@@ -1,0 +1,25 @@
+---
+title: "Einführung"
+---
+
+Diese Einführung beruht zum großen Teil auf dem Buch von @kertz. Dort werden grundlegende Zusammenhänge zur Physik der Hochatmosphäre physikalisch und mathematisch gut aufbereitet und erläutet. Zum Selbststudium ist dieses Buch daher sehr zu empfehlen.
+
+![](images/paste-25F555DC.png)
+
+![](https://www.researchgate.net/publication/305271096/figure/fig1/AS:385109879476224@1468828758543/Schematic-illustration-of-magnetospheric-current-systems-contributing-to-the-near-Earth.png)
+
+![](images/paste-444DBB41.png)
+
+## Begriffe
+
+In der Physik der Ionosphäre und Magnetosphäre behandeln wir Prozesse im erdnahen Raum. Dort werden physikalische Vorgänge durch das Erdmagnetfeld oder seine Interaktion mit dem interplanetaren Magnetfeld bestimmt.
+
+Eine besondere Rolle spielen hier geladene Teilchen. Wir werden sehen, dass der erdnahe Raum nicht leer, sondern ein stark verdünntes Gas aus geladenen und neutralen Teilchen ist. Dieses Teilchengemisch nennt man Plasma.
+
+## Plasma
+
+Unser Universum besteht zu 68 % aus dunkler Energie, zu 27 % aus dunkler Materie und zu 5 % aus gewöhnlicher Materie (Atomen) ([NASA Science](https://science.nasa.gov/astrophysics/focus-areas/what-is-dark-energy/)).
+
+Die gewöhnliche *sichtbare* Materie besteht zu über 99.9 % aus Plasma.
+
+{{< youtube xlCFGFIYfOo >}}

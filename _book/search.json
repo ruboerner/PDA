@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Physik der Hochatmosphäre",
+    "section": "",
+    "text": "Dieses Skript zur Vorlesung “Physik der Hochatmosphäre” entstand im Sommer 2022 und ist mit Quarto, einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt worden.\nAlle Änderungen sind in github nachvollziehbar. Ein PDF-Dokument mit gleichem Inhalt kann hier heruntergeladen werden."
+  },
+  {
+    "objectID": "einf.html",
+    "href": "einf.html",
+    "title": "1  Einführung",
+    "section": "",
+    "text": "Diese Einführung beruht zum großen Teil auf dem Buch von Kertz (1971). Dort werden grundlegende Zusammenhänge zur Physik der Hochatmosphäre physikalisch und mathematisch gut aufbereitet und erläutet. Zum Selbststudium ist dieses Buch daher sehr zu empfehlen."
+  },
+  {
+    "objectID": "atmo.html",
+    "href": "atmo.html",
+    "title": "2  Aufbau der Atmosphäre",
+    "section": "",
+    "text": "Quelle: https://www.britannica.com/science/ionosphere-and-magnetosphere"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "11  Summary",
+    "section": "",
+    "text": "1 + 1\n\n2"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Literaturverzeichnis",
+    "section": "",
+    "text": "Bothmer, Volker, and Ioannis A Daglis. 2007. Space Weather: Physics\nand Effects. Springer Science & Business Media.\n\n\nChen, Francis F. 2012. Introduction to Plasma Physics. Springer\nScience & Business Media.\n\n\nKelly, Michael. 2012. The Earth’s Ionosphere: Plasma Physics and\nElectrodynamics. Vol. 43. Elsevier.\n\n\nKertz, Walter. 1971. “Einführung in die Geophysik II.”\nBibliographisches Institut, Mannheim.\n\n\nPrölss, Gerd. 2013. Physik des erdnahen\nWeltraums: eine Einführung.\nSpringer-Verlag."
+  },
+  {
+    "objectID": "einf.html#kloadasd",
+    "href": "einf.html#kloadasd",
+    "title": "1  Einführung",
+    "section": "1.1 Kloadasd",
+    "text": "1.1 Kloadasd\n\n\n\n\nKertz, Walter. 1971. „Einführung in die Geophysik II“. Bibliographisches Institut, Mannheim."
+  },
+  {
+    "objectID": "einf.html#begriffe",
+    "href": "einf.html#begriffe",
+    "title": "1  Einführung",
+    "section": "1.1 Begriffe",
+    "text": "1.1 Begriffe\nIn der Physik der Ionosphäre und Magnetosphäre behandeln wir Prozesse im erdnahen Raum. Dort werden physikalische Vorgänge durch das Erdmagnetfeld oder seine Interaktion mit dem interplanetaren Magnetfeld bestimmt.\nEine besondere Rolle spielen hier geladene Teilchen. Wir werden sehen, dass der erdnahe Raum nicht leer, sondern ein stark verdünntes Gas aus geladenen und neutralen Teilchen ist. Dieses Teilchengemisch nennt man Plasma."
+  },
+  {
+    "objectID": "einf.html#plasma",
+    "href": "einf.html#plasma",
+    "title": "1  Einführung",
+    "section": "1.2 Plasma",
+    "text": "1.2 Plasma\nUnser Universum besteht zu 68 % aus dunkler Energie, zu 27 % aus dunkler Materie und zu 5 % aus gewöhnlicher Materie (Atomen) (NASA Science).\nDie gewöhnliche sichtbare Materie besteht zu über 99.9 % aus Plasma.\n\n\n\n\n\nKertz, Walter. 1971. „Einführung in die Geophysik II“. Bibliographisches Institut, Mannheim."
+  },
+  {
+    "objectID": "bewegungsgleichung.html",
+    "href": "bewegungsgleichung.html",
+    "title": "7  Bewegungsgleichung",
+    "section": "",
+    "text": "\\[\nm \\ddot{\\mathbf x} = q (\\mathbf E + \\mathbf v \\times \\mathbf B) + m \\mathbf g\n\\]"
+  },
+  {
+    "objectID": "Dipolefield_Motion.html",
+    "href": "Dipolefield_Motion.html",
+    "title": "8  Simulation der Teilchenbewegung mit Julia",
+    "section": "",
+    "text": "Wir nutzen einen ODE-Löser des Julia-Pakets OrdinaryDiffEq. Außerdem nutzen wir TestParticle.jl, ein Paket zum bequemen Berechnen der Bewegungsbahnen geladener Teilchen in Dipolfeldern.\nDie Visualisierung erfolgt mit Plots.jl.\n\nusing TestParticle\nusing TestParticle: getB_dipole, getE_dipole, sph2cart, Rₑ\nusing OrdinaryDiffEq\nusing Plots\nusing Statistics\n\n\nfunction fieldline(ϕ::Float64, L::Float64=2.5, nP::Int=100)\n\n   xyz = [ sph2cart(L*sin(θ)^2,ϕ,θ) for θ in range(-π,stop=π,length=nP) ]\n   x = Vector{Float64}(undef,length(xyz))\n   y = Vector{Float64}(undef,length(xyz))\n   z = Vector{Float64}(undef,length(xyz))\n\n   for (i, pos) in enumerate(xyz)\n      x[i],y[i],z[i] = [pos...]\n   end\n\n   (x,y,z)\nend\n\nfieldline (generic function with 3 methods)\n\n\n\nfunction plot_iso3d(xs, ys, zs; lw=3, lc=:red, title=\"Isometric 3D plot\",label=false, camera=(45,30))\n    # condition data for nearly isometric 3D plot \n    x12, y12, z12 = extrema(xs), extrema(ys), extrema(zs)\n    d = maximum([diff([x12...]),diff([y12...]),diff([z12...])])[1] / 2\n    xm, ym, zm = mean(x12),  mean(y12),  mean(z12) \n\n    # plot data\n    p = Plots.plot(; xlabel=\"x\",ylabel=\"y\",zlabel=\"z\", aspect_ratio=:equal, grid=:true)\n    Plots.plot!(xlims=(xm-d,xm+d), ylims=(ym-d,ym+d), zlims=(zm-d,zm+d))\n    Plots.plot!(;camera=camera)    #(azimuth,elevation) ???\n    Plots.plot!(xs, ys, zs, title=title,lw=lw,lc=lc,label=label)\n    Plots.plot!(xs, ys, zlims(p)[1] .+ 0*zs, lw=1, lc=:lightgray, label=false)\n    Plots.plot!(xs, ylims(p)[2]  .+ 0*ys, zs, lw=1, lc=:lightgray, label=false)\n    Plots.plot!(xlims(p)[1]  .+ 0*xs, ys, zs, lw=1, lc=:lightgray, label=false)\nend\n\nplot_iso3d (generic function with 1 method)\n\n\n\nEk = 5e7\n\nm = TestParticle.mᵢ\nq = TestParticle.qᵢ\nc = TestParticle.c;\n\n\n# initial velocity, [m/s]\nv₀ = sph2cart(c*sqrt(1-1/(1+Ek*q/(m*c^2))^2), 0.0, π/4)\n# initial position, [m]\nr₀ = sph2cart(2.5*Rₑ, 0.0, π/2)\nstateinit = [r₀..., v₀...]\n# obtain field\nparam = prepare(getE_dipole, getB_dipole)\ntspan = (0.0, 20.0);\n\n\nprob = ODEProblem(trace_analytic!, stateinit, tspan, param);\n\n\nsol = solve(prob, Tsit5(); save_idxs=[1,2,3])\n\nx = getindex.(sol.u,1) / Rₑ\ny = getindex.(sol.u,2) / Rₑ\nz = getindex.(sol.u,3) / Rₑ;\n\n\nplot(x, y, z, aspect_ratio=:equal, legend=false)\nfor ϕ in range(0, stop=2*π, length=10)\n   plot!(fieldline(ϕ)..., color=\"red\", aspect_ratio=:equal, alpha=0.3, legend=false)\nend\n\ncurrent()\n\n\n\n\n\np = plot_iso3d(x, y, z, title=\"Charged particle traces\")\np"
+  }
+]

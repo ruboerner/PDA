@@ -1,0 +1,47 @@
+project:
+  type: book
+
+lang: de
+
+book:
+  title: "Physik der Hochatmosphäre"
+  subtitle: "Modul: Ausgewählte Kapitel der Geophysik"
+  author: "Ralph-Uwe Börner"
+  date: today
+  chapters:
+    - index.qmd
+    - part: "Einführung"
+      chapters: 
+        - einf.qmd
+        - atmo.qmd
+    - part: "Die ruhige und aktive Sonne"
+      chapters: 
+        - aufbau.qmd
+        - sonnenflecken.qmd
+    - part: "Plasmen und ihre Magnetfelder"
+      chapters: 
+        - plasmen.qmd
+        - bewegungsgleichung.qmd
+        - Dipolefield_Motion.qmd
+    - part: "Die elektrische Leitfähigkeit der Ionosphäre"
+      chapters: 
+        - eej.qmd
+    - part: "Das erdmagnetische Außenfeld"
+      chapters: 
+        - ionosphere.qmd
+        - variationen.qmd
+    - phenomena.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrartcl
+    papersize: a4
+
+editor: visual
+
