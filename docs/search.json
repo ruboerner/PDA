@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Physik der Hochatmosphäre",
     "section": "",
-    "text": "Dieses Skript zur Vorlesung “Physik der Hochatmosphäre” entstand im Sommer 2022 und ist mit Quarto, einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt worden.\nAlle Änderungen sind in github nachvollziehbar. Ein PDF-Dokument mit gleichem Inhalt kann hier heruntergeladen werden."
+    "text": "Alle Änderungen sind in GitHub nachvollziehbar. Ein PDF-Dokument mit gleichem Inhalt kann hier heruntergeladen werden."
   },
   {
     "objectID": "einf.html",

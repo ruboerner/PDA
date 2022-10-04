@@ -41,7 +41,7 @@ format:
   html:
     theme: cosmo
   pdf:
-    documentclass: scrartcl
+    documentclass: scrreprt
     papersize: a4
 
 editor: visual

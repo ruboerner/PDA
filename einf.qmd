@@ -6,8 +6,6 @@ Diese Einführung beruht zum großen Teil auf dem Buch von @kertz. Dort werden g
 
 ![](images/paste-25F555DC.png)
 
-![](https://www.researchgate.net/publication/305271096/figure/fig1/AS:385109879476224@1468828758543/Schematic-illustration-of-magnetospheric-current-systems-contributing-to-the-near-Earth.png)
-
 ![](images/paste-444DBB41.png)
 
 ## Begriffe
