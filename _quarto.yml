@@ -18,6 +18,7 @@ book:
     - part: "Die ruhige und aktive Sonne"
       chapters: 
         - aufbau.qmd
+        - strahlung.qmd
         - sonnenflecken.qmd
     - part: "Plasmen und ihre Magnetfelder"
       chapters: 

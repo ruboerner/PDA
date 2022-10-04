@@ -2,8 +2,10 @@
 title: "Aufbau der Atmosphäre"
 ---
 
-Gliederung der Atmosphäre s. KERTZ
+In @kertz finden wir die folgende Gliederung der Atmosphäre hinsichtlich des Temperaturverlaufs, der Homogenität sowie der Elektronendichte. Von großer Bedeutung für die Physik der Hochatmosphäre ist der Magnetfeldeinfluss.
 
 ![](images/paste-CCE7768B.png)
 
-![Quelle: https://www.britannica.com/science/ionosphere-and-magnetosphere](images/paste-437D2E62.png)
+Eine andere Darstellung ist hier gegeben:
+
+![Vertikale Gliederung der Atmosphäre (aus https://www.britannica.com/science/ionosphere-and-magnetosphere)](images/paste-437D2E62.png)

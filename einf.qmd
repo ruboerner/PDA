@@ -2,11 +2,11 @@
 title: "Einführung"
 ---
 
-Diese Einführung beruht zum großen Teil auf dem Buch von @kertz. Dort werden grundlegende Zusammenhänge zur Physik der Hochatmosphäre physikalisch und mathematisch gut aufbereitet und erläutet. Zum Selbststudium ist dieses Buch daher sehr zu empfehlen.
+Diese Einführung beruht zum großen Teil auf dem Buch von @kertz. Dort werden grundlegende Zusammenhänge zur Physik der Hochatmosphäre physikalisch und mathematisch gut aufbereitet und erläutet. Zum Selbststudium ist dieses Buch sehr zu empfehlen.
 
-![](images/paste-25F555DC.png)
+![Künstlerische Darstellung der solar-terrestrischen Beziehungen](images/paste-25F555DC.png)
 
-![](images/paste-444DBB41.png)
+![Schematische Darstellung der Magnetosphäre](images/paste-444DBB41.png)
 
 ## Begriffe
 

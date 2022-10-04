@@ -2,6 +2,3 @@
 title: "Aufbau der Sonne"
 ---
 
-## Treibhausgase
-
-{{< youtube f6SbCA9GZms >}}
