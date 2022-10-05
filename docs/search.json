@@ -32,7 +32,7 @@
     "href": "atmo.html",
     "title": "3  Aufbau der Atmosphäre",
     "section": "",
-    "text": "Eine andere Darstellung ist hier gegeben:\n\n\n\nVertikale Gliederung der Atmosphäre (aus https://www.britannica.com/science/ionosphere-and-magnetosphere)\n\n\n\n\n\n\nKertz, Walter. 1971. „Einführung in die Geophysik II“. Bibliographisches Institut, Mannheim."
+    "text": "In Kertz (1971) finden wir die folgende Gliederung der Atmosphäre hinsichtlich des Temperaturverlaufs, der Homogenität sowie der Elektronendichte. Von großer Bedeutung für die Physik der Hochatmosphäre ist der Magnetfeldeinfluss.\nUnterhalb einer Höhe von 50 km befinden sich 99.9 % der Gesamtmasse der Atmosphäre. Die übrigen 0.1 % verteilen sich auf ein Vielfaches des Erdvolumens.\nDie Physik der Hochatmosphäre beobachtet Vorgänge in einem stark verdünnten Gas.\n\n\n\nGliederung der Atmosphäre (aus Kertz)\n\n\nEine etwas andere Darstellung:\n\n\n\nVertikale Gliederung der Atmosphäre (aus https://www.britannica.com/science/ionosphere-and-magnetosphere)"
   },
   {
     "objectID": "bewegungsgleichung.html",
@@ -54,5 +54,138 @@
     "title": "Literaturverzeichnis",
     "section": "",
     "text": "Kertz, Walter. 1971. “Einführung in die Geophysik II.”\nBibliographisches Institut, Mannheim."
+  },
+  {
+    "objectID": "einf.html#motivation",
+    "href": "einf.html#motivation",
+    "title": "2  Einführung",
+    "section": "2.1 Motivation",
+    "text": "2.1 Motivation\nIn der Physik der Ionosphäre und Magnetosphäre behandeln wir Prozesse im erdnahen Raum. Dort werden physikalische Vorgänge durch das Erdmagnetfeld oder seine Interaktion mit dem interplanetaren Magnetfeld bestimmt.\nEine besondere Rolle spielen hier geladene Teilchen. Wir werden sehen, dass der erdnahe Raum nicht leer, sondern ein stark verdünntes Gas aus geladenen und neutralen Teilchen ist. Die Annahme, dass im Universum Vakuum herrscht, ist falsch. Neben der elektromagnetichen Wellenstrahlung der Sonne beobachtet man auch einen Partikelstrom aus geladenen Teilchen. Dieses Teilchengemisch nennt man Plasma.\nIn unserem Sonnensystem findet man Plasma im Sonnenwind, der als ständiger Strom geladener Teilchen mit Geschwindigkeiten von etwa 400 bis 600 km/s die Sonne verlässt.\nTrifft der Sonnenwind auf die Magnetosphäre, werden die geladenen Teilchen einer Kraft ausgesetzt, die hauptsächlich durch das irdische Magnetfeld hervorgerufen wird. Diese Kraft ist die Lorentzkraft.\nDie elektromagnetische Wellenstrahlung der Sonne bringt Energie in die Atmosphäre und verursacht eine höhenabhängige Ionisierung der Atmosphäre. Die Ionenproduktionsrate ist in der Dynamoschicht besonders hoch. Dort besitzt die hohe Atmosphäre eine beachtliche elektrische Leitfähigkeit. Es bilden sich große elektrische Stromsysteme.\nDie an die Stromsysteme gekoppelten Magnetfelder können an der Erdoberfläche gemessen werden. Da sie zeitlich variabel und großräumig sind, eignen sich die Variationen als Energiequelle für die Magnetotellurik. Andererseits führen Magnetfeldvariationen zu unerwünschten Störgrößen bei geomagnetischen Messungen. Diese werden durch Variometer erfasst.\nStromsysteme sind immer an Teilchenpopulationen geknüpft. Diese können auch in der Magnetosphäre auftreten und bilden die Van-Allen-Gürtel. Eine kurzzeitige Erhöhung der Teilchendichte in der Magnetosphäre, vor allem auf Grund von Koronalen Massenauswürfen (engl. coronal mass ejection, CME), führt zur Ausbildung von verstärkten Ringströmen in Stromsystemen von einigen Erdradien Ausdehnung, deren messbare magnetische Wirkung als magnetischer Sturm bezeichnet werden."
+  },
+  {
+    "objectID": "atmo.html#hochatmosphäre",
+    "href": "atmo.html#hochatmosphäre",
+    "title": "3  Aufbau der Atmosphäre",
+    "section": "3.1 Hochatmosphäre",
+    "text": "3.1 Hochatmosphäre\nDie Grenze zur Hochatmosphäre ist nicht einheitlich festgelegt. Sie liegt bei \\(h > 50\\) km.\nWarum wird diese Grenze eingeführt? Dies hat verschiedene Gründe, die von der Methoide der Erforschung der Atmosphäre, von der Zusammensetzung der Atmosphäre sowie vom Einfluss der solaren Aktivität abhängen.\nVor allem handelt es sich um eine physikalische Einfussgrenze.\n\n3.1.1 Methode der Erforschung\nRegistrierballons erreichen nur Höhen bis etwa 50 km, darüberhinaus sind entweder nur Momentaufnahmen (etwa wegen der hohen Geschwindigkeit von Forschungsraketen) oder indirekte Beobachtungen möglich.\nSo geben beispielsweise magnetische Aufzeichungen an der Erdoberfläche Hinweise auf elektrische Ströme in leitfähigen Schichten der Ionosphäre.\nSpektren von Polarlichtern geben Hinweise auf die chemische Zusammensetzung.\nAn der Ionosphäre reflektierte Radiowellen liefern Hinweise auf die Teilchendichte und Windbewegungen.\n\n\n3.1.2 Luftchemie\nIn Höhen bis zu 50 km ist die Luft gleichmäßig durchmischt. Ihre Zusammensetzung entspricht der an der Erdoberfläche. Oberhalb von 50 km tritt eine höhendifferenzierte unterschiedliche Luftzusammensetzung auf, die durch Ionisierung und gravitative Entmischung verursacht wird.,\n\n\n3.1.3 Steuerung durch solare Aktivität\nDie Dynamik der unteren Atmosphäre äußert sich in kleinskaligen und kurzzeitigen Wettervorgängen.\nStörungen der oberen Atmosphäre sind räumlich ausgedehnter und umfassen mindestens die gesamte Tag- oder Nachtseite der Erde."
+  },
+  {
+    "objectID": "atmo.html#iaga",
+    "href": "atmo.html#iaga",
+    "title": "3  Aufbau der Atmosphäre",
+    "section": "3.2 IAGA",
+    "text": "3.2 IAGA\nDie wissenschaftliche Dachvereinigung zur Erforschung der Hochatmosphäre ist die IAGA (International Association of Geomagnetism and Aeronomy).\n\n\n\n\nKertz, Walter. 1971. „Einführung in die Geophysik II“. Bibliographisches Institut, Mannheim."
+  },
+  {
+    "objectID": "atmo.html#aeronomie",
+    "href": "atmo.html#aeronomie",
+    "title": "3  Aufbau der Atmosphäre",
+    "section": "3.3 Aeronomie",
+    "text": "3.3 Aeronomie\nDie Physik der Hochatmosphäre wird auch als Aeronomie bezeichnet (im Gegensatz zur Meteorologie als Physik der unteren Atmosphäre). Die wissenschaftliche Dachvereinigung zur Erforschung der Hochatmosphäre ist die IAGA (International Association of Geomagnetism and Aeronomy).\n\n\n\n\nKertz, Walter. 1971. „Einführung in die Geophysik II“. Bibliographisches Institut, Mannheim."
+  },
+  {
+    "objectID": "atmo.html#die-grenze-zur-hochatmosphäre",
+    "href": "atmo.html#die-grenze-zur-hochatmosphäre",
+    "title": "3  Aufbau der Atmosphäre",
+    "section": "3.2 Die Grenze zur Hochatmosphäre",
+    "text": "3.2 Die Grenze zur Hochatmosphäre\nDie Grenze zur Hochatmosphäre ist nicht einheitlich festgelegt. Sie liegt bei \\(h > 50\\) km.\nWarum wird diese Grenze eingeführt? Dies hat verschiedene Gründe, die von der Methoide der Erforschung der Atmosphäre, von der Zusammensetzung der Atmosphäre sowie vom Einfluss der solaren Aktivität abhängen.\nVor allem handelt es sich um eine physikalische Einfussgrenze.\n\n3.2.1 Methode der Erforschung\nRegistrierballons erreichen nur Höhen bis etwa 50 km, darüberhinaus sind entweder nur Momentaufnahmen (etwa wegen der hohen Geschwindigkeit von Forschungsraketen) oder indirekte Beobachtungen möglich.\nSo geben beispielsweise magnetische Aufzeichungen an der Erdoberfläche Hinweise auf elektrische Ströme in leitfähigen Schichten der Ionosphäre.\nSpektren von Polarlichtern geben Hinweise auf die chemische Zusammensetzung.\nAn der Ionosphäre reflektierte Radiowellen liefern Hinweise auf die Teilchendichte und Windbewegungen.\n\n\n3.2.2 Luftchemie\nIn Höhen bis zu 50 km ist die Luft gleichmäßig durchmischt. Ihre Zusammensetzung entspricht der an der Erdoberfläche. Oberhalb von 50 km tritt eine höhendifferenzierte unterschiedliche Luftzusammensetzung auf, die durch Ionisierung und gravitative Entmischung verursacht wird.,\n\n\n3.2.3 Steuerung durch solare Aktivität\nDie Dynamik der unteren Atmosphäre äußert sich in kleinskaligen und kurzzeitigen Wettervorgängen.\nStörungen der oberen Atmosphäre sind räumlich ausgedehnter und umfassen mindestens die gesamte Tag- oder Nachtseite der Erde."
+  },
+  {
+    "objectID": "aufbau.html",
+    "href": "aufbau.html",
+    "title": "4  Aufbau der Sonne",
+    "section": "",
+    "text": "In erster Näherung ist die Sonne kugelsymmetrisch aufgebaut. Sie befindet sich in einem stationären Gleichgewicht ohne Kontraktionen oder Schwingungen.\nDie Sonne vereint in sich etwa 99.86 % der Masse des Sonnensystems.\nIm Innern der Sonne herrscht ein hydrostatisches Gleichgewicht der nach außen wirkenden Druckkräfte und der nach innen gerichteten Gravitationskräfte. Es gilt\n\\[\n\\frac{d p(r)}{d r} = - f \\frac{\\rho(r) m(r)}{r^2}\n\\]\nmit\n\\[\nm(r) = 4 \\pi \\int_0 ^r \\rho(r) r^2 \\, dr\n\\]"
+  },
+  {
+    "objectID": "aufbau.html#energiefreisetzungsprozesse",
+    "href": "aufbau.html#energiefreisetzungsprozesse",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.2 Energiefreisetzungsprozesse",
+    "text": "4.2 Energiefreisetzungsprozesse\nDie primäre Quelle der Sonnenenergie ist die Verschmelzung von Wasserstoffkernen zu Heliumkernen. Dies geschieht im Kern der Sonne bei Temperaturen von \\(1.4 \\times 10^7\\) K.\nIn jeder Sekunde werden etwa 620 Millionen Tonnen Wasserstoff in Helium umgewandelt."
+  },
+  {
+    "objectID": "aufbau.html#kern",
+    "href": "aufbau.html#kern",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.4 Kern",
+    "text": "4.4 Kern"
+  },
+  {
+    "objectID": "aufbau.html#strahlungszone",
+    "href": "aufbau.html#strahlungszone",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.5 Strahlungszone",
+    "text": "4.5 Strahlungszone"
+  },
+  {
+    "objectID": "aufbau.html#konvektionszone",
+    "href": "aufbau.html#konvektionszone",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.6 Konvektionszone",
+    "text": "4.6 Konvektionszone"
+  },
+  {
+    "objectID": "aufbau.html#sonnenoberfläche-und-umgebung",
+    "href": "aufbau.html#sonnenoberfläche-und-umgebung",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.7 Sonnenoberfläche und Umgebung",
+    "text": "4.7 Sonnenoberfläche und Umgebung\n\n4.7.1 Photosphäre\n\n\n4.7.2 Chromosphäre"
+  },
+  {
+    "objectID": "aufbau.html#äußere-atmosphäre",
+    "href": "aufbau.html#äußere-atmosphäre",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.8 Äußere Atmosphäre",
+    "text": "4.8 Äußere Atmosphäre\n\n4.8.1 Korona\n\n\n4.8.2 Sonnenwind"
+  },
+  {
+    "objectID": "aufbau.html#magnetfeld",
+    "href": "aufbau.html#magnetfeld",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.9 Magnetfeld",
+    "text": "4.9 Magnetfeld"
+  },
+  {
+    "objectID": "sonnenflecken.html",
+    "href": "sonnenflecken.html",
+    "title": "6  Sonnenflecken",
+    "section": "",
+    "text": "Sonnenflecken sind dunkle Stellen auf der Sonnenoberfläche. Sie sind kühler und strahlen weniger sichtbares Licht ab als der Rest der Sonnenoberfläche.\nSonnenflecken bilden das einfachste Maß für die Sonnenaktivität.\nDie Häufigkeit der Sonnenflecken unterliegt einer Periodizität von durchschnittlich 11 Jahren.\nUrsache der Sonnenflecken sind starke Magnetfelder, welche den Wärmetransport an die Sonnenoberfläche behindern."
+  },
+  {
+    "objectID": "sonnenflecken.html#sonnenfleckenrelativzahl",
+    "href": "sonnenflecken.html#sonnenfleckenrelativzahl",
+    "title": "6  Sonnenflecken",
+    "section": "6.1 Sonnenfleckenrelativzahl",
+    "text": "6.1 Sonnenfleckenrelativzahl\nDie Häufigkeit der Sonnenflecken wird durch die Relativzahl erfasst.\nman zählt die Einzelflecken (Zahl $f$) und addiert dazu das Zehnfache der Gruppenanzahl (Zahl \\(g\\)).\nDie Sonnenfleckenrelativzahl ist eine Maßzahl der Sonnenaktivität und berechnet sich aus\n\\[\nR = k ( f + 10 g)\n\\]\nwobei \\(k\\) ein vom Beobachter und seinen Instrumenten abhängiger Korrekturfaktor ist."
+  },
+  {
+    "objectID": "sonnenflecken.html#aufzeichnungen-der-sonnefleckenrelativzahl",
+    "href": "sonnenflecken.html#aufzeichnungen-der-sonnefleckenrelativzahl",
+    "title": "6  Sonnenflecken",
+    "section": "6.2 Aufzeichnungen der Sonnefleckenrelativzahl",
+    "text": "6.2 Aufzeichnungen der Sonnefleckenrelativzahl"
+  },
+  {
+    "objectID": "sonnenflecken.html#aufzeichnungen-der-sonnenfleckenrelativzahl",
+    "href": "sonnenflecken.html#aufzeichnungen-der-sonnenfleckenrelativzahl",
+    "title": "6  Sonnenflecken",
+    "section": "6.2 Aufzeichnungen der Sonnenfleckenrelativzahl",
+    "text": "6.2 Aufzeichnungen der Sonnenfleckenrelativzahl\nZuständig für die Berechnung, Speicherung und Verbreitung der Sonnenfleckenrelativzahl ist das Solar Influences Data analysis Center (SIDC)."
+  },
+  {
+    "objectID": "aufbau.html#energietransportmechanismen",
+    "href": "aufbau.html#energietransportmechanismen",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.3 Energietransportmechanismen",
+    "text": "4.3 Energietransportmechanismen\nEnergie gelangt nach außen durch\n\nStrahlung\nKonvektion\nWärmeleitung\n\nBenötigt wird ein Temperaturgefälle."
+  },
+  {
+    "objectID": "aufbau.html#differentielle-rotation",
+    "href": "aufbau.html#differentielle-rotation",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.10 Differentielle Rotation",
+    "text": "4.10 Differentielle Rotation"
   }
 ]

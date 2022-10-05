@@ -8,11 +8,23 @@ Diese Einführung beruht zum großen Teil auf dem Buch von @kertz. Dort werden g
 
 ![Schematische Darstellung der Magnetosphäre](images/paste-444DBB41.png)
 
-## Begriffe
+## Motivation
 
 In der Physik der Ionosphäre und Magnetosphäre behandeln wir Prozesse im erdnahen Raum. Dort werden physikalische Vorgänge durch das Erdmagnetfeld oder seine Interaktion mit dem interplanetaren Magnetfeld bestimmt.
 
-Eine besondere Rolle spielen hier geladene Teilchen. Wir werden sehen, dass der erdnahe Raum nicht leer, sondern ein stark verdünntes Gas aus geladenen und neutralen Teilchen ist. Dieses Teilchengemisch nennt man Plasma.
+Eine besondere Rolle spielen hier geladene Teilchen. Wir werden sehen, dass der erdnahe Raum nicht leer, sondern ein stark verdünntes Gas aus geladenen und neutralen Teilchen ist. Die Annahme, dass im Universum Vakuum herrscht, ist falsch. Neben der elektromagnetichen Wellenstrahlung der Sonne beobachtet man auch einen Partikelstrom aus geladenen Teilchen. Dieses Teilchengemisch nennt man Plasma.
+
+In unserem Sonnensystem findet man Plasma im Sonnenwind, der als ständiger Strom geladener Teilchen mit Geschwindigkeiten von etwa 400 bis 600 km/s die Sonne verlässt.
+
+Trifft der Sonnenwind auf die Magnetosphäre, werden die geladenen Teilchen einer Kraft ausgesetzt, die hauptsächlich durch das irdische Magnetfeld hervorgerufen wird. Diese Kraft ist die *Lorentzkraft*.
+
+Die elektromagnetische Wellenstrahlung der Sonne bringt Energie in die Atmosphäre und verursacht eine höhenabhängige Ionisierung der Atmosphäre. Die Ionenproduktionsrate ist in der Dynamoschicht besonders hoch. Dort besitzt die hohe Atmosphäre eine beachtliche elektrische Leitfähigkeit. Es bilden sich große elektrische Stromsysteme.
+
+Die an die Stromsysteme gekoppelten Magnetfelder können an der Erdoberfläche gemessen werden. Da sie zeitlich variabel und großräumig sind, eignen sich die Variationen als Energiequelle für die Magnetotellurik. Andererseits führen Magnetfeldvariationen zu unerwünschten Störgrößen bei geomagnetischen Messungen. Diese werden durch Variometer erfasst.
+
+Stromsysteme sind immer an Teilchenpopulationen geknüpft. Diese können auch in der Magnetosphäre auftreten und bilden die *Van-Allen-Gürtel*. Eine kurzzeitige Erhöhung der Teilchendichte in der Magnetosphäre, vor allem auf Grund von Koronalen Massenauswürfen (engl. coronal mass ejection, CME), führt zur Ausbildung von verstärkten Ringströmen in Stromsystemen von einigen Erdradien Ausdehnung, deren messbare magnetische Wirkung als magnetischer Sturm bezeichnet werden.
+
+{{< youtube nX0Oy332WEk >}}
 
 ## Plasma
 

@@ -1,3 +1,37 @@
 ---
 title: "Sonnenflecken"
 ---
+
+Sonnenflecken sind dunkle Stellen auf der Sonnenoberfläche. Sie sind kühler und strahlen weniger sichtbares Licht ab als der Rest der Sonnenoberfläche.
+
+Sonnenflecken bilden das einfachste Maß für die Sonnenaktivität.
+
+Die Häufigkeit der Sonnenflecken unterliegt einer Periodizität von durchschnittlich 11 Jahren.
+
+Ursache der Sonnenflecken sind starke Magnetfelder, welche den Wärmetransport an die Sonnenoberfläche behindern.
+
+![](images/paste-612C7829.png)
+
+{{< youtube eUNiR-69eTA >}}
+
+## Sonnenfleckenrelativzahl
+
+Die Häufigkeit der Sonnenflecken wird durch die Relativzahl erfasst.
+
+man zählt die Einzelflecken (Zahl \$f\$) und addiert dazu das Zehnfache der Gruppenanzahl (Zahl $g$).
+
+Die Sonnenfleckenrelativzahl ist eine Maßzahl der Sonnenaktivität und berechnet sich aus
+
+$$
+R = k ( f + 10 g)
+$$
+
+wobei $k$ ein vom Beobachter und seinen Instrumenten abhängiger Korrekturfaktor ist.
+
+## Aufzeichnungen der Sonnenfleckenrelativzahl
+
+Zuständig für die Berechnung, Speicherung und Verbreitung der Sonnenfleckenrelativzahl ist das [Solar Influences Data analysis Center (SIDC)](https://www.sidc.be/silso/home).
+
+![](images/paste-F8C5D725.png)
+
+![](images/paste-DE59FE1D.png)

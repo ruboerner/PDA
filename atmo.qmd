@@ -2,10 +2,48 @@
 title: "Aufbau der Atmosphäre"
 ---
 
+## Gliederung der Atmosphäre
+
 In @kertz finden wir die folgende Gliederung der Atmosphäre hinsichtlich des Temperaturverlaufs, der Homogenität sowie der Elektronendichte. Von großer Bedeutung für die Physik der Hochatmosphäre ist der Magnetfeldeinfluss.
 
-![](images/paste-CCE7768B.png)
+Unterhalb einer Höhe von 50 km befinden sich 99.9 % der Gesamtmasse der Atmosphäre. Die übrigen 0.1 % verteilen sich auf ein Vielfaches des Erdvolumens.
 
-Eine andere Darstellung ist hier gegeben:
+Die Physik der Hochatmosphäre beobachtet Vorgänge in einem stark verdünnten Gas.
+
+![Gliederung der Atmosphäre (aus Kertz)](images/paste-CCE7768B.png)
+
+Eine etwas andere Darstellung:
 
 ![Vertikale Gliederung der Atmosphäre (aus https://www.britannica.com/science/ionosphere-and-magnetosphere)](images/paste-437D2E62.png)
+
+## Die Grenze zur Hochatmosphäre
+
+Die Grenze zur Hochatmosphäre ist nicht einheitlich festgelegt. Sie liegt bei $h > 50$ km.
+
+Warum wird diese Grenze eingeführt? Dies hat verschiedene Gründe, die von der Methoide der Erforschung der Atmosphäre, von der Zusammensetzung der Atmosphäre sowie vom Einfluss der solaren Aktivität abhängen.
+
+Vor allem handelt es sich um eine physikalische Einfussgrenze.
+
+### Methode der Erforschung
+
+Registrierballons erreichen nur Höhen bis etwa 50 km, darüberhinaus sind entweder nur Momentaufnahmen (etwa wegen der hohen Geschwindigkeit von Forschungsraketen) oder indirekte Beobachtungen möglich.
+
+So geben beispielsweise magnetische Aufzeichungen an der Erdoberfläche Hinweise auf elektrische Ströme in leitfähigen Schichten der Ionosphäre.
+
+Spektren von Polarlichtern geben Hinweise auf die chemische Zusammensetzung.
+
+An der Ionosphäre reflektierte Radiowellen liefern Hinweise auf die Teilchendichte und Windbewegungen.
+
+### Luftchemie
+
+In Höhen bis zu 50 km ist die Luft gleichmäßig durchmischt. Ihre Zusammensetzung entspricht der an der Erdoberfläche. Oberhalb von 50 km tritt eine höhendifferenzierte unterschiedliche Luftzusammensetzung auf, die durch Ionisierung und gravitative Entmischung verursacht wird.,
+
+### Steuerung durch solare Aktivität
+
+Die Dynamik der unteren Atmosphäre äußert sich in kleinskaligen und kurzzeitigen Wettervorgängen.
+
+Störungen der oberen Atmosphäre sind räumlich ausgedehnter und umfassen mindestens die gesamte Tag- oder Nachtseite der Erde.
+
+## Aeronomie
+
+Die Physik der Hochatmosphäre wird auch als Aeronomie bezeichnet (im Gegensatz zur Meteorologie als Physik der unteren Atmosphäre). Die wissenschaftliche Dachvereinigung zur Erforschung der Hochatmosphäre ist die [IAGA](https://www.iaga-aiga.org/) (International Association of Geomagnetism and Aeronomy).

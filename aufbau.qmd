@@ -2,3 +2,58 @@
 title: "Aufbau der Sonne"
 ---
 
+## Grundprinzipien des Aufbaus der Sonne
+
+In erster Näherung ist die Sonne kugelsymmetrisch aufgebaut. Sie befindet sich in einem stationären Gleichgewicht ohne Kontraktionen oder Schwingungen.
+
+Die Sonne vereint in sich etwa 99.86 % der Masse des Sonnensystems.
+
+Im Innern der Sonne herrscht ein hydrostatisches Gleichgewicht der nach außen wirkenden Druckkräfte und der nach innen gerichteten Gravitationskräfte. Es gilt
+
+$$
+\frac{d p(r)}{d r} = - f \frac{\rho(r) m(r)}{r^2}
+$$
+
+mit
+
+$$
+m(r) = 4 \pi \int_0 ^r \rho(r) r^2 \, dr
+$$
+
+## Energiefreisetzungsprozesse
+
+Die primäre Quelle der Sonnenenergie ist die Verschmelzung von Wasserstoffkernen zu Heliumkernen. Dies geschieht im Kern der Sonne bei Temperaturen von $1.4 \times 10^7$ K.
+
+In jeder Sekunde werden etwa 620 Millionen Tonnen Wasserstoff in Helium umgewandelt.
+
+## Energietransportmechanismen
+
+Energie gelangt nach außen durch
+
+-   Strahlung
+-   Konvektion
+-   Wärmeleitung
+
+Benötigt wird ein Temperaturgefälle.
+
+## Kern
+
+## Strahlungszone
+
+## Konvektionszone
+
+## Sonnenoberfläche und Umgebung
+
+### Photosphäre
+
+### Chromosphäre
+
+## Äußere Atmosphäre
+
+### Korona
+
+### Sonnenwind
+
+## Magnetfeld
+
+## Differentielle Rotation
