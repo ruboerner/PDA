@@ -1,3 +1,23 @@
 ---
 title: "Plasmen"
 ---
+
+Der Begriff des Plasmas (von altgriechisch πλάσμα plásma) stammt aus dem Griechischen und bedeutet *das Gebildete, Geformte*.
+
+Wir benutzen die folgende Definition:
+
+::: callout-important
+Ein Plasma ist ein quasineutrales Gas geladener und neutraler Teilchen mit kollektivem Verhalten.
+:::
+
+## Kollektives Verhalten
+
+Bewegen sich die geladenen Teilchen in einem Plasma, können sie lokale Änderungen der Ladungsträgerdichte hervorrufen. Die Folge sind elektrische Felder. Die Bewegung geladener Teilchen erzeugt elektrische Ströme, die wiederum von Magnetfeldern begleitet werden. Diese Feldeffekte beeinflussen die Bewegung geladener Teilchen in großen Abständen.
+
+Bewegungsmuster der Teilchen hängen nicht nur von lokalen Bedingungen, sondern auch vom Zustand des Plasmas in entfernten Bereichen ab. Über große Entfernungen wirksame elektromagnetische Kräfte führen dazu, dass die Teilchen im Plasma simultan mit anderen interagieren.
+
+Außerdem muss man unterscheiden zwischen Ladung-Ladung- und Ladung-Neutralgas-Wechselwirkungen.
+
+## Debye-Länge
+
+Eine wichtige Eigenschaft von Plasmen ist ihre Fähigkeit, elektrische Potentiale abzuschirmen.

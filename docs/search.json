@@ -187,5 +187,26 @@
     "title": "4  Aufbau der Sonne",
     "section": "4.10 Differentielle Rotation",
     "text": "4.10 Differentielle Rotation"
+  },
+  {
+    "objectID": "plasmen.html",
+    "href": "plasmen.html",
+    "title": "7  Plasmen",
+    "section": "",
+    "text": "Der Begriff des Plasmas (von altgriechisch πλάσμα plásma) stammt aus dem Griechischen und bedeutet das Gebildete, Geformte.\nWir benutzen die folgende Definition:"
+  },
+  {
+    "objectID": "plasmen.html#kollektives-verhalten",
+    "href": "plasmen.html#kollektives-verhalten",
+    "title": "7  Plasmen",
+    "section": "7.1 Kollektives Verhalten",
+    "text": "7.1 Kollektives Verhalten\nBewegen sich die geladenen Teilchen in einem Plasma, können sie lokale Änderungen der Ladungsträgerdichte hervorrufen. Die Folge sind elektrische Felder. Die Bewegung geladener Teilchen erzeugt elektrische Ströme, die wiederum von Magnetfeldern begleitet werden. Diese Feldeffekte beeinflussen die Bewegung geladener Teilchen in großen Abständen.\nBewegungsmuster der Teilchen hängen nicht nur von lokalen Bedingungen, sondern auch vom Zustand des Plasmas in entfernten Bereichen ab. Über große Entfernungen wirksame elektromagnetische Kräfte führen dazu, dass die Teilchen im Plasma simultan mit anderen interagieren.\nAußerdem muss man unterscheiden zwischen Ladung-Ladung- und Ladung-Neutralgas-Wechselwirkungen."
+  },
+  {
+    "objectID": "plasmen.html#debye-länge",
+    "href": "plasmen.html#debye-länge",
+    "title": "7  Plasmen",
+    "section": "7.2 Debye-Länge",
+    "text": "7.2 Debye-Länge\nEine wichtige Eigenschaft von Plasmen ist ihre Fähigkeit, elektrische Potentiale abzuschirmen."
   }
 ]
