@@ -18,6 +18,158 @@ Bewegungsmuster der Teilchen hängen nicht nur von lokalen Bedingungen, sondern 
 
 Außerdem muss man unterscheiden zwischen Ladung-Ladung- und Ladung-Neutralgas-Wechselwirkungen.
 
+Die wichtigsten Phänomene im Zusammenhang mit dem kollektivem Verhalten von Plasmen sind die Debye-Abschirmung sowie die Plasmafrequenz.
+
+## Typische Plasmen
+
+Folgende Tabelle gibt einen Überblick über verschieden Plasmatypen und ihre Eigenschaften (@gibbon).
+
+| Typ                 | Elektronendichte (cm$^{-3}$) | Temperatur (eV) |
+|---------------------|------------------------------|-----------------|
+| Sterne              | $10^{26}$                    | 2000            |
+| Trägheitsfusion     | $10^{25}$                    | 3000            |
+| Magnetische Fusion  | $10^{15}$                    | 1000            |
+| Laser-generiert     | $10^{18}$ - $10^{24}$        | 100-1000        |
+| Entladung           | $10^{12}$                    | 1-10            |
+| Ionosphäre          | $10^{6}$                     | 0.1             |
+| Interstellarer Raum | 1                            | 0.01            |
+
+(1 eV = 11600 K)
+
+![Dichte-Temperatur-Regime für typische Plasmen (aus @thorne2017modern)](images/paste-B4955853.png)
+
 ## Debye-Länge
 
 Eine wichtige Eigenschaft von Plasmen ist ihre Fähigkeit, elektrische Potentiale abzuschirmen.
+
+@debye1923debye und @debye1923theorie vermitteln grundlegende Theorien zu den Wechselwirkungen von Ionen in Elektrolyten. Diese Erkenntnisse lassen sich auf Plasmen übertragen.
+
+![Debye-Abschirmung von geladenen Kugeln in einem Plasma (aus @gibbon)](images/paste-718770F4.png){width="560"}
+
+### Herleitung
+
+Jedes geladene Teilchen innerhalb eines Plasmas zieht andere Teilchen mit entgegengesetzter Ladung an und stößt Teilchen mit der gleichen Ladung ab, wodurch in der unmittelbaren Umgebung des Teilchens eine Wolke aus überwiegend entgegengesetzten Ladungen entsteht.
+
+Diese Wolke schirmt die eigene Ladung des Teilchens von der Außenwelt ab, d. h. sie bewirkt, dass das Coulomb-Feld des Teilchens bei großen Entfernungen exponentiell abnimmt, anstatt mit $1/r^2$.
+
+Diese Debye-Abschirmung der Ladung eines Teilchens kann wie folgt demonstriert und quantifiziert werden (@thorne2017modern):
+
+Man betrachte eine einzelne Testladung $Q$ im Ursprung, die von einem Plasma aus Protonen und Elektronen umgeben ist. Wir definieren mit $n_p(r)$ und $n_e(r)$ die mittleren Dichten für Elektronen und Protonen als glatte Funktionen des Abstandes $r$ von der Testladung, und mit $\bar n$ die mittleren Dichten von Elektronen und Protonen. Dann ist das elektrostatische Potential $\Phi(r)$ außerhalb des Teilchens Lösung der Poisson-Gleichung
+
+$$
+-\nabla^2 \Phi = \frac{n_p - n_e}{\epsilon_0} e + \frac{Q}{\epsilon_0} \delta(r)
+$$ {#eq-poisson}
+
+Wir bezeichnen die Ladung eines Protons mit $+e$ und die Ladung des Elektrons mit $-e$.
+
+Ein Proton besitzt in der Entfernung $r$ von der Testladung das elektrostatische Potential $e \Phi(r)$.
+
+Die mittlere Ladungsträgerdichte ändert sich entsprechend zu
+
+$$
+n_p(r) = \bar n \, e^{-\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 - \frac{e \Phi}{k T} \right)
+$$
+
+bzw.
+
+$$
+n_e(r) = \bar n \, e^{+\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 + \frac{e \Phi}{k T} \right).
+$$
+
+Wir haben wegen $e\Phi \ll kT$ die Exponentialfunktion in eine Taylorreihe entwickelt und Terme höherer Ordnung vernachlässigt.
+
+Einsetzen in @eq-poisson liefert
+
+$$
+-\nabla^2 \Phi + \frac{2 \bar n e^2}{\epsilon_0 k T} \Phi = \frac{Q}{\epsilon_0}\delta(r).
+$$
+
+Die kugelsymmetrische (nur von $r$ abhängige) Lösung ist
+
+$$
+\Phi(r) = \frac{Q}{4 \pi \epsilon_0 r} \, e^{-\sqrt{\dfrac{2r^2}{\lambda_D^2}}}
+$$
+
+und besitzt die Form eines Coulomb-Potentials mit exponentiellem Abfall. Die charakteristische Skalenlänge dieses Abfalls ist
+
+$$
+\lambda_D = \sqrt{ \frac{\epsilon_0 k T}{\bar n e^2}}
+$$
+
+wird *Debye-Radius* genannt. Sie ist ein Maß für die Größe der Debye-Abschirmung. Sie hängt gleichermaßen von der Temeratur als auch von der Teilchendichte des Plasmas ab. In einem idealen Plasmsa befinden sich viele Teilchen innerhalb einer Kugel vom Radius $\lambda_D$. Die Anzahl ist
+
+$$
+N_D = n_e \frac{4 \pi}{3} \lambda_D^3 \gg 1.
+$$
+
+![Ionenverteilung in einer Lösung (aus Wikipedia: Debye-Länge)](images/paste-D4D1A82B.png){fig-align="center" width="210"}
+
+Wird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so reicht die Wirkung dieser Störung nur bis zu einer Entfernung der Größenordnung $\lambda_D$. Nur innerhalb dieses Abstandes weicht die lokale Ladungsträgerdichte signifikant von der makroskopischen elektrischen Neutralität ab.
+
+#### Beispiel
+
+Im Allgemeinen ist $\lambda_D$ sehr klein. In der Ionosphäre ist $n_e = 10^{12}$ m$^{-3}$ und $T=10^3$ K. Damit ist $\lambda_D = 10^{-3}$ m.
+
+![Typische Plasmaparameter (aus @thorne2017modern)](images/paste-2A0EC69D.png){#tabelle201}
+
+Die Tabelle gibt für typische Plasmen die folgenden charakteristischen Größen an:
+
+-   Teilchendichte der Elektronen $n_e$
+-   Temperatur T
+-   Magnetfeld $B$
+-   Debye-Länge $\lambda_D$
+-   Debye-Zahl $N_D$
+-   Plasmafrequenz $\omega_p$
+-   $\nu_{ee}$
+-   Larmor-Kreisfrequenz $\omega_c$
+-   Larmor-Radius $r_L$.
+
+## Plasmaschwingungen und Plasmafrequenz
+
+Das wichtigste dynamische Phänomen in Plasmen ist die Schwingungsbewegung von Protonen und Elektronen relativ zueinander.
+
+![Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus @thorne2017modern)](images/paste-1FB78BDE.png)
+
+### Herleitung
+
+Wir nehmen an, dass alle Protonen ortsfest sind. Die Elektronen werden relativ zu den Protonen um $\xi$ nach rechts in $x$-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten $-e \bar n \xi$ am rechten Ende des Plasmas, sowie \$ +e \\bar n \\xi\$ am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas ist $\mathbf E = (E, 0, 0)^\top$, also
+
+$$
+E = \frac{e \bar n \xi}{\epsilon_0}.
+$$
+
+Dieses Feld übt eine Coulomb-Kraft auf die Protonen und Elektronen aus. Die Bewegungsgleichung lautet
+
+$$
+\ddot \xi = - \frac{e}{m_e} E = - \frac{e^2 \bar n}{\epsilon_0 m_e} \xi.
+$$
+
+Dies ist eine *harmonische Schwingungsdifferentialgleichung* für die Verschiebung der Elektronen ausgedrückt durch $\xi$. Wir haben wegen des Masseverhältnisses von Elektronen zu Protonen $m_e/m_p = 1 / 1836$ die Kraftwirkung auf die Protonen vernachlässigt.
+
+Die Elektronen schwingen harmonisch mit den Ortskoordinaten
+
+$$
+\xi(t) = \xi_0 \cos(\omega_p t),
+$$
+
+wobei die Plasmafrequenz
+
+$$
+\omega_p = \sqrt{ \frac{\bar n e^2}{\epsilon_0 m_e} }
+$$
+
+nur von der Plasmadichte $\bar n$ aber *nicht* von der Temperatur $T$ oder der magnetischen Feldstärke abhängt.
+
+Die thermische Geschwindigkeit der Elektronen ist definiert durch
+
+$$
+v_e = \sqrt{ \frac{k T}{m_e} },
+$$
+
+somit ist
+
+$$
+\omega_p = \frac{v_e}{\lambda_D}.
+$$
+
+Mit anderen Worten: Thermische Elektronen legen innerhalb einer Plasmaschwingungsperiode etwa eine Debye-Länge zurück.

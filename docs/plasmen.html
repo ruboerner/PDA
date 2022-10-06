@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -61,6 +80,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -228,7 +248,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#kollektives-verhalten" id="toc-kollektives-verhalten" class="nav-link active" data-scroll-target="#kollektives-verhalten"><span class="toc-section-number">7.1</span>  Kollektives Verhalten</a></li>
-  <li><a href="#debye-länge" id="toc-debye-länge" class="nav-link" data-scroll-target="#debye-länge"><span class="toc-section-number">7.2</span>  Debye-Länge</a></li>
+  <li><a href="#typische-plasmen" id="toc-typische-plasmen" class="nav-link" data-scroll-target="#typische-plasmen"><span class="toc-section-number">7.2</span>  Typische Plasmen</a></li>
+  <li><a href="#debye-länge" id="toc-debye-länge" class="nav-link" data-scroll-target="#debye-länge"><span class="toc-section-number">7.3</span>  Debye-Länge</a>
+  <ul class="collapse">
+  <li><a href="#herleitung" id="toc-herleitung" class="nav-link" data-scroll-target="#herleitung"><span class="toc-section-number">7.3.1</span>  Herleitung</a></li>
+  </ul></li>
+  <li><a href="#plasmaschwingungen-und-plasmafrequenz" id="toc-plasmaschwingungen-und-plasmafrequenz" class="nav-link" data-scroll-target="#plasmaschwingungen-und-plasmafrequenz"><span class="toc-section-number">7.4</span>  Plasmaschwingungen und Plasmafrequenz</a>
+  <ul class="collapse">
+  <li><a href="#herleitung-1" id="toc-herleitung-1" class="nav-link" data-scroll-target="#herleitung-1"><span class="toc-section-number">7.4.1</span>  Herleitung</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -271,12 +299,197 @@ Wichtig
 <p>Bewegen sich die geladenen Teilchen in einem Plasma, können sie lokale Änderungen der Ladungsträgerdichte hervorrufen. Die Folge sind elektrische Felder. Die Bewegung geladener Teilchen erzeugt elektrische Ströme, die wiederum von Magnetfeldern begleitet werden. Diese Feldeffekte beeinflussen die Bewegung geladener Teilchen in großen Abständen.</p>
 <p>Bewegungsmuster der Teilchen hängen nicht nur von lokalen Bedingungen, sondern auch vom Zustand des Plasmas in entfernten Bereichen ab. Über große Entfernungen wirksame elektromagnetische Kräfte führen dazu, dass die Teilchen im Plasma simultan mit anderen interagieren.</p>
 <p>Außerdem muss man unterscheiden zwischen Ladung-Ladung- und Ladung-Neutralgas-Wechselwirkungen.</p>
+<p>Die wichtigsten Phänomene im Zusammenhang mit dem kollektivem Verhalten von Plasmen sind die Debye-Abschirmung sowie die Plasmafrequenz.</p>
 </section>
-<section id="debye-länge" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="debye-länge"><span class="header-section-number">7.2</span> Debye-Länge</h2>
+<section id="typische-plasmen" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="typische-plasmen"><span class="header-section-number">7.2</span> Typische Plasmen</h2>
+<p>Folgende Tabelle gibt einen Überblick über verschieden Plasmatypen und ihre Eigenschaften (<span class="citation" data-cites="gibbon">Gibbon (<a href="references.html#ref-gibbon" role="doc-biblioref">2016</a>)</span>).</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Typ</th>
+<th>Elektronendichte (cm<span class="math inline">\(^{-3}\)</span>)</th>
+<th>Temperatur (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sterne</td>
+<td><span class="math inline">\(10^{26}\)</span></td>
+<td>2000</td>
+</tr>
+<tr class="even">
+<td>Trägheitsfusion</td>
+<td><span class="math inline">\(10^{25}\)</span></td>
+<td>3000</td>
+</tr>
+<tr class="odd">
+<td>Magnetische Fusion</td>
+<td><span class="math inline">\(10^{15}\)</span></td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>Laser-generiert</td>
+<td><span class="math inline">\(10^{18}\)</span> - <span class="math inline">\(10^{24}\)</span></td>
+<td>100-1000</td>
+</tr>
+<tr class="odd">
+<td>Entladung</td>
+<td><span class="math inline">\(10^{12}\)</span></td>
+<td>1-10</td>
+</tr>
+<tr class="even">
+<td>Ionosphäre</td>
+<td><span class="math inline">\(10^{6}\)</span></td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>Interstellarer Raum</td>
+<td>1</td>
+<td>0.01</td>
+</tr>
+</tbody>
+</table>
+<p>(1 eV = 11600 K)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-B4955853.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Dichte-Temperatur-Regime für typische Plasmen (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="debye-länge" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="debye-länge"><span class="header-section-number">7.3</span> Debye-Länge</h2>
 <p>Eine wichtige Eigenschaft von Plasmen ist ihre Fähigkeit, elektrische Potentiale abzuschirmen.</p>
+<p><span class="citation" data-cites="debye1923debye">Debye und Hückel (<a href="references.html#ref-debye1923debye" role="doc-biblioref">1923a</a>)</span> und <span class="citation" data-cites="debye1923theorie">Debye und Hückel (<a href="references.html#ref-debye1923theorie" role="doc-biblioref">1923b</a>)</span> vermitteln grundlegende Theorien zu den Wechselwirkungen von Ionen in Elektrolyten. Diese Erkenntnisse lassen sich auf Plasmen übertragen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-718770F4.png" class="img-fluid figure-img" width="560"></p>
+<p></p><figcaption class="figure-caption">Debye-Abschirmung von geladenen Kugeln in einem Plasma (aus <span class="citation" data-cites="gibbon">Gibbon (<a href="references.html#ref-gibbon" role="doc-biblioref">2016</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+<section id="herleitung" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="herleitung"><span class="header-section-number">7.3.1</span> Herleitung</h3>
+<p>Jedes geladene Teilchen innerhalb eines Plasmas zieht andere Teilchen mit entgegengesetzter Ladung an und stößt Teilchen mit der gleichen Ladung ab, wodurch in der unmittelbaren Umgebung des Teilchens eine Wolke aus überwiegend entgegengesetzten Ladungen entsteht.</p>
+<p>Diese Wolke schirmt die eigene Ladung des Teilchens von der Außenwelt ab, d.&nbsp;h. sie bewirkt, dass das Coulomb-Feld des Teilchens bei großen Entfernungen exponentiell abnimmt, anstatt mit <span class="math inline">\(1/r^2\)</span>.</p>
+<p>Diese Debye-Abschirmung der Ladung eines Teilchens kann wie folgt demonstriert und quantifiziert werden (<span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>):</p>
+<p>Man betrachte eine einzelne Testladung <span class="math inline">\(Q\)</span> im Ursprung, die von einem Plasma aus Protonen und Elektronen umgeben ist. Wir definieren mit <span class="math inline">\(n_p(r)\)</span> und <span class="math inline">\(n_e(r)\)</span> die mittleren Dichten für Elektronen und Protonen als glatte Funktionen des Abstandes <span class="math inline">\(r\)</span> von der Testladung, und mit <span class="math inline">\(\bar n\)</span> die mittleren Dichten von Elektronen und Protonen. Dann ist das elektrostatische Potential <span class="math inline">\(\Phi(r)\)</span> außerhalb des Teilchens Lösung der Poisson-Gleichung</p>
+<p><span id="eq-poisson"><span class="math display">\[
+-\nabla^2 \Phi = \frac{n_p - n_e}{\epsilon_0} e + \frac{Q}{\epsilon_0} \delta(r)
+\tag{7.1}\]</span></span></p>
+<p>Wir bezeichnen die Ladung eines Protons mit <span class="math inline">\(+e\)</span> und die Ladung des Elektrons mit <span class="math inline">\(-e\)</span>.</p>
+<p>Ein Proton besitzt in der Entfernung <span class="math inline">\(r\)</span> von der Testladung das elektrostatische Potential <span class="math inline">\(e \Phi(r)\)</span>.</p>
+<p>Die mittlere Ladungsträgerdichte ändert sich entsprechend zu</p>
+<p><span class="math display">\[
+n_p(r) = \bar n \, e^{-\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 - \frac{e \Phi}{k T} \right)
+\]</span></p>
+<p>bzw.</p>
+<p><span class="math display">\[
+n_e(r) = \bar n \, e^{+\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 + \frac{e \Phi}{k T} \right).
+\]</span></p>
+<p>Wir haben wegen <span class="math inline">\(e\Phi \ll kT\)</span> die Exponentialfunktion in eine Taylorreihe entwickelt und Terme höherer Ordnung vernachlässigt.</p>
+<p>Einsetzen in <a href="#eq-poisson">Gleichung&nbsp;<span>7.1</span></a> liefert</p>
+<p><span class="math display">\[
+-\nabla^2 \Phi + \frac{2 \bar n e^2}{\epsilon_0 k T} \Phi = \frac{Q}{\epsilon_0}\delta(r).
+\]</span></p>
+<p>Die kugelsymmetrische (nur von <span class="math inline">\(r\)</span> abhängige) Lösung ist</p>
+<p><span class="math display">\[
+\Phi(r) = \frac{Q}{4 \pi \epsilon_0 r} \, e^{-\sqrt{\dfrac{2r^2}{\lambda_D^2}}}
+\]</span></p>
+<p>und besitzt die Form eines Coulomb-Potentials mit exponentiellem Abfall. Die charakteristische Skalenlänge dieses Abfalls ist</p>
+<p><span class="math display">\[
+\lambda_D = \sqrt{ \frac{\epsilon_0 k T}{\bar n e^2}}
+\]</span></p>
+<p>wird <em>Debye-Radius</em> genannt. Sie ist ein Maß für die Größe der Debye-Abschirmung. Sie hängt gleichermaßen von der Temeratur als auch von der Teilchendichte des Plasmas ab. In einem idealen Plasmsa befinden sich viele Teilchen innerhalb einer Kugel vom Radius <span class="math inline">\(\lambda_D\)</span>. Die Anzahl ist</p>
+<p><span class="math display">\[
+N_D = n_e \frac{4 \pi}{3} \lambda_D^3 \gg 1.
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-D4D1A82B.png" class="img-fluid figure-img" width="210"></p>
+<p></p><figcaption class="figure-caption">Ionenverteilung in einer Lösung (aus Wikipedia: Debye-Länge)</figcaption><p></p>
+</figure>
+</div>
+<p>Wird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so reicht die Wirkung dieser Störung nur bis zu einer Entfernung der Größenordnung <span class="math inline">\(\lambda_D\)</span>. Nur innerhalb dieses Abstandes weicht die lokale Ladungsträgerdichte signifikant von der makroskopischen elektrischen Neutralität ab.</p>
+<section id="beispiel" class="level4" data-number="7.3.1.1">
+<h4 data-number="7.3.1.1" class="anchored" data-anchor-id="beispiel"><span class="header-section-number">7.3.1.1</span> Beispiel</h4>
+<p>Im Allgemeinen ist <span class="math inline">\(\lambda_D\)</span> sehr klein. In der Ionosphäre ist <span class="math inline">\(n_e = 10^{12}\)</span> m<span class="math inline">\(^{-3}\)</span> und <span class="math inline">\(T=10^3\)</span> K. Damit ist <span class="math inline">\(\lambda_D = 10^{-3}\)</span> m.</p>
+<div id="tabelle201" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-2A0EC69D.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Typische Plasmaparameter (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+<p>Die Tabelle gibt für typische Plasmen die folgenden charakteristischen Größen an:</p>
+<ul>
+<li>Teilchendichte der Elektronen <span class="math inline">\(n_e\)</span></li>
+<li>Temperatur T</li>
+<li>Magnetfeld <span class="math inline">\(B\)</span></li>
+<li>Debye-Länge <span class="math inline">\(\lambda_D\)</span></li>
+<li>Debye-Zahl <span class="math inline">\(N_D\)</span></li>
+<li>Plasmafrequenz <span class="math inline">\(\omega_p\)</span></li>
+<li><span class="math inline">\(\nu_{ee}\)</span></li>
+<li>Larmor-Kreisfrequenz <span class="math inline">\(\omega_c\)</span></li>
+<li>Larmor-Radius <span class="math inline">\(r_L\)</span>.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="plasmaschwingungen-und-plasmafrequenz" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="plasmaschwingungen-und-plasmafrequenz"><span class="header-section-number">7.4</span> Plasmaschwingungen und Plasmafrequenz</h2>
+<p>Das wichtigste dynamische Phänomen in Plasmen ist die Schwingungsbewegung von Protonen und Elektronen relativ zueinander.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-1FB78BDE.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+<section id="herleitung-1" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="herleitung-1"><span class="header-section-number">7.4.1</span> Herleitung</h3>
+<p>Wir nehmen an, dass alle Protonen ortsfest sind. Die Elektronen werden relativ zu den Protonen um <span class="math inline">\(\xi\)</span> nach rechts in <span class="math inline">\(x\)</span>-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten <span class="math inline">\(-e \bar n \xi\)</span> am rechten Ende des Plasmas, sowie $ +e \bar n \xi$ am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas ist <span class="math inline">\(\mathbf E = (E, 0, 0)^\top\)</span>, also</p>
+<p><span class="math display">\[
+E = \frac{e \bar n \xi}{\epsilon_0}.
+\]</span></p>
+<p>Dieses Feld übt eine Coulomb-Kraft auf die Protonen und Elektronen aus. Die Bewegungsgleichung lautet</p>
+<p><span class="math display">\[
+\ddot \xi = - \frac{e}{m_e} E = - \frac{e^2 \bar n}{\epsilon_0 m_e} \xi.
+\]</span></p>
+<p>Dies ist eine <em>harmonische Schwingungsdifferentialgleichung</em> für die Verschiebung der Elektronen ausgedrückt durch <span class="math inline">\(\xi\)</span>. Wir haben wegen des Masseverhältnisses von Elektronen zu Protonen <span class="math inline">\(m_e/m_p = 1 / 1836\)</span> die Kraftwirkung auf die Protonen vernachlässigt.</p>
+<p>Die Elektronen schwingen harmonisch mit den Ortskoordinaten</p>
+<p><span class="math display">\[
+\xi(t) = \xi_0 \cos(\omega_p t),
+\]</span></p>
+<p>wobei die Plasmafrequenz</p>
+<p><span class="math display">\[
+\omega_p = \sqrt{ \frac{\bar n e^2}{\epsilon_0 m_e} }
+\]</span></p>
+<p>nur von der Plasmadichte <span class="math inline">\(\bar n\)</span> aber <em>nicht</em> von der Temperatur <span class="math inline">\(T\)</span> oder der magnetischen Feldstärke abhängt.</p>
+<p>Die thermische Geschwindigkeit der Elektronen ist definiert durch</p>
+<p><span class="math display">\[
+v_e = \sqrt{ \frac{k T}{m_e} },
+\]</span></p>
+<p>somit ist</p>
+<p><span class="math display">\[
+\omega_p = \frac{v_e}{\lambda_D}.
+\]</span></p>
+<p>Mit anderen Worten: Thermische Elektronen legen innerhalb einer Plasmaschwingungsperiode etwa eine Debye-Länge zurück.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-debye1923debye" class="csl-entry" role="doc-biblioentry">
+Debye, P, und E Hückel. 1923a. <span>„On the Debye length in strong electrolytes“</span>. <em>Physikalische Zeitschrift</em> 24: 185.
+</div>
+<div id="ref-debye1923theorie" class="csl-entry" role="doc-biblioentry">
+———. 1923b. <span>„<span>Zur Theorie der Elektrolyte. II. Das Grenzgesetz f<span>ü</span>r die elektrische Leitf<span>ä</span>higkeit</span>“</span>. <em>Physikalische Zeitschrift</em> 24 (15): 305–25.
+</div>
+<div id="ref-gibbon" class="csl-entry" role="doc-biblioentry">
+Gibbon, P. 2016. <span>„Introduction to Plasma Physics“</span>. <em>CERN Yellow Reports</em>, Vol 1 (2016): Proceedings of the 2014 CAS–CERN Accelerator School: Plasma Wake Acceleration. <a href="https://doi.org/10.5170/CERN-2016-001.51">https://doi.org/10.5170/CERN-2016-001.51</a>.
+</div>
+<div id="ref-thorne2017modern" class="csl-entry" role="doc-biblioentry">
+Thorne, Kip S, und Roger D Blandford. 2017. <em>Modern classical physics: optics, fluids, plasmas, elasticity, relativity, and statistical physics</em>. Princeton University Press.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
