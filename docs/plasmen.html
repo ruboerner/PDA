@@ -303,8 +303,10 @@ Wichtig
 </section>
 <section id="typische-plasmen" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="typische-plasmen"><span class="header-section-number">7.2</span> Typische Plasmen</h2>
-<p>Folgende Tabelle gibt einen Überblick über verschieden Plasmatypen und ihre Eigenschaften (<span class="citation" data-cites="gibbon">Gibbon (<a href="references.html#ref-gibbon" role="doc-biblioref">2016</a>)</span>).</p>
+<p>Folgende Tabelle <a href="#tbl-typen">Tabelle&nbsp;<span>7.1</span></a> gibt einen Überblick über verschieden Plasmatypen und ihre Eigenschaften (<span class="citation" data-cites="gibbon">Gibbon (<a href="references.html#ref-gibbon" role="doc-biblioref">2016</a>)</span>).</p>
+<div id="tbl-typen" class="anchored">
 <table class="table">
+<caption>Tabelle&nbsp;7.1: Plasmatypen</caption>
 <thead>
 <tr class="header">
 <th>Typ</th>
@@ -350,6 +352,7 @@ Wichtig
 </tr>
 </tbody>
 </table>
+</div>
 <p>(1 eV = 11600 K)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -414,13 +417,13 @@ N_D = n_e \frac{4 \pi}{3} \lambda_D^3 \gg 1.
 <section id="beispiel" class="level4" data-number="7.3.1.1">
 <h4 data-number="7.3.1.1" class="anchored" data-anchor-id="beispiel"><span class="header-section-number">7.3.1.1</span> Beispiel</h4>
 <p>Im Allgemeinen ist <span class="math inline">\(\lambda_D\)</span> sehr klein. In der Ionosphäre ist <span class="math inline">\(n_e = 10^{12}\)</span> m<span class="math inline">\(^{-3}\)</span> und <span class="math inline">\(T=10^3\)</span> K. Damit ist <span class="math inline">\(\lambda_D = 10^{-3}\)</span> m.</p>
-<div id="tabelle201" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-tabelle201" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-2A0EC69D.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Typische Plasmaparameter (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.1: Typische Plasmaparameter (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
 </figure>
 </div>
-<p>Die Tabelle gibt für typische Plasmen die folgenden charakteristischen Größen an:</p>
+<p>Die Tabelle in <a href="#fig-tabelle201">Abbildung&nbsp;<span>7.1</span></a> gibt für typische Plasmen die folgenden charakteristischen Größen an:</p>
 <ul>
 <li>Teilchendichte der Elektronen <span class="math inline">\(n_e\)</span></li>
 <li>Temperatur T</li>
@@ -438,24 +441,26 @@ N_D = n_e \frac{4 \pi}{3} \lambda_D^3 \gg 1.
 <section id="plasmaschwingungen-und-plasmafrequenz" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="plasmaschwingungen-und-plasmafrequenz"><span class="header-section-number">7.4</span> Plasmaschwingungen und Plasmafrequenz</h2>
 <p>Das wichtigste dynamische Phänomen in Plasmen ist die Schwingungsbewegung von Protonen und Elektronen relativ zueinander.</p>
-<div class="quarto-figure quarto-figure-center">
+<p>Wird ein Plasma plötzlich aus seinem Gleichgewichtszustand gebracht, verursachen die internen Raumladungsfelder kollektive Partikelbewegungen, welche anstreben, die ursprüngliche Ladungsneutralität wiederherzustellen.</p>
+<p>Diese kollektiven Schwingungsmuster laufen mit einer bestimmten <em>Plasma-Frequenz</em> ab. Wegen der hohen Frequenz tragen die Elektroden aufgrund ihrer im Vergleich zu Protonen geringeren Massenträgheit maßgeblich zur Plasmaschwingung bei. Elektronen schwingen kollektiv um die schweren Ionen, wobei die Rückstellkräfte durch die Ion-Elektron-Coulomb-Kräfte verursacht werden. Die Periodendauer dieser Bewegung ist eine typische Zeitskala.</p>
+<div id="fig-osz" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-1FB78BDE.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.2: Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
 </figure>
 </div>
 <section id="herleitung-1" class="level3" data-number="7.4.1">
 <h3 data-number="7.4.1" class="anchored" data-anchor-id="herleitung-1"><span class="header-section-number">7.4.1</span> Herleitung</h3>
-<p>Wir nehmen an, dass alle Protonen ortsfest sind. Die Elektronen werden relativ zu den Protonen um <span class="math inline">\(\xi\)</span> nach rechts in <span class="math inline">\(x\)</span>-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten <span class="math inline">\(-e \bar n \xi\)</span> am rechten Ende des Plasmas, sowie $ +e \bar n \xi$ am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas ist <span class="math inline">\(\mathbf E = (E, 0, 0)^\top\)</span>, also</p>
+<p>Wir platzieren das Plasma gemäß Abb. <a href="#fig-osz">Abbildung&nbsp;<span>7.2</span></a> entlang einer unendlich ausgedehnten Ebene in <span class="math inline">\(x=0\)</span> und nehmen an, dass alle Protonen ortsfest bleiben. Die Elektronen werden relativ zu den Protonen um den Betrag <span class="math inline">\(\xi_0\)</span> nach rechts in <span class="math inline">\(x\)</span>-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten <span class="math inline">\(-e \bar n \xi_0\)</span> am rechten Ende des Plasmas, sowie <span class="math inline">\(+e \bar n \xi_0\)</span> am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas zum Zeitpunkt <span class="math inline">\(t=0\)</span> ist <span class="math inline">\(\mathbf E = (E, 0, 0)^\top\)</span>, also</p>
 <p><span class="math display">\[
-E = \frac{e \bar n \xi}{\epsilon_0}.
+E = \frac{e \bar n \xi_0}{\epsilon_0}.
 \]</span></p>
-<p>Dieses Feld übt eine Coulomb-Kraft auf die Protonen und Elektronen aus. Die Bewegungsgleichung lautet</p>
+<p>Dieses Feld übt eine Coulomb-Kraft auf die Protonen und Elektronen aus. Die Bewegungsgleichung für die Veschiebung lautet</p>
 <p><span class="math display">\[
 \ddot \xi = - \frac{e}{m_e} E = - \frac{e^2 \bar n}{\epsilon_0 m_e} \xi.
 \]</span></p>
-<p>Dies ist eine <em>harmonische Schwingungsdifferentialgleichung</em> für die Verschiebung der Elektronen ausgedrückt durch <span class="math inline">\(\xi\)</span>. Wir haben wegen des Masseverhältnisses von Elektronen zu Protonen <span class="math inline">\(m_e/m_p = 1 / 1836\)</span> die Kraftwirkung auf die Protonen vernachlässigt.</p>
-<p>Die Elektronen schwingen harmonisch mit den Ortskoordinaten</p>
+<p>Dies ist eine <em>harmonische Schwingungsdifferentialgleichung</em>. Wir haben wegen des Masseverhältnisses von Elektronen zu Protonen <span class="math inline">\(m_e/m_p = 1 / 1836\)</span> die Kraftwirkung auf die Protonen vernachlässigt.</p>
+<p>Mit der oben angegebene Anfangsbedingung für <span class="math inline">\(t=0\)</span> schwingen die Elektronen harmonisch mit den Ortskoordinaten</p>
 <p><span class="math display">\[
 \xi(t) = \xi_0 \cos(\omega_p t),
 \]</span></p>

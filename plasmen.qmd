@@ -22,7 +22,7 @@ Die wichtigsten Phänomene im Zusammenhang mit dem kollektivem Verhalten von Pla
 
 ## Typische Plasmen
 
-Folgende Tabelle gibt einen Überblick über verschieden Plasmatypen und ihre Eigenschaften (@gibbon).
+Folgende Tabelle @tbl-typen gibt einen Überblick über verschieden Plasmatypen und ihre Eigenschaften (@gibbon).
 
 | Typ                 | Elektronendichte (cm$^{-3}$) | Temperatur (eV) |
 |---------------------|------------------------------|-----------------|
@@ -33,6 +33,8 @@ Folgende Tabelle gibt einen Überblick über verschieden Plasmatypen und ihre Ei
 | Entladung           | $10^{12}$                    | 1-10            |
 | Ionosphäre          | $10^{6}$                     | 0.1             |
 | Interstellarer Raum | 1                            | 0.01            |
+
+: Plasmatypen {#tbl-typen}
 
 (1 eV = 11600 K)
 
@@ -110,9 +112,9 @@ Wird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so r
 
 Im Allgemeinen ist $\lambda_D$ sehr klein. In der Ionosphäre ist $n_e = 10^{12}$ m$^{-3}$ und $T=10^3$ K. Damit ist $\lambda_D = 10^{-3}$ m.
 
-![Typische Plasmaparameter (aus @thorne2017modern)](images/paste-2A0EC69D.png){#tabelle201}
+![Typische Plasmaparameter (aus @thorne2017modern)](images/paste-2A0EC69D.png){#fig-tabelle201}
 
-Die Tabelle gibt für typische Plasmen die folgenden charakteristischen Größen an:
+Die Tabelle in @fig-tabelle201 gibt für typische Plasmen die folgenden charakteristischen Größen an:
 
 -   Teilchendichte der Elektronen $n_e$
 -   Temperatur T
@@ -128,25 +130,29 @@ Die Tabelle gibt für typische Plasmen die folgenden charakteristischen Größen
 
 Das wichtigste dynamische Phänomen in Plasmen ist die Schwingungsbewegung von Protonen und Elektronen relativ zueinander.
 
-![Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus @thorne2017modern)](images/paste-1FB78BDE.png)
+Wird ein Plasma plötzlich aus seinem Gleichgewichtszustand gebracht, verursachen die internen Raumladungsfelder kollektive Partikelbewegungen, welche anstreben, die ursprüngliche Ladungsneutralität wiederherzustellen.
+
+Diese kollektiven Schwingungsmuster laufen mit einer bestimmten *Plasma-Frequenz* ab. Wegen der hohen Frequenz tragen die Elektroden aufgrund ihrer im Vergleich zu Protonen geringeren Massenträgheit maßgeblich zur Plasmaschwingung bei. Elektronen schwingen kollektiv um die schweren Ionen, wobei die Rückstellkräfte durch die Ion-Elektron-Coulomb-Kräfte verursacht werden. Die Periodendauer dieser Bewegung ist eine typische Zeitskala.
+
+![Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus @thorne2017modern)](images/paste-1FB78BDE.png){#fig-osz}
 
 ### Herleitung
 
-Wir nehmen an, dass alle Protonen ortsfest sind. Die Elektronen werden relativ zu den Protonen um $\xi$ nach rechts in $x$-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten $-e \bar n \xi$ am rechten Ende des Plasmas, sowie \$ +e \\bar n \\xi\$ am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas ist $\mathbf E = (E, 0, 0)^\top$, also
+Wir platzieren das Plasma gemäß Abb. @fig-osz entlang einer unendlich ausgedehnten Ebene in $x=0$ und nehmen an, dass alle Protonen ortsfest bleiben. Die Elektronen werden relativ zu den Protonen um den Betrag $\xi_0$ nach rechts in $x$-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten $-e \bar n \xi_0$ am rechten Ende des Plasmas, sowie $+e \bar n \xi_0$ am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas zum Zeitpunkt $t=0$ ist $\mathbf E = (E, 0, 0)^\top$, also
 
 $$
-E = \frac{e \bar n \xi}{\epsilon_0}.
+E = \frac{e \bar n \xi_0}{\epsilon_0}.
 $$
 
-Dieses Feld übt eine Coulomb-Kraft auf die Protonen und Elektronen aus. Die Bewegungsgleichung lautet
+Dieses Feld übt eine Coulomb-Kraft auf die Protonen und Elektronen aus. Die Bewegungsgleichung für die Veschiebung lautet
 
 $$
 \ddot \xi = - \frac{e}{m_e} E = - \frac{e^2 \bar n}{\epsilon_0 m_e} \xi.
 $$
 
-Dies ist eine *harmonische Schwingungsdifferentialgleichung* für die Verschiebung der Elektronen ausgedrückt durch $\xi$. Wir haben wegen des Masseverhältnisses von Elektronen zu Protonen $m_e/m_p = 1 / 1836$ die Kraftwirkung auf die Protonen vernachlässigt.
+Dies ist eine *harmonische Schwingungsdifferentialgleichung*. Wir haben wegen des Masseverhältnisses von Elektronen zu Protonen $m_e/m_p = 1 / 1836$ die Kraftwirkung auf die Protonen vernachlässigt.
 
-Die Elektronen schwingen harmonisch mit den Ortskoordinaten
+Mit der oben angegebene Anfangsbedingung für $t=0$ schwingen die Elektronen harmonisch mit den Ortskoordinaten
 
 $$
 \xi(t) = \xi_0 \cos(\omega_p t),
