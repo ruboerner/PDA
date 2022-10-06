@@ -1,6 +1,41 @@
 ---
 title: "Die Sonne als Energiequelle"
+jupyter: "julia-1.8"
 ---
+
+## Physikalische Größen
+
+Die Erde umkreist die Sonne in einer annähernd kreisförmigen Umlaufbahn mit Radius 1 AU = $1.495978707 \times 10^{8}$ km.
+
+Die Sonne besitzt eine Strahlungsleistung ("Leuchtkraft") von $3.828 \times 10^{26}$ W.
+
+Die scheinbare Größe der Erde aus der Sicht der Sonne beträgt ca. 18 Bogensekunden.
+
+Der Raumwinkel $\Omega$, unter dem die Erde erscheint, beträgt etwa $5.7\times 10^{-9}$ sr, damit emittiert die Sonne insgesamt etwa das $2.2\times 10^9$-fache der Strahlung, die lediglich auf die Fläche der Erde entfällt.
+
+Berechnung der scheinbaren Größe:
+
+$$
+\alpha = 2 \arctan \left( \frac{R}{d} \right)
+$$
+
+Berechnung des kanonischen Raumwinkels $\Omega$ eines Kegels mit Öffnungswinkel $2\theta = \alpha$:
+
+$$
+\Omega = \int_0^{2 \pi} \mathrm d\phi \int_0^\theta \sin\theta' \mathrm d\theta' =  2 \pi \left( 1 - \cos\theta \right)
+$$
+
+```{julia}
+#| code-fold: true
+R_E = 6.3781e6;
+AU = 1.495978707e11;
+alpha = 2 * atan(R_E / AU);
+bs = alpha * 180 / pi * 3600;
+Omega = 2 * pi * (1 - cos(alpha / 2));
+println("Die scheinbare Größe beträgt $(round(bs, digits=2)) Bogensekunden.")
+println("Der Raumwinkel beträgt $(round(Omega, sigdigits=2)) sr.")
+println("Die Sonne emittiert das $(round(4 * pi / Omega, sigdigits=2))-fache bezogen auf die Erdscheibe.")
+```
 
 ## Treibhausgase
 
