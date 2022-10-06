@@ -37,9 +37,9 @@
   {
     "objectID": "bewegungsgleichung.html",
     "href": "bewegungsgleichung.html",
-    "title": "8  Bewegungsgleichung",
+    "title": "8  Newtonsche Bewegungsgleichung",
     "section": "",
-    "text": "\\[\nm \\ddot{\\mathbf x} = q (\\mathbf E + \\mathbf v \\times \\mathbf B) + m \\mathbf g\n\\]"
+    "text": "\\[\nm \\ddot{\\mathbf x} = q (\\mathbf E + \\mathbf v \\times \\mathbf B) + m \\mathbf g\n\\tag{8.1}\\]"
   },
   {
     "objectID": "Dipolefield_Motion.html",
