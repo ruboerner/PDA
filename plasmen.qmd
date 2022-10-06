@@ -38,7 +38,7 @@ Folgende Tabelle @tbl-typen gibt einen Überblick über verschieden Plasmatypen 
 
 (1 eV = 11600 K)
 
-![Dichte-Temperatur-Regime für typische Plasmen (aus @thorne2017modern)](images/paste-B4955853.png)
+![Dichte-Temperatur-Regime für typische Plasmen (aus @thorne2017modern)](images/paste-B4955853.png){#fig-typical-plasma}
 
 ## Debye-Länge
 
@@ -46,7 +46,7 @@ Eine wichtige Eigenschaft von Plasmen ist ihre Fähigkeit, elektrische Potential
 
 @debye1923debye und @debye1923theorie vermitteln grundlegende Theorien zu den Wechselwirkungen von Ionen in Elektrolyten. Diese Erkenntnisse lassen sich auf Plasmen übertragen.
 
-![Debye-Abschirmung von geladenen Kugeln in einem Plasma (aus @gibbon)](images/paste-718770F4.png){width="560"}
+![Debye-Abschirmung von geladenen Kugeln in einem Plasma (aus @gibbon)](images/paste-718770F4.png){#fig-elektrolyt width="560"}
 
 ### Herleitung
 
@@ -78,9 +78,11 @@ $$
 n_e(r) = \bar n \, e^{+\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 + \frac{e \Phi}{k T} \right).
 $$
 
-Wir haben wegen $e\Phi \ll kT$ die Exponentialfunktion in eine Taylorreihe entwickelt und Terme höherer Ordnung vernachlässigt.
+Damit wird @eq-poisson eine *nichtlineare Differentialgleichung* in $\Phi$, weil $n_p$ und $n_e$ Funktionen von $\Phi$ sind.
 
-Einsetzen in @eq-poisson liefert
+Wir können aber wegen $e\Phi \ll kT$ die Exponentialfunktion in eine Taylorreihe entwickelt und Terme höherer Ordnung vernachlässigen.
+
+Einsetzen in @eq-poisson liefert nach Linearisierung
 
 $$
 -\nabla^2 \Phi + \frac{2 \bar n e^2}{\epsilon_0 k T} \Phi = \frac{Q}{\epsilon_0}\delta(r).
@@ -92,21 +94,21 @@ $$
 \Phi(r) = \frac{Q}{4 \pi \epsilon_0 r} \, e^{-\sqrt{\dfrac{2r^2}{\lambda_D^2}}}
 $$
 
-und besitzt die Form eines Coulomb-Potentials mit exponentiellem Abfall. Die charakteristische Skalenlänge dieses Abfalls ist
+und besitzt die Form eines Coulomb-Potentials mit exponentiellem Abfall. Die charakteristische Skalenlänge dieses Abfalls ist der *Debye-Radius*
 
 $$
 \lambda_D = \sqrt{ \frac{\epsilon_0 k T}{\bar n e^2}}
 $$
 
-wird *Debye-Radius* genannt. Sie ist ein Maß für die Größe der Debye-Abschirmung. Sie hängt gleichermaßen von der Temeratur als auch von der Teilchendichte des Plasmas ab. In einem idealen Plasmsa befinden sich viele Teilchen innerhalb einer Kugel vom Radius $\lambda_D$. Die Anzahl ist
+und ist ein Maß für die Größe der Debye-Abschirmung. Der Debye-Radius hängt gleichermaßen von der Temperatur als auch von der Teilchendichte des Plasmas ab. In einem idealen Plasmsa befinden sich viele Teilchen innerhalb einer Kugel vom Radius $\lambda_D$. Die Anzahl ist
 
 $$
 N_D = n_e \frac{4 \pi}{3} \lambda_D^3 \gg 1.
 $$
 
-![Ionenverteilung in einer Lösung (aus Wikipedia: Debye-Länge)](images/paste-D4D1A82B.png){fig-align="center" width="210"}
+![Ionenverteilung in einer Lösung (aus Wikipedia: Debye-Länge)](images/paste-D4D1A82B.png){#fig-ionenverteilung fig-align="center" width="210"}
 
-Wird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so reicht die Wirkung dieser Störung nur bis zu einer Entfernung der Größenordnung $\lambda_D$. Nur innerhalb dieses Abstandes weicht die lokale Ladungsträgerdichte signifikant von der makroskopischen elektrischen Neutralität ab.
+Wird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so reicht die Wirkung dieser Störung nur bis zu einer Entfernung der Größenordnung $\lambda_D$. Nur innerhalb dieses Abstandes weicht die lokale Ladungsträgerdichte signifikant von der makroskopischen elektrischen Neutralität ab (@fig-ionenverteilung).
 
 #### Beispiel
 

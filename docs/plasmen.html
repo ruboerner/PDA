@@ -178,7 +178,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bewegungsgleichung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bewegungsgleichung</span></a>
+  <a href="./bewegungsgleichung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Newtonsche Bewegungsgleichung</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -354,10 +354,10 @@ Wichtig
 </table>
 </div>
 <p>(1 eV = 11600 K)</p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-typical-plasma" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-B4955853.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Dichte-Temperatur-Regime für typische Plasmen (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.1: Dichte-Temperatur-Regime für typische Plasmen (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -365,10 +365,10 @@ Wichtig
 <h2 data-number="7.3" class="anchored" data-anchor-id="debye-länge"><span class="header-section-number">7.3</span> Debye-Länge</h2>
 <p>Eine wichtige Eigenschaft von Plasmen ist ihre Fähigkeit, elektrische Potentiale abzuschirmen.</p>
 <p><span class="citation" data-cites="debye1923debye">Debye und Hückel (<a href="references.html#ref-debye1923debye" role="doc-biblioref">1923a</a>)</span> und <span class="citation" data-cites="debye1923theorie">Debye und Hückel (<a href="references.html#ref-debye1923theorie" role="doc-biblioref">1923b</a>)</span> vermitteln grundlegende Theorien zu den Wechselwirkungen von Ionen in Elektrolyten. Diese Erkenntnisse lassen sich auf Plasmen übertragen.</p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-elektrolyt" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-718770F4.png" class="img-fluid figure-img" width="560"></p>
-<p></p><figcaption class="figure-caption">Debye-Abschirmung von geladenen Kugeln in einem Plasma (aus <span class="citation" data-cites="gibbon">Gibbon (<a href="references.html#ref-gibbon" role="doc-biblioref">2016</a>)</span>)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.2: Debye-Abschirmung von geladenen Kugeln in einem Plasma (aus <span class="citation" data-cites="gibbon">Gibbon (<a href="references.html#ref-gibbon" role="doc-biblioref">2016</a>)</span>)</figcaption><p></p>
 </figure>
 </div>
 <section id="herleitung" class="level3" data-number="7.3.1">
@@ -390,8 +390,9 @@ n_p(r) = \bar n \, e^{-\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 - \frac{e \
 <p><span class="math display">\[
 n_e(r) = \bar n \, e^{+\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 + \frac{e \Phi}{k T} \right).
 \]</span></p>
-<p>Wir haben wegen <span class="math inline">\(e\Phi \ll kT\)</span> die Exponentialfunktion in eine Taylorreihe entwickelt und Terme höherer Ordnung vernachlässigt.</p>
-<p>Einsetzen in <a href="#eq-poisson">Gleichung&nbsp;<span>7.1</span></a> liefert</p>
+<p>Damit wird <a href="#eq-poisson">Gleichung&nbsp;<span>7.1</span></a> eine <em>nichtlineare Differentialgleichung</em> in <span class="math inline">\(\Phi\)</span>, weil <span class="math inline">\(n_p\)</span> und <span class="math inline">\(n_e\)</span> Funktionen von <span class="math inline">\(\Phi\)</span> sind.</p>
+<p>Wir können aber wegen <span class="math inline">\(e\Phi \ll kT\)</span> die Exponentialfunktion in eine Taylorreihe entwickelt und Terme höherer Ordnung vernachlässigen.</p>
+<p>Einsetzen in <a href="#eq-poisson">Gleichung&nbsp;<span>7.1</span></a> liefert nach Linearisierung</p>
 <p><span class="math display">\[
 -\nabla^2 \Phi + \frac{2 \bar n e^2}{\epsilon_0 k T} \Phi = \frac{Q}{\epsilon_0}\delta(r).
 \]</span></p>
@@ -399,31 +400,31 @@ n_e(r) = \bar n \, e^{+\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 + \frac{e \
 <p><span class="math display">\[
 \Phi(r) = \frac{Q}{4 \pi \epsilon_0 r} \, e^{-\sqrt{\dfrac{2r^2}{\lambda_D^2}}}
 \]</span></p>
-<p>und besitzt die Form eines Coulomb-Potentials mit exponentiellem Abfall. Die charakteristische Skalenlänge dieses Abfalls ist</p>
+<p>und besitzt die Form eines Coulomb-Potentials mit exponentiellem Abfall. Die charakteristische Skalenlänge dieses Abfalls ist der <em>Debye-Radius</em></p>
 <p><span class="math display">\[
 \lambda_D = \sqrt{ \frac{\epsilon_0 k T}{\bar n e^2}}
 \]</span></p>
-<p>wird <em>Debye-Radius</em> genannt. Sie ist ein Maß für die Größe der Debye-Abschirmung. Sie hängt gleichermaßen von der Temeratur als auch von der Teilchendichte des Plasmas ab. In einem idealen Plasmsa befinden sich viele Teilchen innerhalb einer Kugel vom Radius <span class="math inline">\(\lambda_D\)</span>. Die Anzahl ist</p>
+<p>und ist ein Maß für die Größe der Debye-Abschirmung. Der Debye-Radius hängt gleichermaßen von der Temperatur als auch von der Teilchendichte des Plasmas ab. In einem idealen Plasmsa befinden sich viele Teilchen innerhalb einer Kugel vom Radius <span class="math inline">\(\lambda_D\)</span>. Die Anzahl ist</p>
 <p><span class="math display">\[
 N_D = n_e \frac{4 \pi}{3} \lambda_D^3 \gg 1.
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-ionenverteilung" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-D4D1A82B.png" class="img-fluid figure-img" width="210"></p>
-<p></p><figcaption class="figure-caption">Ionenverteilung in einer Lösung (aus Wikipedia: Debye-Länge)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.3: Ionenverteilung in einer Lösung (aus Wikipedia: Debye-Länge)</figcaption><p></p>
 </figure>
 </div>
-<p>Wird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so reicht die Wirkung dieser Störung nur bis zu einer Entfernung der Größenordnung <span class="math inline">\(\lambda_D\)</span>. Nur innerhalb dieses Abstandes weicht die lokale Ladungsträgerdichte signifikant von der makroskopischen elektrischen Neutralität ab.</p>
+<p>Wird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so reicht die Wirkung dieser Störung nur bis zu einer Entfernung der Größenordnung <span class="math inline">\(\lambda_D\)</span>. Nur innerhalb dieses Abstandes weicht die lokale Ladungsträgerdichte signifikant von der makroskopischen elektrischen Neutralität ab (<a href="#fig-ionenverteilung">Abbildung&nbsp;<span>7.3</span></a>).</p>
 <section id="beispiel" class="level4" data-number="7.3.1.1">
 <h4 data-number="7.3.1.1" class="anchored" data-anchor-id="beispiel"><span class="header-section-number">7.3.1.1</span> Beispiel</h4>
 <p>Im Allgemeinen ist <span class="math inline">\(\lambda_D\)</span> sehr klein. In der Ionosphäre ist <span class="math inline">\(n_e = 10^{12}\)</span> m<span class="math inline">\(^{-3}\)</span> und <span class="math inline">\(T=10^3\)</span> K. Damit ist <span class="math inline">\(\lambda_D = 10^{-3}\)</span> m.</p>
 <div id="fig-tabelle201" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-2A0EC69D.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.1: Typische Plasmaparameter (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.4: Typische Plasmaparameter (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
 </figure>
 </div>
-<p>Die Tabelle in <a href="#fig-tabelle201">Abbildung&nbsp;<span>7.1</span></a> gibt für typische Plasmen die folgenden charakteristischen Größen an:</p>
+<p>Die Tabelle in <a href="#fig-tabelle201">Abbildung&nbsp;<span>7.4</span></a> gibt für typische Plasmen die folgenden charakteristischen Größen an:</p>
 <ul>
 <li>Teilchendichte der Elektronen <span class="math inline">\(n_e\)</span></li>
 <li>Temperatur T</li>
@@ -446,12 +447,12 @@ N_D = n_e \frac{4 \pi}{3} \lambda_D^3 \gg 1.
 <div id="fig-osz" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/paste-1FB78BDE.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.2: Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.5: Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus <span class="citation" data-cites="thorne2017modern">Thorne und Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
 </figure>
 </div>
 <section id="herleitung-1" class="level3" data-number="7.4.1">
 <h3 data-number="7.4.1" class="anchored" data-anchor-id="herleitung-1"><span class="header-section-number">7.4.1</span> Herleitung</h3>
-<p>Wir platzieren das Plasma gemäß Abb. <a href="#fig-osz">Abbildung&nbsp;<span>7.2</span></a> entlang einer unendlich ausgedehnten Ebene in <span class="math inline">\(x=0\)</span> und nehmen an, dass alle Protonen ortsfest bleiben. Die Elektronen werden relativ zu den Protonen um den Betrag <span class="math inline">\(\xi_0\)</span> nach rechts in <span class="math inline">\(x\)</span>-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten <span class="math inline">\(-e \bar n \xi_0\)</span> am rechten Ende des Plasmas, sowie <span class="math inline">\(+e \bar n \xi_0\)</span> am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas zum Zeitpunkt <span class="math inline">\(t=0\)</span> ist <span class="math inline">\(\mathbf E = (E, 0, 0)^\top\)</span>, also</p>
+<p>Wir platzieren das Plasma gemäß Abb. <a href="#fig-osz">Abbildung&nbsp;<span>7.5</span></a> entlang einer unendlich ausgedehnten Ebene in <span class="math inline">\(x=0\)</span> und nehmen an, dass alle Protonen ortsfest bleiben. Die Elektronen werden relativ zu den Protonen um den Betrag <span class="math inline">\(\xi_0\)</span> nach rechts in <span class="math inline">\(x\)</span>-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten <span class="math inline">\(-e \bar n \xi_0\)</span> am rechten Ende des Plasmas, sowie <span class="math inline">\(+e \bar n \xi_0\)</span> am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas zum Zeitpunkt <span class="math inline">\(t=0\)</span> ist <span class="math inline">\(\mathbf E = (E, 0, 0)^\top\)</span>, also</p>
 <p><span class="math display">\[
 E = \frac{e \bar n \xi_0}{\epsilon_0}.
 \]</span></p>
@@ -604,7 +605,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./bewegungsgleichung.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bewegungsgleichung</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Newtonsche Bewegungsgleichung</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -4,13 +4,13 @@ title: "Aufbau der Atmosphäre"
 
 ## Gliederung der Atmosphäre
 
-In @kertz finden wir die folgende Gliederung der Atmosphäre hinsichtlich des Temperaturverlaufs, der Homogenität sowie der Elektronendichte. Von großer Bedeutung für die Physik der Hochatmosphäre ist der Magnetfeldeinfluss.
+In @kertz finden wir die folgende Gliederung der Atmosphäre @fig-kertz hinsichtlich des Temperaturverlaufs, der Homogenität sowie der Elektronendichte. Von großer Bedeutung für die Physik der Hochatmosphäre ist der Magnetfeldeinfluss.
 
 Unterhalb einer Höhe von 50 km befinden sich 99.9 % der Gesamtmasse der Atmosphäre. Die übrigen 0.1 % verteilen sich auf ein Vielfaches des Erdvolumens.
 
 Die Physik der Hochatmosphäre beobachtet Vorgänge in einem stark verdünnten Gas.
 
-![Gliederung der Atmosphäre (aus Kertz)](images/paste-CCE7768B.png)
+![Gliederung der Atmosphäre (aus Kertz)](images/paste-CCE7768B.png){#fig-kertz}
 
 Eine etwas andere Darstellung:
 
