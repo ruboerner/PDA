@@ -221,7 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bewegungsgleichung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bewegungsgleichung</span></a>
+  <a href="./bewegungsgleichung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Newtonsche Bewegungsgleichung</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -286,7 +286,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#einlesen-der-julia-pakete" id="toc-einlesen-der-julia-pakete" class="nav-link active" data-scroll-target="#einlesen-der-julia-pakete"><span class="toc-section-number">9.1</span>  Einlesen der Julia-Pakete</a></li>
+  <li><a href="#definition-von-funktionen" id="toc-definition-von-funktionen" class="nav-link" data-scroll-target="#definition-von-funktionen"><span class="toc-section-number">9.2</span>  Definition von Funktionen</a></li>
+  <li><a href="#beispiele" id="toc-beispiele" class="nav-link" data-scroll-target="#beispiele"><span class="toc-section-number">9.3</span>  Beispiele</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -307,54 +315,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Dieses Notebook demonstriert die numerische Simulation der Teilchenbewegung.</p>
-<p>Wir nutzen einen ODE-Löser des Julia-Pakets <em>OrdinaryDiffEq</em>. Außerdem nutzen wir <em>TestParticle.jl</em>, ein Paket zum bequemen Berechnen der Bewegungsbahnen geladener Teilchen in Dipolfeldern.</p>
+<p>In diesem Abschnitt demonstrieren wir die numerische Simulation der Teilchenbewegung.</p>
+<p>Wir benutzen einen ODE-Löser des Julia-Pakets <em>OrdinaryDiffEq</em>. Außerdem verwenden wir <em>TestParticle.jl</em>, ein Julia-Paket zum bequemen Berechnen der Bewegungsbahnen geladener Teilchen in Dipolfeldern.</p>
 <p>Die Visualisierung erfolgt mit <em>Plots.jl</em>.</p>
-<div class="cell" data-tags="[]" data-execution_count="1">
+<section id="einlesen-der-julia-pakete" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="einlesen-der-julia-pakete"><span class="header-section-number">9.1</span> Einlesen der Julia-Pakete</h2>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">TestParticle</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">TestParticle</span>: getB_dipole, getE_dipole, sph2cart, Rₑ</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">OrdinaryDiffEq</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
+</section>
+<section id="definition-von-funktionen" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="definition-von-funktionen"><span class="header-section-number">9.2</span> Definition von Funktionen</h2>
 <div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">fieldline</span>(ϕ<span class="op">::</span><span class="dt">Float64</span>, L<span class="op">::</span><span class="dt">Float64</span>=<span class="fl">2.5</span>, nP<span class="op">::</span><span class="dt">Int</span>=<span class="fl">100</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   xyz <span class="op">=</span> [ <span class="fu">sph2cart</span>(<span class="fu">L*sin</span>(θ)<span class="op">^</span><span class="fl">2</span>,ϕ,θ) for θ <span class="kw">in</span> <span class="fu">range</span>(<span class="op">-</span><span class="cn">π</span>,stop<span class="op">=</span><span class="cn">π</span>,length<span class="op">=</span>nP) ]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   x <span class="op">=</span> <span class="fu">Vector</span><span class="dt">{Float64}</span>(<span class="cn">undef</span>,<span class="fu">length</span>(xyz))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>   y <span class="op">=</span> <span class="fu">Vector</span><span class="dt">{Float64}</span>(<span class="cn">undef</span>,<span class="fu">length</span>(xyz))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>   z <span class="op">=</span> <span class="fu">Vector</span><span class="dt">{Float64}</span>(<span class="cn">undef</span>,<span class="fu">length</span>(xyz))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   xyz <span class="op">=</span> [ <span class="fu">sph2cart</span>(L <span class="op">*</span> <span class="fu">sin</span>(θ)<span class="op">^</span><span class="fl">2</span>, ϕ, θ) for θ <span class="kw">in</span> <span class="fu">range</span>(<span class="op">-</span><span class="cn">π</span>,stop<span class="op">=</span><span class="cn">π</span>,length<span class="op">=</span>nP) ]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   x <span class="op">=</span> <span class="fu">Vector</span><span class="dt">{Float64}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(xyz))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>   y <span class="op">=</span> <span class="fu">Vector</span><span class="dt">{Float64}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(xyz))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>   z <span class="op">=</span> <span class="fu">Vector</span><span class="dt">{Float64}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(xyz))</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> (i, pos) <span class="kw">in</span> <span class="fu">enumerate</span>(xyz)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      x[i],y[i],z[i] <span class="op">=</span> [pos<span class="op">...</span>]</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      x[i], y[i], z[i] <span class="op">=</span> [pos<span class="op">...</span>]</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>   <span class="cf">end</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>   (x,y,z)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> (x, y, z)</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
+</details>
+<div class="cell-output cell-output-display" data-execution_count="47">
 <pre><code>fieldline (generic function with 3 methods)</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">plot_iso3d</span>(xs, ys, zs; lw<span class="op">=</span><span class="fl">3</span>, lc<span class="op">=:</span>red, title<span class="op">=</span><span class="st">"Isometric 3D plot"</span>,label<span class="op">=</span><span class="cn">false</span>, camera<span class="op">=</span>(<span class="fl">45</span>,<span class="fl">30</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># condition data for nearly isometric 3D plot </span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    x12, y12, z12 <span class="op">=</span> <span class="fu">extrema</span>(xs), <span class="fu">extrema</span>(ys), <span class="fu">extrema</span>(zs)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> <span class="fu">maximum</span>([<span class="fu">diff</span>([x12<span class="op">...</span>]),<span class="fu">diff</span>([y12<span class="op">...</span>]),<span class="fu">diff</span>([z12<span class="op">...</span>])])[<span class="fl">1</span>] <span class="op">/</span> <span class="fl">2</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    xm, ym, zm <span class="op">=</span> <span class="fu">mean</span>(x12),  <span class="fu">mean</span>(y12),  <span class="fu">mean</span>(z12) </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot data</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> Plots.<span class="fu">plot</span>(; xlabel<span class="op">=</span><span class="st">"x"</span>,ylabel<span class="op">=</span><span class="st">"y"</span>,zlabel<span class="op">=</span><span class="st">"z"</span>, aspect_ratio<span class="op">=:</span>equal, grid<span class="op">=:</span><span class="cn">true</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(xlims<span class="op">=</span>(xm<span class="op">-</span>d,xm<span class="op">+</span>d), ylims<span class="op">=</span>(ym<span class="op">-</span>d,ym<span class="op">+</span>d), zlims<span class="op">=</span>(zm<span class="op">-</span>d,zm<span class="op">+</span>d))</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(;camera<span class="op">=</span>camera)    <span class="co">#(azimuth,elevation) ???</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(xs, ys, zs, title<span class="op">=</span>title,lw<span class="op">=</span>lw,lc<span class="op">=</span>lc,label<span class="op">=</span>label)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(xs, ys, <span class="fu">zlims</span>(p)[<span class="fl">1</span>] <span class="op">.+</span> <span class="fl">0</span><span class="op">*</span>zs, lw<span class="op">=</span><span class="fl">1</span>, lc<span class="op">=:</span>lightgray, label<span class="op">=</span><span class="cn">false</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(xs, <span class="fu">ylims</span>(p)[<span class="fl">2</span>]  <span class="op">.+</span> <span class="fl">0</span><span class="op">*</span>ys, zs, lw<span class="op">=</span><span class="fl">1</span>, lc<span class="op">=:</span>lightgray, label<span class="op">=</span><span class="cn">false</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(<span class="fu">xlims</span>(p)[<span class="fl">1</span>]  <span class="op">.+</span> <span class="fl">0</span><span class="op">*</span>xs, ys, zs, lw<span class="op">=</span><span class="fl">1</span>, lc<span class="op">=:</span>lightgray, label<span class="op">=</span><span class="cn">false</span>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">plot_iso3d</span>(xs, ys, zs; </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  lw<span class="op">=</span><span class="fl">3</span>, lc<span class="op">=:</span>red, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  title<span class="op">=</span><span class="st">"Isometric 3D plot"</span>,label<span class="op">=</span><span class="cn">false</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  camera<span class="op">=</span>(<span class="fl">45</span>,<span class="fl">30</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    x12, y12, z12 <span class="op">=</span> <span class="fu">extrema</span>(xs), <span class="fu">extrema</span>(ys), <span class="fu">extrema</span>(zs)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> <span class="fu">maximum</span>([<span class="fu">diff</span>([x12<span class="op">...</span>]),<span class="fu">diff</span>([y12<span class="op">...</span>]),<span class="fu">diff</span>([z12<span class="op">...</span>])])[<span class="fl">1</span>] <span class="op">/</span> <span class="fl">2</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    xm, ym, zm <span class="op">=</span> <span class="fu">mean</span>(x12),  <span class="fu">mean</span>(y12),  <span class="fu">mean</span>(z12) </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot data</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> Plots.<span class="fu">plot</span>(; xlabel<span class="op">=</span><span class="st">"x"</span>,ylabel<span class="op">=</span><span class="st">"y"</span>,zlabel<span class="op">=</span><span class="st">"z"</span>, aspect_ratio<span class="op">=:</span>equal, grid<span class="op">=:</span><span class="cn">true</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(xlims<span class="op">=</span>(xm<span class="op">-</span>d,xm<span class="op">+</span>d), ylims<span class="op">=</span>(ym<span class="op">-</span>d,ym<span class="op">+</span>d), zlims<span class="op">=</span>(zm<span class="op">-</span>d,zm<span class="op">+</span>d))</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(;camera<span class="op">=</span>camera)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(xs, ys, zs, title<span class="op">=</span>title,lw<span class="op">=</span>lw,lc<span class="op">=</span>lc,label<span class="op">=</span>label)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(xs, ys, <span class="fu">zlims</span>(p)[<span class="fl">1</span>]  <span class="op">.+</span> <span class="fl">0</span><span class="op">*</span>zs, lw<span class="op">=</span><span class="fl">1</span>, lc<span class="op">=:</span>lightgray, label<span class="op">=</span><span class="cn">false</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(xs, <span class="fu">ylims</span>(p)[<span class="fl">2</span>]  <span class="op">.+</span> <span class="fl">0</span><span class="op">*</span>ys, zs, lw<span class="op">=</span><span class="fl">1</span>, lc<span class="op">=:</span>lightgray, label<span class="op">=</span><span class="cn">false</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    Plots.<span class="fu">plot!</span>(<span class="fu">xlims</span>(p)[<span class="fl">1</span>]  <span class="op">.+</span> <span class="fl">0</span><span class="op">*</span>xs, ys, zs, lw<span class="op">=</span><span class="fl">1</span>, lc<span class="op">=:</span>lightgray, label<span class="op">=</span><span class="cn">false</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="48">
 <pre><code>plot_iso3d (generic function with 1 method)</code></pre>
 </div>
 </div>
+</section>
+<section id="beispiele" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="beispiele"><span class="header-section-number">9.3</span> Beispiele</h2>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Ek <span class="op">=</span> <span class="fl">5e7</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -362,46 +391,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> TestParticle.qᵢ</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> TestParticle.c;</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-nteract="{&quot;transient&quot;:{&quot;deleting&quot;:false}}" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initial velocity, [m/s]</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>v₀ <span class="op">=</span> <span class="fu">sph2cart</span>(<span class="fu">c*sqrt</span>(<span class="fl">1</span><span class="op">-</span><span class="fl">1</span><span class="op">/</span>(<span class="fl">1</span><span class="op">+</span>Ek<span class="op">*</span>q<span class="op">/</span>(m<span class="op">*</span>c<span class="op">^</span><span class="fl">2</span>))<span class="op">^</span><span class="fl">2</span>), <span class="fl">0.0</span>, <span class="cn">π</span><span class="op">/</span><span class="fl">4</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># initial position, [m]</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>r₀ <span class="op">=</span> <span class="fu">sph2cart</span>(<span class="fl">2.5</span><span class="op">*</span>Rₑ, <span class="fl">0.0</span>, <span class="cn">π</span><span class="op">/</span><span class="fl">2</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [r₀<span class="op">...</span>, v₀<span class="op">...</span>]</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># obtain field</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(getE_dipole, getB_dipole)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0.0</span>, <span class="fl">20.0</span>);</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>v₀ <span class="op">=</span> <span class="fu">sph2cart</span>(<span class="fu">c*sqrt</span>(<span class="fl">1</span><span class="op">-</span><span class="fl">1</span><span class="op">/</span>(<span class="fl">1</span><span class="op">+</span>Ek<span class="op">*</span>q<span class="op">/</span>(m<span class="op">*</span>c<span class="op">^</span><span class="fl">2</span>))<span class="op">^</span><span class="fl">2</span>), <span class="fl">0.0</span>, <span class="cn">π</span><span class="op">/</span><span class="fl">4</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>r₀ <span class="op">=</span> <span class="fu">sph2cart</span>(<span class="fl">2.5</span><span class="op">*</span>Rₑ, <span class="fl">0.0</span>, <span class="cn">π</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [r₀<span class="op">...</span>, v₀<span class="op">...</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(getE_dipole, getB_dipole)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0.0</span>, <span class="fl">20.0</span>);</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="cell" data-nteract="{&quot;transient&quot;:{&quot;deleting&quot;:false}}" data-tags="[]" data-execution_count="6">
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(trace_analytic!, stateinit, tspan, param);</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="cell" data-nteract="{&quot;transient&quot;:{&quot;deleting&quot;:false}}" data-tags="[]" data-execution_count="7">
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>])</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">getindex</span>.(sol.u,<span class="fl">1</span>) <span class="op">/</span> Rₑ</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">getindex</span>.(sol.u,<span class="fl">2</span>) <span class="op">/</span> Rₑ</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="fu">getindex</span>.(sol.u,<span class="fl">3</span>) <span class="op">/</span> Rₑ;</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, z, aspect_ratio<span class="op">=:</span>equal, legend<span class="op">=</span><span class="cn">false</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ϕ <span class="kw">in</span> <span class="fu">range</span>(<span class="fl">0</span>, stop<span class="op">=</span><span class="fl">2</span><span class="op">*</span><span class="cn">π</span>, length<span class="op">=</span><span class="fl">10</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">plot!</span>(<span class="fu">fieldline</span>(ϕ)<span class="op">...</span>, color<span class="op">=</span><span class="st">"red"</span>, aspect_ratio<span class="op">=:</span>equal, alpha<span class="op">=</span><span class="fl">0.3</span>, legend<span class="op">=</span><span class="cn">false</span>)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">current</span>()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="42">
+</details>
+<div class="cell-output cell-output-display" data-execution_count="53">
 <p><img src="Dipolefield_Motion_files/figure-html/cell-9-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fu">plot_iso3d</span>(x, y, z, title<span class="op">=</span><span class="st">"Charged particle traces"</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="43">
+</details>
+<div class="cell-output cell-output-display" data-execution_count="54">
 <p><img src="Dipolefield_Motion_files/figure-html/cell-10-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -505,7 +547,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./bewegungsgleichung.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bewegungsgleichung</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Newtonsche Bewegungsgleichung</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

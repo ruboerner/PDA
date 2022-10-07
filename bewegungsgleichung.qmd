@@ -4,7 +4,7 @@ title: "Newtonsche Bewegungsgleichung"
 
 Die Bewegung geladener Teilchen in einem stark verdünnten Plasma lässt sich bei Vernachlässigung von Stößen durch eine Einzelteilchentheorie gut annähern.
 
-Die Änderung des Bewegungszustandes eines Teilchen wird durch die *Newtonsche Bewegungsgleichung* formuliert. Die Newtonsche Mechanik beschreibt die klassische Teilchenbewegung als eine *Bahn* durch den Euklidischen Raum und die Zeit $t$. Zum Zeitpunkt $t$ befindet sich das Teilchen am Ort $\mathbf x(t)$. Die Funktion $\mathbf x(t)$ becshreibt die Bahn des Teilchens im Raum. Die Teilchengeschwindigkeit $\mathbf v(t)$ ist die Zeitableitung der Position. Der Impuls $\mathbf p(t)$ ist das Produkt aus Masse $m$ und Geschwindigkeit $\mathbf v(t)$. Die Zeitableitung der Geschwindigkeit ist die Beschleunigung $\mathbf a(t)$.
+Die Änderung des Bewegungszustandes eines Teilchen wird durch die *Newtonsche Bewegungsgleichung* formuliert. Die Newtonsche Mechanik beschreibt die klassische Teilchenbewegung als eine *Bahn* durch den Euklidischen Raum und die Zeit $t$. Zum Zeitpunkt $t$ befindet sich das Teilchen am Ort $\mathbf r(t)$. Die Funktion $\mathbf r(t)$ beschreibt die Bahn des Teilchens im Raum. Die Teilchengeschwindigkeit $\mathbf v(t)$ ist die Zeitableitung der Position. Der Impuls $\mathbf p(t)$ ist das Produkt aus Masse $m$ und Geschwindigkeit $\mathbf v(t)$. Die Zeitableitung der Geschwindigkeit ist die Beschleunigung $\mathbf a(t)$.
 
 Newtons zweites Grundgesetz der Mechanik *lex secunda* besagt folgendes:
 
@@ -13,10 +13,16 @@ Newtons zweites Grundgesetz der Mechanik *lex secunda* besagt folgendes:
 Die Änderung des Bewegungszustandes kann nur unter Wirkung von Kräften erfolgen. Werden diese Kräfte z.B. durch ein magnetisches Feld $\mathbf B$, ein elektrisches Feld $\mathbf E$ sowie ein weiteres Kraftfeld $\mathbf F$ erzeugt, dann nimmt die Newtonsche Bewegungsgleichung folgende Form an:
 
 $$
-m \ddot{\mathbf x} = q (\mathbf E + \mathbf v \times \mathbf B) + \mathbf F
+m \ddot{\mathbf r} = q (\mathbf E + \mathbf v \times \mathbf B) + \mathbf F
 $$ {#eq-newton}
+Diese Gleichung kann für einfache Feldkonfigurationen trivial integriert werden.
+Im Falle des geomagnetischen Feldes gibt es keine geschlossenen Lösungen, sondern nur Näherungen. Für Teilchen mit geringer Energie, wie sie bspw. in der Ionosphäre oder im Van-Allen-Gürtel vorliegen, steht eine Theorie zur Approximation bereit.
 
-## Zyklotronfrequenz und Larmor-Radius
+Zunächst werden wir Lösungen von @eq-newton für vereinfachte Bedingungen betrachten.
+Später werden wir sehen, dass im Allgemeinen von den Teilchen eine schnelle Kreisbewegung ausgeführt wird, die überlagert wird durch die Bewegung durch Magnetfelder und elektrische Felder.
+
+
+## Zyklotronfrequenz und Gyrationsradius
 
 Bei Anwesenheit eines Magnetfeldes bewegen sich geladene Teilchen in Schraubenlinien entlang der Feldlinien.
 Die Bewegungsgleichung für ein mit der Geschwindigkeit $\mathbf v$ bewegtes Teilchen der Masse $m$ und Ladung $q$ im Magnetfeld $\mathbf B$ lautet
@@ -58,10 +64,10 @@ und
 $$
 \mathbf v_\perp \times \mathbf B \perp \mathbf B.
 $$
-Es gilt wegen $\mathbf v = \mathbf \omega \times \mathbf x$ (Bahngeschwindigkeit gleich Kreuzprodukt aus Winkelgeschwindigkeit und Ortsvektor)
+Es gilt wegen $\mathbf v = \mathbf \omega \times \mathbf r$ (Bahngeschwindigkeit gleich Kreuzprodukt aus Winkelgeschwindigkeit und Ortsvektor)
 $$
-m \dot{\mathbf v}_\perp = \frac{q}{m} \left( \mathbf v_\perp \times \mathbf B \right) = \mathbf \omega_g \times \mathbf v_\perp
-$$
+\dot{\mathbf v}_\perp = \frac{q}{m} \left( \mathbf v_\perp \times \mathbf B \right) = \mathbf \omega_g \times \mathbf v_\perp
+$$ {#eq-gyration}
 Die Größe $\mathbf \omega_g$ ist die vektorielle Winkelgeschwindigkeit der Kreisbewegung.
 Es folgt
 $$
@@ -70,10 +76,39 @@ $$
 \omega_g \widehat{\mathbf \omega}_g
 $$
 Der Betrag der Winkelgeschwindigkeit wird als Zyklotronfrequenz (oder Larmorfrequenz) bezeichnet.
+$\widehat{\mathbf \omega}_g$ ist der Einheitsvektor der Winkelgeschwindigkeit. Mit der Rechte-Hand-Regel ergibt sich die Bewegungsrichtung.
 Die Richtung der Kreisbewegung hängt vom Vorzeichen der Ladung des Teilchen ab. Es gilt
 $$
 q < 0: \qquad \widehat{\mathbf \omega}_g \| \mathbf B \qquad \text{parallel}
 $$
 $$
 q > 0: \qquad -\widehat{\mathbf \omega}_g \| \mathbf B \qquad \text{antiparallel}
+$$
+Integrieren wir @eq-gyration zeitlich, erkennen wir den Zusammenhang zwischen Bahngeschwindigkeit und Teilchenposition. Es gilt
+$$
+\mathbf v_\perp = \mathbf \omega_g \times \mathbf r_g
+$$
+Mit $\mathbf r_g$ bezeichnen wir die Teilchenposition. Sie beschreibt eine Kreisbahn mit Radius $r_g$ um den Gyrationsmittelpunkt, der auch als _Führungszentrum_ bezeichnet wird.
+
+### Beispiel
+Wir berechnen die Zyklotronfrequenz und den Gyratonsradius für ein Elektron.
+Die Elektronenmasse ist
+$$
+m_e = 9.109 \times 10^{-31} ~\text{kg},
+$$
+seine Ladung entspricht der Elementarladung
+$$
+|q| = e = 1.602 \times 10^{-19} ~ \text{C}.
+$$
+Wird $\mathbf B$ in Tesla angegeben, gilt für die Zyklotronfrequenz des Elektrons die Gleichung
+$$
+\omega_c^e = \frac{e B}{m_e} = 1.76 \times 10^{11} \, B \text{ in rad}\cdot s^{-1}
+$$
+Da Protonen eine um den Faktor 1890 größere Masse als Elektronen besitzen, ist ihre Zyklotronfrequenz niedriger:
+$$
+\omega_c^p = \frac{e B}{m_p} = 9.58 \times 10^{7} \, B \text{ in rad}\cdot s^{-1}
+$$
+Der Gyrationsradius ist
+$$
+r_g = \frac{v_\perp}{\omega_g} = \frac{m v_\perp}{|q| B}.
 $$
