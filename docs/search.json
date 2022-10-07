@@ -256,6 +256,20 @@
     "href": "bewegungsgleichung.html#zyklotronfrequenz-und-larmor-radius",
     "title": "8  Newtonsche Bewegungsgleichung",
     "section": "8.1 Zyklotronfrequenz und Larmor-Radius",
-    "text": "8.1 Zyklotronfrequenz und Larmor-Radius\nBei Anwesenheit eines Magnetfeldes bewegen sich geladene Teilchen in Schraubenlinien entlang der Feldlinien. Die Bewegungsgleichung für ein mit der Geschwindigkeit \\(\\mathbf v\\) bewegtes Elektron im Magnetfeld \\(\\mathbf B\\) lautet \\[\nm_e \\frac{d \\mathbf v}{d t} = -e \\mathbf v \\times \\mathbf B\n\\]\nWir betrachten zunächst den Fall eines homogenen Magnetfeldes und setzen \\[\n\\mathbf B = const, \\quad \\mathbf E = 0, \\quad \\mathbf F = 0\n\\] Die Geschwindigkeit \\(\\mathbf v\\) zerlegen wir vektoriell in eine Komponente parallel und eine Komponente senkrecht zum magnetischen Feld. \\[\n\\mathbf v = \\mathbf v_\\| + \\mathbf v_\\perp\n\\] Bewegt sich das Teilchen in einer Ebene senkrecht zu \\(\\mathbf B\\), dann gilt"
+    "text": "8.1 Zyklotronfrequenz und Larmor-Radius\nBei Anwesenheit eines Magnetfeldes bewegen sich geladene Teilchen in Schraubenlinien entlang der Feldlinien. Die Bewegungsgleichung für ein mit der Geschwindigkeit \\(\\mathbf v\\) bewegtes Teilchen der Masse \\(m\\) und Ladung \\(q\\) im Magnetfeld \\(\\mathbf B\\) lautet \\[\nm \\frac{d \\mathbf v}{d t} = q \\mathbf v \\times \\mathbf B\n\\]\nWir betrachten zunächst den Fall eines homogenen Magnetfeldes und setzen \\[\n\\mathbf B = const, \\quad \\mathbf E = 0, \\quad \\mathbf F = 0\n\\] Die Geschwindigkeit \\(\\mathbf v\\) zerlegen wir vektoriell in eine Komponente parallel und eine Komponente senkrecht zum magnetischen Feld. \\[\n\\mathbf v = \\mathbf v_\\| + \\mathbf v_\\perp\n\\] Gilt \\(\\mathbf v_\\| = const\\), dann ist \\(m \\dot{\\mathbf v}_\\| = 0\\) und \\[\nm \\dot{\\mathbf v}_\\perp = q \\mathbf v_\\perp \\times \\mathbf B.\n\\]"
+  },
+  {
+    "objectID": "bewegungsgleichung.html#energiererhaltung",
+    "href": "bewegungsgleichung.html#energiererhaltung",
+    "title": "8  Newtonsche Bewegungsgleichung",
+    "section": "8.2 Energiererhaltung",
+    "text": "8.2 Energiererhaltung\nAn dieser Stelle klären wir, ob die kinetische Energie des Teilchens eine Erhaltungsgröße ist. Da \\(\\mathbf v_\\| = const\\), betrachten wir die Änderung der kinetischen Energie \\[\n\\frac{d E_{kin}}{d t} = \\frac{d}{dt} \\left( \\frac{1}{2} m |\\mathbf v_\\perp|^2  \\right) =\n\\mathbf v_\\perp \\cdot (m \\dot{\\mathbf v}_\\perp) = q \\mathbf v_\\perp \\cdot \\left( \\mathbf v_\\perp \\times \\mathbf B \\right) \\overset{!}{=} 0.\n\\] Damit ist gezeigt, dass die kinetische Energie eines Teilchens im Magnetfeld eine Erhaltungsgröße ist. Ein statisches Magnetfeld ändert also weder \\(\\mathbf v\\) noch die kinetische Energie. Dies ist eine sehr wichtige Erkenntnis mit weitreichenden Konsequenzen für den Fall, dass das Magnetfeld zeitlich variabel oder inhomogen ist."
+  },
+  {
+    "objectID": "bewegungsgleichung.html#flugbahn",
+    "href": "bewegungsgleichung.html#flugbahn",
+    "title": "8  Newtonsche Bewegungsgleichung",
+    "section": "8.3 Flugbahn",
+    "text": "8.3 Flugbahn\nBewegt sich das Teilchen in einer Ebene senkrecht zu \\(\\mathbf B\\), dann gilt \\[\n\\mathbf v _\\| \\times \\mathbf B = \\mathbf 0\n\\] und \\[\n\\mathbf v_\\perp \\times \\mathbf B \\perp \\mathbf B.\n\\] Es gilt wegen \\(\\mathbf v = \\mathbf \\omega \\times \\mathbf x\\) (Bahngeschwindigkeit gleich Kreuzprodukt aus Winkelgeschwindigkeit und Ortsvektor) \\[\nm \\dot{\\mathbf v}_\\perp = \\frac{q}{m} \\left( \\mathbf v_\\perp \\times \\mathbf B \\right) = \\mathbf \\omega_g \\times \\mathbf v_\\perp\n\\] Die Größe \\(\\mathbf \\omega_g\\) ist die vektorielle Winkelgeschwindigkeit der Kreisbewegung. Es folgt \\[\n\\mathbf \\omega_g = - \\frac{q}{m} \\mathbf B =\n\\frac{|q|}{m} B \\, \\widehat{\\mathbf \\omega}_g =\n\\omega_g \\widehat{\\mathbf \\omega}_g\n\\] Der Betrag der Winkelgeschwindigkeit wird als Zyklotronfrequenz (oder Larmorfrequenz) bezeichnet. Die Richtung der Kreisbewegung hängt vom Vorzeichen der Ladung des Teilchen ab. Es gilt \\[\nq < 0: \\qquad \\widehat{\\mathbf \\omega}_g \\| \\mathbf B \\qquad \\text{parallel}\n\\] \\[\nq > 0: \\qquad -\\widehat{\\mathbf \\omega}_g \\| \\mathbf B \\qquad \\text{antiparallel}\n\\]"
   }
 ]
