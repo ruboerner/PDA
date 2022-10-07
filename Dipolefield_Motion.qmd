@@ -6,7 +6,7 @@ freeze: true
 
 In diesem Abschnitt demonstrieren wir die numerische Simulation der Teilchenbewegung.
 
-Wir benutzen einen ODE-Löser des Julia-Pakets *OrdinaryDiffEq*. Außerdem verwenden wir *TestParticle.jl*, ein Julia-Paket zum bequemen Berechnen der Bewegungsbahnen geladener Teilchen in Dipolfeldern.
+Wir benutzen zum Lösen von gewöhnlichen Differentialgleichungen (engl. Ordinary Differential Equations, ODE) das Julia-Paket *OrdinaryDiffEq*. Außerdem verwenden wir *TestParticle.jl*, ein Julia-Paket zum bequemen Berechnen der Bewegungsbahnen geladener Teilchen in Dipolfeldern.
 
 Die Visualisierung erfolgt mit *Plots.jl*.
 
