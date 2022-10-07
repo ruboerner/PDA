@@ -2,6 +2,34 @@
 title: "Newtonsche Bewegungsgleichung"
 ---
 
+Die Bewegung geladener Teilchen in einem stark verdünnten Plasma lässt sich bei Vernachlässigung von Stößen durch eine Einzelteilchentheorie gut annähern.
+
+Die Änderung des Bewegungszustandes eines Teilchen wird durch die *Newtonsche Bewegungsgleichung* formuliert. Die Newtonsche Mechanik beschreibt die klassische Teilchenbewegung als eine *Bahn* durch den Euklidischen Raum und die Zeit $t$. Zum Zeitpunkt $t$ befindet sich das Teilchen am Ort $\mathbf x(t)$. Die Funktion $\mathbf x(t)$ becshreibt die Bahn des Teilchens im Raum. Die Teilchengeschwindigkeit $\mathbf v(t)$ ist die Zeitableitung der Position. Der Impuls $\mathbf p(t)$ ist das Produkt aus Masse $m$ und Geschwindigkeit $\mathbf v(t)$. Die Zeitableitung der Geschwindigkeit ist die Beschleunigung $\mathbf a(t)$.
+
+Newtons zweites Grundgesetz der Mechanik *lex secunda* besagt folgendes:
+
+> Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.
+
+Die Änderung des Bewegungszustandes kann nur unter Wirkung von Kräften erfolgen. Werden diese Kräfte z.B. durch ein magnetisches Feld $\mathbf B$, ein elektrisches Feld $\mathbf E$ sowie ein weiteres Kraftfeld $\mathbf F$ erzeugt, dann nimmt die Newtonsche Bewegungsgleichung folgende Form an:
+
 $$
-m \ddot{\mathbf x} = q (\mathbf E + \mathbf v \times \mathbf B) + m \mathbf g
+m \ddot{\mathbf x} = q (\mathbf E + \mathbf v \times \mathbf B) + \mathbf F
 $$ {#eq-newton}
+
+## Zyklotronfrequenz und Larmor-Radius
+
+Bei Anwesenheit eines Magnetfeldes bewegen sich geladene Teilchen in Schraubenlinien entlang der Feldlinien.
+Die Bewegungsgleichung für ein mit der Geschwindigkeit $\mathbf v$ bewegtes Elektron im Magnetfeld $\mathbf B$ lautet
+$$
+m_e \frac{d \mathbf v}{d t} = -e \mathbf v \times \mathbf B
+$$
+
+Wir betrachten zunächst den Fall eines homogenen Magnetfeldes und setzen
+$$
+\mathbf B = const, \quad \mathbf E = 0, \quad \mathbf F = 0
+$$
+Die Geschwindigkeit $\mathbf v$ zerlegen wir vektoriell in eine Komponente parallel und eine Komponente senkrecht zum magnetischen Feld.
+$$
+\mathbf v = \mathbf v_\| + \mathbf v_\perp
+$$
+Bewegt sich das Teilchen in einer Ebene senkrecht zu $\mathbf B$, dann gilt

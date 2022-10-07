@@ -400,10 +400,13 @@ P_{out} = \sigma 4 \pi R_E^2 T^4
 T = \sqrt[4]{\frac{0.7 S}{4 \sigma}}
 \]</span></p>
 <div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> <span class="fl">1361</span>;</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">5.670374419e-8</span>;</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> (<span class="fl">0.7</span> <span class="op">*</span> S <span class="op">/</span> <span class="fl">4</span>  <span class="op">/</span>sigma)<span class="op">^</span><span class="fl">0.25</span> <span class="op">-</span> <span class="fl">273.15</span>;</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Oberflächentemperatur: T = </span><span class="sc">$</span>(<span class="fu">round</span>(T, digits<span class="op">=</span><span class="fl">1</span>))<span class="st"> °C"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oberflächentemperatur: T = -18.6 °C</code></pre>
 </div>
@@ -424,11 +427,14 @@ T = \sqrt[4]{\frac{P_{out}}{\sigma A}}
 \]</span></p>
 <p>Wir setzen ein und erhalten</p>
 <div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>P_out <span class="op">=</span> <span class="fl">4</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> AU<span class="op">^</span><span class="fl">2</span> <span class="op">*</span> S;</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>R_S <span class="op">=</span> <span class="fl">6.96342e8</span>;</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">4</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> R_S<span class="op">^</span><span class="fl">2</span>;</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> (P_out <span class="op">/</span> sigma <span class="op">/</span> A)<span class="op">^</span><span class="fl">0.25</span>;</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Effektive Temperatur der Sonne: T = </span><span class="sc">$</span>(<span class="fu">round</span>(T, digits<span class="op">=</span><span class="fl">2</span>))<span class="st"> K."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Effektive Temperatur der Sonne: T = 5769.17 K.</code></pre>
 </div>

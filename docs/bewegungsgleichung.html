@@ -224,7 +224,13 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#zyklotronfrequenz-und-larmor-radius" id="toc-zyklotronfrequenz-und-larmor-radius" class="nav-link active" data-scroll-target="#zyklotronfrequenz-und-larmor-radius"><span class="toc-section-number">8.1</span>  Zyklotronfrequenz und Larmor-Radius</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -245,11 +251,29 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Die Bewegung geladener Teilchen in einem stark verdünnten Plasma lässt sich bei Vernachlässigung von Stößen durch eine Einzelteilchentheorie gut annähern.</p>
+<p>Die Änderung des Bewegungszustandes eines Teilchen wird durch die <em>Newtonsche Bewegungsgleichung</em> formuliert. Die Newtonsche Mechanik beschreibt die klassische Teilchenbewegung als eine <em>Bahn</em> durch den Euklidischen Raum und die Zeit <span class="math inline">\(t\)</span>. Zum Zeitpunkt <span class="math inline">\(t\)</span> befindet sich das Teilchen am Ort <span class="math inline">\(\mathbf x(t)\)</span>. Die Funktion <span class="math inline">\(\mathbf x(t)\)</span> becshreibt die Bahn des Teilchens im Raum. Die Teilchengeschwindigkeit <span class="math inline">\(\mathbf v(t)\)</span> ist die Zeitableitung der Position. Der Impuls <span class="math inline">\(\mathbf p(t)\)</span> ist das Produkt aus Masse <span class="math inline">\(m\)</span> und Geschwindigkeit <span class="math inline">\(\mathbf v(t)\)</span>. Die Zeitableitung der Geschwindigkeit ist die Beschleunigung <span class="math inline">\(\mathbf a(t)\)</span>.</p>
+<p>Newtons zweites Grundgesetz der Mechanik <em>lex secunda</em> besagt folgendes:</p>
+<blockquote class="blockquote">
+<p>Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.</p>
+</blockquote>
+<p>Die Änderung des Bewegungszustandes kann nur unter Wirkung von Kräften erfolgen. Werden diese Kräfte z.B. durch ein magnetisches Feld <span class="math inline">\(\mathbf B\)</span>, ein elektrisches Feld <span class="math inline">\(\mathbf E\)</span> sowie ein weiteres Kraftfeld <span class="math inline">\(\mathbf F\)</span> erzeugt, dann nimmt die Newtonsche Bewegungsgleichung folgende Form an:</p>
 <p><span id="eq-newton"><span class="math display">\[
-m \ddot{\mathbf x} = q (\mathbf E + \mathbf v \times \mathbf B) + m \mathbf g
+m \ddot{\mathbf x} = q (\mathbf E + \mathbf v \times \mathbf B) + \mathbf F
 \tag{8.1}\]</span></span></p>
+<section id="zyklotronfrequenz-und-larmor-radius" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="zyklotronfrequenz-und-larmor-radius"><span class="header-section-number">8.1</span> Zyklotronfrequenz und Larmor-Radius</h2>
+<p>Bei Anwesenheit eines Magnetfeldes bewegen sich geladene Teilchen in Schraubenlinien entlang der Feldlinien. Die Bewegungsgleichung für ein mit der Geschwindigkeit <span class="math inline">\(\mathbf v\)</span> bewegtes Elektron im Magnetfeld <span class="math inline">\(\mathbf B\)</span> lautet <span class="math display">\[
+m_e \frac{d \mathbf v}{d t} = -e \mathbf v \times \mathbf B
+\]</span></p>
+<p>Wir betrachten zunächst den Fall eines homogenen Magnetfeldes und setzen <span class="math display">\[
+\mathbf B = const, \quad \mathbf E = 0, \quad \mathbf F = 0
+\]</span> Die Geschwindigkeit <span class="math inline">\(\mathbf v\)</span> zerlegen wir vektoriell in eine Komponente parallel und eine Komponente senkrecht zum magnetischen Feld. <span class="math display">\[
+\mathbf v = \mathbf v_\| + \mathbf v_\perp
+\]</span> Bewegt sich das Teilchen in einer Ebene senkrecht zu <span class="math inline">\(\mathbf B\)</span>, dann gilt</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
