@@ -37,7 +37,7 @@ $$
 m \dot{\mathbf v}_\perp = q \mathbf v_\perp \times \mathbf B.
 $$
 
-## Energiererhaltung
+## Energieerhaltung
 
 An dieser Stelle klären wir, ob die kinetische Energie des Teilchens eine Erhaltungsgröße ist. Da  $\mathbf v_\| = const$, betrachten wir die Änderung der kinetischen Energie
 $$
