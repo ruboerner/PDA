@@ -20,7 +20,7 @@ Eine etwas andere Darstellung:
 
 Die Grenze zur Hochatmosphäre ist nicht einheitlich festgelegt. Sie liegt bei $h > 50$ km.
 
-Warum wird diese Grenze eingeführt? Dies hat verschiedene Gründe, die von der Methoide der Erforschung der Atmosphäre, von der Zusammensetzung der Atmosphäre sowie vom Einfluss der solaren Aktivität abhängen.
+Warum wird diese Grenze eingeführt? Dies hat verschiedene Gründe, die von der Methode der Erforschung der Atmosphäre, von der Zusammensetzung der Atmosphäre sowie vom Einfluss der solaren Aktivität abhängen.
 
 Vor allem handelt es sich um eine physikalische Einfussgrenze.
 

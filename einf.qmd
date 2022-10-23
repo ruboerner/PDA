@@ -12,7 +12,7 @@ Diese Einführung beruht zum großen Teil auf dem Buch von @kertz. Dort werden g
 
 In der Physik der Ionosphäre und Magnetosphäre behandeln wir Prozesse im erdnahen Raum. Dort werden physikalische Vorgänge durch das Erdmagnetfeld oder seine Interaktion mit dem interplanetaren Magnetfeld bestimmt.
 
-Eine besondere Rolle spielen hier geladene Teilchen. Wir werden sehen, dass der erdnahe Raum nicht leer, sondern ein stark verdünntes Gas aus geladenen und neutralen Teilchen ist. Die Annahme, dass im Universum Vakuum herrscht, ist falsch. Neben der elektromagnetichen Wellenstrahlung der Sonne beobachtet man auch einen Partikelstrom aus geladenen Teilchen. Dieses Teilchengemisch nennt man Plasma.
+Eine besondere Rolle spielen hier geladene Teilchen. Wir werden sehen, dass der erdnahe Raum nicht leer, sondern ein stark verdünntes Gas aus geladenen und neutralen Teilchen ist. Die Annahme, dass im Universum Vakuum herrscht, ist falsch. Neben der elektromagnetischen Wellenstrahlung der Sonne beobachtet man auch einen Partikelstrom aus geladenen Teilchen. Dieses Teilchengemisch nennt man Plasma.
 
 In unserem Sonnensystem findet man Plasma im Sonnenwind, der als ständiger Strom geladener Teilchen mit Geschwindigkeiten von etwa 400 bis 600 km/s die Sonne verlässt.
 
