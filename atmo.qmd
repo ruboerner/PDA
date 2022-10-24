@@ -1,5 +1,5 @@
 ---
-title: "Aufbau der Atmosphäre"
+title: "Die Atmosphäre der Erde"
 ---
 
 ## Gliederung der Atmosphäre
@@ -11,6 +11,35 @@ Unterhalb einer Höhe von 50 km befinden sich 99.9 % der Gesamtmasse der Atmosph
 Die Physik der Hochatmosphäre beobachtet Vorgänge in einem stark verdünnten Gas.
 
 ![Gliederung der Atmosphäre (aus Kertz)](images/paste-CCE7768B.png){#fig-kertz}
+
+Die Sonnenstrahlung bewirkt eine teilweise Ionisation der Luft in der oberen Atmosphäre. Daher ist es sinnvoll, für den ionisierten Anteil eine andere Einteilung als für die Neutralgaskomponente zu benutzen.
+
+### Neutralgaskomponente
+
+#### Temperaturverlauf
+
+Man unterscheidet
+
+-   Troposphäre: Wettergeschehen, beeinflusst durch Wasser, Erdoberfläche und Erdrotation
+-   Stratosphäre: Geringe vertikale Durchmischung, Strahlungsabsorption des Ozons führt zu Temperaturzunahme
+-   Mesosphäre: Temperaturabnahme mit zunehmender Höhe bewirkt weniger starke Dichteverringerung
+-   Thermosphäre: Ansteigende Temperatur
+
+#### Homogenität
+
+Es wird unterschieden zwischen Homo- und Heterosphäre.
+
+In den unteren 100 km ist das Neutralgas bei konstanten Mischungsverhältnissen als Folge von Turbulenzen gut durchmischt.
+
+In der Heterosphäre erfolgt eine Entmischung. Mit zunehmender Höhe treten mehr leichte Teilchen auf. In sehr großen Höhen treten wegen der geringen Dichte keine Stöße zwischen den Teilchen auf. Die Teilchen bewegen sich auf Keplerbahnen oder verlassen den Einflussbereich der Erdanziehung, wenn ihre Geschwindigkeiten die Fluchtgeschwindigkeit übersteigen. Dieser Bereich wird *Exosphäre* genannt.
+
+Die Entweichmöglichkeit besteht nur für Neutralgasteilchen. Ionisierte Teilchen verhalten sich anders.
+
+### Ionisierte Komponente
+
+#### Elektronendichte
+
+#### Magnetfeldeinfluss
 
 Eine etwas andere Darstellung:
 
@@ -36,13 +65,17 @@ An der Ionosphäre reflektierte Radiowellen liefern Hinweise auf die Teilchendic
 
 ### Luftchemie
 
-In Höhen bis zu 50 km ist die Luft gleichmäßig durchmischt. Ihre Zusammensetzung entspricht der an der Erdoberfläche. Oberhalb von 50 km tritt eine höhendifferenzierte unterschiedliche Luftzusammensetzung auf, die durch Ionisierung und gravitative Entmischung verursacht wird.,
+In Höhen bis zu 50 km ist die Luft gleichmäßig durchmischt. Ihre Zusammensetzung entspricht der an der Erdoberfläche. Oberhalb von 50 km tritt eine höhendifferenzierte unterschiedliche Luftzusammensetzung auf, die durch Ionisation, Dissoziation und gravitative Entmischung verursacht wird.,
 
 ### Steuerung durch solare Aktivität
 
 Die Dynamik der unteren Atmosphäre äußert sich in kleinskaligen und kurzzeitigen Wettervorgängen.
 
-Störungen der oberen Atmosphäre sind räumlich ausgedehnter und umfassen mindestens die gesamte Tag- oder Nachtseite der Erde.
+Störungen der oberen Atmosphäre sind räumlich ausgedehnter und umfassen mindestens die gesamte Tag- oder Nachtseite der Erde. Verursacht werden sie durch Eruptionen auf der Sonne.
+
+Im Gegensatz dazu werden die Prozesse in der unteren Atmosphäre nicht wesentlich von der solaren Aktivität beeinflusst.
+
+Die Grenze zwischen unterer und oberer Atmosphäre ist eine *physikalische Einflussgrenze*.
 
 ## Aeronomie
 
