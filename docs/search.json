@@ -67,7 +67,7 @@
     "href": "aufbau.html#kern",
     "title": "4  Aufbau der Sonne",
     "section": "4.4 Kern",
-    "text": "4.4 Kern"
+    "text": "4.4 Kern\nDie Hälfte der Sonnenmasse konzentriert sich innerhalb von 25 % des Sonnenradius. Im Zentrum der Sonne beträgt der Druck 200 bar, die Dichte ist 150 g/cm\\(^3\\). Die Temperatur im Kern ist \\(15.7 \\times 10^6\\) K.\nNur im Kern wird thermische Energie durch Kernfusion freigesetzt. 99 % der Fusionsleistung von \\(3.9 \\times 10^{26}\\) W wird innerhalb von 24 % des Sonnenradius erzeugt. In einem Tausendstel des Volumens der Sonne entsteht die Hälfte ihrer Leistung. Die mittlere Leistungsdichte beträgt aber nur 140 W/m\\(^3\\)."
   },
   {
     "objectID": "aufbau.html#strahlungszone",
@@ -87,29 +87,29 @@
     "objectID": "aufbau.html#sonnenoberfläche-und-umgebung",
     "href": "aufbau.html#sonnenoberfläche-und-umgebung",
     "title": "4  Aufbau der Sonne",
-    "section": "4.7 Sonnenoberfläche und Umgebung",
-    "text": "4.7 Sonnenoberfläche und Umgebung\n\n4.7.1 Photosphäre\n\n\n4.7.2 Chromosphäre"
+    "section": "4.6 Sonnenoberfläche und Umgebung",
+    "text": "4.6 Sonnenoberfläche und Umgebung\n\n4.6.1 Photosphäre\n\n\n4.6.2 Chromosphäre"
   },
   {
     "objectID": "aufbau.html#äußere-atmosphäre",
     "href": "aufbau.html#äußere-atmosphäre",
     "title": "4  Aufbau der Sonne",
-    "section": "4.8 Äußere Atmosphäre",
-    "text": "4.8 Äußere Atmosphäre\n\n4.8.1 Korona\n\n\n4.8.2 Sonnenwind"
+    "section": "4.7 Äußere Atmosphäre",
+    "text": "4.7 Äußere Atmosphäre\n\n4.7.1 Korona\n\n\n4.7.2 Sonnenwind"
   },
   {
     "objectID": "aufbau.html#magnetfeld",
     "href": "aufbau.html#magnetfeld",
     "title": "4  Aufbau der Sonne",
-    "section": "4.9 Magnetfeld",
-    "text": "4.9 Magnetfeld"
+    "section": "4.8 Magnetfeld",
+    "text": "4.8 Magnetfeld"
   },
   {
     "objectID": "aufbau.html#differentielle-rotation",
     "href": "aufbau.html#differentielle-rotation",
     "title": "4  Aufbau der Sonne",
-    "section": "4.10 Differentielle Rotation",
-    "text": "4.10 Differentielle Rotation"
+    "section": "4.9 Differentielle Rotation",
+    "text": "4.9 Differentielle Rotation"
   },
   {
     "objectID": "strahlung.html#physikalische-größen",
@@ -222,5 +222,26 @@
     "title": "Literaturverzeichnis",
     "section": "",
     "text": "Debye, P, and E Hückel. 1923a. “On the Debye Length in Strong\nElectrolytes.” Physikalische Zeitschrift 24: 185.\n\n\n———. 1923b. “Zur Theorie der Elektrolyte. II.\nDas Grenzgesetz für die elektrische\nLeitfähigkeit.”\nPhysikalische Zeitschrift 24 (15): 305–25.\n\n\nGibbon, P. 2016. “Introduction to Plasma Physics.” CERN\nYellow Reports, Vol 1 (2016): Proceedings of the 2014 CAS–CERN\nAccelerator School: Plasma Wake Acceleration. https://doi.org/10.5170/CERN-2016-001.51.\n\n\nKertz, Walter. 1971. “Einführung in die Geophysik II.”\nBibliographisches Institut, Mannheim.\n\n\nThorne, Kip S, and Roger D Blandford. 2017. Modern Classical\nPhysics: Optics, Fluids, Plasmas, Elasticity, Relativity, and\nStatistical Physics. Princeton University Press."
+  },
+  {
+    "objectID": "aufbau.html",
+    "href": "aufbau.html",
+    "title": "4  Aufbau der Sonne",
+    "section": "",
+    "text": "In erster Näherung ist die Sonne kugelsymmetrisch aufgebaut. Sie befindet sich in einem stationären Gleichgewicht ohne Kontraktionen oder Schwingungen.\nDie Sonne vereint in sich etwa 99.86 % der Masse des Sonnensystems.\nIm Innern der Sonne herrscht ein hydrostatisches Gleichgewicht der nach außen wirkenden Druckkräfte und der nach innen gerichteten Gravitationskräfte. Es gilt\n\\[\n\\frac{d p(r)}{d r} = - f \\frac{\\rho(r) m(r)}{r^2}\n\\]\nmit\n\\[\nm(r) = 4 \\pi \\int_0 ^r \\rho(r) r^2 \\, dr\n\\]"
+  },
+  {
+    "objectID": "einf.html",
+    "href": "einf.html",
+    "title": "2  Einführung",
+    "section": "",
+    "text": "Diese Einführung beruht zum großen Teil auf dem Buch von Kertz (1971). Dort werden grundlegende Zusammenhänge zur Physik der Hochatmosphäre physikalisch und mathematisch gut aufbereitet und erläutet. Zum Selbststudium ist dieses Buch sehr zu empfehlen."
+  },
+  {
+    "objectID": "aufbau.html#strahlungs--und-konvektionszone",
+    "href": "aufbau.html#strahlungs--und-konvektionszone",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.5 Strahlungs- und Konvektionszone",
+    "text": "4.5 Strahlungs- und Konvektionszone\nAb etwa 30 % Sonnenradius findet keine Fusion mehr statt. Wärmeenergie wird durch Strahlung und Konvektion transportiert."
   }
 ]

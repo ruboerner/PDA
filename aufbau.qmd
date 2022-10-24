@@ -38,9 +38,14 @@ Benötigt wird ein Temperaturgefälle.
 
 ## Kern
 
-## Strahlungszone
+Die Hälfte der Sonnenmasse konzentriert sich innerhalb von 25 % des Sonnenradius. Im Zentrum der Sonne beträgt der Druck 200 bar, die Dichte ist 150 g/cm$^3$. Die Temperatur im Kern ist $15.7 \times 10^6$ K.
 
-## Konvektionszone
+Nur im Kern wird thermische Energie durch Kernfusion freigesetzt. 99 % der Fusionsleistung von $3.9 \times 10^{26}$ W wird innerhalb von 24 % des Sonnenradius erzeugt.
+In einem Tausendstel des Volumens der Sonne entsteht die Hälfte ihrer Leistung. Die mittlere Leistungsdichte beträgt aber nur 140 W/m$^3$.
+
+## Strahlungs- und Konvektionszone
+
+Ab etwa 30 % Sonnenradius findet keine Fusion mehr statt. Wärmeenergie wird durch Strahlung und Konvektion transportiert.
 
 ## Sonnenoberfläche und Umgebung
 
