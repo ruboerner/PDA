@@ -4,6 +4,10 @@ title: "Aufbau der Sonne"
 
 ## Grundprinzipien des Aufbaus der Sonne
 
+![Aufbau eines sonnenähnlichen Hauptreihensterns (NASA image)](images/paste-7BD74E6D.png){#fig-aufbau-hauptreihenstern}
+
+![Schnittdiagramm der Sonne. 1-Kern, 2-Strahlunszone, 3-Konvektionszone, 4-Photosphäre, 5-Chromosphäre, 6-Corona, 7-Sonnenfleck, 8-Granulation, 9-Protuberanz (Wikipedia)](images/paste-2464B050.png){#fig-schnitt-sonne}
+
 In erster Näherung ist die Sonne kugelsymmetrisch aufgebaut. Sie befindet sich in einem stationären Gleichgewicht ohne Kontraktionen oder Schwingungen.
 
 Die Sonne vereint in sich etwa 99.86 % der Masse des Sonnensystems.
@@ -40,8 +44,7 @@ Benötigt wird ein Temperaturgefälle.
 
 Die Hälfte der Sonnenmasse konzentriert sich innerhalb von 25 % des Sonnenradius. Im Zentrum der Sonne beträgt der Druck 200 bar, die Dichte ist 150 g/cm$^3$. Die Temperatur im Kern ist $15.7 \times 10^6$ K.
 
-Nur im Kern wird thermische Energie durch Kernfusion freigesetzt. 99 % der Fusionsleistung von $3.9 \times 10^{26}$ W wird innerhalb von 24 % des Sonnenradius erzeugt.
-In einem Tausendstel des Volumens der Sonne entsteht die Hälfte ihrer Leistung. Die mittlere Leistungsdichte beträgt aber nur 140 W/m$^3$.
+Nur im Kern wird thermische Energie durch Kernfusion freigesetzt. 99 % der Fusionsleistung von $3.9 \times 10^{26}$ W wird innerhalb von 24 % des Sonnenradius erzeugt. In einem Tausendstel des Volumens der Sonne entsteht die Hälfte ihrer Leistung. Die mittlere Leistungsdichte beträgt aber nur 140 W/m$^3$.
 
 ## Strahlungs- und Konvektionszone
 

@@ -228,7 +228,7 @@
     "href": "aufbau.html",
     "title": "4  Aufbau der Sonne",
     "section": "",
-    "text": "In erster Näherung ist die Sonne kugelsymmetrisch aufgebaut. Sie befindet sich in einem stationären Gleichgewicht ohne Kontraktionen oder Schwingungen.\nDie Sonne vereint in sich etwa 99.86 % der Masse des Sonnensystems.\nIm Innern der Sonne herrscht ein hydrostatisches Gleichgewicht der nach außen wirkenden Druckkräfte und der nach innen gerichteten Gravitationskräfte. Es gilt\n\\[\n\\frac{d p(r)}{d r} = - f \\frac{\\rho(r) m(r)}{r^2}\n\\]\nmit\n\\[\nm(r) = 4 \\pi \\int_0 ^r \\rho(r) r^2 \\, dr\n\\]"
+    "text": "Abbildung 4.1: Aufbau eines sonnenähnlichen Hauptreihensterns (NASA image)\n\n\n\n\n\nAbbildung 4.2: Schnittdiagramm der Sonne. 1-Kern, 2-Strahlunszone, 3-Konvektionszone, 4-Photosphäre, 5-Chromosphäre, 6-Corona, 7-Sonnenfleck, 8-Granulation, 9-Protuberanz (Wikipedia)\n\n\nIn erster Näherung ist die Sonne kugelsymmetrisch aufgebaut. Sie befindet sich in einem stationären Gleichgewicht ohne Kontraktionen oder Schwingungen.\nDie Sonne vereint in sich etwa 99.86 % der Masse des Sonnensystems.\nIm Innern der Sonne herrscht ein hydrostatisches Gleichgewicht der nach außen wirkenden Druckkräfte und der nach innen gerichteten Gravitationskräfte. Es gilt\n\\[\n\\frac{d p(r)}{d r} = - f \\frac{\\rho(r) m(r)}{r^2}\n\\]\nmit\n\\[\nm(r) = 4 \\pi \\int_0 ^r \\rho(r) r^2 \\, dr\n\\]"
   },
   {
     "objectID": "einf.html",
