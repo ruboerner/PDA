@@ -47,7 +47,7 @@ S = 3.828e26 / 4 / pi / AU^2;
 println("Solarkonstante: S=$(round(S, digits=2))")
 ```
 
-Der über Satellitenmessungen betimmte Wert beträgt $S=1361$ $W m^{-2}$.
+Der über Satellitenmessungen betimmte Wert beträgt $S=1361$ W/m$^{2}$.
 
 Die Verteilung von Kontinenten und Ozeanen auf der Erdoberfläche führt zur Absorption und unvollständigen Rückstrahlung der Sonneneinstrahlung. Das Rückstrahlvermögen oder die Albedo der Erde beträgt 0.3, damit beträgt die Absorption 0.7.
 
@@ -78,11 +78,14 @@ $$ Die Einstrahlung beträgt bei vollständiger Absorption dagegen
 println("$(round(S * pi * R_E^2 * 1e-15, digits=3)) PW.")
 ```
 
-Die Einstrahlung beträgt also etwa 174 Petawatt! Die aktuell leistungsfähigsten Laser (LLNL (USA): "Nova Laser", 2012; Osaka Univ. (Japan): "LFEX", 2015; EU: "ELI-NP", 2015) erreichten kurzzeitig 1.25, 2 bzw. 10 PW für 0.5, 1 bzw. \< 0.01 Pikosekunden (1 Pikosekunde = $10^{-12}$ s), was einer Energie von 600, 2000 bzw. 10 J entspricht.
+Die Einstrahlung beträgt also etwa 174 Petawatt! Die aktuell leistungsfähigsten Laser (LLNL (USA): "Nova Laser", 2012; Osaka Univ. (Japan): "LFEX", 2015; EU: "ELI-NP", 2015) erreichten kurzzeitig 1.25, 2 bzw. 10 PW für 0.5, 1 bzw. \< 0.01 Pikosekunden (1 Pikosekunde = 10$^{-12}$ s), was einer Energie von 600, 2000 bzw. 10 J entspricht.
 
-Die Abstrahlung in den Kosmos ist $$
+Die Abstrahlung in den Kosmos ist
+$$
 P_{out} = \sigma 4 \pi R_E^2 T^4
-$$ Daraus ermitteln wir die Oberflächentemperatur eines äquivalenten schwarzen Strahlers. Sie lautet $$
+$$ 
+Daraus ermitteln wir die Oberflächentemperatur eines äquivalenten schwarzen Strahlers. Sie lautet
+$$
 T = \sqrt[4]{\frac{0.7 S}{4 \sigma}}
 $$
 
@@ -100,13 +103,17 @@ Somit ergibt sich für die Erde eine Temperatur von ca. -18 °C, die allein veru
 
 Ebenso lässt sich mit Hilfe des Stefan-Boltzmann-Gesetzes aus den oben gegebenen Werten die effektive Oberflächentemperatur der Sonne errechnen.
 
-Der Radius der Sonne beträgt $R_S = 6.963 \times 10^8$ m. Ihre Leuchtkraft lässt sich über die Solarkonstante $S$ und den Radius $d$ der Erdumlaufbahn angeben. Es gilt $$
+Der Radius der Sonne beträgt $R_S = 6.963 \times 10^8$ m. Ihre Leuchtkraft lässt sich über die Solarkonstante $S$ und den Radius $d$ der Erdumlaufbahn angeben. Es gilt 
+$$
 P_{out} = 4 \pi d^2 \, S
-$$ Die Fläche des angenommenen schwarzen Strahlers ist $$
+$$
+Die Fläche des angenommenen schwarzen Strahlers ist
+$$
 A = 4 \pi R_S^2
 $$
 
-Die Temperatur auf der Sonnenoberfläche ist demnach $$
+Die Temperatur auf der Sonnenoberfläche ist demnach
+$$
 T = \sqrt[4]{\frac{P_{out}}{\sigma A}}
 $$
 

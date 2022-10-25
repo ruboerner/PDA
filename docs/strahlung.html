@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.242">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -314,6 +314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -366,7 +367,7 @@ Die Sonne emittiert das 2.2e9-fache bezogen auf die Erdscheibe.</code></pre>
 <pre><code>Solarkonstante: S=1361.17</code></pre>
 </div>
 </div>
-<p>Der über Satellitenmessungen betimmte Wert beträgt <span class="math inline">\(S=1361\)</span> <span class="math inline">\(W m^{-2}\)</span>.</p>
+<p>Der über Satellitenmessungen betimmte Wert beträgt <span class="math inline">\(S=1361\)</span> W/m<span class="math inline">\(^{2}\)</span>.</p>
 <p>Die Verteilung von Kontinenten und Ozeanen auf der Erdoberfläche führt zur Absorption und unvollständigen Rückstrahlung der Sonneneinstrahlung. Das Rückstrahlvermögen oder die Albedo der Erde beträgt 0.3, damit beträgt die Absorption 0.7.</p>
 <section id="temperatur-auf-der-erdoberfläche" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="temperatur-auf-der-erdoberfläche"><span class="header-section-number">5.2.1</span> Temperatur auf der Erdoberfläche</h3>
@@ -393,7 +394,7 @@ P_{in} = 0.7 \, S \, \pi R_E^2
 <pre><code>173.958 PW.</code></pre>
 </div>
 </div>
-<p>Die Einstrahlung beträgt also etwa 174 Petawatt! Die aktuell leistungsfähigsten Laser (LLNL (USA): “Nova Laser”, 2012; Osaka Univ. (Japan): “LFEX”, 2015; EU: “ELI-NP”, 2015) erreichten kurzzeitig 1.25, 2 bzw. 10 PW für 0.5, 1 bzw. &lt; 0.01 Pikosekunden (1 Pikosekunde = <span class="math inline">\(10^{-12}\)</span> s), was einer Energie von 600, 2000 bzw. 10 J entspricht.</p>
+<p>Die Einstrahlung beträgt also etwa 174 Petawatt! Die aktuell leistungsfähigsten Laser (LLNL (USA): “Nova Laser”, 2012; Osaka Univ. (Japan): “LFEX”, 2015; EU: “ELI-NP”, 2015) erreichten kurzzeitig 1.25, 2 bzw. 10 PW für 0.5, 1 bzw. &lt; 0.01 Pikosekunden (1 Pikosekunde = 10<span class="math inline">\(^{-12}\)</span> s), was einer Energie von 600, 2000 bzw. 10 J entspricht.</p>
 <p>Die Abstrahlung in den Kosmos ist <span class="math display">\[
 P_{out} = \sigma 4 \pi R_E^2 T^4
 \]</span> Daraus ermitteln wir die Oberflächentemperatur eines äquivalenten schwarzen Strahlers. Sie lautet <span class="math display">\[
@@ -491,7 +492,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -527,24 +545,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

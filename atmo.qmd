@@ -12,6 +12,8 @@ Die Physik der Hochatmosphäre beobachtet Vorgänge in einem stark verdünnten G
 
 ![Gliederung der Atmosphäre (aus Kertz)](images/paste-CCE7768B.png){#fig-kertz}
 
+## Prinzipien der Einteilung
+
 Die Sonnenstrahlung bewirkt eine teilweise Ionisation der Luft in der oberen Atmosphäre. Daher ist es sinnvoll, für den ionisierten Anteil eine andere Einteilung als für die Neutralgaskomponente zu benutzen.
 
 ### Neutralgaskomponente

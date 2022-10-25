@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.242">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -256,36 +256,38 @@ div.csl-indent {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
 </header>
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
 <div id="ref-debye1923debye" class="csl-entry" role="doc-biblioentry">
-Debye, P, and E Hückel. 1923a. <span>“On the Debye Length in Strong
-Electrolytes.”</span> <em>Physikalische Zeitschrift</em> 24: 185.
+Debye, P. &amp; Hückel, E. (1923) On the debye length in strong
+electrolytes. <em>Physikalische Zeitschrift</em>, <strong>24</strong>,
+185.
 </div>
 <div id="ref-debye1923theorie" class="csl-entry" role="doc-biblioentry">
-———. 1923b. <span>“<span class="nocase">Zur Theorie der Elektrolyte. II.
-Das Grenzgesetz f<span class="nocase">ü</span>r die elektrische
-Leitf<span class="nocase">ä</span>higkeit</span>.”</span>
-<em>Physikalische Zeitschrift</em> 24 (15): 305–25.
+Debye, P. &amp; Hückel, E. (1923) <span class="nocase">Zur Theorie der
+Elektrolyte. II. Das Grenzgesetz f<span class="nocase">ü</span>r die
+elektrische Leitf<span class="nocase">ä</span>higkeit</span>.
+<em>Physikalische Zeitschrift</em>, <strong>24</strong>, 305–325.
 </div>
 <div id="ref-gibbon" class="csl-entry" role="doc-biblioentry">
-Gibbon, P. 2016. <span>“Introduction to Plasma Physics.”</span> <em>CERN
-Yellow Reports</em>, Vol 1 (2016): Proceedings of the 2014 CAS–CERN
-Accelerator School: Plasma Wake Acceleration. <a href="https://doi.org/10.5170/CERN-2016-001.51">https://doi.org/10.5170/CERN-2016-001.51</a>.
+Gibbon, P. (2016) Introduction to plasma physics. <em>CERN Yellow
+Reports</em>, Vol 1 (2016): Proceedings of the 2014 CAS–CERN Accelerator
+School: Plasma Wake Acceleration, CERN, Geneva. doi:<a href="https://doi.org/10.5170/CERN-2016-001.51">10.5170/CERN-2016-001.51</a>
 </div>
 <div id="ref-kertz" class="csl-entry" role="doc-biblioentry">
-Kertz, Walter. 1971. <span>“<span class="nocase">Einf<span class="nocase">ü</span>hrung in die Geophysik II</span>.”</span>
+Kertz, W. (1971) <span class="nocase">Einf<span class="nocase">ü</span>hrung in die Geophysik II</span>.
 <em>Bibliographisches Institut, Mannheim</em>.
 </div>
 <div id="ref-thorne2017modern" class="csl-entry" role="doc-biblioentry">
-Thorne, Kip S, and Roger D Blandford. 2017. <em>Modern Classical
-Physics: Optics, Fluids, Plasmas, Elasticity, Relativity, and
-Statistical Physics</em>. Princeton University Press.
+Thorne, K.S. &amp; Blandford, R.D. (2017) <em>Modern classical physics:
+Optics, fluids, plasmas, elasticity, relativity, and statistical
+physics</em>, Princeton University Press.
 </div>
 </div>
 
@@ -333,7 +335,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -369,24 +388,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

@@ -2,7 +2,9 @@
 title: "Vorbemerkung"
 ---
 
-Dieses Skript zur Vorlesung "Physik der Hochatmosphäre" entstand im Sommer 2022 und ist mit [Quarto](http://quarto.org), einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt worden.
+Das Skript zur Vorlesung "Physik der Hochatmosphäre" entsteht semesterbegleitend.
+
+Es wird mit [Quarto](http://quarto.org), einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt.
 
 Alle Änderungen sind in [GitHub](https://github.com/ruboerner/PDA) nachvollziehbar. Ein PDF-Dokument mit gleichem Inhalt kann hier heruntergeladen werden.
 

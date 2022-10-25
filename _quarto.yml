@@ -6,8 +6,8 @@ lang: de
 
 book:
   title: "Physik der Hochatmosphäre"
-  subtitle: "Modul: Ausgewählte Kapitel der Geophysik"
-  author: "Ralph-Uwe Börner"
+  subtitle: "Modul: Ausgewählte Kapitel der Allgemeinen Geophysik"
+  author: "Dr. Ralph-Uwe Börner"
   date: today
   chapters:
     - index.qmd
@@ -37,6 +37,7 @@ book:
     - references.qmd
 
 bibliography: references.bib
+csl: https://www.zotero.org/styles/geophysical-journal-international
 
 format:
   html:
