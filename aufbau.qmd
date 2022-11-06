@@ -38,30 +38,48 @@ Energie gelangt nach außen durch
 -   Konvektion
 -   Wärmeleitung
 
-Benötigt wird ein Temperaturgefälle.
+Benötigt wird ein Temperaturgefälle. Wärmestrom $\mathbf J = -k \nabla T$.
+
+![Temperatur- und Dichtemessungen von Skylab (Quelle: Wikipedia)](images/paste-7A6CEC06.png){#fig-skylab}
 
 ## Kern
 
-Die Hälfte der Sonnenmasse konzentriert sich innerhalb von 25 % des Sonnenradius. Im Zentrum der Sonne beträgt der Druck 200 bar, die Dichte ist 150 g/cm$^3$. Die Temperatur im Kern ist $15.7 \times 10^6$ K.
+Die Hälfte der Sonnenmasse konzentriert sich innerhalb von 25 % des Sonnenradius. Im Zentrum der Sonne beträgt der Druck 200 Milliarden bar, die Dichte ist 150 g/cm$^3$. Die Temperatur im Kern ist $15.7 \times 10^6$ K.
 
 Nur im Kern wird thermische Energie durch Kernfusion freigesetzt. 99 % der Fusionsleistung von $3.9 \times 10^{26}$ W wird innerhalb von 24 % des Sonnenradius erzeugt. In einem Tausendstel des Volumens der Sonne entsteht die Hälfte ihrer Leistung. Die mittlere Leistungsdichte beträgt aber nur 140 W/m$^3$.
 
+Die freigesetzte Energie wird durch Strahlung nach außen transportiert.
+
 ## Strahlungs- und Konvektionszone
 
-Ab etwa 30 % Sonnenradius findet keine Fusion mehr statt. Wärmeenergie wird durch Strahlung und Konvektion transportiert.
+Ab etwa 30 % Sonnenradius findet keine Fusion mehr statt. Wärmeenergie wird neben der Strahlung durch Konvektion transportiert.
+
+Ab 71 % des Sonnenradius wird der Wärmestrom durch Konvektion transportiert. Die Strömungsgeschwindigkeit ist mit ca. 10 m/s gering, die Konvektionszellen sind groß und beständig (Monate bis Jahre), und daher von Rotation und innerem Magnetfeld beeinflusst.
 
 ## Sonnenoberfläche und Umgebung
 
 ### Photosphäre
 
+Die Dichte nimmt immer schneller ab, das Material wird durchsichtig und die Photonen können ungehindert entweichen. Am Sonnenrand sieht man unter flacherem Beobachtungswinkel eine höhere, kältere Schicht, wodurch der Rand dunkler erscheint.
+
 ### Chromosphäre
+
+Oberhalb der Photosphäre liegt die knapp 2000 km dicke Chromosphäre. Die Temperatur nimmt ab, die Dichte ebenso.
 
 ## Äußere Atmosphäre
 
 ### Korona
 
+Oberhalb der Chromosphäre befindet sich die Korona. Sie geht ohne scharfe Grenze in den interplanetaren Raum über. Die Korona erstreckt sich auf über ein bis zwei Sonnenradien. In der Korona regieren Gravitation und Magnetfeld.
+
 ### Sonnenwind
+
+In der Korona entsteht der Sonnenwind, der mit etwa 300 km/s die Sonne verlässt.
 
 ## Magnetfeld
 
 ## Differentielle Rotation
+
+Die Strahlungszone rotiert gleichförmig mit einer Periode von knapp 27 Tagen (Frequenz etwa 430 nHz, s. Abb. @fig-diffrot) bis zur Tachokline, der Übergangszone zur differentiell rotierenden Konvektionszone.
+
+![Radialer Verlauf der Sonnenrotation für verschiedene heliographische Breiten. Ausgehend von der differentiell rotierenden Oberfläche steigt in den oberen 4 % die Winkelgeschwindigkeit steil an, um dann bis zur tachoklinen Region leicht abzufallen. Dort gleicht sie sich an die der nahezu starr rotierenden Strahlungszone an (Quelle: Wikipedia).](images/paste-A039882F.png){#fig-diffrot}

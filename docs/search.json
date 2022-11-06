@@ -67,35 +67,35 @@
     "href": "aufbau.html#energietransportmechanismen",
     "title": "4  Aufbau der Sonne",
     "section": "4.3 Energietransportmechanismen",
-    "text": "4.3 Energietransportmechanismen\nEnergie gelangt nach außen durch\n\nStrahlung\nKonvektion\nWärmeleitung\n\nBenötigt wird ein Temperaturgefälle."
+    "text": "4.3 Energietransportmechanismen\nEnergie gelangt nach außen durch\n\nStrahlung\nKonvektion\nWärmeleitung\n\nBenötigt wird ein Temperaturgefälle. Wärmestrom \\(\\mathbf J = -k \\nabla T\\).\n\n\n\nAbbildung 4.3: Temperatur- und Dichtemessungen von Skylab (Quelle: Wikipedia)"
   },
   {
     "objectID": "aufbau.html#kern",
     "href": "aufbau.html#kern",
     "title": "4  Aufbau der Sonne",
     "section": "4.4 Kern",
-    "text": "4.4 Kern\nDie Hälfte der Sonnenmasse konzentriert sich innerhalb von 25 % des Sonnenradius. Im Zentrum der Sonne beträgt der Druck 200 bar, die Dichte ist 150 g/cm\\(^3\\). Die Temperatur im Kern ist \\(15.7 \\times 10^6\\) K.\nNur im Kern wird thermische Energie durch Kernfusion freigesetzt. 99 % der Fusionsleistung von \\(3.9 \\times 10^{26}\\) W wird innerhalb von 24 % des Sonnenradius erzeugt. In einem Tausendstel des Volumens der Sonne entsteht die Hälfte ihrer Leistung. Die mittlere Leistungsdichte beträgt aber nur 140 W/m\\(^3\\)."
+    "text": "4.4 Kern\nDie Hälfte der Sonnenmasse konzentriert sich innerhalb von 25 % des Sonnenradius. Im Zentrum der Sonne beträgt der Druck 200 Milliarden bar, die Dichte ist 150 g/cm\\(^3\\). Die Temperatur im Kern ist \\(15.7 \\times 10^6\\) K.\nNur im Kern wird thermische Energie durch Kernfusion freigesetzt. 99 % der Fusionsleistung von \\(3.9 \\times 10^{26}\\) W wird innerhalb von 24 % des Sonnenradius erzeugt. In einem Tausendstel des Volumens der Sonne entsteht die Hälfte ihrer Leistung. Die mittlere Leistungsdichte beträgt aber nur 140 W/m\\(^3\\).\nDie freigesetzte Energie wird durch Strahlung nach außen transportiert."
   },
   {
     "objectID": "aufbau.html#strahlungs--und-konvektionszone",
     "href": "aufbau.html#strahlungs--und-konvektionszone",
     "title": "4  Aufbau der Sonne",
     "section": "4.5 Strahlungs- und Konvektionszone",
-    "text": "4.5 Strahlungs- und Konvektionszone\nAb etwa 30 % Sonnenradius findet keine Fusion mehr statt. Wärmeenergie wird durch Strahlung und Konvektion transportiert."
+    "text": "4.5 Strahlungs- und Konvektionszone\nAb etwa 30 % Sonnenradius findet keine Fusion mehr statt. Wärmeenergie wird neben der Strahlung durch Konvektion transportiert.\nAb 71 % des Sonnenradius wird der Wärmestrom durch Konvektion transportiert. Die Strömungsgeschwindigkeit ist mit ca. 10 m/s gering, die Konvektionszellen sind groß und beständig (Monate bis Jahre), und daher von Rotation und innerem Magnetfeld beeinflusst."
   },
   {
     "objectID": "aufbau.html#sonnenoberfläche-und-umgebung",
     "href": "aufbau.html#sonnenoberfläche-und-umgebung",
     "title": "4  Aufbau der Sonne",
     "section": "4.6 Sonnenoberfläche und Umgebung",
-    "text": "4.6 Sonnenoberfläche und Umgebung\n\n4.6.1 Photosphäre\n\n\n4.6.2 Chromosphäre"
+    "text": "4.6 Sonnenoberfläche und Umgebung\n\n4.6.1 Photosphäre\nDie Dichte nimmt immer schneller ab, das Material wird durchsichtig und die Photonen können ungehindert entweichen. Am Sonnenrand sieht man unter flacherem Beobachtungswinkel eine höhere, kältere Schicht, wodurch der Rand dunkler erscheint.\n\n\n4.6.2 Chromosphäre\nOberhalb der Photosphäre liegt die knapp 2000 km dicke Chromosphäre. Die Temperatur nimmt ab, die Dichte ebenso."
   },
   {
     "objectID": "aufbau.html#äußere-atmosphäre",
     "href": "aufbau.html#äußere-atmosphäre",
     "title": "4  Aufbau der Sonne",
     "section": "4.7 Äußere Atmosphäre",
-    "text": "4.7 Äußere Atmosphäre\n\n4.7.1 Korona\n\n\n4.7.2 Sonnenwind"
+    "text": "4.7 Äußere Atmosphäre\n\n4.7.1 Korona\nOberhalb der Chromosphäre befindet sich die Korona. Sie geht ohne scharfe Grenze in den interplanetaren Raum über. Die Korona erstreckt sich auf über ein bis zwei Sonnenradien. In der Korona regieren Gravitation und Magnetfeld.\n\n\n4.7.2 Sonnenwind\nIn der Korona entsteht der Sonnenwind, der mit etwa 300 km/s die Sonne verlässt."
   },
   {
     "objectID": "aufbau.html#magnetfeld",
@@ -109,7 +109,7 @@
     "href": "aufbau.html#differentielle-rotation",
     "title": "4  Aufbau der Sonne",
     "section": "4.9 Differentielle Rotation",
-    "text": "4.9 Differentielle Rotation"
+    "text": "4.9 Differentielle Rotation\nDie Strahlungszone rotiert gleichförmig mit einer Periode von knapp 27 Tagen (Frequenz etwa 430 nHz, s. Abb. Abbildung 4.4) bis zur Tachokline, der Übergangszone zur differentiell rotierenden Konvektionszone.\n\n\n\nAbbildung 4.4: Radialer Verlauf der Sonnenrotation für verschiedene heliographische Breiten. Ausgehend von der differentiell rotierenden Oberfläche steigt in den oberen 4 % die Winkelgeschwindigkeit steil an, um dann bis zur tachoklinen Region leicht abzufallen. Dort gleicht sie sich an die der nahezu starr rotierenden Strahlungszone an (Quelle: Wikipedia)."
   },
   {
     "objectID": "strahlung.html#physikalische-größen",
