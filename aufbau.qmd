@@ -78,6 +78,12 @@ In der Korona entsteht der Sonnenwind, der mit etwa 300 km/s die Sonne verlässt
 
 ## Magnetfeld
 
+An der Sonnenoberfläche lässt sich das Magnetfeld wegen des Zeeman-Effekts aus spektroskopischen Beobachtungen feststellen. Spektrallinien spalten sich bei Anwesenheit eines Magnetfeldes auf. Der Spektrallinienabstand ist proportional zur Feldstärke.
+
+Die Feldstärke im Umfeld von Sonnenflecken beträgt bis zu 0.4 T.
+
+Das großräumige Magnetfeld lässt sich nur grob durch ein Dipolfeld beschreiben. An der Sonnenoberfläche ist die Feldstärke mit etwa 100,000 nT nur etwa doppelt so groß wie das der Erde auf der Erdoberfläche.
+
 ## Differentielle Rotation
 
 Die Strahlungszone rotiert gleichförmig mit einer Periode von knapp 27 Tagen (Frequenz etwa 430 nHz, s. Abb. @fig-diffrot) bis zur Tachokline, der Übergangszone zur differentiell rotierenden Konvektionszone.
