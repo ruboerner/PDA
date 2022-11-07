@@ -1,7 +1,13 @@
 ---
 title: "Die Sonne als Energiequelle"
 jupyter: "julia-1.8"
+code-fold: true
 ---
+
+```{julia}
+#| echo: false
+using Markdown
+```
 
 ## Physikalische Größen
 
@@ -27,29 +33,43 @@ $$
 
 ```{julia}
 #| code-fold: true
+using Markdown
 R_E = 6.3781e6;
 AU = 1.495978707e11;
 alpha = 2 * atan(R_E / AU);
 bs = alpha * 180 / pi * 3600;
 Omega = 2 * pi * (1 - cos(alpha / 2));
-println("Die scheinbare Größe beträgt $(round(bs, digits=2)) Bogensekunden.")
-println("Der Raumwinkel beträgt $(round(Omega, sigdigits=2)) sr.")
-println("Die Sonne emittiert das $(round(4 * pi / Omega, sigdigits=2))-fache bezogen auf die Erdscheibe.")
+Markdown.parse("""
+Die scheinbare Größe beträgt $(round(bs, digits=2)) Bogensekunden.
+
+Der Raumwinkel beträgt $(round(Omega, sigdigits=2)) sr.
+
+Die Sonne emittiert das $(round(4 * pi / Omega, sigdigits=2))-fache bezogen auf die Erdscheibe.
+""")
+# println("Der Raumwinkel beträgt $(round(Omega, sigdigits=2)) sr.")
+# println("Die Sonne emittiert das $(round(4 * pi / Omega, sigdigits=2))-fache bezogen auf die Erdscheibe.")
 ```
 
 ## Solarkonstante
 
-Die Leuchtkraft der Sonne verteilt sich gleichmäßig (isotrop) auf einer Kugeloberfläche. In der Entfernung von 1 AU ergibt sich daraus die Solarkonstante rechnerisch zu
-
 ```{julia}
 #| code-fold: true
 S = 3.828e26 / 4 / pi / AU^2;
-println("Solarkonstante: S=$(round(S, digits=2))")
+Markdown.parse("""
+Die Leuchtkraft der Sonne verteilt sich gleichmäßig (isotrop) auf einer Kugeloberfläche. In der Entfernung von 1 AU ergibt sich daraus die Solarkonstante rechnerisch zu
+
+``S = `` $(round(S, digits=2)) W/m``^2``.
+""")
 ```
 
-Der über Satellitenmessungen betimmte Wert beträgt $S=1361$ W/m$^{2}$.
+Der über Satellitenmessungen bestimmte Wert ist $S=1361$ W/m$^{2}$.
 
-Die Verteilung von Kontinenten und Ozeanen auf der Erdoberfläche führt zur Absorption und unvollständigen Rückstrahlung der Sonneneinstrahlung. Das Rückstrahlvermögen oder die Albedo der Erde beträgt 0.3, damit beträgt die Absorption 0.7.
+Die Verteilung von Kontinenten und Ozeanen auf der Erdoberfläche führt zur Absorption und unvollständigen Rückstrahlung der Sonneneinstrahlung. Das Rückstrahlvermögen oder die Albedo der Erde ist 0.3, damit beträgt die Absorption 0.7.
+
+Mit der experimentell bestimmten Solarkonstante können wir zwei Größen abschätzen:
+
+-   Temperatur auf der Erdoberfläche ohne Einfluss der Atmosphäre
+-   effektive Oberflächentemperatur eines der Sonne äquivalenten schwarzen Strahlers.
 
 ### Temperatur auf der Erdoberfläche
 
@@ -71,21 +91,21 @@ Mit der oben angegeben Absorption von 0.7 gilt für die Einstrahlung auf der als
 
 $$
 P_{in} = 0.7 \, S \, \pi R_E^2
-$$ Die Einstrahlung beträgt bei vollständiger Absorption dagegen
+$$
 
 ```{julia}
 #| code-fold: true
-println("$(round(S * pi * R_E^2 * 1e-15, digits=3)) PW.")
+Markdown.parse("""
+Die Einstrahlung beträgt bei vollständiger Absorption dagegen
+$(round(S * pi * R_E^2 * 1e-15, digits=3)) PW.
+""")
 ```
 
 Die Einstrahlung beträgt also etwa 174 Petawatt! Die aktuell leistungsfähigsten Laser (LLNL (USA): "Nova Laser", 2012; Osaka Univ. (Japan): "LFEX", 2015; EU: "ELI-NP", 2015) erreichten kurzzeitig 1.25, 2 bzw. 10 PW für 0.5, 1 bzw. \< 0.01 Pikosekunden (1 Pikosekunde = 10$^{-12}$ s), was einer Energie von 600, 2000 bzw. 10 J entspricht.
 
-Die Abstrahlung in den Kosmos ist
-$$
+Die Abstrahlung in den Kosmos ist $$
 P_{out} = \sigma 4 \pi R_E^2 T^4
-$$ 
-Daraus ermitteln wir die Oberflächentemperatur eines äquivalenten schwarzen Strahlers. Sie lautet
-$$
+$$ Daraus ermitteln wir die Oberflächentemperatur eines äquivalenten schwarzen Strahlers. Sie lautet $$
 T = \sqrt[4]{\frac{0.7 S}{4 \sigma}}
 $$
 
@@ -94,7 +114,9 @@ $$
 S = 1361;
 sigma = 5.670374419e-8;
 T = (0.7 * S / 4  /sigma)^0.25 - 273.15;
-println("Oberflächentemperatur: T = $(round(T, digits=1)) °C")
+Markdown.parse("""
+Die Oberflächentemperatur auf der Erde beträgt ohne Atmosphäre T = $(round(T, digits=1)) °C.
+""")
 ```
 
 Somit ergibt sich für die Erde eine Temperatur von ca. -18 °C, die allein verursacht durch die Sonneneinstrahlung, jedoch ohne Berücksichtigung des Einflusses der Atmosphäre (Treibhauseffekt) auf der Erdoberfläche herrschen würde. In der Realität misst man dort eine deutlich höhere Temperatur von im Mittel ca. 14 °C. Die Differenz von 32 K wird durch den Treibhauseffekt verursacht.
@@ -103,17 +125,13 @@ Somit ergibt sich für die Erde eine Temperatur von ca. -18 °C, die allein veru
 
 Ebenso lässt sich mit Hilfe des Stefan-Boltzmann-Gesetzes aus den oben gegebenen Werten die effektive Oberflächentemperatur der Sonne errechnen.
 
-Der Radius der Sonne beträgt $R_S = 6.963 \times 10^8$ m. Ihre Leuchtkraft lässt sich über die Solarkonstante $S$ und den Radius $d$ der Erdumlaufbahn angeben. Es gilt 
-$$
+Der Radius der Sonne beträgt $R_S = 6.963 \times 10^8$ m. Ihre Leuchtkraft lässt sich über die Solarkonstante $S$ und den Radius $d$ der Erdumlaufbahn angeben. Es gilt $$
 P_{out} = 4 \pi d^2 \, S
-$$
-Die Fläche des angenommenen schwarzen Strahlers ist
-$$
+$$ Die Fläche des angenommenen schwarzen Strahlers ist $$
 A = 4 \pi R_S^2
 $$
 
-Die Temperatur auf der Sonnenoberfläche ist demnach
-$$
+Die Temperatur auf der Sonnenoberfläche ist demnach $$
 T = \sqrt[4]{\frac{P_{out}}{\sigma A}}
 $$
 
@@ -125,7 +143,9 @@ P_out = 4 * pi * AU^2 * S;
 R_S = 6.96342e8;
 A = 4 * pi * R_S^2;
 T = (P_out / sigma / A)^0.25;
-println("Effektive Temperatur der Sonne: T = $(round(T, digits=2)) K.")
+Markdown.parse("""
+Die effektive Temperatur der Sonne ist T = $(round(T, digits=2)) K.
+""")
 ```
 
 Die Temperatur, die ein gleich großer schwarzer Strahler haben müsste, um die gleiche Strahlung abzugeben, beträgt also etwa 5770 K.

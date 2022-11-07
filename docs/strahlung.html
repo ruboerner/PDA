@@ -335,40 +335,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[
 \Omega = \int_0^{2 \pi} \mathrm d\phi \int_0^\theta \sin\theta' \mathrm d\theta' =  2 \pi \left( 1 - \cos\theta \right)
 \]</span></p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>R_E <span class="op">=</span> <span class="fl">6.3781e6</span>;</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>AU <span class="op">=</span> <span class="fl">1.495978707e11</span>;</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu">atan</span>(R_E <span class="op">/</span> AU);</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bs <span class="op">=</span> alpha <span class="op">*</span> <span class="fl">180</span> <span class="op">/</span> <span class="cn">pi</span> <span class="op">*</span> <span class="fl">3600</span>;</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Omega <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> (<span class="fl">1</span> <span class="op">-</span> <span class="fu">cos</span>(alpha <span class="op">/</span> <span class="fl">2</span>));</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Die scheinbare Größe beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(bs, digits<span class="op">=</span><span class="fl">2</span>))<span class="st"> Bogensekunden."</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Der Raumwinkel beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(Omega, sigdigits<span class="op">=</span><span class="fl">2</span>))<span class="st"> sr."</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Die Sonne emittiert das </span><span class="sc">$</span>(<span class="fu">round</span>(<span class="fl">4</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">/</span> Omega, sigdigits<span class="op">=</span><span class="fl">2</span>))<span class="st">-fache bezogen auf die Erdscheibe."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Markdown</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>R_E <span class="op">=</span> <span class="fl">6.3781e6</span>;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>AU <span class="op">=</span> <span class="fl">1.495978707e11</span>;</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu">atan</span>(R_E <span class="op">/</span> AU);</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>bs <span class="op">=</span> alpha <span class="op">*</span> <span class="fl">180</span> <span class="op">/</span> <span class="cn">pi</span> <span class="op">*</span> <span class="fl">3600</span>;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Omega <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> (<span class="fl">1</span> <span class="op">-</span> <span class="fu">cos</span>(alpha <span class="op">/</span> <span class="fl">2</span>));</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Markdown.<span class="fu">parse</span>(<span class="st">"""</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">Die scheinbare Größe beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(bs, digits<span class="op">=</span><span class="fl">2</span>))<span class="st"> Bogensekunden.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="st">Der Raumwinkel beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(Omega, sigdigits<span class="op">=</span><span class="fl">2</span>))<span class="st"> sr.</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">Die Sonne emittiert das </span><span class="sc">$</span>(<span class="fu">round</span>(<span class="fl">4</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">/</span> Omega, sigdigits<span class="op">=</span><span class="fl">2</span>))<span class="st">-fache bezogen auf die Erdscheibe.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># println("Der Raumwinkel beträgt $(round(Omega, sigdigits=2)) sr.")</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># println("Die Sonne emittiert das $(round(4 * pi / Omega, sigdigits=2))-fache bezogen auf die Erdscheibe.")</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Die scheinbare Größe beträgt 17.59 Bogensekunden.
-Der Raumwinkel beträgt 5.7e-9 sr.
-Die Sonne emittiert das 2.2e9-fache bezogen auf die Erdscheibe.</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<p>Die scheinbare Größe beträgt 17.59 Bogensekunden.</p>
+<p>Der Raumwinkel beträgt 5.7e-9 sr.</p>
+<p>Die Sonne emittiert das 2.2e9-fache bezogen auf die Erdscheibe.</p>
 </div>
 </div>
 </section>
 <section id="solarkonstante" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="solarkonstante"><span class="header-section-number">5.2</span> Solarkonstante</h2>
-<p>Die Leuchtkraft der Sonne verteilt sich gleichmäßig (isotrop) auf einer Kugeloberfläche. In der Entfernung von 1 AU ergibt sich daraus die Solarkonstante rechnerisch zu</p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> <span class="fl">3.828e26</span> <span class="op">/</span> <span class="fl">4</span> <span class="op">/</span> <span class="cn">pi</span> <span class="op">/</span> AU<span class="op">^</span><span class="fl">2</span>;</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Solarkonstante: S=</span><span class="sc">$</span>(<span class="fu">round</span>(S, digits<span class="op">=</span><span class="fl">2</span>))<span class="st">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> <span class="fl">3.828e26</span> <span class="op">/</span> <span class="fl">4</span> <span class="op">/</span> <span class="cn">pi</span> <span class="op">/</span> AU<span class="op">^</span><span class="fl">2</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Markdown.<span class="fu">parse</span>(<span class="st">"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">Die Leuchtkraft der Sonne verteilt sich gleichmäßig (isotrop) auf einer Kugeloberfläche. In der Entfernung von 1 AU ergibt sich daraus die Solarkonstante rechnerisch zu</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">``S = `` </span><span class="sc">$</span>(<span class="fu">round</span>(S, digits<span class="op">=</span><span class="fl">2</span>))<span class="st"> W/m``^2``.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Solarkonstante: S=1361.17</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<p>Die Leuchtkraft der Sonne verteilt sich gleichmäßig (isotrop) auf einer Kugeloberfläche. In der Entfernung von 1 AU ergibt sich daraus die Solarkonstante rechnerisch zu</p>
+<p><span class="math inline">\(S =\)</span> 1361.17 W/m<span class="math inline">\(^2\)</span>.</p>
 </div>
 </div>
-<p>Der über Satellitenmessungen betimmte Wert beträgt <span class="math inline">\(S=1361\)</span> W/m<span class="math inline">\(^{2}\)</span>.</p>
-<p>Die Verteilung von Kontinenten und Ozeanen auf der Erdoberfläche führt zur Absorption und unvollständigen Rückstrahlung der Sonneneinstrahlung. Das Rückstrahlvermögen oder die Albedo der Erde beträgt 0.3, damit beträgt die Absorption 0.7.</p>
+<p>Der über Satellitenmessungen bestimmte Wert ist <span class="math inline">\(S=1361\)</span> W/m<span class="math inline">\(^{2}\)</span>.</p>
+<p>Die Verteilung von Kontinenten und Ozeanen auf der Erdoberfläche führt zur Absorption und unvollständigen Rückstrahlung der Sonneneinstrahlung. Das Rückstrahlvermögen oder die Albedo der Erde ist 0.3, damit beträgt die Absorption 0.7.</p>
+<p>Mit der experimentell bestimmten Solarkonstante können wir zwei Größen abschätzen:</p>
+<ul>
+<li>Temperatur auf der Erdoberfläche ohne Einfluss der Atmosphäre</li>
+<li>effektive Oberflächentemperatur eines der Sonne äquivalenten schwarzen Strahlers.</li>
+</ul>
 <section id="temperatur-auf-der-erdoberfläche" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="temperatur-auf-der-erdoberfläche"><span class="header-section-number">5.2.1</span> Temperatur auf der Erdoberfläche</h3>
 <p>Wir benutzen das Stefan-Boltzmann-Gesetz, um die Oberflächentemperatur der Erde ohne Berücksichtigung der Atmosphäre zu berechnen.</p>
@@ -384,14 +400,17 @@ P = \sigma\, A \, T^4
 <p>Mit der oben angegeben Absorption von 0.7 gilt für die Einstrahlung auf der als Kreisscheibe angenommenen Erdoberfläche</p>
 <p><span class="math display">\[
 P_{in} = 0.7 \, S \, \pi R_E^2
-\]</span> Die Einstrahlung beträgt bei vollständiger Absorption dagegen</p>
-<div class="cell" data-execution_count="3">
+\]</span></p>
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"</span><span class="sc">$</span>(<span class="fu">round</span>(S <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> R_E<span class="op">^</span><span class="fl">2</span> <span class="op">*</span> <span class="fl">1e-15</span>, digits<span class="op">=</span><span class="fl">3</span>))<span class="st"> PW."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Markdown.<span class="fu">parse</span>(<span class="st">"""</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">Die Einstrahlung beträgt bei vollständiger Absorption dagegen</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>(<span class="fu">round</span>(S <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> R_E<span class="op">^</span><span class="fl">2</span> <span class="op">*</span> <span class="fl">1e-15</span>, digits<span class="op">=</span><span class="fl">3</span>))<span class="st"> PW.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>173.958 PW.</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<p>Die Einstrahlung beträgt bei vollständiger Absorption dagegen 173.958 PW.</p>
 </div>
 </div>
 <p>Die Einstrahlung beträgt also etwa 174 Petawatt! Die aktuell leistungsfähigsten Laser (LLNL (USA): “Nova Laser”, 2012; Osaka Univ. (Japan): “LFEX”, 2015; EU: “ELI-NP”, 2015) erreichten kurzzeitig 1.25, 2 bzw. 10 PW für 0.5, 1 bzw. &lt; 0.01 Pikosekunden (1 Pikosekunde = 10<span class="math inline">\(^{-12}\)</span> s), was einer Energie von 600, 2000 bzw. 10 J entspricht.</p>
@@ -400,16 +419,18 @@ P_{out} = \sigma 4 \pi R_E^2 T^4
 \]</span> Daraus ermitteln wir die Oberflächentemperatur eines äquivalenten schwarzen Strahlers. Sie lautet <span class="math display">\[
 T = \sqrt[4]{\frac{0.7 S}{4 \sigma}}
 \]</span></p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> <span class="fl">1361</span>;</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">5.670374419e-8</span>;</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> (<span class="fl">0.7</span> <span class="op">*</span> S <span class="op">/</span> <span class="fl">4</span>  <span class="op">/</span>sigma)<span class="op">^</span><span class="fl">0.25</span> <span class="op">-</span> <span class="fl">273.15</span>;</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Oberflächentemperatur: T = </span><span class="sc">$</span>(<span class="fu">round</span>(T, digits<span class="op">=</span><span class="fl">1</span>))<span class="st"> °C"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> <span class="fl">1361</span>;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">5.670374419e-8</span>;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> (<span class="fl">0.7</span> <span class="op">*</span> S <span class="op">/</span> <span class="fl">4</span>  <span class="op">/</span>sigma)<span class="op">^</span><span class="fl">0.25</span> <span class="op">-</span> <span class="fl">273.15</span>;</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Markdown.<span class="fu">parse</span>(<span class="st">"""</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">Die Oberflächentemperatur auf der Erde beträgt ohne Atmosphäre T = </span><span class="sc">$</span>(<span class="fu">round</span>(T, digits<span class="op">=</span><span class="fl">1</span>))<span class="st"> °C.</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Oberflächentemperatur: T = -18.6 °C</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<p>Die Oberflächentemperatur auf der Erde beträgt ohne Atmosphäre T = -18.6 °C.</p>
 </div>
 </div>
 <p>Somit ergibt sich für die Erde eine Temperatur von ca. -18 °C, die allein verursacht durch die Sonneneinstrahlung, jedoch ohne Berücksichtigung des Einflusses der Atmosphäre (Treibhauseffekt) auf der Erdoberfläche herrschen würde. In der Realität misst man dort eine deutlich höhere Temperatur von im Mittel ca. 14 °C. Die Differenz von 32 K wird durch den Treibhauseffekt verursacht.</p>
@@ -427,17 +448,19 @@ A = 4 \pi R_S^2
 T = \sqrt[4]{\frac{P_{out}}{\sigma A}}
 \]</span></p>
 <p>Wir setzen ein und erhalten</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>P_out <span class="op">=</span> <span class="fl">4</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> AU<span class="op">^</span><span class="fl">2</span> <span class="op">*</span> S;</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>R_S <span class="op">=</span> <span class="fl">6.96342e8</span>;</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">4</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> R_S<span class="op">^</span><span class="fl">2</span>;</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> (P_out <span class="op">/</span> sigma <span class="op">/</span> A)<span class="op">^</span><span class="fl">0.25</span>;</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Effektive Temperatur der Sonne: T = </span><span class="sc">$</span>(<span class="fu">round</span>(T, digits<span class="op">=</span><span class="fl">2</span>))<span class="st"> K."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>P_out <span class="op">=</span> <span class="fl">4</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> AU<span class="op">^</span><span class="fl">2</span> <span class="op">*</span> S;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>R_S <span class="op">=</span> <span class="fl">6.96342e8</span>;</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">4</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> R_S<span class="op">^</span><span class="fl">2</span>;</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> (P_out <span class="op">/</span> sigma <span class="op">/</span> A)<span class="op">^</span><span class="fl">0.25</span>;</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Markdown.<span class="fu">parse</span>(<span class="st">"""</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">Die effektive Temperatur der Sonne ist T = </span><span class="sc">$</span>(<span class="fu">round</span>(T, digits<span class="op">=</span><span class="fl">2</span>))<span class="st"> K.</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Effektive Temperatur der Sonne: T = 5769.17 K.</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<p>Die effektive Temperatur der Sonne ist T = 5769.17 K.</p>
 </div>
 </div>
 <p>Die Temperatur, die ein gleich großer schwarzer Strahler haben müsste, um die gleiche Strahlung abzugeben, beträgt also etwa 5770 K.</p>
