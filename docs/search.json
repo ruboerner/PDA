@@ -1,0 +1,226 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Physik der Hochatmosphäre",
+    "section": "",
+    "text": "Das Skript zur Vorlesung “Physik der Hochatmosphäre” entsteht semesterbegleitend und erhebt nicht den Anspruch auf Vollständigkeit und Korrektheit.\nEs wird mit Quarto, einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt.\nAlle Änderungen sind in GitHub nachvollziehbar. Ein PDF-Dokument mit aktuellem Inhalt kann dort heruntergeladen werden."
+  },
+  {
+    "objectID": "einf.html#motivation",
+    "href": "einf.html#motivation",
+    "title": "2  Einführung",
+    "section": "2.1 Motivation",
+    "text": "2.1 Motivation\nIn der Physik der Ionosphäre und Magnetosphäre behandeln wir Prozesse im erdnahen Raum. Dort werden physikalische Vorgänge durch das Erdmagnetfeld oder seine Interaktion mit dem interplanetaren Magnetfeld bestimmt.\nEine besondere Rolle spielen hier geladene Teilchen. Wir werden sehen, dass der erdnahe Raum nicht wirklich leer ist, sondern aus einem stark verdünnten Gas aus geladenen und neutralen Teilchen besteht. Die Annahme, dass im Universum Vakuum herrscht, ist falsch. Neben der elektromagnetischen Wellenstrahlung der Sonne beobachtet man auch einen Partikelstrom aus geladenen Teilchen. Dieses Teilchengemisch wird Plasma genannt.\nIn unserem Sonnensystem findet wir Plasma beispielsweise im Sonnenwind, der als ständiger Strom geladener Teilchen mit Geschwindigkeiten von etwa 400 bis 600 km/s die Sonnenoberfläche verlässt.\nGelangt der Sonnenwind in den Wirkungsbereich der Magnetosphäre, werden die geladenen Teilchen des Plasmas einer Kraft ausgesetzt, die durch das irdische Magnetfeld hervorgerufen wird. Diese Kraft ist die Lorentzkraft.\nAndererseits bringt die elektromagnetische Wellenstrahlung der Sonne Energie in die Atmosphäre ein und führt zu einer höhenabhängigen Ionisierung der Atmosphäre. Die Ionenproduktionsrate ist in der Dynamoschicht besonders hoch. Dort besitzt die hohe Atmosphäre eine beachtliche elektrische Leitfähigkeit. Dort bilden sich großräumige elektrische Stromsysteme.\nDie an diese Stromsysteme gekoppelten Magnetfelder können an der Erdoberfläche gemessen werden. Da sie zeitlich variabel und großräumig sind, eignen sich die Variationen als Energiequelle für die Magnetotellurik. Andererseits führen Magnetfeldvariationen zu unerwünschten Störeffekten bei geomagnetischen Messungen. Diese werden durch Variometer erfasst und durch eine Variationskorrektur aus den Messungen eliminiert.\nStromsysteme sind immer an bewegte Teilchenpopulationen geknüpft. Diese können auch in der Magnetosphäre auftreten und bilden die Van-Allen-Gürtel. Eine kurzzeitige Erhöhung der Teilchendichte in der Magnetosphäre, vor allem durch Koronale Massenauswürfe auf der Sonnenoberfläche (engl. coronal mass ejection, CME), führt zur Ausbildung von mehreren Stunden bis Tagen andauernden verstärkten Ringströmen von einigen Erdradien Durchmesser, deren messbare magnetische Wirkung als magnetischer Sturm bezeichnet wird."
+  },
+  {
+    "objectID": "einf.html#plasma",
+    "href": "einf.html#plasma",
+    "title": "2  Einführung",
+    "section": "2.2 Plasma",
+    "text": "2.2 Plasma\nUnser Universum besteht zu 68 % aus dunkler Energie, zu 27 % aus dunkler Materie und zu 5 % aus gewöhnlicher Materie (Atomen) (NASA Science).\nDie gewöhnliche –sichtbare– Materie besteht zu über 99.9 % aus Plasma.\n\n\n\n\n\nKertz, W. (1971) Einführung in die Geophysik II. Bibliographisches Institut, Mannheim."
+  },
+  {
+    "objectID": "atmo.html#gliederung-der-atmosphäre",
+    "href": "atmo.html#gliederung-der-atmosphäre",
+    "title": "3  Die Atmosphäre der Erde",
+    "section": "3.1 Gliederung der Atmosphäre",
+    "text": "3.1 Gliederung der Atmosphäre\nIn Kertz (1971) finden wir die folgende Gliederung der Atmosphäre Abbildung 3.1 hinsichtlich des Temperaturverlaufs, der Homogenität sowie der Elektronendichte. Von großer Bedeutung für die Physik der Hochatmosphäre ist der Magnetfeldeinfluss.\nUnterhalb einer Höhe von 50 km befinden sich 99.9 % der Gesamtmasse der Atmosphäre. Die übrigen 0.1 % verteilen sich auf ein Vielfaches des Erdvolumens.\nDie Physik der Hochatmosphäre beobachtet Vorgänge in einem stark verdünnten Gas.\n\n\n\nAbbildung 3.1: Gliederung der Atmosphäre (aus Kertz)"
+  },
+  {
+    "objectID": "atmo.html#prinzipien-der-einteilung",
+    "href": "atmo.html#prinzipien-der-einteilung",
+    "title": "3  Die Atmosphäre der Erde",
+    "section": "3.2 Prinzipien der Einteilung",
+    "text": "3.2 Prinzipien der Einteilung\nDie Sonnenstrahlung bewirkt eine teilweise Ionisation der Luft in der oberen Atmosphäre. Daher ist es sinnvoll, für den ionisierten Anteil eine andere Einteilung als für die Neutralgaskomponente zu benutzen.\n\n3.2.1 Neutralgaskomponente\n\n3.2.1.1 Temperaturverlauf\nMan unterscheidet\n\nTroposphäre: Wettergeschehen, beeinflusst durch Wasser, Erdoberfläche und Erdrotation\nStratosphäre: Geringe vertikale Durchmischung, Strahlungsabsorption des Ozons führt zu Temperaturzunahme\nMesosphäre: Temperaturabnahme mit zunehmender Höhe bewirkt weniger starke Dichteverringerung\nThermosphäre: Ansteigende Temperatur\n\n\n\n3.2.1.2 Homogenität\nEs wird unterschieden zwischen Homo- und Heterosphäre.\nIn den unteren 100 km ist das Neutralgas bei konstanten Mischungsverhältnissen als Folge von Turbulenzen gut durchmischt.\nIn der Heterosphäre erfolgt eine Entmischung. Mit zunehmender Höhe treten mehr leichte Teilchen auf. In sehr großen Höhen treten wegen der geringen Dichte keine Stöße zwischen den Teilchen auf. Die Teilchen bewegen sich auf Keplerbahnen oder verlassen den Einflussbereich der Erdanziehung, wenn ihre Geschwindigkeiten die Fluchtgeschwindigkeit übersteigen. Dieser Bereich wird Exosphäre genannt.\nDie Entweichmöglichkeit besteht nur für Neutralgasteilchen. Ionisierte Teilchen verhalten sich anders.\n\n\n\n3.2.2 Ionisierte Komponente\n\n3.2.2.1 Elektronendichte\n\n\n3.2.2.2 Magnetfeldeinfluss\nEine etwas andere Darstellung:\n\n\n\nVertikale Gliederung der Atmosphäre (aus https://www.britannica.com/science/ionosphere-and-magnetosphere)"
+  },
+  {
+    "objectID": "atmo.html#die-grenze-zur-hochatmosphäre",
+    "href": "atmo.html#die-grenze-zur-hochatmosphäre",
+    "title": "3  Die Atmosphäre der Erde",
+    "section": "3.3 Die Grenze zur Hochatmosphäre",
+    "text": "3.3 Die Grenze zur Hochatmosphäre\nDie Grenze zur Hochatmosphäre ist nicht einheitlich festgelegt. Sie liegt bei \\(h > 50\\) km.\nWarum wird diese Grenze eingeführt? Dies hat verschiedene Gründe, die von der Methode der Erforschung der Atmosphäre, von der Zusammensetzung der Atmosphäre sowie vom Einfluss der solaren Aktivität abhängen.\nVor allem handelt es sich um eine physikalische Einfussgrenze.\n\n3.3.1 Methode der Erforschung\nRegistrierballons erreichen nur Höhen bis etwa 50 km, darüberhinaus sind entweder nur Momentaufnahmen (etwa wegen der hohen Geschwindigkeit von Forschungsraketen) oder indirekte Beobachtungen möglich.\nSo geben beispielsweise magnetische Aufzeichungen an der Erdoberfläche Hinweise auf elektrische Ströme in leitfähigen Schichten der Ionosphäre.\nSpektren von Polarlichtern geben Hinweise auf die chemische Zusammensetzung.\nAn der Ionosphäre reflektierte Radiowellen liefern Hinweise auf die Teilchendichte und Windbewegungen.\n\n\n3.3.2 Luftchemie\nIn Höhen bis zu 50 km ist die Luft gleichmäßig durchmischt. Ihre Zusammensetzung entspricht der an der Erdoberfläche. Oberhalb von 50 km tritt eine höhendifferenzierte unterschiedliche Luftzusammensetzung auf, die durch Ionisation, Dissoziation und gravitative Entmischung verursacht wird.,\n\n\n3.3.3 Steuerung durch solare Aktivität\nDie Dynamik der unteren Atmosphäre äußert sich in kleinskaligen und kurzzeitigen Wettervorgängen.\nStörungen der oberen Atmosphäre sind räumlich ausgedehnter und umfassen mindestens die gesamte Tag- oder Nachtseite der Erde. Verursacht werden sie durch Eruptionen auf der Sonne.\nIm Gegensatz dazu werden die Prozesse in der unteren Atmosphäre nicht wesentlich von der solaren Aktivität beeinflusst.\nDie Grenze zwischen unterer und oberer Atmosphäre ist eine physikalische Einflussgrenze."
+  },
+  {
+    "objectID": "atmo.html#aeronomie",
+    "href": "atmo.html#aeronomie",
+    "title": "3  Die Atmosphäre der Erde",
+    "section": "3.4 Aeronomie",
+    "text": "3.4 Aeronomie\nDie Physik der Hochatmosphäre wird auch als Aeronomie bezeichnet (im Gegensatz zur Meteorologie als Physik der unteren Atmosphäre). Die wissenschaftliche Dachvereinigung zur Erforschung der Hochatmosphäre ist die IAGA (International Association of Geomagnetism and Aeronomy).\n\n\n\n\nKertz, W. (1971) Einführung in die Geophysik II. Bibliographisches Institut, Mannheim."
+  },
+  {
+    "objectID": "aufbau.html#grundprinzipien-des-aufbaus-der-sonne",
+    "href": "aufbau.html#grundprinzipien-des-aufbaus-der-sonne",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.1 Grundprinzipien des Aufbaus der Sonne",
+    "text": "4.1 Grundprinzipien des Aufbaus der Sonne\n\n\n\nAbbildung 4.1: Aufbau eines sonnenähnlichen Hauptreihensterns (NASA image)\n\n\n\n\n\nAbbildung 4.2: Schnittdiagramm der Sonne. 1-Kern, 2-Strahlunszone, 3-Konvektionszone, 4-Photosphäre, 5-Chromosphäre, 6-Corona, 7-Sonnenfleck, 8-Granulation, 9-Protuberanz (Wikipedia)\n\n\nIn erster Näherung ist die Sonne kugelsymmetrisch aufgebaut. Sie befindet sich in einem stationären Gleichgewicht ohne Kontraktionen oder Schwingungen.\nDie Sonne vereint in sich etwa 99.86 % der Masse des Sonnensystems.\nIm Innern der Sonne herrscht ein hydrostatisches Gleichgewicht der nach außen wirkenden Druckkräfte und der nach innen gerichteten Gravitationskräfte. Es gilt\n\\[\n\\frac{d p(r)}{d r} = - f \\frac{\\rho(r) m(r)}{r^2}\n\\]\nmit\n\\[\nm(r) = 4 \\pi \\int_0 ^r \\rho(r) r^2 \\, dr\n\\]"
+  },
+  {
+    "objectID": "aufbau.html#energiefreisetzungsprozesse",
+    "href": "aufbau.html#energiefreisetzungsprozesse",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.2 Energiefreisetzungsprozesse",
+    "text": "4.2 Energiefreisetzungsprozesse\nDie primäre Quelle der Sonnenenergie ist die Verschmelzung von Wasserstoffkernen zu Heliumkernen. Dies geschieht im Kern der Sonne bei Temperaturen von \\(1.4 \\times 10^7\\) K.\nIn jeder Sekunde werden etwa 620 Millionen Tonnen Wasserstoff in Helium umgewandelt."
+  },
+  {
+    "objectID": "aufbau.html#energietransportmechanismen",
+    "href": "aufbau.html#energietransportmechanismen",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.3 Energietransportmechanismen",
+    "text": "4.3 Energietransportmechanismen\nEnergie gelangt nach außen durch\n\nStrahlung\nKonvektion\nWärmeleitung\n\nBenötigt wird ein Temperaturgefälle. Wärmestrom \\(\\mathbf J = -k \\nabla T\\).\n\n\n\nAbbildung 4.3: Temperatur- und Dichtemessungen von Skylab (Quelle: Wikipedia)"
+  },
+  {
+    "objectID": "aufbau.html#kern",
+    "href": "aufbau.html#kern",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.4 Kern",
+    "text": "4.4 Kern\nDie Hälfte der Sonnenmasse konzentriert sich innerhalb von 25 % des Sonnenradius. Im Zentrum der Sonne beträgt der Druck 200 Milliarden bar, die Dichte ist 150 g/cm\\(^3\\). Die Temperatur im Kern ist \\(15.7 \\times 10^6\\) K.\nNur im Kern wird thermische Energie durch Kernfusion freigesetzt. 99 % der Fusionsleistung von \\(3.9 \\times 10^{26}\\) W wird innerhalb von 24 % des Sonnenradius erzeugt. In einem Tausendstel des Volumens der Sonne entsteht die Hälfte ihrer Leistung. Die mittlere Leistungsdichte beträgt aber nur 140 W/m\\(^3\\).\nDie freigesetzte Energie wird durch Strahlung nach außen transportiert."
+  },
+  {
+    "objectID": "aufbau.html#strahlungs--und-konvektionszone",
+    "href": "aufbau.html#strahlungs--und-konvektionszone",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.5 Strahlungs- und Konvektionszone",
+    "text": "4.5 Strahlungs- und Konvektionszone\nAb etwa 30 % Sonnenradius findet keine Fusion mehr statt. Wärmeenergie wird neben der Strahlung durch Konvektion transportiert.\nAb 71 % des Sonnenradius wird der Wärmestrom durch Konvektion transportiert. Die Strömungsgeschwindigkeit ist mit ca. 10 m/s gering, die Konvektionszellen sind groß und beständig (Monate bis Jahre), und daher von Rotation und innerem Magnetfeld beeinflusst."
+  },
+  {
+    "objectID": "aufbau.html#sonnenoberfläche-und-umgebung",
+    "href": "aufbau.html#sonnenoberfläche-und-umgebung",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.6 Sonnenoberfläche und Umgebung",
+    "text": "4.6 Sonnenoberfläche und Umgebung\n\n4.6.1 Photosphäre\nDie Dichte nimmt immer schneller ab, das Material wird durchsichtig und die Photonen können ungehindert entweichen. Am Sonnenrand sieht man unter flacherem Beobachtungswinkel eine höhere, kältere Schicht, wodurch der Rand dunkler erscheint.\n\n\n4.6.2 Chromosphäre\nOberhalb der Photosphäre liegt die knapp 2000 km dicke Chromosphäre. Die Temperatur nimmt ab, die Dichte ebenso."
+  },
+  {
+    "objectID": "aufbau.html#äußere-atmosphäre",
+    "href": "aufbau.html#äußere-atmosphäre",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.7 Äußere Atmosphäre",
+    "text": "4.7 Äußere Atmosphäre\n\n4.7.1 Korona\nOberhalb der Chromosphäre befindet sich die Korona. Sie geht ohne scharfe Grenze in den interplanetaren Raum über. Die Korona erstreckt sich auf über ein bis zwei Sonnenradien. In der Korona regieren Gravitation und Magnetfeld.\n\n\n4.7.2 Sonnenwind\nIn der Korona entsteht der Sonnenwind, der mit etwa 300 km/s die Sonne verlässt."
+  },
+  {
+    "objectID": "aufbau.html#magnetfeld",
+    "href": "aufbau.html#magnetfeld",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.8 Magnetfeld",
+    "text": "4.8 Magnetfeld\nAn der Sonnenoberfläche lässt sich das Magnetfeld wegen des Zeeman-Effekts aus spektroskopischen Beobachtungen feststellen. Spektrallinien spalten sich bei Anwesenheit eines Magnetfeldes auf. Der Spektrallinienabstand ist proportional zur Feldstärke.\nDie Feldstärke im Umfeld von Sonnenflecken beträgt bis zu 0.4 T.\nDas großräumige Magnetfeld lässt sich nur grob durch ein Dipolfeld beschreiben. An der Sonnenoberfläche ist die Feldstärke mit etwa 100,000 nT nur etwa doppelt so groß wie das der Erde auf der Erdoberfläche."
+  },
+  {
+    "objectID": "aufbau.html#differentielle-rotation",
+    "href": "aufbau.html#differentielle-rotation",
+    "title": "4  Aufbau der Sonne",
+    "section": "4.9 Differentielle Rotation",
+    "text": "4.9 Differentielle Rotation\nDie Strahlungszone rotiert gleichförmig mit einer Periode von knapp 27 Tagen (Frequenz etwa 430 nHz, s. Abb. Abbildung 4.4) bis zur Tachokline, der Übergangszone zur differentiell rotierenden Konvektionszone.\n\n\n\nAbbildung 4.4: Radialer Verlauf der Sonnenrotation für verschiedene heliographische Breiten. Ausgehend von der differentiell rotierenden Oberfläche steigt in den oberen 4 % die Winkelgeschwindigkeit steil an, um dann bis zur tachoklinen Region leicht abzufallen. Dort gleicht sie sich an die der nahezu starr rotierenden Strahlungszone an (Quelle: Wikipedia)."
+  },
+  {
+    "objectID": "strahlung.html#physikalische-größen",
+    "href": "strahlung.html#physikalische-größen",
+    "title": "5  Die Sonne als Energiequelle",
+    "section": "5.1 Physikalische Größen",
+    "text": "5.1 Physikalische Größen\nDie Erde umkreist die Sonne in einer annähernd kreisförmigen Umlaufbahn mit Radius 1 AU = \\(1.495978707 \\times 10^{8}\\) km.\nDie Sonne besitzt eine Strahlungsleistung (“Leuchtkraft”) von \\(3.828 \\times 10^{26}\\) W.\nDie scheinbare Größe der Erde aus der Sicht der Sonne beträgt ca. 18 Bogensekunden.\nDer Raumwinkel \\(\\Omega\\), unter dem die Erde erscheint, beträgt etwa \\(5.7\\times 10^{-9}\\) sr, damit emittiert die Sonne insgesamt etwa das \\(2.2\\times 10^9\\)-fache der Strahlung, die lediglich auf die Fläche der Erde entfällt.\nBerechnung der scheinbaren Größe:\n\\[\n\\alpha = 2 \\arctan \\left( \\frac{R}{d} \\right)\n\\]\nBerechnung des kanonischen Raumwinkels \\(\\Omega\\) eines Kegels mit Öffnungswinkel \\(2\\theta = \\alpha\\):\n\\[\n\\Omega = \\int_0^{2 \\pi} \\mathrm d\\phi \\int_0^\\theta \\sin\\theta' \\mathrm d\\theta' =  2 \\pi \\left( 1 - \\cos\\theta \\right)\n\\]\n\n\nCode\nusing Markdown\nR_E = 6.3781e6;\nAU = 1.495978707e11;\nalpha = 2 * atan(R_E / AU);\nbs = alpha * 180 / pi * 3600;\nOmega = 2 * pi * (1 - cos(alpha / 2));\nMarkdown.parse(\"\"\"\nDie scheinbare Größe beträgt $(round(bs, digits=2)) Bogensekunden.\n\nDer Raumwinkel beträgt $(round(Omega, sigdigits=2)) sr.\n\nDie Sonne emittiert das $(round(4 * pi / Omega, sigdigits=2))-fache bezogen auf die Erdscheibe.\n\"\"\")\n# println(\"Der Raumwinkel beträgt $(round(Omega, sigdigits=2)) sr.\")\n# println(\"Die Sonne emittiert das $(round(4 * pi / Omega, sigdigits=2))-fache bezogen auf die Erdscheibe.\")\n\n\nDie scheinbare Größe beträgt 17.59 Bogensekunden.\nDer Raumwinkel beträgt 5.7e-9 sr.\nDie Sonne emittiert das 2.2e9-fache bezogen auf die Erdscheibe."
+  },
+  {
+    "objectID": "strahlung.html#solarkonstante",
+    "href": "strahlung.html#solarkonstante",
+    "title": "5  Die Sonne als Energiequelle",
+    "section": "5.2 Solarkonstante",
+    "text": "5.2 Solarkonstante\n\n\nCode\nS = 3.828e26 / 4 / pi / AU^2;\nMarkdown.parse(\"\"\"\nDie Leuchtkraft der Sonne verteilt sich gleichmäßig (isotrop) auf einer Kugeloberfläche. In der Entfernung von 1 AU ergibt sich daraus die Solarkonstante rechnerisch zu\n\n``S = `` $(round(S, digits=2)) W/m``^2``.\n\"\"\")\n\n\nDie Leuchtkraft der Sonne verteilt sich gleichmäßig (isotrop) auf einer Kugeloberfläche. In der Entfernung von 1 AU ergibt sich daraus die Solarkonstante rechnerisch zu\n\\(S =\\) 1361.17 W/m\\(^2\\).\n\n\nDer über Satellitenmessungen bestimmte Wert ist \\(S=1361\\) W/m\\(^{2}\\).\nDie Verteilung von Kontinenten und Ozeanen auf der Erdoberfläche führt zur Absorption und unvollständigen Rückstrahlung der Sonneneinstrahlung. Das Rückstrahlvermögen oder die Albedo der Erde ist 0.3, damit beträgt die Absorption 0.7.\nMit der experimentell bestimmten Solarkonstante können wir zwei Größen abschätzen:\n\nTemperatur auf der Erdoberfläche ohne Einfluss der Atmosphäre\neffektive Oberflächentemperatur eines der Sonne äquivalenten schwarzen Strahlers.\n\n\n5.2.1 Temperatur auf der Erdoberfläche\nWir benutzen das Stefan-Boltzmann-Gesetz, um die Oberflächentemperatur der Erde ohne Berücksichtigung der Atmosphäre zu berechnen.\n\n5.2.1.1 Stefan-Boltzmann-Gesetz\nDas Stefan-Boltzmann-Gesetz gibt an, welche Strahlungsleistung \\(P\\) ein schwarzer Körper der Fläche \\(A\\) und der absoluten Temperatur \\(T\\) aussendet. Es lautet\n\\[\nP = \\sigma\\, A \\, T^4\n\\] mit der Stefan-Boltzmann-Konstanten\n\\[\n\\sigma = 5.670374419 \\times 10^{-8}~W\\cdot m^{-2} K^{-4}\n\\] Zur Lösung des Problems stellen wir eine Strahlungsbilanz auf, wonach die Sonneneinstrahlung auf der Erdoberfläche gleich der Abstrahlung in den Kosmos ist.\nMit der oben angegeben Absorption von 0.7 gilt für die Einstrahlung auf der als Kreisscheibe angenommenen Erdoberfläche\n\\[\nP_{in} = 0.7 \\, S \\, \\pi R_E^2\n\\]\n\n\nCode\nMarkdown.parse(\"\"\"\nDie Einstrahlung beträgt bei vollständiger Absorption dagegen\n$(round(S * pi * R_E^2 * 1e-15, digits=3)) PW.\n\"\"\")\n\n\nDie Einstrahlung beträgt bei vollständiger Absorption dagegen 173.958 PW.\n\n\nDie Einstrahlung beträgt also etwa 174 Petawatt! Die aktuell leistungsfähigsten Laser (LLNL (USA): “Nova Laser”, 2012; Osaka Univ. (Japan): “LFEX”, 2015; EU: “ELI-NP”, 2015) erreichten kurzzeitig 1.25, 2 bzw. 10 PW für 0.5, 1 bzw. < 0.01 Pikosekunden (1 Pikosekunde = 10\\(^{-12}\\) s), was einer Energie von 600, 2000 bzw. 10 J entspricht.\nDie Abstrahlung in den Kosmos ist \\[\nP_{out} = \\sigma 4 \\pi R_E^2 T^4\n\\] Daraus ermitteln wir die Oberflächentemperatur eines äquivalenten schwarzen Strahlers. Sie lautet \\[\nT = \\sqrt[4]{\\frac{0.7 S}{4 \\sigma}}\n\\]\n\n\nCode\nS = 1361;\nsigma = 5.670374419e-8;\nT = (0.7 * S / 4  /sigma)^0.25 - 273.15;\nMarkdown.parse(\"\"\"\nDie Oberflächentemperatur auf der Erde beträgt ohne Atmosphäre T = $(round(T, digits=1)) °C.\n\"\"\")\n\n\nDie Oberflächentemperatur auf der Erde beträgt ohne Atmosphäre T = -18.6 °C.\n\n\nSomit ergibt sich für die Erde eine Temperatur von ca. -18 °C, die allein verursacht durch die Sonneneinstrahlung, jedoch ohne Berücksichtigung des Einflusses der Atmosphäre (Treibhauseffekt) auf der Erdoberfläche herrschen würde. In der Realität misst man dort eine deutlich höhere Temperatur von im Mittel ca. 14 °C. Die Differenz von 32 K wird durch den Treibhauseffekt verursacht.\n\n\n\n5.2.2 Effektive Oberflächentemperatur der Sonne\nEbenso lässt sich mit Hilfe des Stefan-Boltzmann-Gesetzes aus den oben gegebenen Werten die effektive Oberflächentemperatur der Sonne errechnen.\nDer Radius der Sonne beträgt \\(R_S = 6.963 \\times 10^8\\) m. Ihre Leuchtkraft lässt sich über die Solarkonstante \\(S\\) und den Radius \\(d\\) der Erdumlaufbahn angeben. Es gilt \\[\nP_{out} = 4 \\pi d^2 \\, S\n\\] Die Fläche des angenommenen schwarzen Strahlers ist \\[\nA = 4 \\pi R_S^2\n\\]\nDie Temperatur auf der Sonnenoberfläche ist demnach \\[\nT = \\sqrt[4]{\\frac{P_{out}}{\\sigma A}}\n\\]\nWir setzen ein und erhalten\n\n\nCode\nP_out = 4 * pi * AU^2 * S;\nR_S = 6.96342e8;\nA = 4 * pi * R_S^2;\nT = (P_out / sigma / A)^0.25;\nMarkdown.parse(\"\"\"\nDie effektive Temperatur der Sonne ist T = $(round(T, digits=2)) K.\n\"\"\")\n\n\nDie effektive Temperatur der Sonne ist T = 5769.17 K.\n\n\nDie Temperatur, die ein gleich großer schwarzer Strahler haben müsste, um die gleiche Strahlung abzugeben, beträgt also etwa 5770 K."
+  },
+  {
+    "objectID": "strahlung.html#treibhausgase",
+    "href": "strahlung.html#treibhausgase",
+    "title": "5  Die Sonne als Energiequelle",
+    "section": "5.3 Treibhausgase",
+    "text": "5.3 Treibhausgase"
+  },
+  {
+    "objectID": "sonnenflecken.html#sonnenfleckenrelativzahl",
+    "href": "sonnenflecken.html#sonnenfleckenrelativzahl",
+    "title": "6  Sonnenflecken",
+    "section": "6.1 Sonnenfleckenrelativzahl",
+    "text": "6.1 Sonnenfleckenrelativzahl\nDie Häufigkeit der Sonnenflecken wird durch die Relativzahl erfasst.\nman zählt die Einzelflecken (Zahl $f$) und addiert dazu das Zehnfache der Gruppenanzahl (Zahl \\(g\\)).\nDie Sonnenfleckenrelativzahl ist eine Maßzahl der Sonnenaktivität und berechnet sich aus\n\\[\nR = k ( f + 10 g)\n\\]\nwobei \\(k\\) ein vom Beobachter und seinen Instrumenten abhängiger Korrekturfaktor ist."
+  },
+  {
+    "objectID": "sonnenflecken.html#aufzeichnungen-der-sonnenfleckenrelativzahl",
+    "href": "sonnenflecken.html#aufzeichnungen-der-sonnenfleckenrelativzahl",
+    "title": "6  Sonnenflecken",
+    "section": "6.2 Aufzeichnungen der Sonnenfleckenrelativzahl",
+    "text": "6.2 Aufzeichnungen der Sonnenfleckenrelativzahl\nZuständig für die Berechnung, Speicherung und Verbreitung der Sonnenfleckenrelativzahl ist das Solar Influences Data analysis Center (SIDC)."
+  },
+  {
+    "objectID": "plasmen.html#kollektives-verhalten",
+    "href": "plasmen.html#kollektives-verhalten",
+    "title": "7  Plasmen",
+    "section": "7.1 Kollektives Verhalten",
+    "text": "7.1 Kollektives Verhalten\nBewegen sich die geladenen Teilchen in einem Plasma, können sie lokale Änderungen der Ladungsträgerdichte hervorrufen. Die Folge sind elektrische Felder. Die Bewegung geladener Teilchen erzeugt elektrische Ströme, die wiederum von Magnetfeldern begleitet werden. Diese Feldeffekte beeinflussen die Bewegung geladener Teilchen in großen Abständen.\nBewegungsmuster der Teilchen hängen nicht nur von lokalen Bedingungen, sondern auch vom Zustand des Plasmas in entfernten Bereichen ab. Über große Entfernungen wirksame elektromagnetische Kräfte führen dazu, dass die Teilchen im Plasma simultan mit anderen interagieren.\nAußerdem muss man unterscheiden zwischen Ladung-Ladung- und Ladung-Neutralgas-Wechselwirkungen.\nDie wichtigsten Phänomene im Zusammenhang mit dem kollektivem Verhalten von Plasmen sind die Debye-Abschirmung sowie die Plasmafrequenz."
+  },
+  {
+    "objectID": "plasmen.html#typische-plasmen",
+    "href": "plasmen.html#typische-plasmen",
+    "title": "7  Plasmen",
+    "section": "7.2 Typische Plasmen",
+    "text": "7.2 Typische Plasmen\nFolgende Tabelle Tabelle 7.1 gibt einen Überblick über verschieden Plasmatypen und ihre Eigenschaften (Gibbon (2016)).\n\n\nTabelle 7.1: Plasmatypen\n\n\nTyp\nElektronendichte (cm\\(^{-3}\\))\nTemperatur (eV)\n\n\n\n\nSterne\n\\(10^{26}\\)\n2000\n\n\nTrägheitsfusion\n\\(10^{25}\\)\n3000\n\n\nMagnetische Fusion\n\\(10^{15}\\)\n1000\n\n\nLaser-generiert\n\\(10^{18}\\) - \\(10^{24}\\)\n100-1000\n\n\nEntladung\n\\(10^{12}\\)\n1-10\n\n\nIonosphäre\n\\(10^{6}\\)\n0.1\n\n\nInterstellarer Raum\n1\n0.01\n\n\n\n\n(1 eV = 11600 K)\n\n\n\nAbbildung 7.1: Dichte-Temperatur-Regime für typische Plasmen (aus Thorne & Blandford (2017))"
+  },
+  {
+    "objectID": "plasmen.html#debye-länge",
+    "href": "plasmen.html#debye-länge",
+    "title": "7  Plasmen",
+    "section": "7.3 Debye-Länge",
+    "text": "7.3 Debye-Länge\nEine wichtige Eigenschaft von Plasmen ist ihre Fähigkeit, elektrische Potentiale abzuschirmen.\nDebye & Hückel (1923a) und Debye & Hückel (1923b) vermitteln grundlegende Theorien zu den Wechselwirkungen von Ionen in Elektrolyten. Diese Erkenntnisse lassen sich auf Plasmen übertragen.\n\n\n\nAbbildung 7.2: Debye-Abschirmung von geladenen Kugeln in einem Plasma (aus Gibbon (2016))\n\n\n\n7.3.1 Herleitung\nJedes geladene Teilchen innerhalb eines Plasmas zieht andere Teilchen mit entgegengesetzter Ladung an und stößt Teilchen mit der gleichen Ladung ab, wodurch in der unmittelbaren Umgebung des Teilchens eine Wolke aus überwiegend entgegengesetzten Ladungen entsteht.\nDiese Wolke schirmt die eigene Ladung des Teilchens von der Außenwelt ab, d. h. sie bewirkt, dass das Coulomb-Feld des Teilchens bei großen Entfernungen exponentiell abnimmt, anstatt mit \\(1/r^2\\).\nDiese Debye-Abschirmung der Ladung eines Teilchens kann wie folgt demonstriert und quantifiziert werden (Thorne & Blandford (2017)):\nMan betrachte eine einzelne Testladung \\(Q\\) im Ursprung, die von einem Plasma aus Protonen und Elektronen umgeben ist. Wir definieren mit \\(n_p(r)\\) und \\(n_e(r)\\) die mittleren Dichten für Elektronen und Protonen als glatte Funktionen des Abstandes \\(r\\) von der Testladung, und mit \\(\\bar n\\) die mittleren Dichten von Elektronen und Protonen. Dann ist das elektrostatische Potential \\(\\Phi(r)\\) außerhalb des Teilchens Lösung der Poisson-Gleichung\n\\[\n-\\nabla^2 \\Phi = \\frac{n_p - n_e}{\\epsilon_0} e + \\frac{Q}{\\epsilon_0} \\delta(r)\n\\tag{7.1}\\]\nWir bezeichnen die Ladung eines Protons mit \\(+e\\) und die Ladung des Elektrons mit \\(-e\\).\nEin Proton besitzt in der Entfernung \\(r\\) von der Testladung das elektrostatische Potential \\(e \\Phi(r)\\).\nDie mittlere Ladungsträgerdichte ändert sich entsprechend zu\n\\[\nn_p(r) = \\bar n \\, e^{-\\dfrac{e \\Phi(r)}{kT}} \\approx \\bar n \\left(1 - \\frac{e \\Phi}{k T} \\right)\n\\]\nbzw.\n\\[\nn_e(r) = \\bar n \\, e^{+\\dfrac{e \\Phi(r)}{kT}} \\approx \\bar n \\left(1 + \\frac{e \\Phi}{k T} \\right).\n\\]\nDamit wird Gleichung 7.1 eine nichtlineare Differentialgleichung in \\(\\Phi\\), weil \\(n_p\\) und \\(n_e\\) Funktionen von \\(\\Phi\\) sind.\nWir können aber wegen \\(e\\Phi \\ll kT\\) die Exponentialfunktion in eine Taylorreihe entwickelt und Terme höherer Ordnung vernachlässigen.\nEinsetzen in Gleichung 7.1 liefert nach Linearisierung\n\\[\n-\\nabla^2 \\Phi + \\frac{2 \\bar n e^2}{\\epsilon_0 k T} \\Phi = \\frac{Q}{\\epsilon_0}\\delta(r).\n\\]\nDie kugelsymmetrische (nur von \\(r\\) abhängige) Lösung ist\n\\[\n\\Phi(r) = \\frac{Q}{4 \\pi \\epsilon_0 r} \\, e^{-\\sqrt{\\dfrac{2r^2}{\\lambda_D^2}}}\n\\]\nund besitzt die Form eines Coulomb-Potentials mit exponentiellem Abfall. Die charakteristische Skalenlänge dieses Abfalls ist der Debye-Radius\n\\[\n\\lambda_D = \\sqrt{ \\frac{\\epsilon_0 k T}{\\bar n e^2}}\n\\]\nund ist ein Maß für die Größe der Debye-Abschirmung. Der Debye-Radius hängt gleichermaßen von der Temperatur als auch von der Teilchendichte des Plasmas ab. In einem idealen Plasmsa befinden sich viele Teilchen innerhalb einer Kugel vom Radius \\(\\lambda_D\\). Die Anzahl ist\n\\[\nN_D = n_e \\frac{4 \\pi}{3} \\lambda_D^3 \\gg 1.\n\\]\n\n\n\nAbbildung 7.3: Ionenverteilung in einer Lösung (aus Wikipedia: Debye-Länge)\n\n\nWird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so reicht die Wirkung dieser Störung nur bis zu einer Entfernung der Größenordnung \\(\\lambda_D\\). Nur innerhalb dieses Abstandes weicht die lokale Ladungsträgerdichte signifikant von der makroskopischen elektrischen Neutralität ab (Abbildung 7.3).\n\n7.3.1.1 Beispiel\nIm Allgemeinen ist \\(\\lambda_D\\) sehr klein. In der Ionosphäre ist \\(n_e = 10^{12}\\) m\\(^{-3}\\) und \\(T=10^3\\) K. Damit ist \\(\\lambda_D = 10^{-3}\\) m.\n\n\n\nAbbildung 7.4: Typische Plasmaparameter (aus Thorne & Blandford (2017))\n\n\nDie Tabelle in Abbildung 7.4 gibt für typische Plasmen die folgenden charakteristischen Größen an:\n\nTeilchendichte der Elektronen \\(n_e\\)\nTemperatur T\nMagnetfeld \\(B\\)\nDebye-Länge \\(\\lambda_D\\)\nDebye-Zahl \\(N_D\\)\nPlasmafrequenz \\(\\omega_p\\)\n\\(\\nu_{ee}\\)\nLarmor-Kreisfrequenz \\(\\omega_c\\)\nLarmor-Radius \\(r_L\\)."
+  },
+  {
+    "objectID": "plasmen.html#plasmaschwingungen-und-plasmafrequenz",
+    "href": "plasmen.html#plasmaschwingungen-und-plasmafrequenz",
+    "title": "7  Plasmen",
+    "section": "7.4 Plasmaschwingungen und Plasmafrequenz",
+    "text": "7.4 Plasmaschwingungen und Plasmafrequenz\nDas wichtigste dynamische Phänomen in Plasmen ist die Schwingungsbewegung von Protonen und Elektronen relativ zueinander.\nWird ein Plasma plötzlich aus seinem Gleichgewichtszustand gebracht, verursachen die internen Raumladungsfelder kollektive Partikelbewegungen, welche anstreben, die ursprüngliche Ladungsneutralität wiederherzustellen.\nDiese kollektiven Schwingungsmuster laufen mit einer bestimmten Plasma-Frequenz ab. Wegen der hohen Frequenz tragen die Elektroden aufgrund ihrer im Vergleich zu Protonen geringeren Massenträgheit maßgeblich zur Plasmaschwingung bei. Elektronen schwingen kollektiv um die schweren Ionen, wobei die Rückstellkräfte durch die Ion-Elektron-Coulomb-Kräfte verursacht werden. Die Periodendauer dieser Bewegung ist eine typische Zeitskala.\n\n\n\nAbbildung 7.5: Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus Thorne & Blandford (2017))\n\n\n\n7.4.1 Herleitung\nWir platzieren das Plasma gemäß Abb. Abbildung 7.5 entlang einer unendlich ausgedehnten Ebene in \\(x=0\\) und nehmen an, dass alle Protonen ortsfest bleiben. Die Elektronen werden relativ zu den Protonen um den Betrag \\(\\xi_0\\) nach rechts in \\(x\\)-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten \\(-e \\bar n \\xi_0\\) am rechten Ende des Plasmas, sowie \\(+e \\bar n \\xi_0\\) am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas zum Zeitpunkt \\(t=0\\) ist \\(\\mathbf E = (E, 0, 0)^\\top\\), also\n\\[\nE = \\frac{e \\bar n \\xi_0}{\\epsilon_0}.\n\\]\nDieses Feld übt eine Coulomb-Kraft auf die Protonen und Elektronen aus. Die Bewegungsgleichung für die Veschiebung lautet\n\\[\n\\ddot \\xi = - \\frac{e}{m_e} E = - \\frac{e^2 \\bar n}{\\epsilon_0 m_e} \\xi.\n\\]\nDies ist eine harmonische Schwingungsdifferentialgleichung. Wir haben wegen des Masseverhältnisses von Elektronen zu Protonen \\(m_e/m_p = 1 / 1836\\) die Kraftwirkung auf die Protonen vernachlässigt.\nMit der oben angegebene Anfangsbedingung für \\(t=0\\) schwingen die Elektronen harmonisch mit den Ortskoordinaten\n\\[\n\\xi(t) = \\xi_0 \\cos(\\omega_p t),\n\\]\nwobei die Plasmafrequenz\n\\[\n\\omega_p = \\sqrt{ \\frac{\\bar n e^2}{\\epsilon_0 m_e} }\n\\]\nnur von der Plasmadichte \\(\\bar n\\) aber nicht von der Temperatur \\(T\\) oder der magnetischen Feldstärke abhängt.\nDie thermische Geschwindigkeit der Elektronen ist definiert durch\n\\[\nv_e = \\sqrt{ \\frac{k T}{m_e} },\n\\]\nsomit ist\n\\[\n\\omega_p = \\frac{v_e}{\\lambda_D}.\n\\]\nMit anderen Worten: Thermische Elektronen legen innerhalb einer Plasmaschwingungsperiode etwa eine Debye-Länge zurück.\n\n\n\n\nDebye, P. & Hückel, E. (1923) On the Debye length in strong electrolytes. Physikalische Zeitschrift, 24, 185.\n\n\nDebye, P. & Hückel, E. (1923) Zur Theorie der Elektrolyte. II. Das Grenzgesetz für die elektrische Leitfähigkeit. Physikalische Zeitschrift, 24, 305–325.\n\n\nGibbon, P. (2016) Introduction to Plasma Physics. CERN Yellow Reports, Vol 1 (2016): Proceedings of the 2014 CAS–CERN Accelerator School: Plasma Wake Acceleration, CERN, Geneva. doi:10.5170/CERN-2016-001.51\n\n\nThorne, K.S. & Blandford, R.D. (2017) Modern classical physics: optics, fluids, plasmas, elasticity, relativity, and statistical physics, Princeton University Press."
+  },
+  {
+    "objectID": "bewegungsgleichung.html#zyklotronfrequenz-und-gyrationsradius",
+    "href": "bewegungsgleichung.html#zyklotronfrequenz-und-gyrationsradius",
+    "title": "8  Newtonsche Bewegungsgleichung",
+    "section": "8.1 Zyklotronfrequenz und Gyrationsradius",
+    "text": "8.1 Zyklotronfrequenz und Gyrationsradius\nBei Anwesenheit eines Magnetfeldes bewegen sich geladene Teilchen in Schraubenlinien entlang der Feldlinien. Die Bewegungsgleichung für ein mit der Geschwindigkeit \\(\\mathbf v\\) bewegtes Teilchen der Masse \\(m\\) und Ladung \\(q\\) im Magnetfeld \\(\\mathbf B\\) lautet \\[\nm \\frac{d \\mathbf v}{d t} = q \\mathbf v \\times \\mathbf B\n\\]\nWir betrachten zunächst den Fall eines homogenen Magnetfeldes und setzen \\[\n\\mathbf B = const, \\quad \\mathbf E = 0, \\quad \\mathbf F = 0\n\\] Die Geschwindigkeit \\(\\mathbf v\\) zerlegen wir vektoriell in eine Komponente parallel und eine Komponente senkrecht zum magnetischen Feld. \\[\n\\mathbf v = \\mathbf v_\\| + \\mathbf v_\\perp\n\\] Gilt \\(\\mathbf v_\\| = const\\), dann ist \\(m \\dot{\\mathbf v}_\\| = 0\\) und \\[\nm \\dot{\\mathbf v}_\\perp = q \\mathbf v_\\perp \\times \\mathbf B.\n\\]"
+  },
+  {
+    "objectID": "bewegungsgleichung.html#energieerhaltung",
+    "href": "bewegungsgleichung.html#energieerhaltung",
+    "title": "8  Newtonsche Bewegungsgleichung",
+    "section": "8.2 Energieerhaltung",
+    "text": "8.2 Energieerhaltung\nAn dieser Stelle klären wir, ob die kinetische Energie des Teilchens eine Erhaltungsgröße ist. Da \\(\\mathbf v_\\| = const\\), betrachten wir die Änderung der kinetischen Energie \\[\n\\frac{d E_{kin}}{d t} = \\frac{d}{dt} \\left( \\frac{1}{2} m |\\mathbf v_\\perp|^2  \\right) =\n\\mathbf v_\\perp \\cdot (m \\dot{\\mathbf v}_\\perp) = q \\mathbf v_\\perp \\cdot \\left( \\mathbf v_\\perp \\times \\mathbf B \\right) \\overset{!}{=} 0.\n\\] Damit ist gezeigt, dass die kinetische Energie eines Teilchens im Magnetfeld eine Erhaltungsgröße ist. Ein statisches Magnetfeld ändert also weder \\(\\mathbf v\\) noch die kinetische Energie. Dies ist eine sehr wichtige Erkenntnis mit weitreichenden Konsequenzen für den Fall, dass das Magnetfeld zeitlich variabel oder inhomogen ist."
+  },
+  {
+    "objectID": "bewegungsgleichung.html#flugbahn",
+    "href": "bewegungsgleichung.html#flugbahn",
+    "title": "8  Newtonsche Bewegungsgleichung",
+    "section": "8.3 Flugbahn",
+    "text": "8.3 Flugbahn\nBewegt sich das Teilchen in einer Ebene senkrecht zu \\(\\mathbf B\\), dann gilt \\[\n\\mathbf v _\\| \\times \\mathbf B = \\mathbf 0\n\\] und \\[\n\\mathbf v_\\perp \\times \\mathbf B \\perp \\mathbf B.\n\\] Es gilt wegen \\(\\mathbf v = \\mathbf \\omega \\times \\mathbf r\\) (Bahngeschwindigkeit gleich Kreuzprodukt aus Winkelgeschwindigkeit und Ortsvektor) \\[\n\\dot{\\mathbf v}_\\perp = \\frac{q}{m} \\left( \\mathbf v_\\perp \\times \\mathbf B \\right) = \\boldsymbol \\omega_g \\times \\mathbf v_\\perp\n\\tag{8.2}\\] Die Größe \\(\\mathbf \\omega_g\\) ist die vektorielle Winkelgeschwindigkeit der Kreisbewegung. Es folgt \\[\n\\boldsymbol \\omega_g = - \\frac{q}{m} \\mathbf B =\n\\frac{|q|}{m} B \\, \\widehat{\\boldsymbol \\omega}_g =\n\\omega_g \\widehat{\\boldsymbol \\omega}_g\n\\] Der Betrag der Winkelgeschwindigkeit wird als Zyklotronfrequenz (oder Larmorfrequenz) bezeichnet. \\(\\widehat{\\mathbf \\omega}_g\\) ist der Einheitsvektor der Winkelgeschwindigkeit. Mit der Rechte-Hand-Regel ergibt sich die Bewegungsrichtung. Die Richtung der Kreisbewegung hängt vom Vorzeichen der Ladung des Teilchen ab. Es gilt \\[\nq < 0: \\qquad \\widehat{\\boldsymbol \\omega}_g \\| \\mathbf B \\qquad \\text{parallel}\n\\] \\[\nq > 0: \\qquad -\\widehat{\\boldsymbol \\omega}_g \\| \\mathbf B \\qquad \\text{antiparallel}\n\\] Integrieren wir Gleichung 8.2 zeitlich, erkennen wir den Zusammenhang zwischen Bahngeschwindigkeit und Teilchenposition. Es gilt \\[\n\\mathbf v_\\perp = \\boldsymbol \\omega_g \\times \\mathbf r_g\n\\] Mit \\(\\mathbf r_g\\) bezeichnen wir die Teilchenposition. Sie beschreibt eine Kreisbahn mit Radius \\(r_g\\) um den Gyrationsmittelpunkt, der auch als Führungszentrum bezeichnet wird.\n\n8.3.1 Beispiel\nWir berechnen die Zyklotronfrequenz und den Gyratonsradius für ein Elektron. Die Elektronenmasse ist \\[\nm_e = 9.109 \\times 10^{-31} ~\\text{kg},\n\\] seine Ladung entspricht der Elementarladung \\[\n|q| = e = 1.602 \\times 10^{-19} ~ \\text{C}.\n\\] Wird \\(\\mathbf B\\) in Tesla angegeben, gilt für die Zyklotronfrequenz des Elektrons die Gleichung \\[\n\\omega_c^e = \\frac{e B}{m_e} = 1.76 \\times 10^{11} \\, B \\text{ in rad}\\cdot s^{-1}\n\\] Da Protonen eine um den Faktor 1890 größere Masse als Elektronen besitzen, ist ihre Zyklotronfrequenz niedriger: \\[\n\\omega_c^p = \\frac{e B}{m_p} = 9.58 \\times 10^{7} \\, B \\text{ in rad}\\cdot s^{-1}\n\\] Der Gyrationsradius ist \\[\nr_g = \\frac{v_\\perp}{\\omega_g} = \\frac{m v_\\perp}{|q| B}.\n\\]"
+  },
+  {
+    "objectID": "Dipolefield_Motion.html#einlesen-der-julia-pakete",
+    "href": "Dipolefield_Motion.html#einlesen-der-julia-pakete",
+    "title": "9  Simulation der Teilchenbewegung mit Julia",
+    "section": "9.1 Einlesen der Julia-Pakete",
+    "text": "9.1 Einlesen der Julia-Pakete\n\n\nCode\nusing TestParticle\nusing TestParticle: getB_dipole, getE_dipole, sph2cart, Rₑ\nusing OrdinaryDiffEq\nusing Plots\nusing Statistics"
+  },
+  {
+    "objectID": "Dipolefield_Motion.html#definition-von-funktionen",
+    "href": "Dipolefield_Motion.html#definition-von-funktionen",
+    "title": "9  Simulation der Teilchenbewegung mit Julia",
+    "section": "9.2 Definition von Funktionen",
+    "text": "9.2 Definition von Funktionen\n\n\nCode\nfunction fieldline(ϕ::Float64, L::Float64=2.5, nP::Int=100)\n\n   xyz = [ sph2cart(L * sin(θ)^2, ϕ, θ) for θ in range(-π,stop=π,length=nP) ]\n   x = Vector{Float64}(undef, length(xyz))\n   y = Vector{Float64}(undef, length(xyz))\n   z = Vector{Float64}(undef, length(xyz))\n\n   for (i, pos) in enumerate(xyz)\n      x[i], y[i], z[i] = [pos...]\n   end\n\n   return (x, y, z)\nend\n\n\nfieldline (generic function with 3 methods)\n\n\n\n\nCode\nfunction plot_iso3d(xs, ys, zs; \n  lw=3, lc=:red, \n  title=\"Isometric 3D plot\",label=false, \n  camera=(45,30))\n    \n    x12, y12, z12 = extrema(xs), extrema(ys), extrema(zs)\n    d = maximum([diff([x12...]),diff([y12...]),diff([z12...])])[1] / 2\n    xm, ym, zm = mean(x12),  mean(y12),  mean(z12) \n\n    # plot data\n    p = Plots.plot(; xlabel=\"x\",ylabel=\"y\",zlabel=\"z\", aspect_ratio=:equal, grid=:true)\n    Plots.plot!(xlims=(xm-d,xm+d), ylims=(ym-d,ym+d), zlims=(zm-d,zm+d))\n    Plots.plot!(;camera=camera)\n    Plots.plot!(xs, ys, zs, title=title,lw=lw,lc=lc,label=label)\n    Plots.plot!(xs, ys, zlims(p)[1]  .+ 0*zs, lw=1, lc=:lightgray, label=false)\n    Plots.plot!(xs, ylims(p)[2]  .+ 0*ys, zs, lw=1, lc=:lightgray, label=false)\n    Plots.plot!(xlims(p)[1]  .+ 0*xs, ys, zs, lw=1, lc=:lightgray, label=false)\n    \nend\n\n\nplot_iso3d (generic function with 1 method)"
+  },
+  {
+    "objectID": "Dipolefield_Motion.html#beispiele",
+    "href": "Dipolefield_Motion.html#beispiele",
+    "title": "9  Simulation der Teilchenbewegung mit Julia",
+    "section": "9.3 Beispiele",
+    "text": "9.3 Beispiele\n\nEk = 5e7\n\nm = TestParticle.mᵢ\nq = TestParticle.qᵢ\nc = TestParticle.c;\n\n\n\nCode\nv₀ = sph2cart(c*sqrt(1-1/(1+Ek*q/(m*c^2))^2), 0.0, π/4)\nr₀ = sph2cart(2.5*Rₑ, 0.0, π/2)\nstateinit = [r₀..., v₀...]\nparam = prepare(getE_dipole, getB_dipole)\ntspan = (0.0, 20.0);\n\n\n\n\nCode\nprob = ODEProblem(trace_analytic!, stateinit, tspan, param);\n\n\n\n\nCode\nsol = solve(prob, Tsit5(); save_idxs=[1,2,3])\n\nx = getindex.(sol.u,1) / Rₑ\ny = getindex.(sol.u,2) / Rₑ\nz = getindex.(sol.u,3) / Rₑ;\n\n\n\n\nCode\nplot(x, y, z, aspect_ratio=:equal, legend=false)\nfor ϕ in range(0, stop=2*π, length=10)\n   plot!(fieldline(ϕ)..., color=\"red\", aspect_ratio=:equal, alpha=0.3, legend=false)\nend\n\ncurrent()\n\n\n\n\n\n\n\nCode\np = plot_iso3d(x, y, z, title=\"Charged particle traces\")\np"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Literaturverzeichnis",
+    "section": "",
+    "text": "Debye, P. & Hückel, E. (1923) On the debye length in strong\nelectrolytes. Physikalische Zeitschrift, 24,\n185.\n\n\nDebye, P. & Hückel, E. (1923) Zur Theorie der\nElektrolyte. II. Das Grenzgesetz für die\nelektrische Leitfähigkeit.\nPhysikalische Zeitschrift, 24, 305–325.\n\n\nGibbon, P. (2016) Introduction to plasma physics. CERN Yellow\nReports, Vol 1 (2016): Proceedings of the 2014 CAS–CERN Accelerator\nSchool: Plasma Wake Acceleration, CERN, Geneva. doi:10.5170/CERN-2016-001.51\n\n\nKertz, W. (1971) Einführung in die Geophysik II.\nBibliographisches Institut, Mannheim.\n\n\nThorne, K.S. & Blandford, R.D. (2017) Modern classical physics:\nOptics, fluids, plasmas, elasticity, relativity, and statistical\nphysics, Princeton University Press."
+  }
+]

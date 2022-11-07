@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.262">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Physik der Hochatmosphäre - 7&nbsp; Plasmen</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./bewegungsgleichung.html" rel="next">
+<link href="./sonnenflecken.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plasmen</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Physik der Hochatmosphäre</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vorbemerkung</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Einführung</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./einf.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einführung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./atmo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Die Atmosphäre der Erde</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Die ruhige und aktive Sonne</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aufbau.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Aufbau der Sonne</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strahlung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Die Sonne als Energiequelle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sonnenflecken.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sonnenflecken</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Plasmen und ihre Magnetfelder</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plasmen.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plasmen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bewegungsgleichung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Newtonsche Bewegungsgleichung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dipolefield_Motion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Simulation der Teilchenbewegung mit Julia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Die elektrische Leitfähigkeit der Ionosphäre</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./eej.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">EEJ</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Das erdmagnetische Außenfeld</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ionosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ionosphäre</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./variationen.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Variationen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./phenomena.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Phänomene im System der Magnetosphäre und Ionosphäre</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Zusammenfassung</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Literaturverzeichnis</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#kollektives-verhalten" id="toc-kollektives-verhalten" class="nav-link active" data-scroll-target="#kollektives-verhalten"><span class="toc-section-number">7.1</span>  Kollektives Verhalten</a></li>
+  <li><a href="#typische-plasmen" id="toc-typische-plasmen" class="nav-link" data-scroll-target="#typische-plasmen"><span class="toc-section-number">7.2</span>  Typische Plasmen</a></li>
+  <li><a href="#debye-länge" id="toc-debye-länge" class="nav-link" data-scroll-target="#debye-länge"><span class="toc-section-number">7.3</span>  Debye-Länge</a>
+  <ul class="collapse">
+  <li><a href="#herleitung" id="toc-herleitung" class="nav-link" data-scroll-target="#herleitung"><span class="toc-section-number">7.3.1</span>  Herleitung</a></li>
+  </ul></li>
+  <li><a href="#plasmaschwingungen-und-plasmafrequenz" id="toc-plasmaschwingungen-und-plasmafrequenz" class="nav-link" data-scroll-target="#plasmaschwingungen-und-plasmafrequenz"><span class="toc-section-number">7.4</span>  Plasmaschwingungen und Plasmafrequenz</a>
+  <ul class="collapse">
+  <li><a href="#herleitung-1" id="toc-herleitung-1" class="nav-link" data-scroll-target="#herleitung-1"><span class="toc-section-number">7.4.1</span>  Herleitung</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plasmen</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Der Begriff des Plasmas (von altgriechisch πλάσμα plásma) stammt aus dem Griechischen und bedeutet <em>das Gebildete, Geformte</em>.</p>
+<p>Wir benutzen die folgende Definition:</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ein Plasma ist ein quasineutrales Gas geladener und neutraler Teilchen mit kollektivem Verhalten.</p>
+</div>
+</div>
+<section id="kollektives-verhalten" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="kollektives-verhalten"><span class="header-section-number">7.1</span> Kollektives Verhalten</h2>
+<p>Bewegen sich die geladenen Teilchen in einem Plasma, können sie lokale Änderungen der Ladungsträgerdichte hervorrufen. Die Folge sind elektrische Felder. Die Bewegung geladener Teilchen erzeugt elektrische Ströme, die wiederum von Magnetfeldern begleitet werden. Diese Feldeffekte beeinflussen die Bewegung geladener Teilchen in großen Abständen.</p>
+<p>Bewegungsmuster der Teilchen hängen nicht nur von lokalen Bedingungen, sondern auch vom Zustand des Plasmas in entfernten Bereichen ab. Über große Entfernungen wirksame elektromagnetische Kräfte führen dazu, dass die Teilchen im Plasma simultan mit anderen interagieren.</p>
+<p>Außerdem muss man unterscheiden zwischen Ladung-Ladung- und Ladung-Neutralgas-Wechselwirkungen.</p>
+<p>Die wichtigsten Phänomene im Zusammenhang mit dem kollektivem Verhalten von Plasmen sind die Debye-Abschirmung sowie die Plasmafrequenz.</p>
+</section>
+<section id="typische-plasmen" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="typische-plasmen"><span class="header-section-number">7.2</span> Typische Plasmen</h2>
+<p>Folgende Tabelle <a href="#tbl-typen">Tabelle&nbsp;<span>7.1</span></a> gibt einen Überblick über verschieden Plasmatypen und ihre Eigenschaften (<span class="citation" data-cites="gibbon">Gibbon (<a href="references.html#ref-gibbon" role="doc-biblioref">2016</a>)</span>).</p>
+<div id="tbl-typen" class="anchored">
+<table class="table">
+<caption>Tabelle&nbsp;7.1: Plasmatypen</caption>
+<thead>
+<tr class="header">
+<th>Typ</th>
+<th>Elektronendichte (cm<span class="math inline">\(^{-3}\)</span>)</th>
+<th>Temperatur (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sterne</td>
+<td><span class="math inline">\(10^{26}\)</span></td>
+<td>2000</td>
+</tr>
+<tr class="even">
+<td>Trägheitsfusion</td>
+<td><span class="math inline">\(10^{25}\)</span></td>
+<td>3000</td>
+</tr>
+<tr class="odd">
+<td>Magnetische Fusion</td>
+<td><span class="math inline">\(10^{15}\)</span></td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>Laser-generiert</td>
+<td><span class="math inline">\(10^{18}\)</span> - <span class="math inline">\(10^{24}\)</span></td>
+<td>100-1000</td>
+</tr>
+<tr class="odd">
+<td>Entladung</td>
+<td><span class="math inline">\(10^{12}\)</span></td>
+<td>1-10</td>
+</tr>
+<tr class="even">
+<td>Ionosphäre</td>
+<td><span class="math inline">\(10^{6}\)</span></td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>Interstellarer Raum</td>
+<td>1</td>
+<td>0.01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(1 eV = 11600 K)</p>
+<div id="fig-typical-plasma" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-B4955853.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.1: Dichte-Temperatur-Regime für typische Plasmen (aus <span class="citation" data-cites="thorne2017modern">Thorne &amp; Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="debye-länge" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="debye-länge"><span class="header-section-number">7.3</span> Debye-Länge</h2>
+<p>Eine wichtige Eigenschaft von Plasmen ist ihre Fähigkeit, elektrische Potentiale abzuschirmen.</p>
+<p><span class="citation" data-cites="debye1923debye">Debye &amp; Hückel (<a href="references.html#ref-debye1923debye" role="doc-biblioref">1923a</a>)</span> und <span class="citation" data-cites="debye1923theorie">Debye &amp; Hückel (<a href="references.html#ref-debye1923theorie" role="doc-biblioref">1923b</a>)</span> vermitteln grundlegende Theorien zu den Wechselwirkungen von Ionen in Elektrolyten. Diese Erkenntnisse lassen sich auf Plasmen übertragen.</p>
+<div id="fig-elektrolyt" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-718770F4.png" class="img-fluid figure-img" width="560"></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.2: Debye-Abschirmung von geladenen Kugeln in einem Plasma (aus <span class="citation" data-cites="gibbon">Gibbon (<a href="references.html#ref-gibbon" role="doc-biblioref">2016</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+<section id="herleitung" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="herleitung"><span class="header-section-number">7.3.1</span> Herleitung</h3>
+<p>Jedes geladene Teilchen innerhalb eines Plasmas zieht andere Teilchen mit entgegengesetzter Ladung an und stößt Teilchen mit der gleichen Ladung ab, wodurch in der unmittelbaren Umgebung des Teilchens eine Wolke aus überwiegend entgegengesetzten Ladungen entsteht.</p>
+<p>Diese Wolke schirmt die eigene Ladung des Teilchens von der Außenwelt ab, d.&nbsp;h. sie bewirkt, dass das Coulomb-Feld des Teilchens bei großen Entfernungen exponentiell abnimmt, anstatt mit <span class="math inline">\(1/r^2\)</span>.</p>
+<p>Diese Debye-Abschirmung der Ladung eines Teilchens kann wie folgt demonstriert und quantifiziert werden (<span class="citation" data-cites="thorne2017modern">Thorne &amp; Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>):</p>
+<p>Man betrachte eine einzelne Testladung <span class="math inline">\(Q\)</span> im Ursprung, die von einem Plasma aus Protonen und Elektronen umgeben ist. Wir definieren mit <span class="math inline">\(n_p(r)\)</span> und <span class="math inline">\(n_e(r)\)</span> die mittleren Dichten für Elektronen und Protonen als glatte Funktionen des Abstandes <span class="math inline">\(r\)</span> von der Testladung, und mit <span class="math inline">\(\bar n\)</span> die mittleren Dichten von Elektronen und Protonen. Dann ist das elektrostatische Potential <span class="math inline">\(\Phi(r)\)</span> außerhalb des Teilchens Lösung der Poisson-Gleichung</p>
+<p><span id="eq-poisson"><span class="math display">\[
+-\nabla^2 \Phi = \frac{n_p - n_e}{\epsilon_0} e + \frac{Q}{\epsilon_0} \delta(r)
+\tag{7.1}\]</span></span></p>
+<p>Wir bezeichnen die Ladung eines Protons mit <span class="math inline">\(+e\)</span> und die Ladung des Elektrons mit <span class="math inline">\(-e\)</span>.</p>
+<p>Ein Proton besitzt in der Entfernung <span class="math inline">\(r\)</span> von der Testladung das elektrostatische Potential <span class="math inline">\(e \Phi(r)\)</span>.</p>
+<p>Die mittlere Ladungsträgerdichte ändert sich entsprechend zu</p>
+<p><span class="math display">\[
+n_p(r) = \bar n \, e^{-\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 - \frac{e \Phi}{k T} \right)
+\]</span></p>
+<p>bzw.</p>
+<p><span class="math display">\[
+n_e(r) = \bar n \, e^{+\dfrac{e \Phi(r)}{kT}} \approx \bar n \left(1 + \frac{e \Phi}{k T} \right).
+\]</span></p>
+<p>Damit wird <a href="#eq-poisson">Gleichung&nbsp;<span>7.1</span></a> eine <em>nichtlineare Differentialgleichung</em> in <span class="math inline">\(\Phi\)</span>, weil <span class="math inline">\(n_p\)</span> und <span class="math inline">\(n_e\)</span> Funktionen von <span class="math inline">\(\Phi\)</span> sind.</p>
+<p>Wir können aber wegen <span class="math inline">\(e\Phi \ll kT\)</span> die Exponentialfunktion in eine Taylorreihe entwickelt und Terme höherer Ordnung vernachlässigen.</p>
+<p>Einsetzen in <a href="#eq-poisson">Gleichung&nbsp;<span>7.1</span></a> liefert nach Linearisierung</p>
+<p><span class="math display">\[
+-\nabla^2 \Phi + \frac{2 \bar n e^2}{\epsilon_0 k T} \Phi = \frac{Q}{\epsilon_0}\delta(r).
+\]</span></p>
+<p>Die kugelsymmetrische (nur von <span class="math inline">\(r\)</span> abhängige) Lösung ist</p>
+<p><span class="math display">\[
+\Phi(r) = \frac{Q}{4 \pi \epsilon_0 r} \, e^{-\sqrt{\dfrac{2r^2}{\lambda_D^2}}}
+\]</span></p>
+<p>und besitzt die Form eines Coulomb-Potentials mit exponentiellem Abfall. Die charakteristische Skalenlänge dieses Abfalls ist der <em>Debye-Radius</em></p>
+<p><span class="math display">\[
+\lambda_D = \sqrt{ \frac{\epsilon_0 k T}{\bar n e^2}}
+\]</span></p>
+<p>und ist ein Maß für die Größe der Debye-Abschirmung. Der Debye-Radius hängt gleichermaßen von der Temperatur als auch von der Teilchendichte des Plasmas ab. In einem idealen Plasmsa befinden sich viele Teilchen innerhalb einer Kugel vom Radius <span class="math inline">\(\lambda_D\)</span>. Die Anzahl ist</p>
+<p><span class="math display">\[
+N_D = n_e \frac{4 \pi}{3} \lambda_D^3 \gg 1.
+\]</span></p>
+<div id="fig-ionenverteilung" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-D4D1A82B.png" class="img-fluid figure-img" width="210"></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.3: Ionenverteilung in einer Lösung (aus Wikipedia: Debye-Länge)</figcaption><p></p>
+</figure>
+</div>
+<p>Wird eine Störung (z.B. eine Überschussladung) in ein Plasma eingebracht, so reicht die Wirkung dieser Störung nur bis zu einer Entfernung der Größenordnung <span class="math inline">\(\lambda_D\)</span>. Nur innerhalb dieses Abstandes weicht die lokale Ladungsträgerdichte signifikant von der makroskopischen elektrischen Neutralität ab (<a href="#fig-ionenverteilung">Abbildung&nbsp;<span>7.3</span></a>).</p>
+<section id="beispiel" class="level4" data-number="7.3.1.1">
+<h4 data-number="7.3.1.1" class="anchored" data-anchor-id="beispiel"><span class="header-section-number">7.3.1.1</span> Beispiel</h4>
+<p>Im Allgemeinen ist <span class="math inline">\(\lambda_D\)</span> sehr klein. In der Ionosphäre ist <span class="math inline">\(n_e = 10^{12}\)</span> m<span class="math inline">\(^{-3}\)</span> und <span class="math inline">\(T=10^3\)</span> K. Damit ist <span class="math inline">\(\lambda_D = 10^{-3}\)</span> m.</p>
+<div id="fig-tabelle201" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-2A0EC69D.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.4: Typische Plasmaparameter (aus <span class="citation" data-cites="thorne2017modern">Thorne &amp; Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+<p>Die Tabelle in <a href="#fig-tabelle201">Abbildung&nbsp;<span>7.4</span></a> gibt für typische Plasmen die folgenden charakteristischen Größen an:</p>
+<ul>
+<li>Teilchendichte der Elektronen <span class="math inline">\(n_e\)</span></li>
+<li>Temperatur T</li>
+<li>Magnetfeld <span class="math inline">\(B\)</span></li>
+<li>Debye-Länge <span class="math inline">\(\lambda_D\)</span></li>
+<li>Debye-Zahl <span class="math inline">\(N_D\)</span></li>
+<li>Plasmafrequenz <span class="math inline">\(\omega_p\)</span></li>
+<li><span class="math inline">\(\nu_{ee}\)</span></li>
+<li>Larmor-Kreisfrequenz <span class="math inline">\(\omega_c\)</span></li>
+<li>Larmor-Radius <span class="math inline">\(r_L\)</span>.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="plasmaschwingungen-und-plasmafrequenz" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="plasmaschwingungen-und-plasmafrequenz"><span class="header-section-number">7.4</span> Plasmaschwingungen und Plasmafrequenz</h2>
+<p>Das wichtigste dynamische Phänomen in Plasmen ist die Schwingungsbewegung von Protonen und Elektronen relativ zueinander.</p>
+<p>Wird ein Plasma plötzlich aus seinem Gleichgewichtszustand gebracht, verursachen die internen Raumladungsfelder kollektive Partikelbewegungen, welche anstreben, die ursprüngliche Ladungsneutralität wiederherzustellen.</p>
+<p>Diese kollektiven Schwingungsmuster laufen mit einer bestimmten <em>Plasma-Frequenz</em> ab. Wegen der hohen Frequenz tragen die Elektroden aufgrund ihrer im Vergleich zu Protonen geringeren Massenträgheit maßgeblich zur Plasmaschwingung bei. Elektronen schwingen kollektiv um die schweren Ionen, wobei die Rückstellkräfte durch die Ion-Elektron-Coulomb-Kräfte verursacht werden. Die Periodendauer dieser Bewegung ist eine typische Zeitskala.</p>
+<div id="fig-osz" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-1FB78BDE.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;7.5: Schematische Darstellung der Verschiebung von Elektronen relativ zu Protonen während einer Plasmaschwingung (aus <span class="citation" data-cites="thorne2017modern">Thorne &amp; Blandford (<a href="references.html#ref-thorne2017modern" role="doc-biblioref">2017</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
+<section id="herleitung-1" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="herleitung-1"><span class="header-section-number">7.4.1</span> Herleitung</h3>
+<p>Wir platzieren das Plasma gemäß Abb. <a href="#fig-osz">Abbildung&nbsp;<span>7.5</span></a> entlang einer unendlich ausgedehnten Ebene in <span class="math inline">\(x=0\)</span> und nehmen an, dass alle Protonen ortsfest bleiben. Die Elektronen werden relativ zu den Protonen um den Betrag <span class="math inline">\(\xi_0\)</span> nach rechts in <span class="math inline">\(x\)</span>-Richtung verschoben. Wir beobachten die Flächenüberschussladungsdichten <span class="math inline">\(-e \bar n \xi_0\)</span> am rechten Ende des Plasmas, sowie <span class="math inline">\(+e \bar n \xi_0\)</span> am linken Ende des Plasmas. Das resultierende elektrische Feld im Innern des Plasmas zum Zeitpunkt <span class="math inline">\(t=0\)</span> ist <span class="math inline">\(\mathbf E = (E, 0, 0)^\top\)</span>, also</p>
+<p><span class="math display">\[
+E = \frac{e \bar n \xi_0}{\epsilon_0}.
+\]</span></p>
+<p>Dieses Feld übt eine Coulomb-Kraft auf die Protonen und Elektronen aus. Die Bewegungsgleichung für die Veschiebung lautet</p>
+<p><span class="math display">\[
+\ddot \xi = - \frac{e}{m_e} E = - \frac{e^2 \bar n}{\epsilon_0 m_e} \xi.
+\]</span></p>
+<p>Dies ist eine <em>harmonische Schwingungsdifferentialgleichung</em>. Wir haben wegen des Masseverhältnisses von Elektronen zu Protonen <span class="math inline">\(m_e/m_p = 1 / 1836\)</span> die Kraftwirkung auf die Protonen vernachlässigt.</p>
+<p>Mit der oben angegebene Anfangsbedingung für <span class="math inline">\(t=0\)</span> schwingen die Elektronen harmonisch mit den Ortskoordinaten</p>
+<p><span class="math display">\[
+\xi(t) = \xi_0 \cos(\omega_p t),
+\]</span></p>
+<p>wobei die Plasmafrequenz</p>
+<p><span class="math display">\[
+\omega_p = \sqrt{ \frac{\bar n e^2}{\epsilon_0 m_e} }
+\]</span></p>
+<p>nur von der Plasmadichte <span class="math inline">\(\bar n\)</span> aber <em>nicht</em> von der Temperatur <span class="math inline">\(T\)</span> oder der magnetischen Feldstärke abhängt.</p>
+<p>Die thermische Geschwindigkeit der Elektronen ist definiert durch</p>
+<p><span class="math display">\[
+v_e = \sqrt{ \frac{k T}{m_e} },
+\]</span></p>
+<p>somit ist</p>
+<p><span class="math display">\[
+\omega_p = \frac{v_e}{\lambda_D}.
+\]</span></p>
+<p>Mit anderen Worten: Thermische Elektronen legen innerhalb einer Plasmaschwingungsperiode etwa eine Debye-Länge zurück.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography" style="display: none">
+<div id="ref-debye1923debye" class="csl-entry" role="doc-biblioentry">
+Debye, P. &amp; Hückel, E. (1923) On the Debye length in strong electrolytes. <em>Physikalische Zeitschrift</em>, <strong>24</strong>, 185.
+</div>
+<div id="ref-debye1923theorie" class="csl-entry" role="doc-biblioentry">
+Debye, P. &amp; Hückel, E. (1923) <span>Zur Theorie der Elektrolyte. II. Das Grenzgesetz f<span>ü</span>r die elektrische Leitf<span>ä</span>higkeit</span>. <em>Physikalische Zeitschrift</em>, <strong>24</strong>, 305–325.
+</div>
+<div id="ref-gibbon" class="csl-entry" role="doc-biblioentry">
+Gibbon, P. (2016) Introduction to Plasma Physics. <em>CERN Yellow Reports</em>, Vol 1 (2016): Proceedings of the 2014 CAS–CERN Accelerator School: Plasma Wake Acceleration, CERN, Geneva. doi:<a href="https://doi.org/10.5170/CERN-2016-001.51">10.5170/CERN-2016-001.51</a>
+</div>
+<div id="ref-thorne2017modern" class="csl-entry" role="doc-biblioentry">
+Thorne, K.S. &amp; Blandford, R.D. (2017) <em>Modern classical physics: optics, fluids, plasmas, elasticity, relativity, and statistical physics</em>, Princeton University Press.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./sonnenflecken.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sonnenflecken</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./bewegungsgleichung.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Newtonsche Bewegungsgleichung</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
