@@ -2,7 +2,7 @@
 title: "Vorbemerkung"
 ---
 
-Das Skript zur Vorlesung "Physik der Hochatmosphäre" entsteht semesterbegleitend.
+Das Skript zur Vorlesung "Physik der Hochatmosphäre" entsteht semesterbegleitend und erhebt nicht den Anspruch auf [Vollständigkeit](https://imgflip.com/i/6zt09v) und Korrektheit.
 
 Es wird mit [Quarto](http://quarto.org), einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt.
 

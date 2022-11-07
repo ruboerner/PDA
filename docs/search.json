@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Physik der Hochatmosphäre",
     "section": "",
-    "text": "Das Skript zur Vorlesung “Physik der Hochatmosphäre” entsteht semesterbegleitend.\nEs wird mit Quarto, einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt.\nAlle Änderungen sind in GitHub nachvollziehbar. Ein PDF-Dokument mit gleichem Inhalt kann hier heruntergeladen werden."
+    "text": "Das Skript zur Vorlesung “Physik der Hochatmosphäre” entsteht semesterbegleitend und erhebt nicht den Anspruch auf Vollständigkeit und Korrektheit.\nEs wird mit Quarto, einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt.\nAlle Änderungen sind in GitHub nachvollziehbar. Ein PDF-Dokument mit gleichem Inhalt kann hier heruntergeladen werden."
   },
   {
     "objectID": "einf.html#motivation",
