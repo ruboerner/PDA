@@ -6,6 +6,6 @@ Das Skript zur Vorlesung "Physik der Hochatmosphäre" entsteht semesterbegleiten
 
 Es wird mit [Quarto](http://quarto.org), einem Open-Source-System zum wissenschaftlichen und technischen Publizieren, entwickelt.
 
-Alle Änderungen sind in [GitHub](https://github.com/ruboerner/PDA) nachvollziehbar. Ein PDF-Dokument mit gleichem Inhalt kann hier heruntergeladen werden.
+Alle Änderungen sind in [GitHub](https://github.com/ruboerner/PDA) nachvollziehbar. Ein PDF-Dokument mit gleichem Inhalt kann dort heruntergeladen werden.
 
 <!--# TODO: Links einbauen -->
