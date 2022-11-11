@@ -1,5 +1,6 @@
 ---
 title: "Sonnenflecken"
+code-fold: true
 ---
 
 Sonnenflecken sind dunkle Stellen auf der Sonnenoberfläche. Sie sind kühler und strahlen weniger sichtbares Licht ab als der Rest der Sonnenoberfläche.
@@ -18,7 +19,7 @@ Ursache der Sonnenflecken sind starke Magnetfelder, welche den Wärmetransport a
 
 Die Häufigkeit der Sonnenflecken wird durch die Relativzahl erfasst.
 
-man zählt die Einzelflecken (Zahl \$f\$) und addiert dazu das Zehnfache der Gruppenanzahl (Zahl $g$).
+man zählt die Einzelflecken (Zahl $f$) und addiert dazu das Zehnfache der Gruppenanzahl (Zahl $g$).
 
 Die Sonnenfleckenrelativzahl ist eine Maßzahl der Sonnenaktivität und berechnet sich aus
 
@@ -35,3 +36,54 @@ Zuständig für die Berechnung, Speicherung und Verbreitung der Sonnenfleckenrel
 ![](images/paste-F8C5D725.png)
 
 ![](images/paste-DE59FE1D.png)
+
+Wir wollen nun die aktuellen Daten visualisieren und analysieren. dazu nutzen wir einenDatensatz der Monatsmittelwerte der Sonnenfleckenrelativzahl von 1749 bis heute.
+
+```{julia}
+using DataFrames
+using CSV
+using Plots
+theme(:vibrant)
+default(frame_style=:box)
+df = CSV.read("SN_m_tot_V2.0.csv", delim=";", header=1,  DataFrame)
+t = df[:, :FracOfYear]
+SN = df[:, :SN]
+plot(t, SN, label="")
+xlabel!("Jahr")
+ylabel!("Sonnenfleckenrelativzahl")
+
+```
+
+Wir versuchen nun, die offensichtlich vorhandene Periodizität zu berechnen und nutzen dafür die Schnelle Fourietransformation `FFT`.
+
+```{julia}
+using FFTW
+using Statistics
+S = fft(SN .- mean(SN))
+popfirst!(S)
+plot(abs.(S), label="")
+ylabel!("Amplitudenspektrum")
+```
+
+```{julia}
+n = length(S)
+up = Int(floor(n/2))
+power = abs.(S[1:up, :]).^2
+samplinginterval = 1.0 / 12.0
+nyquist = 1 / (2 * samplinginterval)
+freq = [1:up...] ./ (n / 2) * nyquist
+plot(freq, power)
+xlabel!("Frequenz in 1/a")
+ylabel!("Powerspektrum")
+```
+
+```{julia}
+period = 1 ./ freq
+i = argmax(power)
+
+plot(period, power, xscale=:log10, label="")
+scatter!([period[i]], [power[i]], m=:o, label="")
+xlabel!("Periodendauer in a")
+ylabel!("Powerspektrum")
+title!("Sonnenfleckenzyklus: $(round(period[i], digits=2)) a")
+```

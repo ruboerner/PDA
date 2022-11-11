@@ -24,6 +24,7 @@ book:
       chapters: 
         - plasmen.qmd
         - bewegungsgleichung.qmd
+        - motion_homogen.qmd
         - Dipolefield_Motion.qmd
     - part: "Die elektrische Leitfähigkeit der Ionosphäre"
       chapters: 

@@ -1,0 +1,129 @@
+---
+title: Proton und Elektron
+jupyter: julia-1.8
+code-fold: true
+---
+
+```{julia}
+#| cold-fold: true
+using TestParticle
+using Meshes
+using OrdinaryDiffEq
+using Plots
+using Markdown
+theme(:vibrant)
+default(widen=false)
+
+function circle(radius, center, N)
+    θ = range(0, 2π, N)
+    center[1] .+ radius * cos.(θ), center[2] .+ radius * sin.(θ)
+end
+
+
+```
+
+## Bewegung eines geladenen Teilchens im homogenen Feld
+
+Wir betrachten den Fall, dass das Teilchen mit der Geschwindigkeit $\mathbf v = \mathbf v_\perp$ in ein Magnetfeld $\mathbf B$ und elektrisches Feld $\mathbf E$ eingebracht wird.
+
+Die Bewegungsgleichung lautet $$
+\dot{\mathbf v}_\perp = \frac{q}{m} \left( \mathbf E +  \mathbf v_\perp \times \mathbf B \right)
+$$
+
+Vereinfachend nehmen wir zunächst an, dass $\mathbf E = \mathbf 0$. Weiterhin sei $\mathbf B = (0, 0, B)^\top$ homogen.
+
+Aus der Lösung berechnen wir die Kreisfrequenz der Gyrationsbewegung $$
+\omega_g = \frac{|q| B}{m}
+$$ und den Gyrationsradius $$
+r_g = \frac{m v_\perp}{|q| B}.
+$$
+
+## Numerisches Beispiel
+
+Wir berechnen die Gyrationsfrequenz und den Gyrationsradius für nichtrelativistische Elektronen und Protonen. Die Ladung eines Protons beträgt $q = +e = +1.60217662 \times 10^{-19}$ C, seine Masse ist $1.673557546 \times 10^{-27}$ kg. Die Ladung eines Elektrons beträgt $q = -e = -1.60217662 \times 10^{-19}$ C, seine Masse ist $9.10938356 \times 10^{-31}$ kg.
+
+Im Magnetfeld der Stärke $B = 1$ nT erhalten wir für die Gyrationsfrequenz $$
+f_g = \frac{\omega_g}{2 \pi} = \frac{|q| B}{2 \pi m}
+$$
+
+```{julia}
+m_p = TestParticle.mᵢ
+m_e = TestParticle.mₑ
+q_p = TestParticle.qᵢ
+q_e = TestParticle.qₑ
+B = 1.0e-9
+v = 1.0
+
+f_p = q_p * B / (2 * pi * m_p) 
+f_e = abs(q_e) * B / (2 * pi * m_e) 
+
+r_p = m_p * v / abs(q_p) / B
+r_e = m_e * v / abs(q_e) / B
+
+Markdown.parse("""
+Die Gyrationsfrequenz für Protonen beträgt $(round(f_p, digits=3)) Hz.
+Die Gyrationsfrequenz für Elektronen beträgt $(round(f_e, digits=3)) Hz.
+Der Gyrationsradius für Protonen beträgt $(round(r_p, sigdigits=3)) m.
+Der Gyrationsradius für Elektronen beträgt $(round(r_e, sigdigits=3)) m.
+""")
+```
+
+```{julia}
+x = range(-20, 20, length=41)
+y = range(-20, 20, length=41)
+z = range(-20, 20, length=41)
+B = fill(0.0, 3, length(x), length(y), length(z)) # [T]
+E = fill(0.0, 3, length(x), length(y), length(z)) # [V/m]
+B[3,:,:,:] .= 1e-9
+# E[2,:,:,:] .= 1e-10
+nothing
+```
+
+```{julia}
+Δx = x[2] - x[1]
+Δy = y[2] - y[1]
+Δz = z[2] - z[1]
+
+grid = CartesianGrid((length(x)-1, length(y)-1, length(z)-1),
+   (x[1], y[1], z[1]),
+   (Δx, Δy, Δz))
+nothing
+```
+
+```{julia}
+isAnalytic = false
+trajectories = 1
+
+x0 = [-1.0, 0.0, 0.0] # initial position, [m]
+u0 = [0.0, 1.0, 0.0] # initial velocity, [m/s]
+stateinit = [x0..., u0...]
+
+param_electron = prepare(grid, E, B, species=Electron)
+tspan_electron = (0.0, 0.1)
+
+param_proton = prepare(grid, E, B, species=Proton)
+tspan_proton = (0.0, 200.0)
+
+prob_e = ODEProblem(trace!, stateinit, tspan_electron, param_electron)
+prob_p = ODEProblem(trace!, stateinit, tspan_proton, param_proton)
+sol_e = solve(prob_e, Tsit5(); save_idxs=[1,2,3])
+sol_p = solve(prob_p, Tsit5(); save_idxs=[1,2,3]);
+```
+
+```{julia}
+
+```
+
+```{julia}
+plot(sol_e, idxs=(1,2), lw=3, label="Elektron")
+
+c = circle(r_e ,[-1.0 - r_e; 0.0], 32);
+plot!(c[1], c[2], label="analytisch", lw=0.5, aspect_ratio=:equal)
+```
+
+```{julia}
+plot(sol_p, idxs=(1,2), lw=3, label="Proton")
+
+c = circle(r_p ,[-1.0 + r_p; 0.0], 64);
+plot!(c[1], c[2], label="analytisch", lw=0.5, aspect_ratio=:equal)
+```
