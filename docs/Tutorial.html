@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Physik der Hochatmosphäre - 11&nbsp; Tutorial</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./eej.html" rel="next">
+<link href="./Dipolefield_Motion.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tutorial</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Physik der Hochatmosphäre</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vorbemerkung</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Einführung</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./einf.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einführung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./atmo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Die Atmosphäre der Erde</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Die ruhige und aktive Sonne</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aufbau.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Aufbau der Sonne</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strahlung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Die Sonne als Energiequelle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sonnenflecken.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sonnenflecken</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Plasmen und ihre Magnetfelder</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plasmen.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Plasmen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bewegungsgleichung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Newtonsche Bewegungsgleichung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./motion_homogen.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Proton und Elektron</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dipolefield_Motion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulation der Teilchenbewegung mit Julia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Tutorial.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tutorial</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Die elektrische Leitfähigkeit der Ionosphäre</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./eej.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">EEJ</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Das erdmagnetische Außenfeld</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ionosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ionosphäre</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./variationen.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Variationen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./phenomena.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Phänomene im System der Magnetosphäre und Ionosphäre</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Zusammenfassung</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Literaturverzeichnis</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#tutorial" id="toc-tutorial" class="nav-link active" data-scroll-target="#tutorial"><span class="toc-section-number">12</span>  Tutorial</a>
+  <ul class="collapse">
+  <li><a href="#uniform-e-and-b-fields" id="toc-uniform-e-and-b-fields" class="nav-link" data-scroll-target="#uniform-e-and-b-fields"><span class="toc-section-number">12.1</span>  Uniform E and B Fields</a>
+  <ul class="collapse">
+  <li><a href="#e0" id="toc-e0" class="nav-link" data-scroll-target="#e0"><span class="toc-section-number">12.1.1</span>  E=0</a></li>
+  <li><a href="#finite-e" id="toc-finite-e" class="nav-link" data-scroll-target="#finite-e"><span class="toc-section-number">12.1.2</span>  Finite E</a></li>
+  <li><a href="#gravitational-field" id="toc-gravitational-field" class="nav-link" data-scroll-target="#gravitational-field"><span class="toc-section-number">12.1.3</span>  Gravitational Field</a></li>
+  </ul></li>
+  <li><a href="#nonuniform-b-field" id="toc-nonuniform-b-field" class="nav-link" data-scroll-target="#nonuniform-b-field"><span class="toc-section-number">12.2</span>  Nonuniform B Field</a>
+  <ul class="collapse">
+  <li><a href="#b-b-grad-b-drift" id="toc-b-b-grad-b-drift" class="nav-link" data-scroll-target="#b-b-grad-b-drift"><span class="toc-section-number">12.2.1</span>  ∇B ⊥ B: Grad-B Drift</a></li>
+  <li><a href="#curved-b-curvature-drift" id="toc-curved-b-curvature-drift" class="nav-link" data-scroll-target="#curved-b-curvature-drift"><span class="toc-section-number">12.2.2</span>  Curved B: Curvature Drift</a></li>
+  <li><a href="#b-b-magnetic-mirrors" id="toc-b-b-magnetic-mirrors" class="nav-link" data-scroll-target="#b-b-magnetic-mirrors"><span class="toc-section-number">12.2.3</span>  ∇B ∥ B: Magnetic Mirrors</a></li>
+  </ul></li>
+  <li><a href="#nonuniform-e-field" id="toc-nonuniform-e-field" class="nav-link" data-scroll-target="#nonuniform-e-field"><span class="toc-section-number">12.3</span>  Nonuniform E Field</a></li>
+  <li><a href="#time-varying-e-field" id="toc-time-varying-e-field" class="nav-link" data-scroll-target="#time-varying-e-field"><span class="toc-section-number">12.4</span>  Time-Varying E Field</a></li>
+  <li><a href="#time-varying-b-field" id="toc-time-varying-b-field" class="nav-link" data-scroll-target="#time-varying-b-field"><span class="toc-section-number">12.5</span>  Time-Varying B Field</a></li>
+  <li><a href="#summary-of-guiding-center-drifts" id="toc-summary-of-guiding-center-drifts" class="nav-link" data-scroll-target="#summary-of-guiding-center-drifts"><span class="toc-section-number">12.6</span>  Summary of Guiding Center Drifts</a></li>
+  <li><a href="#adiabatic-invariants" id="toc-adiabatic-invariants" class="nav-link" data-scroll-target="#adiabatic-invariants"><span class="toc-section-number">12.7</span>  Adiabatic Invariants</a>
+  <ul class="collapse">
+  <li><a href="#the-first-adiabatic-invariant" id="toc-the-first-adiabatic-invariant" class="nav-link" data-scroll-target="#the-first-adiabatic-invariant"><span class="toc-section-number">12.7.1</span>  The First Adiabatic Invariant</a></li>
+  <li><a href="#the-second-adiabatic-invariant" id="toc-the-second-adiabatic-invariant" class="nav-link" data-scroll-target="#the-second-adiabatic-invariant"><span class="toc-section-number">12.7.2</span>  The Second Adiabatic Invariant</a></li>
+  <li><a href="#the-third-adiabatic-invariant" id="toc-the-third-adiabatic-invariant" class="nav-link" data-scroll-target="#the-third-adiabatic-invariant"><span class="toc-section-number">12.7.3</span>  The Third Adiabatic Invariant</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tutorial</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="tutorial" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Tutorial</h1>
+<p>What makes plasmas particularly difficult to analyze is the fact that the densities fall in an intermediate range. Fluids like water are so dense that the motions of individual molecules do not have to be considered. Collisions dominate, and the simple equations of ordinary fluid dynamics suffice. At the other extreme in very low-density devices, only single-particle trajectories need to be considered; collective effects are often unimportant. Plasma behaves sometimes like fluids, and sometimes like a collection of individual particles. The first step in learning how to deal with this schizophrenic personality is to understand how single particles behave in electric and magnetic fields.</p>
+<p>Was die Analyse von Plasmen besonders schwierig macht, ist die Tatsache, dass die Dichten in einem Zwischenbereich liegen. Flüssigkeiten wie Wasser sind so dicht, dass die Bewegungen der einzelnen Moleküle nicht berücksichtigt werden müssen. Es dominieren Kollisionen, und die einfachen Gleichungen der gewöhnlichen Flüssigkeitsdynamik reichen aus. Im anderen Extremfall, in Geräten mit sehr geringer Dichte, müssen nur die Flugbahnen einzelner Teilchen berücksichtigt werden; kollektive Effekte sind oft unwichtig. Ein Plasma verhält sich manchmal wie eine Flüssigkeit und manchmal wie eine Ansammlung von Einzelteilchen. Der erste Schritt, um zu lernen, wie man mit dieser schizophrenen Persönlichkeit umgeht, besteht darin zu verstehen, wie sich einzelne Teilchen in elektrischen und magnetischen Feldern verhalten.</p>
+<p>Here we assume that the EM fields are prescribed and not affected by the charged particles. The materials here closely follows F.F.Chen’s <a href="https://link.springer.com/book/10.1007/978-3-319-22309-4">Introduction to Plasma Physics and Controlled Fusion</a>.</p>
+<p>Hier gehen wir davon aus, dass die EM-Felder vorgegeben sind und nicht von den geladenen Teilchen beeinflusst werden. Die Materialien hier lehnen sich eng an F.F.Chens <a href="https://link.springer.com/book/10.1007/978-3-319-22309-4">Einführung in die Plasmaphysik und kontrollierte Fusion</a> an.</p>
+<p>In all examples we assume the following packages are loaded:</p>
+<p>In allen Beispielen gehen wir davon aus, dass die folgenden Pakete geladen sind:</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JSServe</span>: Page <span class="co"># hide</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Page</span>(exportable<span class="op">=</span><span class="cn">true</span>, offline<span class="op">=</span><span class="cn">true</span>) <span class="co"># hide</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">TestParticle</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">TestParticle</span>: get_gc</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">TestParticleMakie</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">OrdinaryDiffEq</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StaticArrays</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LinearAlgebra</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">GLMakie </span>as WM</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="uniform-e-and-b-fields" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="uniform-e-and-b-fields"><span class="header-section-number">12.1</span> Uniform E and B Fields</h2>
+<section id="e0" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="e0"><span class="header-section-number">12.1.1</span> E=0</h3>
+<p>In this case, a charged particle has a simple cyclotron gyration. The equation of motion is</p>
+<p>In diesem Fall führt ein geladenes Teilchen eine einfache Gyrationsbewegung aus. Die Bewegungsgleichung lautet</p>
+<p><span class="math display">\[
+m\frac{\mathrm d\mathbf{v}}{\mathrm dt} = q\mathbf{v}\times\mathbf{B}
+\]</span></p>
+<p>Taking <span class="math inline">\(\widehat{z}\)</span> to be the direction of <span class="math inline">\(\mathbf{B}\)</span> (<span class="math inline">\(\mathbf{B} = B\widehat{z}\)</span>), we have</p>
+<p>Nimmt man <span class="math inline">\(\widehat{z}\)</span> als die Richtung von <span class="math inline">\(\mathbf{B}\)</span> (<span class="math inline">\(\mathbf{B} = B\widehat{z}\)</span>), so gilt</p>
+<p><span class="math display">\[
+\begin{aligned}
+m\dot{v}_x = qB v_y,\, m\dot{v}_y = -qB v_x,\, m\dot{v}_z = 0, \\
+\ddot{v}_x = \frac{qB}{m}\dot{v}_y = -\big( \frac{qB}{m}\big)^2 v_x \\
+\ddot{v}_y = \frac{qB}{m}\dot{v}_x = -\big( \frac{qB}{m}\big)^2 v_y
+\end{aligned}
+\]</span></p>
+<p>This describes a simple harmonic oscillator at the <em>cyclotron frequency</em>, which we define to be</p>
+<p>Dies beschreibt einen einfachen harmonischen Oszillator mit der <em>Gyrationsfrequenz</em>, die wir wie folgt definieren</p>
+<p><span class="math display">\[
+\omega_c \equiv \frac{| q | B}{m}
+\]</span></p>
+<p>By the convention we have chosen, <span class="math inline">\(\omega_c\)</span> is always nonnegative. The solution of velocity is then</p>
+<p>Nach der von uns gewählten Konvention ist <span class="math inline">\(\omega_c\)</span> immer nicht-negativ. Die Lösung für die Geschwindigkeit ist dann</p>
+<p><span class="math display">\[
+v_{x,y} = v_\perp \exp(\pm i \omega_c t + i\delta_{x,y})
+\]</span></p>
+<p>The <span class="math inline">\(\pm\)</span> denote the sign of q. We may choose the phase <span class="math inline">\(\delta\)</span> so that</p>
+<p>Die <span class="math inline">\(\pm\)</span> bezeichnen das Vorzeichen von q. Wir können die Phase <span class="math inline">\(\delta\)</span> so wählen, dass</p>
+<p><span class="math display">\[
+v_x = v_\perp e^{i\omega_c t} = \dot{x}
+\]</span></p>
+<p>where <span class="math inline">\(v_\perp\)</span> is a positive constant denoting the speed in the plane perpendicular to <span class="math inline">\(\mathbf{B}\)</span>. Then</p>
+<p>wobei <span class="math inline">\(v_\perp\)</span> eine positive Konstante ist, die die Geschwindigkeit in der Ebene senkrecht zu <span class="math inline">\(\mathbf{B}\)</span> angibt. Dann gilt</p>
+<p><span class="math display">\[
+v_y  = \frac{m}{qB} \dot{v}_x = \pm \frac{1}{\omega_c}\dot{v}_x = \pm i v_\perp e^{i\omega_c t} = \dot{y}
+\]</span></p>
+<p>Integrating once again, we have</p>
+<p>Nochmalige Integration liefert</p>
+<p><span class="math display">\[
+\begin{aligned}
+x - x_0 &amp;= -i\frac{v_\perp}{\omega_c}e^{i\omega_c t} \\
+y - y_0 &amp;= \pm i\frac{v_\perp}{\omega_c}e^{i\omega_c t}
+\end{aligned}
+\]</span></p>
+<p>We define the <em>Larmor radius</em> to be</p>
+<p>Wir definieren die <em>Gyrationsradius</em> zu</p>
+<p><span class="math display">\[
+r_L \equiv \frac{v_\perp}{\omega_c} = \frac{mv_\perp}{|q| B}
+\]</span></p>
+<p>Taking the real part of the positions, we have</p>
+<p>Der Realteil liefert</p>
+<p><span class="math display">\[
+\begin{aligned}
+x - x_0 &amp;= r_L\sin\omega_c t \\
+y - y_0 &amp;= \pm r_L \cos\omega_c t  
+\end{aligned}
+\]</span></p>
+<p>This describes a circular orbit about a <em>guiding center</em> (<span class="math inline">\(x_0, y_0\)</span>) which is fixed. The direction of the gyration is always such that the magnetic field generated by the charged particle is opposite to the externally imposed field. Plasma particles, therefore, tend to <em>reduce</em> the magnetic field, and plasmas are <em>diamagnetic</em>. In addition to this motion, there is an arbitrary velocity <span class="math inline">\(v_z\)</span> along <span class="math inline">\(\mathbf{B}\)</span> which is not affected by <span class="math inline">\(\mathbf{B}\)</span>. The trajectory of a charged particle in space is, in general, a helix.</p>
+<p>Diese beschreibt eine Kreisbahn um ein <em>Führungszentrum</em> (<span class="math inline">\(x_0, y_0\)</span>), das ortsfest ist. Die Richtung der Kreisbewegung ist immer so, dass das von dem geladenen Teilchen erzeugte Magnetfeld dem von außen angelegten Feld entgegengesetzt ist. Plasmateilchen neigen daher dazu, das Magnetfeld zu <em>schwächen</em>, und Plasmen sind <em>diamagnetisch</em>. Zusätzlich zu dieser Bewegung gibt es eine beliebige Geschwindigkeit <span class="math inline">\(v_z\)</span> entlang <span class="math inline">\(\mathbf{B}\)</span>, die von <span class="math inline">\(\mathbf{B}\)</span> nicht beeinflusst wird. Die Flugbahn eines geladenen Teilchens im Raum ist im Allgemeinen eine Spirale.</p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">uniform_B</span>(x)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1e-8</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">uniform_E</span>(x)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.1</span>]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, v0<span class="op">...</span>]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">18</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(uniform_E, uniform_B, species<span class="op">=</span>Proton)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan, param)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span>])</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>WM.<span class="fu">plot</span>(sol)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="finite-e" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="finite-e"><span class="header-section-number">12.1.2</span> Finite E</h3>
+<p>If now we allow an electric field to be present, the motion will be found to be the sum of two motions: the usual circular Larmor gyration plus a drift of the guiding center. We may choose <span class="math inline">\(\mathbf{E}\)</span> to lie in the <span class="math inline">\(x\)</span>-<span class="math inline">\(z\)</span> plane so that <span class="math inline">\(E_y = 0\)</span>. As before, the <span class="math inline">\(z\)</span> component of velocity is unrelated to the transverse components and can be treated separately. The equation of motion is now</p>
+<p>Wenn wir nun ein elektrisches Feld zulassen, ergibt sich die Bewegung als Summe zweier Bewegungen: die kreisförmige Gyration und eine Drift des Führungszentrums. Wir können <span class="math inline">\(\mathbf{E}\)</span> so wählen, dass es in der Ebene <span class="math inline">\(x\)</span>-<span class="math inline">\(z\)</span> liegt, so dass <span class="math inline">\(E_y = 0\)</span> ist. Wie zuvor ist die <span class="math inline">\(z\)</span>-Komponente der Geschwindigkeit unabhängig von den transversalen Komponenten und kann separat behandelt werden. Die Bewegungsgleichung lautet nun</p>
+<p><span class="math display">\[
+m\frac{d\mathbf{v}}{dt} = q( \mathbf{E} + \mathbf{v}\times\mathbf{B} )
+\]</span></p>
+<p>whose z component is</p>
+<p>dessen <span class="math inline">\(z\)</span>-Komponente lautet</p>
+<p><span class="math display">\[
+\frac{dv_z}{dt} = \frac{q}{m}E_z
+\]</span></p>
+<p>oder</p>
+<p><span class="math display">\[
+v_z = \frac{qE_z}{m}t + v_{z0}
+\]</span></p>
+<p>This is a straightforward acceleration along <span class="math inline">\(\mathbf{B}\)</span>. The transverse components are</p>
+<p>Dies ist eine einfache Beschleunigung entlang <span class="math inline">\(\mathbf{B}\)</span>. Die Komponenten senkrecht dazu sind</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{dv_x}{dt} &amp;= \frac{q}{m}E_x \pm \omega_c v_y \\
+\frac{dv_y}{dt} &amp;= 0 \mp \omega_c v_x
+\end{aligned}
+\]</span></p>
+<p>Differentiating, we have (for constant <span class="math inline">\(\mathbf{E}\)</span>)</p>
+<p>Nach Differentiation bei konstantem elektrischen Feld erhalten wir</p>
+<p><span class="math display">\[
+\begin{aligned}
+\ddot{v}_x &amp;= -\omega_c^2 v_x \\
+\ddot{v}_y &amp;= \mp \omega_c \Big( \frac{q}{m}E_x \pm \omega_c v_y \Big) = -\omega_c^2 \Big( v_y + \frac{E_x}{B} \Big)
+\end{aligned}
+\]</span></p>
+<p>We can write this as</p>
+<p>welches wir umschreiben</p>
+<p><span class="math display">\[
+\frac{d^2}{dt^2}\Big( v_y + \frac{E_x}{B} \Big) = -\omega_c^2\Big( v_y + \frac{E_x}{B} \Big)
+\]</span></p>
+<p>so that it reduces to the previous case if we replace <span class="math inline">\(v_y\)</span> by <span class="math inline">\(v_y + (E_x/B)\)</span>. The velocity solution is then replaced by</p>
+<p>so dass es sich auf den vorherigen Fall reduziert, wenn wir <span class="math inline">\(v_y\)</span> durch <span class="math inline">\(v_y + (E_x/B)\)</span> ersetzen. Die Geschwindigkeitslösung wird dann ersetzt durch</p>
+<p><span class="math display">\[
+\begin{aligned}
+v_x &amp;= v_\perp e^{i\omega_c t} \\
+v_y &amp;= \pm v_\perp e^{i\omega_c t} - \frac{E_x}{B}
+\end{aligned}
+\]</span></p>
+<p>The Larmor motion is the same as before, but there is superimposed a drift <span class="math inline">\(\mathbf{v}_{gc}\)</span> of the guiding center in the -y direction (for <span class="math inline">\(E_x &gt; 0\)</span>).</p>
+<p>To obtain a general formula for <span class="math inline">\(\mathbf{v}_{gc}\)</span>, we can solve the momentum equation in vector form. We may omit the <span class="math inline">\(m d\mathbf{v}/dt\)</span> term, since this term gives only the circular motion at <span class="math inline">\(\omega_c\)</span>, which we already know about. Then the momentum equation becomes</p>
+<p>Die Gyrationsbewegung ist dieselbe wie zuvor, aber es wird eine Drift <span class="math inline">\(\mathbf{v}_{gc}\)</span> des Führungszentrums in negative y-Richtung (für <span class="math inline">\(E_x &gt; 0\)</span>) überlagert.</p>
+<p>Um eine allgemeine Formel für <span class="math inline">\(\mathbf{v}_{gc}\)</span> zu erhalten, können wir die Impulsgleichung in Vektorform lösen. Wir können den Term <span class="math inline">\(m d\mathbf{v}/dt\)</span> weglassen, da dieser Term nur die Kreisbewegung bei <span class="math inline">\(\omega_c\)</span> ergibt, die wir bereits kennen. Die Impulsgleichung lautet dann</p>
+<p><span class="math display">\[
+\mathbf{E} + \mathbf{v}\times\mathbf{B} = 0
+\]</span></p>
+<p>Taking the cross product with <span class="math inline">\(\mathbf{B}\)</span>, we have</p>
+<p>Nimmt man das Kreuzprodukt mit <span class="math inline">\(\mathbf{B}\)</span>, so erhält man</p>
+<p><span class="math display">\[
+\mathbf{E}\times\mathbf{B} = \mathbf{B}\times(\mathbf{v}\times\mathbf{B}) = \mathbf{v}B^2 - \mathbf{B}(\mathbf{v}\cdot\mathbf{B})
+\]</span></p>
+<p>The transverse components of this equation are</p>
+<p>Die zum Magnetfeld transversale Komponente dieser Gleichung lautet</p>
+<p><span class="math display">\[
+\mathbf{v}_{gc} = \mathbf{E}\times\mathbf{B}/B^2 \equiv \mathbf{v}_E
+\]</span></p>
+<p>We define this to be <span class="math inline">\(\mathbf{v}_E\)</span>, the electric field drift of the guiding center. In magnitude, this drift is</p>
+<p>Wir definieren dies als <span class="math inline">\(\mathbf{v}_E\)</span>, die durch das elektrische Feld verursachte Drift des Führungszentrums. Der Größenordnung nach ist diese Drift</p>
+<p><span class="math display">\[
+v_E = \frac{E(\text{V/m})}{B(\text{tesla})}\frac{\text{m}}{\text{sec}}
+\]</span></p>
+<p>It is important to note that <span class="math inline">\(\mathbf{v}_E\)</span> is independent of q, m, and <span class="math inline">\(v_\perp\)</span>. The reason is obvious from the following physical picture. In the first half-cycle of the ion’s orbit, it gains energy from the electric field and increases in <span class="math inline">\(v_\perp\)</span> and, hence, in <span class="math inline">\(r_L\)</span>. In the second half-cycle, it loses energy and decreases in <span class="math inline">\(r_L\)</span>. This difference in <span class="math inline">\(r_L\)</span> on the left and right sides of the orbit causes the drift <span class="math inline">\(v_E\)</span>. A negative electron gyrates in the opposite direction but also gains energy in the opposite direction; it ends up drifting in the same direction as an ion. For particles of the same velocity but different mass, the lighter one will have smaller <span class="math inline">\(r_L\)</span> and hence drift less per cycle. However, its gyration frequency is also larger, and the two effects exactly cancel. Two particles of the same mass but different energy would have the same <span class="math inline">\(\omega_c\)</span>. The slower one will have smaller <span class="math inline">\(r_L\)</span> and hence gain less energy from <span class="math inline">\(\mathbf{E}\)</span> in a half-cycle. However, for less energetic particles the fractional change in <span class="math inline">\(r_L\)</span> for a given change in energy is larger, and these two effects cancel.</p>
+<p>Es ist wichtig zu beachten, dass <span class="math inline">\(\mathbf{v}_E\)</span> unabhängig von q, m und <span class="math inline">\(v_\perp\)</span> ist. Der Grund dafür ergibt sich aus dem folgenden physikalischen Bild. Im ersten Halbzyklus der Ionenbahn gewinnt das Ion Energie aus dem elektrischen Feld und erhöht <span class="math inline">\(v_\perp\)</span> und damit auch <span class="math inline">\(r_L\)</span>. Im zweiten Halbzyklus verliert es Energie und nimmt in <span class="math inline">\(r_L\)</span> ab. Dieser Unterschied in <span class="math inline">\(r_L\)</span> auf der linken und rechten Seite der Bahn verursacht die Drift <span class="math inline">\(v_E\)</span>. Ein negatives Elektron dreht sich in die entgegengesetzte Richtung, gewinnt aber auch Energie in die entgegengesetzte Richtung; es driftet schließlich in dieselbe Richtung wie ein Ion. Bei Teilchen mit gleicher Geschwindigkeit, aber unterschiedlicher Masse, hat das leichtere Teilchen ein kleineres <span class="math inline">\(r_L\)</span> und driftet daher weniger pro Zyklus. Allerdings ist auch seine Gyrationsfrequenz größer, und die beiden Effekte heben sich genau auf. Zwei Teilchen mit gleicher Masse, aber unterschiedlicher Energie hätten das gleiche <span class="math inline">\(\omega_c\)</span>. Das langsamere Teilchen hat ein kleineres <span class="math inline">\(r_L\)</span> und gewinnt daher weniger Energie aus <span class="math inline">\(\mathbf{E}\)</span> in einem Halbzyklus. Bei weniger energiereichen Teilchen ist jedoch der Anteil der <span class="math inline">\(r_L\)</span>-Änderung bei einer gegebenen Energieänderung größer, und diese beiden Effekte heben sich auf.</p>
+<p>The three-dimensional orbit in space is therefore a slanted helix with changing pitch.</p>
+<p>Die dreidimensionale Umlaufbahn im Raum ist also eine schräge Helix mit wechselnder Steigung.</p>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">uniform_B</span>(x)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1e-8</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">uniform_E</span>(x)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">1e-9</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># trace the orbit of the guiding center</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">trace_gc!</span>(dx, x, p, t)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    _, _, E, B, sol <span class="op">=</span> p</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    xu <span class="op">=</span> <span class="fu">sol</span>(t)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    Bv <span class="op">=</span> <span class="fu">B</span>(x)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="fu">normalize</span>(Bv)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    v_par <span class="op">=</span> (xu[<span class="fl">4</span><span class="op">:</span><span class="fl">6</span>]<span class="op">⋅</span>b)<span class="op">.*</span>b</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    B2 <span class="op">=</span> <span class="fu">sum</span>(Bv<span class="op">.^</span><span class="fl">2</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    dx[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>] <span class="op">=</span> (<span class="fu">E</span>(x)<span class="op">×</span>Bv)<span class="op">/</span>B2 <span class="op">+</span> v_par</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.1</span>]</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, v0<span class="op">...</span>]</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">20</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co"># E×B drift</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(uniform_E, uniform_B, species<span class="op">=</span>Proton)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan, param)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span>])</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>gc <span class="op">=</span> <span class="fu">get_gc</span>(param)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>gc_x0 <span class="op">=</span> [<span class="fu">gc_i</span>(stateinit) for gc_i <span class="kw">in</span> gc]</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>prob_gc <span class="op">=</span> <span class="fu">ODEProblem</span>(trace_gc!, gc_x0, tspan, (param<span class="op">...</span>, sol))</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>sol_gc <span class="op">=</span> <span class="fu">solve</span>(prob_gc, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>])</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>gc_analytic <span class="op">=</span> <span class="fu">Tuple</span>(xu <span class="op">-&gt;</span> <span class="fu">getindex</span>(<span class="fu">sol_gc</span>(xu[<span class="fl">7</span>]), i) <span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co"># numeric result and analytic result</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">orbit</span>(sol, vars<span class="op">=</span>[(<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>), gc, gc_analytic])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="gravitational-field" class="level3" data-number="12.1.3">
+<h3 data-number="12.1.3" class="anchored" data-anchor-id="gravitational-field"><span class="header-section-number">12.1.3</span> Gravitational Field</h3>
+<p>The foregoing result can be applied to other forces by replacing <span class="math inline">\(q\mathbf{E}\)</span> in the equation of motion by a general force <span class="math inline">\(\mathbf{F}\)</span>. The guiding center drift caused by <span class="math inline">\(\mathbf{F}\)</span> is then</p>
+<p><span class="math display">\[
+\mathbf{v}_f = \frac{1}{q}\frac{\mathbf{F}\times\mathbf{B}}{B^2}
+\]</span></p>
+<p>In particular, if <span class="math inline">\(\mathbf{F}\)</span> is the force of gravity <span class="math inline">\(m\mathbf{g}\)</span>, there is a drift</p>
+<p><span class="math display">\[
+\mathbf{v}_g = \frac{m}{q}\frac{\mathbf{g}\times\mathbf{B}}{B^2}
+\]</span></p>
+<p>This is similar to the drift <span class="math inline">\(\mathbf{v}_E\)</span> in that it is perpendicular to both the force and <span class="math inline">\(\mathbf{B}\)</span>, but it differs in one important respect. The drift <span class="math inline">\(\mathbf{v}_g\)</span> changes sign with the particle’s charge. Under a gravitational force, ions and electrons drift in opposite directions, so there is a net current density in the plasma given by</p>
+<p><span class="math display">\[
+\mathbf{j} = n(M+m)\frac{\mathbf{g}\times\mathbf{B}}{B^2}
+\]</span></p>
+<p>The physical reason for this drift is again the change in Larmor radius as the particle gains and loses energy in the gravitational field. Now the electrons gyrate in the opposite sense to the ions, but the force on them is in the same direction, so the drift is in the opposite direction. The magnitude of <span class="math inline">\(\mathbf{v}_g\)</span> is usually negligible, but when the lines of force (i.e.&nbsp;magnetic field lines) are curved, there is an effective gravitational force due to centrifugal force. This force, which is not negligible, is independent of mass; this is why we did not stress the m dependence of the drift here. Centrifugal force is the basis of a plasma instability called the “gravitational” instability, which has nothing to do with real gravity.</p>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">B</span>(x)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0.0</span>, <span class="fl">1e-8</span>, <span class="fl">0.0</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">E</span>(x)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># gravity</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">F</span>(x)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="op">-</span>TestParticle.mᵢ<span class="op">*</span><span class="fl">9.8</span>]</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># initial static particle</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>]</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, v0<span class="op">...</span>]</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">1.0</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(E, B, F, species<span class="op">=</span>Proton)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan, param)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>])</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># drift in x-direction + free fall in z-direction</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>WM.<span class="fu">plot</span>(sol)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="nonuniform-b-field" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="nonuniform-b-field"><span class="header-section-number">12.2</span> Nonuniform B Field</h2>
+<p>Now that the concept of a guiding center drift is firmly established, we can discuss the motion of particles in inhomogeneous fields — <span class="math inline">\(\mathbf{E}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> fields which vary in space or time. For uniform fields we were able to obtain exact expressions for the guiding center drifts. As soon as we introduce inhomogeneity, the problem becomes too complicated to solve exactly. To get an approximate answer, it is customary to expand in the small ratio <span class="math inline">\(r_L/L\)</span>, where L is the scale length of the inhomogeneity. This type of theory, called <em>orbit theory</em>, can become extremely involved. We shall examine only the simplest cases, where only one inhomogeneity occurs at a time.</p>
+<section id="b-b-grad-b-drift" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="b-b-grad-b-drift"><span class="header-section-number">12.2.1</span> ∇B ⊥ B: Grad-B Drift</h3>
+<p>Here the magnetic field lines are straight, but their density increases, say, in the y direction. We can anticipate the result by using our simple physical picture. The gradient in |B| causes the Larmor radius to be larger at the bottom of the orbit than at the top, and this should lead to a drift, in opposite directions for ions and electrons, perpendicular to both B and <span class="math inline">\(\nabla B\)</span>. The drift velocity should obviously be proportional to <span class="math inline">\(r_L/L\)</span> and to <span class="math inline">\(v_\perp\)</span>.</p>
+<p>Consider the Lorentz force <span class="math inline">\(\mathbf{F} = q\mathbf{v}\times\mathbf{B}\)</span>, averaged over a gyration. Clearly, <span class="math inline">\(\bar{F}_x = 0\)</span>, since the particle spends as much time moving up as down. We wish to calculate <span class="math inline">\(\bar{F}_y\)</span>, in an approximate fashion, by using the <em>undisturbed orbit</em> of the particle to find the average. The undisturbed orbit is given by the solution in the first section for a uniform <span class="math inline">\(\mathbf{B}\)</span> field. Taking the real part of the solution for <span class="math inline">\(v_x\)</span> and <span class="math inline">\(y\)</span>, we have</p>
+<p><span class="math display">\[
+F_y = -q v_x B_z(y) = -q v_\perp(\cos \omega_c t) \Big[ B_0 \pm r_L(\cos\omega_c t )\frac{\partial B}{\partial y} \Big]
+\]</span></p>
+<p>where we have made a Taylor expansion of <span class="math inline">\(\mathbf{B}\)</span> field about the point <span class="math inline">\(x_0=0, y_0=0\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathbf{B} &amp;= \mathbf{B}_0 + (\mathbf{r}\cdot\nabla)\mathbf{B} + ... \\
+B_z &amp;= B_0 + y(\partial B_z/\partial y) + ...
+\end{aligned}
+\]</span></p>
+<p>This expansion of course requires <span class="math inline">\(r_L / L \ll 1\)</span>, where L is the length scale of <span class="math inline">\(\partial Bz/\partial y\)</span>. The first term above averages to zero in a gyration, and the average of <span class="math inline">\(\cos^2 \omega_c t\)</span> is <span class="math inline">\(1/2\)</span>, so that</p>
+<p><span class="math display">\[
+\bar{F}_y = \mp q v_\perp r_L \frac{1}{2}\frac{\partial B}{\partial y}
+\]</span></p>
+<p>The guiding center drift velocity is then</p>
+<p><span class="math display">\[
+\mathbf{v}_{gc} = \frac{1}{q}\frac{\mathbf{F}\times\mathbf{B}}{B^2} = \frac{1}{q}\frac{\bar{F}_y}{|B|}\widehat{x} = \mp \frac{v_\perp r_L}{B}\frac{1}{2} \frac{\partial B}{\partial y} \widehat{x}
+\]</span></p>
+<p>where we have used the formula shown previously. Since the choice of the y axis was arbitrary, this can be generalized to</p>
+<p><span class="math display">\[
+\mathbf{v}_{\nabla B} = \pm v_\perp r_L \frac{\mathbf{B}\times \nabla B}{B^2}
+\]</span></p>
+<p>This has all the dependences we expected from the physical picture; only the factor <span class="math inline">\(\frac{1}{2}\)</span> (arising from the averaging) was not predicted. Note that the <span class="math inline">\(\pm\)</span> stands for the sign of the charge, and lightface <span class="math inline">\(B\)</span> stands for <span class="math inline">\(|B|\)</span>. The quantity <span class="math inline">\(\mathbf{v}_{\nabla B}\)</span> is called the <em>grad-B drift</em>; it is in opposite directions for ions and electrons and causes a current transverse to <span class="math inline">\(\mathbf{B}\)</span>. An exact calculation of <span class="math inline">\(\mathbf{v}_{\nabla B}\)</span> would require using the exact orbit, including the drift, in the averaging process.</p>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ForwardDiff</span>: gradient</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">grad_B</span>(x)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1e-8</span><span class="op">+</span><span class="fl">1e-9</span> <span class="op">*</span>x[<span class="fl">2</span>]]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">uniform_E</span>(x)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">1e-9</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abs_B</span>(x) <span class="op">=</span> <span class="fu">norm</span>(<span class="fu">grad_B</span>(x))</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># trace the orbit of the guiding center</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">trace_gc!</span>(dx, x, p, t)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    q, m, E, B, sol <span class="op">=</span> p</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    xu <span class="op">=</span> <span class="fu">sol</span>(t)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    gradient_B <span class="op">=</span> <span class="fu">gradient</span>(abs_B, x)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    Bv <span class="op">=</span> <span class="fu">B</span>(x)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="fu">normalize</span>(Bv)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    v_par <span class="op">=</span> (xu[<span class="fl">4</span><span class="op">:</span><span class="fl">6</span>]<span class="op">⋅</span>b)<span class="op">.*</span>b</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    v_perp <span class="op">=</span> xu[<span class="fl">4</span><span class="op">:</span><span class="fl">6</span>] <span class="op">-</span> v_par</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    dx[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>] <span class="op">=</span> <span class="fu">m*norm</span>(v_perp)<span class="op">^</span><span class="fl">2</span><span class="fu">*</span>(Bv<span class="op">×</span>gradient_B)<span class="op">/</span>(<span class="fl">2</span><span class="fu">*q*norm</span>(Bv)<span class="op">^</span><span class="fl">3</span>) <span class="op">+</span> (<span class="fu">E</span>(x)<span class="op">×</span>Bv)<span class="op">/</span><span class="fu">norm</span>(Bv)<span class="op">^</span><span class="fl">2</span><span class="op">+</span>v_par</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.1</span>]</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, v0<span class="op">...</span>]</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">20</span>)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(uniform_E, grad_B, species<span class="op">=</span>Proton)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan, param)</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span>])</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>gc <span class="op">=</span> <span class="fu">get_gc</span>(param)</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>gc_x0 <span class="op">=</span> [<span class="fu">gc_i</span>(stateinit) for gc_i <span class="kw">in</span> gc]</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>prob_gc <span class="op">=</span> <span class="fu">ODEProblem</span>(trace_gc!, gc_x0, tspan, (param<span class="op">...</span>, sol))</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>sol_gc <span class="op">=</span> <span class="fu">solve</span>(prob_gc, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>])</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>gc_analytic <span class="op">=</span> <span class="fu">Tuple</span>(xu <span class="op">-&gt;</span> <span class="fu">getindex</span>(<span class="fu">sol_gc</span>(xu[<span class="fl">7</span>]), i) <span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="co"># numeric result and analytic result</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="co"># The orbit of guiding center includes some high order terms, which is different from the</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="co"># formula of magnetic field gradient drift of some textbooks that just preserves the first</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co"># order term.</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="fu">orbit</span>(sol, vars<span class="op">=</span>[(<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>), gc, gc_analytic])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="curved-b-curvature-drift" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="curved-b-curvature-drift"><span class="header-section-number">12.2.2</span> Curved B: Curvature Drift</h3>
+<p>Here we assume the magnetic field lines to be curved with a constant radius of curvature <span class="math inline">\(R_c\)</span>, and we take <span class="math inline">\(|B|\)</span> to be constant. Such a field does not obey Maxwell’s equations in a vacuum, so in practice the grad-B drift will always be added to the effect derived here. A guiding center drift arises from the centrifugal force felt by the particles as they move along the field lines in their thermal motion. If <span class="math inline">\(v_\parallel^2\)</span> denotes the average square of the component of random velocity along <span class="math inline">\(\mathbf{B}\)</span>, the average centrifugal force is</p>
+<p><span class="math display">\[
+\mathbf{F}_{cf} = \frac{mv_\parallel^2}{R_c}\widehat{r} = mv_\parallel^2\frac{\mathbf{R}_c}{R_c^2}
+\]</span></p>
+<p>According to the guiding center drift formula, this gives rise to a drift</p>
+<p><span class="math display">\[
+\mathbf{v}_{R} = \frac{1}{q}\frac{\mathbf{F}_{cf}\times\mathbf{B}}{B^2} = \frac{mv_\parallel^2}{qB^2}\frac{\mathbf{R}_c \times\mathbf{B}}{R_c^2}
+\]</span></p>
+<p>The drift <span class="math inline">\(\mathbf{v}_R\)</span> is called the <em>curvature drift</em>.</p>
+<p>We must now compute the grad-B drift which accompanies this when the decrease of <span class="math inline">\(|B|\)</span> with radius is taken into account. In a vacuum, we have <span class="math inline">\(\nabla\times\mathbf{B} = 0\)</span>. In the cylindrical coordinates, <span class="math inline">\(\nabla\times\mathbf{B}\)</span> only has a <span class="math inline">\(z\)</span> component, since <span class="math inline">\(\mathbf{B}\)</span> has only a <span class="math inline">\(\theta\)</span> component and <span class="math inline">\(\nabla B\)</span> only an <span class="math inline">\(r\)</span> component. We then have</p>
+<p><span class="math display">\[
+(\nabla\times\mathbf{B})_z = \frac{1}{r}\frac{\partial}{\partial r}(rB_\theta) = 0,\, B\propto \frac{1}{r}
+\]</span></p>
+<p>Thus</p>
+<p><span class="math display">\[
+|B| \propto \frac{1}{R_c},\, \frac{\nabla B}{B} = - \frac{\mathbf{R}_c}{R_c^2}
+\]</span></p>
+<p>Using the expression of the grad-B drift, we have</p>
+<p><span class="math display">\[
+\mathbf{v}_{\nabla B} = \mp \frac{1}{2}\frac{v_\perp r_L}{B^2}\frac{B}\times |B| \frac{\mathbf{R}_c}{R_c^2} = \pm \frac{1}{2}\frac{v_\perp^2}{\omega_c}\frac{\mathbf{R}_c\times\mathbf{B}}{R_c^2 B} = \frac{1}{2}\frac{m}{q}v_\perp^2\frac{\mathbf{R}_c\times\mathbf{B}}{R_c^2 B^2}
+\]</span></p>
+<p>Adding this to <span class="math inline">\(\mathbf{v}_R\)</span> , we have the total drift in a curved vacuum field:</p>
+<p><span class="math display">\[
+\mathbf{v}_R + \mathbf{v}_{\nabla B} = \frac{m}{q}\frac{\mathbf{R}_c\times\mathbf{B}}{R_c^2 B^2}\Big( v_\parallel^2 + \frac{1}{2}v_\perp^2 \Big)
+\]</span></p>
+<p>It is unfortunate that these drifts add. This means that if one bends a magnetic field into a torus for the purpose of confining a thermonuclear plasma, the particles will drift out of the torus no matter how one juggles the temperatures and magnetic fields.</p>
+<p>For a Maxwellian distribution, <span class="math inline">\(\bar{v_\parallel^2}\)</span> and <span class="math inline">\(\frac{1}{2}\bar{v_\perp^2}\)</span> are each equal to <span class="math inline">\(k_B T/m\)</span>, since <span class="math inline">\(v_\perp\)</span> involves two degrees of freedom. Then the average curved-field drift can be written as</p>
+<p><span class="math display">\[
+\bar{\mathbf{v}}_{R+\nabla B} = \pm \frac{v_{th}^2}{R_c\omega_c}\widehat{y} = \pm\frac{\bar{r}_L}{R_c}v_{th}\widehat{y}
+\]</span></p>
+<p>where <span class="math inline">\(\widehat{y}\)</span> here is the direction of <span class="math inline">\(\widehat{R}_c\times\mathbf{B}\)</span>. This shows that <span class="math inline">\(\bar{\mathbf{v}}_{R+\nabla B}\)</span> depends on the charge of the species but not on its mass.</p>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ForwardDiff</span>: gradient, jacobian</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">curved_B</span>(x)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># satisify ∇⋅B=0</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># B_θ = 1/r =&gt; ∂B_θ/∂θ = 0</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    θ <span class="op">=</span> <span class="fu">atan</span>(x[<span class="fl">3</span>]<span class="op">/</span>(x[<span class="fl">1</span>]<span class="op">+</span><span class="fl">3</span>))</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> <span class="fu">hypot</span>(x[<span class="fl">1</span>]<span class="op">+</span><span class="fl">3</span>, x[<span class="fl">3</span>])</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fu">-1e-7*sin</span>(θ)<span class="op">/</span>r, <span class="fl">0</span>, <span class="fl">1e-7</span><span class="fu">*cos</span>(θ)<span class="op">/</span>r]</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">zero_E</span>(x)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abs_B</span>(x) <span class="op">=</span> <span class="fu">norm</span>(<span class="fu">curved_B</span>(x))  <span class="co"># |B|</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># trace the orbit of the guiding center</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">trace_gc!</span>(dx, x, p, t)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    q, m, E, B, sol <span class="op">=</span> p</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    xu <span class="op">=</span> <span class="fu">sol</span>(t)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    gradient_B <span class="op">=</span> <span class="fu">gradient</span>(abs_B, x)  <span class="co"># ∇|B|</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    Bv <span class="op">=</span> <span class="fu">B</span>(x)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="fu">normalize</span>(Bv)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    v_par <span class="op">=</span> (xu[<span class="fl">4</span><span class="op">:</span><span class="fl">6</span>]<span class="op">⋅</span>b)<span class="op">.*</span>b  <span class="co"># (v⋅b)b</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    v_perp <span class="op">=</span> xu[<span class="fl">4</span><span class="op">:</span><span class="fl">6</span>] <span class="op">-</span> v_par</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    Ω <span class="op">=</span> <span class="fu">q*norm</span>(Bv)<span class="op">/</span>m</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    κ <span class="op">=</span> <span class="fu">jacobian</span>(B, x)<span class="op">*</span>Bv  <span class="co"># B⋅∇B</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># v⟂^2*(B×∇|B|)/(2*Ω*B^2) + v∥^2*(B×(B⋅∇B))/(Ω*B^3) + (E×B)/B^2 + v∥</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    dx[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>] <span class="op">=</span> <span class="fu">norm</span>(v_perp)<span class="op">^</span><span class="fl">2</span><span class="fu">*</span>(Bv<span class="op">×</span>gradient_B)<span class="op">/</span>(<span class="fl">2</span><span class="fu">*Ω*norm</span>(Bv)<span class="op">^</span><span class="fl">2</span>) <span class="op">+</span> </span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>                <span class="fu">norm</span>(v_par)<span class="op">^</span><span class="fl">2</span><span class="fu">*</span>(Bv<span class="op">×</span>κ)<span class="op">/</span>Ω<span class="op">/</span><span class="fu">norm</span>(Bv)<span class="op">^</span><span class="fl">3</span> <span class="op">+</span> (<span class="fu">E</span>(x)<span class="op">×</span>Bv)<span class="op">/</span><span class="fu">norm</span>(Bv)<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> v_par</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.1</span>]</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, v0<span class="op">...</span>]</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">40</span>)</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co"># E×B drift</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(zero_E, curved_B, species<span class="op">=</span>Proton)</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan, param)</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span>])</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>gc <span class="op">=</span> <span class="fu">get_gc</span>(param)</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>gc_x0 <span class="op">=</span> [<span class="fu">gc_i</span>(stateinit) for gc_i <span class="kw">in</span> gc]</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>prob_gc <span class="op">=</span> <span class="fu">ODEProblem</span>(trace_gc!, gc_x0, tspan, (param<span class="op">...</span>, sol))</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>sol_gc <span class="op">=</span> <span class="fu">solve</span>(prob_gc, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>])</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>gc_analytic <span class="op">=</span> <span class="fu">Tuple</span>(xu <span class="op">-&gt;</span> <span class="fu">getindex</span>(<span class="fu">sol_gc</span>(xu[<span class="fl">7</span>]), i) <span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="co"># numeric result and analytic result</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="co"># similar to the magnetic field gradient drift</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="co"># analytic calculation should include both of the gradient drift and the curvature drift</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="fu">orbit</span>(sol, vars<span class="op">=</span>[(<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>), gc, gc_analytic])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="b-b-magnetic-mirrors" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="b-b-magnetic-mirrors"><span class="header-section-number">12.2.3</span> ∇B ∥ B: Magnetic Mirrors</h3>
+<p>Now we consider a magnetic field which is pointed primarily in the z direction and whose magnitude varies in the z direction. Let the field be axisymmetric, with <span class="math inline">\(B_\theta = 0\)</span> and <span class="math inline">\(\partial/\partial\theta = 0\)</span>. Since the magnetic field lines converge and diverge, there is necessarily a component <span class="math inline">\(B_r\)</span>. We wish to show that this gives rise to a force which can trap a particle in a magnetic field.</p>
+<p>We can obtain <span class="math inline">\(B_r\)</span> from <span class="math inline">\(\nabla\cdot\mathbf{B} = 0\)</span>:</p>
+<p><span class="math display">\[
+\frac{1}{r}\frac{\partial}{\partial r}(rB_r) + \frac{\partial B_z}{\partial z} = 0
+\]</span></p>
+<p>If <span class="math inline">\(\partial \mathbf{B}_z/\partial z\)</span> is given at <span class="math inline">\(r=0\)</span> and does not vary much with r, we have approximately</p>
+<p><span class="math display">\[
+\begin{aligned}
+rB_r &amp;= -\int_0^r r\frac{\partial B_z}{\partial z}dr \simeq -\frac{1}{2}r^2 \Big[ \frac{\partial \mathbf{B}_z}{\partial z} \Big]_{r=0} \\
+B_r &amp;= -\frac{1}{2}r \Big[ \frac{\partial \mathbf{B}_z}{\partial z} \Big]_{r=0}
+\end{aligned}
+\]</span></p>
+<p>The variation of <span class="math inline">\(|B|\)</span> with r causes a grad-B drift of guiding centers about the axis of symmetry, but there is no radial grad-B drift, because <span class="math inline">\(\partial B/\partial \theta = 0\)</span>. The components of the Lorentz force are</p>
+<p><span class="math display">\[
+\newcommand{\textcircled}[1]{\enclose{circle}{\kern.1em\text{#1}\kern.1em}}
+\begin{aligned}
+F_r &amp;= q(\underbrace{v_\theta B_z}_{\textcircled{\small{1}}} - v_z \cancel{B_\theta}) \\
+F_\theta &amp;= q(\underbrace{-v_r B_z}_{\textcircled{\small{2}}} + \underbrace{v_z B_r}_{\textcircled{\small{3}}}) \\
+F_z &amp;= q(v_r \cancel{B}_\theta - \underbrace{v_\theta B_r}_{\textcircled{\small{4}}})
+\end{aligned}
+\]</span></p>
+<p>Two terms vanish if <span class="math inline">\(B_\theta = 0\)</span>, and terms 1 and 2 give rise to the usual Larmor gyration. Term 3 vanishes on the axis; when it does not vanish, this azimuthal force causes a drift in the radial direction. This drift merely makes the guiding centers follow the magnetic field lines. Term 4 is the one we are interested in. Using the expression of <span class="math inline">\(B_r\)</span>, we have</p>
+<p><span class="math display">\[
+F_z = \frac{1}{2}q v_\theta r_L \frac{\partial B_z}{\partial z}
+\]</span></p>
+<p>We must now average over one gyration. For simplicity, consider a particle whose guiding center lies on the axis. Then <span class="math inline">\(v_\theta\)</span> is a constant during a gyration; depending on the sign of q, <span class="math inline">\(v_\theta\)</span> is <span class="math inline">\(\mp v_\perp\)</span>. Since <span class="math inline">\(r = r_L\)</span> , the average force is</p>
+<p><span class="math display">\[
+\bar{F}_z = \mp \frac{1}{2}q v_\perp r_L \frac{\partial B_z}{\partial z} = \mp \frac{1}{2}q\frac{v_\perp^2}{\omega_c} \frac{\partial B_z}{\partial z} = -\frac{1}{2}\frac{mv_\perp^2}{B} \frac{\partial B_z}{\partial z}
+\]</span></p>
+<p>We define the <em>magnetic moment</em> of the gyrating particle to be</p>
+<p><span class="math display">\[
+\mu \equiv \frac{1}{2}mv_\perp^2 / B
+\]</span></p>
+<p>so that</p>
+<p><span class="math display">\[
+\bar{F}_z = -\mu \frac{\partial B_z}{\partial z}
+\]</span></p>
+<p>This is a specific example of the force on a diamagnetic particle, which in general can be written</p>
+<p><span class="math display">\[
+\mathbf{F}_\parallel = -\mu\frac{\partial B}{\partial \mathbf{s}} = -\mu\nabla_\parallel B
+\]</span></p>
+<p>where <span class="math inline">\(d\mathbf{s}\)</span> is a line element along <span class="math inline">\(\mathbf{B}\)</span>. Note that the definition of magnetic moment here is the same as the usual definition for the magnetic moment of a current loop with area A and current I: <span class="math inline">\(\mu = IA\)</span>. In the case of a singly charged ion, I is generated by a charge e coming around <span class="math inline">\(\omega_c / 2\pi\)</span> times a second: <span class="math inline">\(I = e\omega_c/2\pi\)</span>. The area A is <span class="math inline">\(\pi r_L^2 = \pi r_L^2/\omega_c^2\)</span>. Thus</p>
+<p><span class="math display">\[
+\mu = \frac{e\omega_c}{2\pi}\frac{\pi r_L^2}{\omega_c^2} = \frac{1}{2}\frac{v_\perp^2 e}{\omega_c} = \frac{1}{2}\frac{mv_\perp^2}{B}
+\]</span></p>
+<p>As the particle moves into regions of stronger or weaker B, its Larmor radius changes, but <em>μ remains invariant</em>. To prove this, consider the component of the equation of motion along <span class="math inline">\(\mathbf{B}\)</span>:</p>
+<p><span class="math display">\[
+m\frac{dv_\parallel}{dt} = -\mu \frac{\partial B}{\partial s}
+\]</span></p>
+<p>Multiplying by <span class="math inline">\(v_\parallel\)</span> on the left and its equivalent <span class="math inline">\(ds/dt\)</span> on the right, we have</p>
+<p><span class="math display">\[
+mv_\parallel \frac{dv_\parallel}{dt} = \frac{d}{dt}\Big( \frac{1}{2}mv_\parallel^2 \Big) = -\mu\frac{\partial B}{\partial s}\frac{ds}{dt} = -\mu\frac{dB}{dt}
+\]</span></p>
+<p>Here dB/dt is the variation of B as seen by the particle; B itself is constant. The particle’s energy must be conserved, so we have</p>
+<p><span class="math display">\[
+\frac{d}{dt}\Big( \frac{1}{2}mv_\parallel^2 + \frac{1}{2}mv_\perp^2 \Big) = \frac{d}{dt}\Big( \frac{1}{2}mv_\parallel^2 + \mu B \Big) = 0
+\]</span></p>
+<p>With the previous equation this becomes</p>
+<p><span class="math display">\[
+-\mu\frac{dB}{dt} + \frac{d}{dt}(\mu B) = 0
+\]</span></p>
+<p>so that</p>
+<p><span class="math display">\[
+\frac{d\mu}{dt} = 0
+\]</span></p>
+<p>The invariance of <span class="math inline">\(\mu\)</span> is the basis for one of the primary schemes for plasma confinement: the <em>magnetic mirror</em>. As a particle moves from a weak-field region to a strong-field region in the course of its thermal motion, it sees an increasing B, and therefore its <span class="math inline">\(v_\perp\)</span> must increase in order to keep μ constant. Since its total energy must remain constant, <span class="math inline">\(v_\parallel\)</span> must necessarily decrease. If B is high enough in the “throat” of the mirror, <span class="math inline">\(v_\parallel\)</span> eventually becomes zero; and the particle is “reflected” back to the weak-field region. It is, of course, the force <span class="math inline">\(\mathbf{F}_\parallel\)</span> which causes the reflection. The nonuniform field of a simple pair of coil form two magnetic mirrors between which a plasma can be trapped. This effect works on both ions and electrons.</p>
+<p>The trapping is not perfect, however. For instance, a particle with <span class="math inline">\(v_\perp = 0\)</span> will have no magnetic moment and will not feel any force along <span class="math inline">\(\mathbf{B}\)</span>. A particle with small <span class="math inline">\(v_\perp / v_\parallel\)</span> at the midplane (<span class="math inline">\(B = B_0\)</span>) will also escape if the maximum field <span class="math inline">\(B_m\)</span> is not large enough. For given <span class="math inline">\(B_0\)</span> and <span class="math inline">\(B_m\)</span>, which particles will escape? A particle with <span class="math inline">\(v_\perp = v_{\perp 0}\)</span> and <span class="math inline">\(v_\parallel = v_{\parallel 0}\)</span> at the midplane will have <span class="math inline">\(v_\perp = v_\perp^\prime\)</span> and <span class="math inline">\(v_\parallel = 0\)</span> at its turning point. Let the field be <span class="math inline">\(B^\prime\)</span> there. Then the invariants of <span class="math inline">\(\mu\)</span> yields</p>
+<p><span class="math display">\[
+\frac{1}{2}\frac{mv_{\perp 0}^2}{B_0} = \frac{1}{2}\frac{m{v_{\perp 0}^{\prime}}^2}{B^\prime}
+\]</span></p>
+<p>Conservation of energy requires</p>
+<p><span class="math display">\[
+{v_{\perp 0}^{\prime}}^2 = v_{\perp 0}^2 + v_{\parallel 0}^2 \equiv v_0^2
+\]</span></p>
+<p>Combining the above two equations, we find</p>
+<p><span class="math display">\[
+\frac{B_0}{B^\prime} = \frac{v_{\perp 0}^2}{{v_{\perp}^{\prime}}^2} \equiv \sin^2 \theta
+\]</span></p>
+<p>where <span class="math inline">\(\theta\)</span> is the pitch angle of the orbit in the weak-field region. Particles with smaller θ will mirror in regions of higher B. If θ is too small, <span class="math inline">\(B^\prime\)</span> exceeds <span class="math inline">\(B_m\)</span>; and the particles does not mirror at all. Replacing <span class="math inline">\(B^\prime\)</span> by <span class="math inline">\(B_m\)</span>, we see that the smallest <span class="math inline">\(\theta\)</span> of a confined particle is given by</p>
+<p><span class="math display">\[
+\sin^2 \theta_m = \frac{B_0}{B_m} \equiv \frac{1}{R_m}
+\]</span></p>
+<p>where <span class="math inline">\(R_m\)</span> is the <em>mirror ratio</em>. It defines the boundary of a region in velocity space in the shape of a cone, called a <em>loss cone</em>. Particles lying within the loss cone are not confined. Consequently, a mirror-confined plasma is never isotropic. Note that the loss cone is independent of q or m. Without collisions, both ions and electrons are equally well confined. When collisions occur, particles are lost when they change their pitch angle in a collision and are scattered into the loss cone. Generally, electrons are lost more easily because they have a higher collision frequency.</p>
+<p>The magnetic mirror was first proposed by Enrico Fermi as a mechanism for the acceleration of cosmic rays. Protons bouncing between magnetic mirrors approaching each other at high velocity could gain energy at each bounce. How such mirrors could arise is another story. A further example of the mirror effect is the confinement of particles in the Van Allen belts. The magnetic field of the earth, being strong at the poles and weak at the equator, forms a natural mirror with rather large <span class="math inline">\(R_m\)</span>.</p>
+</section>
+</section>
+<section id="nonuniform-e-field" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="nonuniform-e-field"><span class="header-section-number">12.3</span> Nonuniform E Field</h2>
+<p>Now we let the magnetic field be uniform and the electric field be nonuniform. For simplicity, we assume <span class="math inline">\(\mathbf{E}\)</span> to be in the x direction and to vary sinusoidally in the x direction:</p>
+<p><span class="math display">\[
+\mathbf{E} \equiv E_0 (\cos kx)\widehat{x}
+\]</span></p>
+<p>This field distribution has a wavelength <span class="math inline">\(\lambda = 2\pi / k\)</span>, and is the result of a sinusoidal distribution of charges, which we need not specify. In practice, such a charge distribution can arise in a plasma during a wave motion. The equation of motion is</p>
+<p><span class="math display">\[
+m\frac{d\mathbf{v}}{dt} = q[\mathbf{E}(x) + \mathbf{v}\times\mathbf{B}]
+\]</span></p>
+<p>whose transverse components are</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dot{v}_x &amp;= \frac{qB}{m}v_y + \frac{q}{m}E_x(x) \\
+\dot{v}_y &amp;= -\frac{qB}{m}v_x
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\ddot{v}_x &amp;= -\omega_c^2 v_x \pm \omega_c \frac{\dot{E}_x}{B} \\
+\ddot{v}_y &amp;= -\omega_c^2 v_y -\omega_c^2\frac{E_x(x)}{B}
+\end{aligned}
+\]</span></p>
+<p>Here <span class="math inline">\(E_x(x)\)</span> is the electric field at the position of the particle. To evaluate this, we need to know the particle’s orbit, which we are trying to solve for in the first place. If the electric field is weak, we may, as an approximation, use the <em>undisturbed orbit</em> to evaluate <span class="math inline">\(E_x(x)\)</span>. The orbit in the absence of the E field was given before</p>
+<p><span class="math display">\[
+x = x_0 + r_L\sin \omega_c t
+\]</span></p>
+<p>so we have</p>
+<p><span class="math display">\[
+\ddot{v}_y = -\omega_c^2 v_y -\omega_c^2\frac{E_0}{B}\cos k (x_0 + r_L \sin\omega_c t)
+\]</span></p>
+<p>Anticipating the result, we look for a solution which is the sum of a gyration at <span class="math inline">\(\omega_c\)</span> and a steady drift <span class="math inline">\(\mathbf{v}_E\)</span>. Since we are interested in finding an expression for <span class="math inline">\(v_E\)</span>, we take out the gyratory motion by averaging over a cycle. The <span class="math inline">\(v_x\)</span> component then gives <span class="math inline">\(\bar{v}_x = 0\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In the <span class="math inline">\(v_y\)</span> component, the oscillating term <span class="math inline">\(\ddot{v}_y\)</span> clearly averages to zero, and we have</p>
+<p><span class="math display">\[
+\bar{\ddot{v}_y} = 0 = -\omega_c^2 \bar{v}_y -\omega_c^2\frac{E_0}{B}\bar{\cos k (x_0 + r_L \sin\omega_c t)}
+\]</span></p>
+<p>Expanding the cosine, we have</p>
+<p><span class="math display">\[
+\cos k (x_0 + r_L \sin\omega_c t) = \cos(kx_0) \cos(kr_L \sin\omega_c t) - \sin(kx_0) \sin(kr_L \sin\omega_c t)
+\]</span></p>
+<p>It will suffice to treat the small Larmor radius case, <span class="math inline">\(kr_L \ll 1\)</span>. The Taylor expansions allow us to write</p>
+<p><span class="math display">\[
+\cos k (x_0 + r_L \sin\omega_c t) \approx \cos(kx_0)\big( 1 - \frac{1}{2}k^2r_L^2 \sin^2\omega_c t \big) - \sin(kx_0)k r_L \sin\omega_c t
+\]</span></p>
+<p>The last term vanishes upon averaging over time, and it gives</p>
+<p><span class="math display">\[
+\bar{v}_y = -\frac{E_0}{B}\cos(kx_0)\big( 1 - \frac{1}{4}k^2r_L^2 \big) = -\frac{E_x(x_0)}{B}\big( 1 - \frac{1}{4}k^2r_L^2 \big)
+\]</span></p>
+<p>Thus the usual <span class="math inline">\(\mathbf{E}\times\mathbf{B}\)</span> drift is modified by the inhomogeneity to read</p>
+<p><span class="math display">\[
+\mathbf{v}_E = \frac{\mathbf{E}\times\mathbf{B}}{B^2}\big( 1 - \frac{1}{4}k^2r_L^2 \big)
+\]</span></p>
+<p>The physical reason for this is easy to see. An ion with its guiding center at a maximum of <span class="math inline">\(\mathbf{E}\)</span> actually spends a good deal of its time in regions of weaker <span class="math inline">\(\mathbf{E}\)</span>. Its average drift, therefore, is less than E/B evaluated at the guiding center. In a linearly varying <span class="math inline">\(\mathbf{E}\)</span> field, the ion would be in a stronger field on one side of the orbit and in a field weaker by the same amount on the other side; the correction to <span class="math inline">\(\mathbf{v}_E\)</span> then cancels out. From this it is clear that the correction term depends on the <em>second derivative</em> of <span class="math inline">\(\mathbf{E}\)</span>. For the sinusoidal distribution we assumed, the second derivative is always negative with respect to <span class="math inline">\(\mathbf{E}\)</span>. For an arbitrary variation of <span class="math inline">\(\mathbf{E}\)</span>, we need only replace <span class="math inline">\(ik\)</span> by <span class="math inline">\(\nabla\)</span> and write the drift as</p>
+<p><span class="math display">\[
+\mathbf{v}_E = \Big( 1 + \frac{1}{4}r_L^2\nabla^2 \Big) \frac{\mathbf{E}\times\mathbf{B}}{B^2}
+\]</span></p>
+<p>The second term is called the <em>finite-Larmor-radius effect</em>. What is the significance of this correction? Since <span class="math inline">\(r_L\)</span> is much larger for ions than for electrons, <span class="math inline">\(\mathbf{v}_E\)</span> is no longer independent of species. If a density clump occurs in a plasma, an electric field can cause the ions and electrons to separate, generating another electric field. If there is a feedback mechanism that causes the second electric field to enhance the first one, <span class="math inline">\(\mathbf{E}\)</span> grows indefinitely, and the plasma is unstable. Such an instability, called a <em>drift instability</em>, is one type of plasma instabilities. The grad-B drift, of course, is also a finite-Larmor-radius effect and also causes charges to separate. However, <span class="math inline">\(\mathbf{v}_{\nabla B} \propto kr_L\)</span> whereas the correction term above is proportional to <span class="math inline">\(k^2 r_L^2\)</span>. The nonuniform-E-field effect, therefore, is important at relatively large k, or small scale lengths of the inhomogeneity. For this reason, drift instabilities belong to a more general class called <em>microinstabilities</em>.</p>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Tensors</span>: laplace</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Tensors</span>: Vec as Vec3</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># using SpecialFunctions</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">uniform_B</span>(x)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1e-8</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">nonuniform_E</span>(x)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">1e-9</span><span class="fu">*cos</span>(<span class="fl">0.3</span><span class="op">*</span>x[<span class="fl">1</span>]), <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># trace the orbit of the guiding center</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">trace_gc!</span>(dx, x, p, t)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    q, m, E, B, sol <span class="op">=</span> p</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    xu <span class="op">=</span> <span class="fu">sol</span>(t)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    xp <span class="op">=</span> <span class="pp">@view</span> xu[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>]</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    Bv <span class="op">=</span> <span class="fu">B</span>(xp)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="fu">normalize</span>(Bv)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    v_par <span class="op">=</span> (xu[<span class="fl">4</span><span class="op">:</span><span class="fl">6</span>]<span class="op">⋅</span>b)<span class="op">.*</span>b  <span class="co"># (v⋅b)b</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    v_perp <span class="op">=</span> xu[<span class="fl">4</span><span class="op">:</span><span class="fl">6</span>] <span class="op">-</span> v_par</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    r4 <span class="op">=</span> (<span class="fu">m*norm</span>(v_perp)<span class="op">/</span>q<span class="op">/</span><span class="fu">norm</span>(Bv))<span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">4</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">EB</span>(x) <span class="op">=</span> (<span class="fu">E</span>(x)<span class="fu">×B</span>(x))<span class="op">/</span><span class="fu">norm</span>(<span class="fu">B</span>(x))<span class="op">^</span><span class="fl">2</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># dx[1:3] = EB(xp) + v_par</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    dx[<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>] <span class="op">=</span> <span class="fu">EB</span>(x) <span class="op">+</span> <span class="fu">r4*laplace</span>.(EB, <span class="fu">Vec3</span>(x<span class="op">...</span>)) <span class="op">+</span> v_par</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># more accurate</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># dx[1:3] = besselj0(0.3*m*norm(v_perp)/q/norm(Bv))*EB(x) + v_par</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.1</span>]</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, v0<span class="op">...</span>]</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">20</span>)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(nonuniform_E, uniform_B, species<span class="op">=</span>Proton)</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan, param)</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span>])</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>gc <span class="op">=</span> <span class="fu">get_gc</span>(param)</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>gc_x0 <span class="op">=</span> [<span class="fu">gc_i</span>(stateinit) for gc_i <span class="kw">in</span> gc]</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>prob_gc <span class="op">=</span> <span class="fu">ODEProblem</span>(trace_gc!, gc_x0, tspan, (param<span class="op">...</span>, sol))</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>sol_gc <span class="op">=</span> <span class="fu">solve</span>(prob_gc, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>])</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>gc_analytic <span class="op">=</span> <span class="fu">Tuple</span>(xu <span class="op">-&gt;</span> <span class="fu">getindex</span>(<span class="fu">sol_gc</span>(xu[<span class="fl">7</span>]), i) <span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>)</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="co"># numeric result and analytic result</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="fu">orbit</span>(sol, vars<span class="op">=</span>[(<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>), gc, gc_analytic])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="time-varying-e-field" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="time-varying-e-field"><span class="header-section-number">12.4</span> Time-Varying E Field</h2>
+<p>Let us now take <span class="math inline">\(\mathbf{E}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> to be uniform in space but varying in time. First, consider the case in which <span class="math inline">\(\mathbf{E}\)</span> alone varies sinusoidally in time, and let it lie along the x axis:</p>
+<p><span class="math display">\[
+\mathbf{E} = E_0 e^{i\omega t}\widehat{x}
+\]</span></p>
+<p>Since <span class="math inline">\(\dot{E}_x = i\omega E_x\)</span>, we can write the velocity x-component equation as</p>
+<p><span class="math display">\[
+\ddot{v}_x = -\omega_c^2 \Big( v_x \mp \frac{i\omega}{\omega_c}\frac{\tilde{E}_x}{B} \Big)
+\]</span></p>
+<p>Let us define</p>
+<p><span class="math display">\[
+\begin{aligned}
+\tilde{v}_p &amp;\equiv \pm \frac{i\omega}{\omega_c}\frac{\tilde{E}_x}{B} \\
+\tilde{v}_E &amp;\equiv \frac{\tilde{E}_x}{B}
+\end{aligned}
+\]</span></p>
+<p>where the tilde has been added merely to emphasize that the drift is oscillating. The plus (minus) sign, as usual, denotes positive (negative) <span class="math inline">\(q\)</span>. Now the x and y velocity component equations can be written as</p>
+<p><span class="math display">\[
+\begin{aligned}
+\ddot{v}_x &amp;= -\omega_c^2(v_x - \tilde{v}_p) \\
+\ddot{v}_y &amp;= -\omega_c^2(v_y - \tilde{v}_E)
+\end{aligned}
+\]</span></p>
+<p>By analogy with the derivation in the case of a uniform EM field, we try a solution which is the sum of a drift and a gyratory motion:</p>
+<p><span class="math display">\[
+\begin{aligned}
+v_x &amp;= v_\perp e^{i\omega_c t} + \tilde{v}_p \\
+v_y &amp;= \pm i v_\perp e^{i\omega_c t} + \tilde{v}_E
+\end{aligned}
+\]</span></p>
+<p>If we now differentiate twice with respect to time, we find</p>
+<p><span class="math display">\[
+\begin{aligned}
+\ddot{v}_x &amp;= -\omega_c^2 v_x + (\omega_c^2 - \omega^2)\tilde{v}_p \\
+\ddot{v}_y &amp;= -\omega_c^2 v_y + (\omega_c^2 - \omega^2)\tilde{v}_E
+\end{aligned}
+\]</span></p>
+<p>This is <strong>not</strong> the same as the previous expressions right above unless <span class="math inline">\(\omega^2 \ll \omega_c^2\)</span>. If we now make the assumption that <span class="math inline">\(\mathbf{E}\)</span> varies slowly, so that <span class="math inline">\(\omega^2 \ll \omega_c^2\)</span>, then there we have the approximate solution.</p>
+<p>The solution of velocities in x and y tells us that the guiding center motion has two components. The y component, perpendicular to <span class="math inline">\(\mathbf{B}\)</span> and <span class="math inline">\(\mathbf{E}\)</span>, is the usual <span class="math inline">\(\mathbf{E}\times\mathbf{B}\)</span> drift, except that <span class="math inline">\(v_E\)</span> now oscillates slowly at the frequency <span class="math inline">\(\omega\)</span>. The x component, a new drift <em>along the direction of</em> <span class="math inline">\(\mathbf{E}\)</span>, is called the <em>polarization drift</em>. By replacing <span class="math inline">\(i\omega\)</span> with <span class="math inline">\(\partial/\partial t\)</span>, we can generalize the expression of <span class="math inline">\(v_p\)</span> and define the polarization drift as</p>
+<p><span class="math display">\[
+\mathbf{v}_p = \pm \frac{1}{\omega_c B}\frac{d\mathbf{E}}{dt}
+\]</span></p>
+<p>Since <span class="math inline">\(\mathbf{v}_p\)</span> is in opposite directions for ions and electrons, there is a <em>polarization current</em>; for Z = 1, this is</p>
+<p><span class="math display">\[
+\mathbf{j}_p = ne(v_{ip} - v_{ep}) = \frac{ne}{eB^2}(M+m)\frac{d\mathbf{E}}{dt} = \frac{\rho}{B^2}\frac{d\mathbf{E}}{dt}
+\]</span></p>
+<p>where <span class="math inline">\(\rho\)</span> is the mass density.</p>
+<p>The physical reason for the polarization current is simple. Consider an ion at rest in a magnetic field. If a field <span class="math inline">\(\mathbf{E}\)</span> is suddenly applied, the first thing the ion does is to move in the direction of <span class="math inline">\(\mathbf{E}\)</span>. Only after picking up a velocity <span class="math inline">\(\mathbf{v}\)</span> does the ion feel a Lorentz force <span class="math inline">\(e\mathbf{v}\times\mathbf{B}\)</span> and begin to move perpendicular to both fields. If <span class="math inline">\(\mathbf{E}\)</span> is now kept constant, there is no further <span class="math inline">\(\mathbf{v}_p\)</span> drift but only a <span class="math inline">\(\mathbf{v}_E\)</span> drift. However, if <span class="math inline">\(\mathbf{E}\)</span> is reversed, there is again a momentary drift, this time to the left. Thus <span class="math inline">\(\mathbf{v}_p\)</span> is a startup drift due to inertia and occurs only in the first half-cycle of each gyration during which <span class="math inline">\(\mathbf{E}\)</span> changes. Consequently, <span class="math inline">\(\mathbf{v}_p\)</span> goes to zero when <span class="math inline">\(\omega/\omega_c \ll 1\)</span>.</p>
+<p>The polarization effect in a plasma is similar to that in a solid dielectric, where <span class="math inline">\(\mathbf{D} = \epsilon_0\mathbf{E} + \mathbf{P}\)</span>. The dipoles in a plasma are ions and electrons separated by a distance <span class="math inline">\(r_L\)</span>. But since ions and electrons can move around to preserve quasineutrality, the application of a steady <span class="math inline">\(\mathbf{E}\)</span> field does not result in a polarization field <span class="math inline">\(\mathbf{P}\)</span>. However, if <span class="math inline">\(\mathbf{E}\)</span> oscillates, an oscillating current <span class="math inline">\(\mathbf{j}_p\)</span> results from the lag due to the ion inertia.</p>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">uniform_B</span>(x)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1e-8</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">time_varying_E</span>(x, t)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> SA[<span class="fl">0</span>, <span class="fl">1e-9</span><span class="op">*</span><span class="fl">0.1</span><span class="op">*</span>t, <span class="fl">0</span>]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0</span>, <span class="fl">0</span>]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.1</span>]</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, v0<span class="op">...</span>]</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>tspan <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">100</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>param <span class="op">=</span> <span class="fu">prepare</span>(time_varying_E, uniform_B, species<span class="op">=</span>Proton)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan, param)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> <span class="fu">solve</span>(prob, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span>])</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>gc <span class="op">=</span> <span class="fu">get_gc</span>(param)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">v_perp</span>(xu) <span class="op">=</span> <span class="fu">hypot</span>(xu[<span class="fl">4</span>], xu[<span class="fl">5</span>])</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>gc_y <span class="op">=</span> gc[<span class="fl">2</span>]</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># polarization drift</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="fu">monitor</span>(sol, vars<span class="op">=</span>[v_perp, <span class="fl">2</span>, gc_y])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="time-varying-b-field" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="time-varying-b-field"><span class="header-section-number">12.5</span> Time-Varying B Field</h2>
+<p>Finally, we allow the magnetic field to vary in time. Since the Lorentz force is always perpendicular to <span class="math inline">\(\mathbf{v}\)</span>, a magnetic field itself cannot impart energy to a charged particle. However, associated with <span class="math inline">\(\mathbf{B}\)</span> is an electric field given by</p>
+<p><span class="math display">\[
+\nabla\times\mathbf{E} = -\dot{\mathbf{B}}
+\]</span></p>
+<p>and this can accelerate the particles. We can no longer assume the fields to be completely uniform. Let <span class="math inline">\(\mathbf{v}_\perp = d\mathbf{l}/dt\)</span> be the transverse velocity, <span class="math inline">\(\mathbf{l}\)</span> being the element of the path along a particle trajectory (with <span class="math inline">\(v_\parallel\)</span> neglected). Taking the scalar product of the equation of motion with <span class="math inline">\(\mathbf{v}_\perp\)</span>, we have</p>
+<p><span class="math display">\[
+\frac{d}{dt}\Big( \frac{1}{2}mv_\perp^2 \Big) = q\mathbf{E}\cdot\mathbf{v}_\perp = q\mathbf{E}\cdot\frac{d\mathbf{l}}{dt}
+\]</span></p>
+<p>The change in one gyration is obtained by integrating over one period:</p>
+<p><span class="math display">\[
+\delta \Big( \frac{1}{2}mv_\perp^2  \Big) = \int_0^{2\pi/\omega_c}q\mathbf{E}\cdot\frac{d\mathbf{l}}{dt}dt
+\]</span></p>
+<p>If the field changes slowly, we can replace the time integral by a line integral over the unperturbed orbit:</p>
+<p><span class="math display">\[
+\delta \Big( \frac{1}{2}mv_\perp^2  \Big) = \oint q\mathbf{E}\cdot d\mathbf{l} = q\int_s (\nabla\times\mathbf{E})\cdot d\mathbf{S} = -q \int_s\dot{\mathbf{B}}\cdot d\mathbf{S}
+\]</span></p>
+<p>Here <span class="math inline">\(\mathbf{S}\)</span> is the surface enclosed by the Larmor orbit and has a direction given by the right-hand rule when the fingers point in the direction of <span class="math inline">\(\mathbf{v}\)</span>. Since the plasma is diamagnetic, we have <span class="math inline">\(\mathbf{B}\cdot d\mathbf{S}&lt;0\)</span> for ions and <span class="math inline">\(\mathbf{B}\cdot d\mathbf{S}&gt;0\)</span> for electrons. Then</p>
+<p><span class="math display">\[
+\delta \Big( \frac{1}{2}mv_\perp^2  \Big) = \pm q \dot{B}\pi r_L^2 = \pm q \pi\dot{B}\frac{v_\perp^2}{\omega_c}\frac{m}{\pm qB} = \frac{\frac{1}{2}mv_\perp^2}{B}\cdot \frac{2\pi \dot{B}}{\omega_c}
+\]</span></p>
+<p>The quantity <span class="math inline">\(\frac{2\pi\dot{B}}{\omega_c} = \frac{\dot{B}}{\omega_c}\)</span> is just the change <span class="math inline">\(\delta B\)</span> during one period of gyration. Thus</p>
+<p><span class="math display">\[
+\delta \Big( \frac{1}{2}mv_\perp^2  \Big) = \mu \delta B
+\]</span></p>
+<p>Since the left-hand-side is <span class="math inline">\(\delta(\mu B)\)</span>, we have the desired result</p>
+<p><span class="math display">\[
+\delta \mu = 0
+\]</span></p>
+<p><em>The magnetic moment is invariant in slowly varying magnetic fields.</em></p>
+<p>As the B field varies in strength, the Larmor orbits expand and contract, and the particles lose and gain transverse energy. This exchange of energy between the particles and the field is described very simply by the invariant of magnetic moment. The invariance of <span class="math inline">\(\mu\)</span> allows us to prove easily the following well-known theorem: &gt; The magnetic flux through a Larmor orbit is constant.</p>
+<p>The flux <span class="math inline">\(\Phi\)</span> is given by <span class="math inline">\(BS\)</span>, with <span class="math inline">\(S = \pi r_L^2\)</span>. Thus</p>
+<p><span class="math display">\[
+\Phi = B\pi\frac{v_\perp^2}{\omega_c^2} = B\pi\frac{v_\perp^2 m^2}{q^2 B^2} = \frac{2\pi m}{q^2}\frac{\frac{1}{2}mv_\perp^2}{B} = \frac{2\pi m}{q^2}\mu
+\]</span></p>
+<p>Therefore, <span class="math inline">\(\Phi\)</span> is constant if <span class="math inline">\(\mu\)</span> is constant.</p>
+<p>This property is used in a method of plasma heating known as <em>adiabatic compression</em>. A plasma is injected into a sequence of magnetic mirrors and by keep increasing the magnetic field in subsequent mirrors we can increase the plasma velocities.</p>
+</section>
+<section id="summary-of-guiding-center-drifts" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="summary-of-guiding-center-drifts"><span class="header-section-number">12.6</span> Summary of Guiding Center Drifts</h2>
+<p>General force:</p>
+<p><span class="math display">\[
+\mathbf{v}_f = \frac{1}{q}\frac{\mathbf{F}\times\mathbf{B}}{B^2}
+\]</span></p>
+<p>Electric field:</p>
+<p><span class="math display">\[
+\mathbf{v}_E = \frac{\mathbf{E}\times\mathbf{B}}{B^2}
+\]</span></p>
+<p>Gravitational field:</p>
+<p><span class="math display">\[
+\mathbf{v}_g = \frac{m}{q}\frac{\mathbf{g}\times\mathbf{B}}{B^2}
+\]</span></p>
+<p>Nonuniform electric field:</p>
+<p><span class="math display">\[
+\mathbf{v}_E = \Big( 1+\frac{1}{4}r_L^2 \nabla^2 \Big)\frac{\mathbf{E}\times\mathbf{B}}{B^2}
+\]</span></p>
+<p>Nonuniform magnetic field:</p>
+<p>Grad-B:</p>
+<p><span class="math display">\[
+\mathbf{v}_{\nabla B} = \pm \frac{1}{2}v_\perp r_L\frac{\mathbf{B}\times\nabla B}{B^2}
+\]</span></p>
+<p>Curvature drift:</p>
+<p><span class="math display">\[
+\mathbf{v}_R = \frac{mv_\parallel^2}{q}\frac{\mathbf{R}_c \times\mathbf{B}}{R_c^2 B^2}
+\]</span></p>
+<p>Curved vacuum field:</p>
+<p><span class="math display">\[
+\mathbf{v}_R + \mathbf{v}_{\nabla B} = \frac{m}{q}\Big( v_\parallel^2 + \frac{1}{2}v_\perp^2 \Big) \frac{\mathbf{R}_c \times\mathbf{B}}{R_c^2 B^2}
+\]</span></p>
+<p>Polarization drift:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="math display">\[
+\mathbf{v}_p = \pm \frac{1}{\omega_c B}\frac{d\mathbf{E}}{dt}
+\]</span></p>
+</section>
+<section id="adiabatic-invariants" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="adiabatic-invariants"><span class="header-section-number">12.7</span> Adiabatic Invariants</h2>
+<p>It is well known in classical mechanics that whenever a system has a periodic motion, the action integral <span class="math inline">\(\oint p dq\)</span> taken over a period is a constant of the motion. Here <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are the generalized momentum and coordinate which repeat themselves in the motion. If a slow change is made in the system, so that the motion is not quite periodic, the constant of the motion does not change and is then called an <em>adiabatic invariant</em>. By slow here we mean slow compared with the period of motion, so that the integral <span class="math inline">\(\oint p dq\)</span> is well defined even though it is strictly no longer an integral over a closed path. Adiabatic invariants play an important role in plasma physics; they allow us to obtain simple answers in many instances involving complicated motions. There are three adiabatic invariants, each corresponding to a different type of periodic motion.</p>
+<section id="the-first-adiabatic-invariant" class="level3" data-number="12.7.1">
+<h3 data-number="12.7.1" class="anchored" data-anchor-id="the-first-adiabatic-invariant"><span class="header-section-number">12.7.1</span> The First Adiabatic Invariant</h3>
+<p>We have already met the quantity</p>
+<p><span class="math display">\[
+\mu = mv_\perp^2 / 2B
+\]</span></p>
+<p>and have proved its invariance in spatially and temporally varying <span class="math inline">\(\mathbf{B}\)</span> fields. The periodic motion involved, of course, is the Larmor gyration. If we take <span class="math inline">\(p\)</span> to be angular momentum <span class="math inline">\(mv_\perp r\)</span> and <span class="math inline">\(dq\)</span> to be the coordinate <span class="math inline">\(d\theta\)</span>, the action integral becomes</p>
+<p><span class="math display">\[
+\oint p dq = \oint mv_\perp r d\theta = 2\pi r_L m v_\perp = 2\pi \frac{mv_\perp^2}{\omega_c} = 4\pi \frac{m}{|q|}\mu
+\]</span></p>
+<p>Thus μ is a constant of the motion as long as <span class="math inline">\(q/m\)</span> is not changed. We have proved the invariance of μ only with the implicit assumption <span class="math inline">\(\omega/\omega_c \ll 1\)</span>, where <span class="math inline">\(\omega\)</span> is a frequency characterizing the rate of change of <span class="math inline">\(\mathbf{B}\)</span> as seen by the particle. A proof exists, however, that μ is invariant even when <span class="math inline">\(\omega/\omega_c \le q\)</span>. In theorists’ language, μ is invariant “to all orders in an expansion in ω/ω c .” What this means in practice is that μ remains much more nearly constant than <span class="math inline">\(\mathbf{B}\)</span> does during one period of gyration.</p>
+<p>It is just as important to know when an adiabatic invariant does <em>not</em> exist as to know when it does. Adiabatic invariance of μ is violated when ω is not small compared with <span class="math inline">\(\omega_c\)</span> . We give three examples of this.</p>
+<ul>
+<li><p><em>Magnetic Pumping</em>. If the strength of <span class="math inline">\(\mathbf{B}\)</span> in a mirror confinement system is varied sinusoidally, the particles’ <span class="math inline">\(v_\perp\)</span> would oscillate; but there would be no gain of energy in the long run. However, if the particles make collisions, the invariance of μ is violated, and the plasma can be heated. In particular, a particle making a collision during the compression phase can transfer part of its gyration energy into <span class="math inline">\(v_\parallel\)</span> energy, and this is not taken out again in the expansion phase.</p></li>
+<li><p><em>Cyclotron Heating</em>. Now imagine that the <span class="math inline">\(\mathbf{B}\)</span> field is oscillated at the frequency <span class="math inline">\(\omega_c\)</span>. The induced electric field will then rotate in phase with some of the particles and accelerate their Larmor motion continuously. The condition <span class="math inline">\(\omega\ll \omega_c\)</span> is violated, μ is not conserved, and the plasma can be heated.</p></li>
+<li><p><em>Magnetic Cusps</em>. If the current in one of the coils in a simple magnetic mirror system is reversed, a magnetic cusp is formed. This configuration has, in addition to the usual mirrors, a spindle-cusp mirror extending over <span class="math inline">\(360^o\)</span> in azimuth. A plasma confined in a cusp device is supposed to have better stability properties than that in an ordinary mirror. Unfortunately, the loss-cone losses are larger because of the additional loss region; and the particle motion is nonadiabatic. Since the <span class="math inline">\(\mathbf{B}\)</span> field vanishes at the center of symmetry, <span class="math inline">\(\omega_c\)</span> is zero there; and μ is not preserved. The local Larmor radius near the center is larger than the device. Because of this, the adiabatic invariant μ does not guarantee that particles outside a loss cone will stay outside after passing through the nonadiabatic region. Fortunately, there is in this case another invariant: the canonical angular momentum <span class="math inline">\(p_\theta = mrv_\theta - erA_\theta\)</span>. This ensures that there will be a population of particles trapped indefinitely until they make a collision.</p></li>
+</ul>
+</section>
+<section id="the-second-adiabatic-invariant" class="level3" data-number="12.7.2">
+<h3 data-number="12.7.2" class="anchored" data-anchor-id="the-second-adiabatic-invariant"><span class="header-section-number">12.7.2</span> The Second Adiabatic Invariant</h3>
+<p>Consider a particle trapped between two magnetic mirrors: it bounces between them and therefore has a periodic motion at the “bounce frequency”. A constant of this motion is given by <span class="math inline">\(\oint mv_\parallel ds\)</span>, where <span class="math inline">\(ds\)</span> is an element of path length (of the guiding center) along a field line. However, since the guiding center drifts across field lines, the motion is not exactly periodic, and the constant of the motion becomes an adiabatic invariant. This is called the <em>longitudinal invariant</em> <span class="math inline">\(J\)</span> and is defined for a half-cycle between the two turning points</p>
+<p><span class="math display">\[
+J = \int_a^b v_\parallel ds
+\]</span></p>
+<p>We shall prove that <span class="math inline">\(J\)</span> is invariant in a static, nonuniform B field; the result is also true for a slowly time-varying B field.</p>
+<p>Before embarking on this somewhat lengthy proof, let us consider an example of the type of problem in which a theorem on the invariance of <span class="math inline">\(J\)</span> would be useful. As we have already seen, the earth’s magnetic field mirror-traps charged particles, which slowly drift in longitude around the earth. If the magnetic field were perfectly symmetric, the particle would eventually drift back to the same magnetic field line. However, the actual field is distorted by such effects as the solar wind. In that case, will a particle ever come back to the same magnetic field line? Since the particle’s energy is conserved and is equal to <span class="math inline">\(\frac{1}{2} mv_\perp^2\)</span> at the turning point, the invariance of μ indicates that <span class="math inline">\(|B|\)</span> remains the same at the turning point. However, upon drifting back to the same longitude, a particle may find itself on another magnetic field line at a different altitude. This cannot happen if <span class="math inline">\(J\)</span> is conserved. <span class="math inline">\(J\)</span> determines the length of the field lines between turning points, and no two lines have the same length between points with the same <span class="math inline">\(|B|\)</span>. Consequently, the particle returns to the same magnetic field line even in a slightly asymmetric field.</p>
+<p>To prove the invariance of <span class="math inline">\(J\)</span>, we first consider the invariance of <span class="math inline">\(v_\parallel \delta s\)</span>, where <span class="math inline">\(\delta s\)</span> is a segment of the path along <span class="math inline">\(\mathbf{B}\)</span>. Because of guiding center drifts, a particle on <span class="math inline">\(s\)</span> will find itself on another magnetic field line <span class="math inline">\(\delta s^\prime\)</span> after a time <span class="math inline">\(\Delta t\)</span>. The length of <span class="math inline">\(\delta s^\prime\)</span> is defined by passing planes perpendicular to <span class="math inline">\(\mathbf{B}\)</span> through the end points of <span class="math inline">\(\delta s\)</span>. The length of <span class="math inline">\(\delta s\)</span> is obviously proportional to the radius of curvature:</p>
+<p><span class="math display">\[
+\frac{\delta s}{R_c} = \frac{\delta s^\prime}{R_c^\prime}
+\]</span></p>
+<p>so that</p>
+<p><span class="math display">\[
+\frac{\delta s^\prime - \delta s}{\Delta t \delta s} = \frac{R_c^\prime - R_c}{\Delta t R_c}
+\]</span></p>
+<p>The “radial” component of <span class="math inline">\(\mathbf{v}_{gc}\)</span> is just</p>
+<p><span class="math display">\[
+\mathbf{v}_{gc}\cdot \frac{\mathbf{R}_c}{R_c} = \frac{R_c^\prime - R_c}{\Delta t}
+\]</span></p>
+<p>The guiding center drift in curved vacuum field is</p>
+<p><span class="math display">\[
+\mathbf{v}_{gc} = \mathbf{v}_R + \mathbf{v}_{\nabla B} = \pm \frac{1}{2}v_\perp r_L\frac{\mathbf{B}\times\nabla B}{B^2} + \frac{mv_\parallel^2}{q}\frac{\mathbf{R}_c \times\mathbf{B}}{R_c^2 B^2}
+\]</span></p>
+<p>The curvature drift has no component along <span class="math inline">\(\mathbf{R}_c\)</span>. Using the above three equations, we have</p>
+<p><span class="math display">\[
+\frac{1}{\delta s}\frac{d}{dt}\delta s = \mathbf{v}_{gs} \cdot \frac{\mathbf{R}_c}{R_c^2} = \frac{1}{2}\frac{m}{q}\frac{v_\perp^2}{B^3}(\mathbf{B}\times\nabla B)\cdot\frac{\mathbf{R}_c}{R_c^2}
+\]</span></p>
+<p>This is the rate of change of <span class="math inline">\(\delta s\)</span> as seen by the particle. We must now get the rate of change of <span class="math inline">\(v_\parallel\)</span> as seen by the particle. The parallel and perpendicular energies are defined by</p>
+<p><span class="math display">\[
+W \equiv \frac{1}{2}mv_\parallel^2 + \frac{1}{2}mv_\parallel^2 = \frac{1}{2}mv_\parallel^2 + \mu B \equiv W_\parallel + W_\perp
+\]</span></p>
+<p>Thus <span class="math inline">\(v_\parallel\)</span> can be written</p>
+<p><span class="math display">\[
+v_\parallel = \big[ \frac{2}{m}(W - \mu B) \big]^{1/2}
+\]</span></p>
+<p>Here W and μ are constant, and only B varies. Therefore,</p>
+<p><span class="math display">\[
+\frac{\dot{v}_\parallel}{v_\parallel} = -\frac{1}{2}\frac{\mu\dot{B}}{W - \mu B} = -\frac{1}{2}\frac{\mu \dot{B}}{W_\parallel} = -\frac{\mu\dot{B}}{mv_\parallel^2}
+\]</span></p>
+<p>Since B was assumed static, <span class="math inline">\(\dot{B}\)</span> is not zero only because of the guiding center motion:</p>
+<p><span class="math display">\[
+\dot{B} = \frac{dB}{d\mathbf{r}}\cdot\frac{d\mathbf{r}}{dt} = \mathbf{v}_{gc}\cdot\nabla B = \frac{mv_\parallel^2}{q}\frac{\mathbf{R}_c \times\mathbf{B}}{R_c^2 B^2} \cdot\nabla B
+\]</span></p>
+<p>Now we have</p>
+<p><span class="math display">\[
+\frac{\dot{v}_\parallel}{v_\parallel} = -\frac{\mu}{q}\frac{(\mathbf{R}_c\times\mathbf{B})\cdot\nabla B}{R_c^2 B^2} = -\frac{1}{2}\frac{m}{q}\frac{v_\perp^2}{B} \frac{(\mathbf{R}_c\times\mathbf{B})\cdot\nabla B}{R_c^2 B^2}
+\]</span></p>
+<p>The fractional change in <span class="math inline">\(v_\parallel \delta s\)</span> is</p>
+<p><span class="math display">\[
+\frac{1}{v_\parallel \delta s}\frac{d}{dt}(v_\parallel \delta s) = \frac{1}{\delta s}\frac{d\delta s}{dt} + \frac{1}{v_\parallel}\frac{dv_\parallel}{dt}
+\]</span></p>
+<p>From the previous derivations we see that the these two terms cancel, so that</p>
+<p><span class="math display">\[
+v_\parallel \delta s = \textrm{constant}
+\]</span></p>
+<p>This is not exactly the same as saying that <span class="math inline">\(J\)</span> is constant, however. In taking the integral of <span class="math inline">\(v_\parallel \delta s\)</span>, between the turning points, it may be that the turning points on <span class="math inline">\(\delta s^\prime\)</span> do not coincide with the intersections of the perpendicular planes. However, any error in <span class="math inline">\(J\)</span> arising from such a discrepancy is negligible because near the turning points, <span class="math inline">\(v_\parallel\)</span> is nearly zero. Consequently, we have proved</p>
+<p><span class="math display">\[
+J = \int_a^b v_\parallel ds = \textrm{constant}
+\]</span></p>
+<p>An example of the violation of J invariance is given by a plasma heating scheme called <em>transit-time magnetic pumping</em>. Suppose an oscillating current is applied to the coils of a mirror system so that the mirrors alternately approach and withdraw from each other near the bounce frequency. Those particles that have the right bounce frequency will always see an approaching mirror and will therefore gain <span class="math inline">\(v_\parallel\)</span>. <span class="math inline">\(J\)</span> is not conserved in this case because the change of <span class="math inline">\(\mathbf{B}\)</span> occurs on a time scale not long compared with the bounce time.</p>
+</section>
+<section id="the-third-adiabatic-invariant" class="level3" data-number="12.7.3">
+<h3 data-number="12.7.3" class="anchored" data-anchor-id="the-third-adiabatic-invariant"><span class="header-section-number">12.7.3</span> The Third Adiabatic Invariant</h3>
+<p>Referring again to the earth dipole case, we see that the slow drift of a guiding center around the earth constitutes a third type of periodic motion. The adiabatic invariant connected with this turns out to be the total magnetic flux <span class="math inline">\(\Phi\)</span> enclosed by the drift surface. It is almost obvious that, as <span class="math inline">\(\mathbf{B}\)</span> varies, the particle will stay on a surface such that the total number of magnetic field lines enclosed remains constant. This invariant, <span class="math inline">\(\Phi\)</span>, has few applications because most fluctuations of <span class="math inline">\(\mathbf{B}\)</span> occur on a time scale short compared with the drift period. As an example of the violation of <span class="math inline">\(\Phi\)</span> invariance, we can cite some recent work on the excitation of hydromagnetic waves in the ionosphere. These waves have a long period comparable to the drift time of a particle around the earth. The particles can therefore encounter the wave in the same phase each time around. If the phase is right, the wave can be excited by the conversion of particle drift energy to wave energy.</p>
+
+
+</section>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>I am kind of lost here. Probably the logic here is that first we assume the solution has an additional steady drift, so we let <span class="math inline">\(\ddot{v}_y = 0\)</span>? Check Y.Y’s note.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In common test particle models, we assume static EM fields, so the polarization drift as well as adiabatic heating is not present. However, it is easily achieveable here in this package.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Dipolefield_Motion.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulation der Teilchenbewegung mit Julia</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./eej.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">EEJ</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

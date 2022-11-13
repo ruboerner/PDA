@@ -26,6 +26,7 @@ book:
         - bewegungsgleichung.qmd
         - motion_homogen.qmd
         - Dipolefield_Motion.qmd
+        - Tutorial.qmd
     - part: "Die elektrische Leitfähigkeit der Ionosphäre"
       chapters: 
         - eej.qmd
