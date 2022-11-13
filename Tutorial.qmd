@@ -13,8 +13,6 @@ What makes plasmas particularly difficult to analyze is the fact that the densit
 
 Was die Analyse von Plasmen besonders schwierig macht, ist die Tatsache, dass die Dichten in einem Zwischenbereich liegen. Flüssigkeiten wie Wasser sind so dicht, dass die Bewegungen der einzelnen Moleküle nicht berücksichtigt werden müssen. Es dominieren Kollisionen, und die einfachen Gleichungen der gewöhnlichen Flüssigkeitsdynamik reichen aus. Im anderen Extremfall, in Geräten mit sehr geringer Dichte, müssen nur die Flugbahnen einzelner Teilchen berücksichtigt werden; kollektive Effekte sind oft unwichtig. Ein Plasma verhält sich manchmal wie eine Flüssigkeit und manchmal wie eine Ansammlung von Einzelteilchen. Der erste Schritt, um zu lernen, wie man mit dieser schizophrenen Persönlichkeit umgeht, besteht darin zu verstehen, wie sich einzelne Teilchen in elektrischen und magnetischen Feldern verhalten.
 
-
-
 Here we assume that the EM fields are prescribed and not affected by the charged particles. The materials here closely follows F.F.Chen's [Introduction to Plasma Physics and Controlled Fusion](https://link.springer.com/book/10.1007/978-3-319-22309-4).
 
 Hier gehen wir davon aus, dass die EM-Felder vorgegeben sind und nicht von den geladenen Teilchen beeinflusst werden. Die Materialien hier lehnen sich eng an F.F.Chens [Einführung in die Plasmaphysik und kontrollierte Fusion](https://link.springer.com/book/10.1007/978-3-319-22309-4) an.
@@ -46,7 +44,6 @@ In this case, a charged particle has a simple cyclotron gyration. The equation o
 
 In diesem Fall führt ein geladenes Teilchen eine einfache Gyrationsbewegung aus. Die Bewegungsgleichung lautet
 
-
 $$
 m\frac{\mathrm d\mathbf{v}}{\mathrm dt} = q\mathbf{v}\times\mathbf{B}
 $$
@@ -54,7 +51,6 @@ $$
 Taking $\widehat{z}$ to be the direction of $\mathbf{B}$ ($\mathbf{B} = B\widehat{z}$), we have
 
 Nimmt man $\widehat{z}$ als die Richtung von $\mathbf{B}$ ($\mathbf{B} = B\widehat{z}$), so gilt
-
 
 $$
 \begin{aligned}
@@ -68,7 +64,6 @@ This describes a simple harmonic oscillator at the *cyclotron frequency*, which 
 
 Dies beschreibt einen einfachen harmonischen Oszillator mit der *Gyrationsfrequenz*, die wir wie folgt definieren
 
-
 $$
 \omega_c \equiv \frac{| q | B}{m}
 $$
@@ -77,7 +72,6 @@ By the convention we have chosen, $\omega_c$ is always nonnegative. The solution
 
 Nach der von uns gewählten Konvention ist $\omega_c$ immer nicht-negativ. Die Lösung für die Geschwindigkeit ist dann
 
-
 $$
 v_{x,y} = v_\perp \exp(\pm i \omega_c t + i\delta_{x,y})
 $$
@@ -85,7 +79,6 @@ $$
 The $\pm$ denote the sign of q. We may choose the phase $\delta$ so that
 
 Die $\pm$ bezeichnen das Vorzeichen von q. Wir können die Phase $\delta$ so wählen, dass
-
 
 $$
 v_x = v_\perp e^{i\omega_c t} = \dot{x}
@@ -223,10 +216,9 @@ The Larmor motion is the same as before, but there is superimposed a drift $\mat
 
 To obtain a general formula for $\mathbf{v}_{gc}$, we can solve the momentum equation in vector form. We may omit the $m d\mathbf{v}/dt$ term, since this term gives only the circular motion at $\omega_c$, which we already know about. Then the momentum equation becomes
 
-Die Gyrationsbewegung ist dieselbe wie zuvor, aber es wird eine Drift $\mathbf{v}_{gc}$ des Führungszentrums in  negative y-Richtung (für $E_x > 0$) überlagert.
+Die Gyrationsbewegung ist dieselbe wie zuvor, aber es wird eine Drift $\mathbf{v}_{gc}$ des Führungszentrums in negative y-Richtung (für $E_x > 0$) überlagert.
 
 Um eine allgemeine Formel für $\mathbf{v}_{gc}$ zu erhalten, können wir die Impulsgleichung in Vektorform lösen. Wir können den Term $m d\mathbf{v}/dt$ weglassen, da dieser Term nur die Kreisbewegung bei $\omega_c$ ergibt, die wir bereits kennen. Die Impulsgleichung lautet dann
-
 
 $$
 \mathbf{E} + \mathbf{v}\times\mathbf{B} = 0
@@ -235,7 +227,6 @@ $$
 Taking the cross product with $\mathbf{B}$, we have
 
 Nimmt man das Kreuzprodukt mit $\mathbf{B}$, so erhält man
-
 
 $$
 \mathbf{E}\times\mathbf{B} = \mathbf{B}\times(\mathbf{v}\times\mathbf{B}) = \mathbf{v}B^2 - \mathbf{B}(\mathbf{v}\cdot\mathbf{B})
