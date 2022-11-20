@@ -18,12 +18,11 @@ Die Ströme werden durch elektrische Felder hervorgerufen, und es gilt das Ohmsc
 ## Kollisionen
 
 Die Teilchengeschwindigkeiten sind abhängig von ihrer Richtung zum Magnetfeld, deshalb wird die elektrische Leitfähigkeit bei Anwesenheit eines Magnetfeldes anisotrop.
-    
-Ein elektrisches Feld parallel zum Magnetfeld ergibt sich für _ein_ Teilchen die konstante Beschleunigung $q \mathbf E / m$.
-    
-Bei Anwesenheit _vieler_ Teilchen wird Bewegung des Einzelteilchens durch Stöße gebremst.
-Es stellt sich mittlere Geschwindigkeit ein.
-    
+
+Ein elektrisches Feld parallel zum Magnetfeld ergibt sich für *ein* Teilchen die konstante Beschleunigung $q \mathbf E / m$.
+
+Bei Anwesenheit *vieler* Teilchen wird Bewegung des Einzelteilchens durch Stöße gebremst. Es stellt sich mittlere Geschwindigkeit ein.
+
 Die Zeit zwischen zwei aufeinanderfolgenden Stößen sei $\tau$.
 
 Unter der unrealistischen Annahme einer konstanten Stoßzeit erhalten wir für die mittlere Geschwindigkeit
@@ -53,4 +52,81 @@ $$
 W(\hat\tau) \mathrm d \hat\tau = \frac{q \mathbf E_\|}{m} \tau.
 $$
 
-Für die elektrische Stromdichte ergibt sich
+Für die elektrische Stromdichte ergibt sich daraus
+
+$$
+\mathbf j_\| = \left(
+\frac{n_i \tau_i}{m_i} 
++
+\frac{n_e \tau_e}{m_e}
+\right) e^2 \mathbf E_\| = \sigma_0 \mathbf E_\|
+$$
+
+mit der *Parallelleitfähigkeit* $\sigma_0$.
+
+Führt man mit \$\\nu = 1 / \tau\$ die *Stoßfrequenz* ein, so gilt
+
+$$
+\sigma_0 = \left(
+\frac{n_i \tau_i}{m_i} 
++
+\frac{n_e \tau_e}{m_e}
+\right) e^2.
+$$
+
+Bei beliebiger Lage des elektrischen Feldes erhält man als Folge der Stöße und Driften
+
+$$
+\mathbf j = \sigma_0 \mathbf E_\| + \sigma_1 \mathbf E_\perp + \sigma_2 \frac{\mathbf B \times \mathbf E_\perp}{B}
+$$
+
+Wie lauten $\sigma_1$ und $\sigma_2$?
+
+### Pedersen- oder Transversalleitfähigkeit
+
+Reine Gyrationsbewegungen liefern keinen Beitrag zur Leitfähigkeit. Aus der Newtonschen Bewegungsgleichung @eq-newton erhält man bei zeitlicher Mittelung
+
+$$
+m \nu \overline {\mathbf v} = q(\mathbf E + \overline{\mathbf v} \times \mathbf B) 
+$$ Für ein kartesisches Koordinatensystem mit $\mathbf B = (0, 0, B)^\top$ und $\mathbf E = \mathbf E_\perp$ gilt
+
+$$
+m \nu \overline{\mathbf v}_x = q \mathbf E_\perp + q B \overline{\mathbf v}_y  \\
+m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
+$$ Daraus gewinnt man
+
+$$
+\sigma_1 = \left(    \frac{n_i \nu_i}{m_i(\nu_i^2 + \omega_{gi}^2)} +    \frac{n_e \nu_e}{m_e(\nu_e^2 + \omega_{ge}^2)}    \right) e^2
+$$
+
+### Hall-Leitfähigkeit
+
+$\mathbf E_\perp$ erzeugt eine Drift in y-Richtung. Die Leitfähigkeit
+
+$$
+\sigma_2 = \left(    -\frac{n_i \omega_{gi}}{m_i(\nu_i^2 + \omega_{gi}^2)}    +\frac{n_e \omega_{ge}}{m_e(\nu_e^2 + \omega_{ge}^2)}    \right) e^2
+$$ wird *Hall-Leitfähigkeit* genannt.
+
+## Leitfähigkeit der Ionosphäre
+
+In der Ionosphäre hängt die Leitfähigkeit über
+
+-   die Ionen- und Elektronenkonzentration sowie die
+-   Gyro- und Stoßfrequenz
+
+von
+
+-   der Höhe,
+-   den geographischen Koordinaten,
+-   der Tages- und Jahreszeit, sowie
+-   der Stellung im Sonnenfleckenzyklus
+
+ab.
+
+Am wichtigsten für die Höhenabhängigkeit sind der Verlauf von $n_i(h)$, $n_e(h)$, $\nu_i(h)$ und $\nu_e(h)$.
+
+![](images/hoehenabh_stossfreq.png)
+
+## Der äquatoriale Elektrojet (EEJ)
+
+![](images/aequator_leitf.png)

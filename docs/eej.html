@@ -238,7 +238,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#kollisionen" id="toc-kollisionen" class="nav-link active" data-scroll-target="#kollisionen"><span class="toc-section-number">12.1</span>  Kollisionen</a></li>
+  <li><a href="#kollisionen" id="toc-kollisionen" class="nav-link active" data-scroll-target="#kollisionen"><span class="toc-section-number">12.1</span>  Kollisionen</a>
+  <ul class="collapse">
+  <li><a href="#pedersen--oder-transversalleitfähigkeit" id="toc-pedersen--oder-transversalleitfähigkeit" class="nav-link" data-scroll-target="#pedersen--oder-transversalleitfähigkeit"><span class="toc-section-number">12.1.1</span>  Pedersen- oder Transversalleitfähigkeit</a></li>
+  <li><a href="#hall-leitfähigkeit" id="toc-hall-leitfähigkeit" class="nav-link" data-scroll-target="#hall-leitfähigkeit"><span class="toc-section-number">12.1.2</span>  Hall-Leitfähigkeit</a></li>
+  </ul></li>
+  <li><a href="#leitfähigkeit-der-ionosphäre" id="toc-leitfähigkeit-der-ionosphäre" class="nav-link" data-scroll-target="#leitfähigkeit-der-ionosphäre"><span class="toc-section-number">12.2</span>  Leitfähigkeit der Ionosphäre</a></li>
+  <li><a href="#der-äquatoriale-elektrojet-eej" id="toc-der-äquatoriale-elektrojet-eej" class="nav-link" data-scroll-target="#der-äquatoriale-elektrojet-eej"><span class="toc-section-number">12.3</span>  Der äquatoriale Elektrojet (EEJ)</a></li>
   </ul>
 </nav>
     </div>
@@ -294,7 +300,71 @@ W(\hat\tau) = \frac{1}{\tau} e^{- \hat\tau / \tau}.
 \right\}
 W(\hat\tau) \mathrm d \hat\tau = \frac{q \mathbf E_\|}{m} \tau.
 \]</span></p>
-<p>Für die elektrische Stromdichte ergibt sich</p>
+<p>Für die elektrische Stromdichte ergibt sich daraus</p>
+<p><span class="math display">\[
+\mathbf j_\| = \left(
+\frac{n_i \tau_i}{m_i}
++
+\frac{n_e \tau_e}{m_e}
+\right) e^2 \mathbf E_\| = \sigma_0 \mathbf E_\|
+\]</span></p>
+<p>mit der <em>Parallelleitfähigkeit</em> <span class="math inline">\(\sigma_0\)</span>.</p>
+<p>Führt man mit $\nu = 1 / $ die <em>Stoßfrequenz</em> ein, so gilt</p>
+<p><span class="math display">\[
+\sigma_0 = \left(
+\frac{n_i \tau_i}{m_i}
++
+\frac{n_e \tau_e}{m_e}
+\right) e^2.
+\]</span></p>
+<p>Bei beliebiger Lage des elektrischen Feldes erhält man als Folge der Stöße und Driften</p>
+<p><span class="math display">\[
+\mathbf j = \sigma_0 \mathbf E_\| + \sigma_1 \mathbf E_\perp + \sigma_2 \frac{\mathbf B \times \mathbf E_\perp}{B}
+\]</span></p>
+<p>Wie lauten <span class="math inline">\(\sigma_1\)</span> und <span class="math inline">\(\sigma_2\)</span>?</p>
+<section id="pedersen--oder-transversalleitfähigkeit" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="pedersen--oder-transversalleitfähigkeit"><span class="header-section-number">12.1.1</span> Pedersen- oder Transversalleitfähigkeit</h3>
+<p>Reine Gyrationsbewegungen liefern keinen Beitrag zur Leitfähigkeit. Aus der Newtonschen Bewegungsgleichung <a href="bewegungsgleichung.html#eq-newton">Gleichung&nbsp;<span>8.1</span></a> erhält man bei zeitlicher Mittelung</p>
+<p><span class="math display">\[
+m \nu \overline {\mathbf v} = q(\mathbf E + \overline{\mathbf v} \times \mathbf B)
+\]</span> Für ein kartesisches Koordinatensystem mit <span class="math inline">\(\mathbf B = (0, 0, B)^\top\)</span> und <span class="math inline">\(\mathbf E = \mathbf E_\perp\)</span> gilt</p>
+<p><span class="math display">\[
+m \nu \overline{\mathbf v}_x = q \mathbf E_\perp + q B \overline{\mathbf v}_y  \\
+m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
+\]</span> Daraus gewinnt man</p>
+<p><span class="math display">\[
+\sigma_1 = \left(    \frac{n_i \nu_i}{m_i(\nu_i^2 + \omega_{gi}^2)} +    \frac{n_e \nu_e}{m_e(\nu_e^2 + \omega_{ge}^2)}    \right) e^2
+\]</span></p>
+</section>
+<section id="hall-leitfähigkeit" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="hall-leitfähigkeit"><span class="header-section-number">12.1.2</span> Hall-Leitfähigkeit</h3>
+<p><span class="math inline">\(\mathbf E_\perp\)</span> erzeugt eine Drift in y-Richtung. Die Leitfähigkeit</p>
+<p><span class="math display">\[
+\sigma_2 = \left(    -\frac{n_i \omega_{gi}}{m_i(\nu_i^2 + \omega_{gi}^2)}    +\frac{n_e \omega_{ge}}{m_e(\nu_e^2 + \omega_{ge}^2)}    \right) e^2
+\]</span> wird <em>Hall-Leitfähigkeit</em> genannt.</p>
+</section>
+</section>
+<section id="leitfähigkeit-der-ionosphäre" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="leitfähigkeit-der-ionosphäre"><span class="header-section-number">12.2</span> Leitfähigkeit der Ionosphäre</h2>
+<p>In der Ionosphäre hängt die Leitfähigkeit über</p>
+<ul>
+<li>die Ionen- und Elektronenkonzentration sowie die</li>
+<li>Gyro- und Stoßfrequenz</li>
+</ul>
+<p>von</p>
+<ul>
+<li>der Höhe,</li>
+<li>den geographischen Koordinaten,</li>
+<li>der Tages- und Jahreszeit, sowie</li>
+<li>der Stellung im Sonnenfleckenzyklus</li>
+</ul>
+<p>ab.</p>
+<p>Am wichtigsten für die Höhenabhängigkeit sind der Verlauf von <span class="math inline">\(n_i(h)\)</span>, <span class="math inline">\(n_e(h)\)</span>, <span class="math inline">\(\nu_i(h)\)</span> und <span class="math inline">\(\nu_e(h)\)</span>.</p>
+<p><img src="images/hoehenabh_stossfreq.png" class="img-fluid"></p>
+</section>
+<section id="der-äquatoriale-elektrojet-eej" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="der-äquatoriale-elektrojet-eej"><span class="header-section-number">12.3</span> Der äquatoriale Elektrojet (EEJ)</h2>
+<p><img src="images/aequator_leitf.png" class="img-fluid"></p>
 
 
 </section>
