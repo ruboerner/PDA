@@ -61,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -233,7 +234,13 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#kollisionen" id="toc-kollisionen" class="nav-link active" data-scroll-target="#kollisionen"><span class="toc-section-number">12.1</span>  Kollisionen</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -255,8 +262,42 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Wir untersuchen den Mechanismus der elektrischen Leitfähigkeit in schwach ionisierten Gasen.</p>
+<p>Wir gehen zunächst von einem Ensemble von Einzelteilchen aus und betrachten wie üblich die Bewegungsgleichung. Enthält das Gas Ionen der Ladung <span class="math inline">\(q=+e\)</span> und Elektronen der Ladung <span class="math inline">\(q=-e\)</span>, ergibt sich die elektrische Stromdichte zu</p>
+<p><span class="math display">\[
+\mathbf j = (n_i \mathbf v_i - n_e \mathbf v_e) e.
+\]</span></p>
+<p>Die Ströme werden durch elektrische Felder hervorgerufen, und es gilt das Ohmsche Gesetz <span class="math inline">\(\mathbf j = \sigma \mathbf E\)</span>.</p>
+<!-- Es besteht eine Abhängigkeit der Leitfähigkeit von den Teilchendaten und dem Magnetfeld.-->
+<section id="kollisionen" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="kollisionen"><span class="header-section-number">12.1</span> Kollisionen</h2>
+<p>Die Teilchengeschwindigkeiten sind abhängig von ihrer Richtung zum Magnetfeld, deshalb wird die elektrische Leitfähigkeit bei Anwesenheit eines Magnetfeldes anisotrop.</p>
+<p>Ein elektrisches Feld parallel zum Magnetfeld ergibt sich für <em>ein</em> Teilchen die konstante Beschleunigung <span class="math inline">\(q \mathbf E / m\)</span>.</p>
+<p>Bei Anwesenheit <em>vieler</em> Teilchen wird Bewegung des Einzelteilchens durch Stöße gebremst. Es stellt sich mittlere Geschwindigkeit ein.</p>
+<p>Die Zeit zwischen zwei aufeinanderfolgenden Stößen sei <span class="math inline">\(\tau\)</span>.</p>
+<p>Unter der unrealistischen Annahme einer konstanten Stoßzeit erhalten wir für die mittlere Geschwindigkeit</p>
+<p><span class="math display">\[
+\overline{\mathbf v}_\| = \frac{1}{\tau}\int\limits_0^\tau \frac{q \mathbf E_\|}{m} t \,\mathrm d t =
+\frac{1}{2} \frac{q \mathbf E_\|}{m} \tau
+\]</span></p>
+<p>Die Stoßzeiten sind jedoch nicht konstant, sondern statistisch verteilt.</p>
+<p>Die Wahrscheinlichkeit <span class="math inline">\(W(\hat \tau)\)</span>, dass die Stoßzeit im Intervall <span class="math inline">\((\hat\tau, \hat\tau + \mathrm d\hat\tau)\)</span> liegt, betrage</p>
+<p><span class="math display">\[
+W(\hat\tau) = \frac{1}{\tau} e^{- \hat\tau / \tau}.
+\]</span></p>
+<p>Diese Wahrscheinlichkeitsverteilung hat einen Mittelwert und eine mittlere quadratische Abweichung von <span class="math inline">\(\tau\)</span>.</p>
+<p>Damit erhält man</p>
+<p><span class="math display">\[
+\overline{\mathbf v}_\| = \frac{1}{\tau}\int\limits_0^\infty
+\left \{
+\int\limits_0^\hat\tau \frac{q \mathbf E_\|}{m} t \,\mathrm dt
+\right\}
+W(\hat\tau) \mathrm d \hat\tau = \frac{q \mathbf E_\|}{m} \tau.
+\]</span></p>
+<p>Für die elektrische Stromdichte ergibt sich</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

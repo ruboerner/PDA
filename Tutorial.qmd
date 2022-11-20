@@ -300,7 +300,6 @@ Hier sind die magnetischen Feldlinien nicht gekrümmt, aber ihre Dichte nimmt z.
 
 Betrachten wir die Lorentz-Kraft $\mathbf{F} = q\mathbf{v}\times\mathbf{B}$, gemittelt über eine Gyration. Es ist klar, dass $\bar{F}_x = 0$ ist, da sich das Teilchen genauso viel Zeit nach oben wie nach unten bewegt. Wir wollen $\bar{F}_y$ näherungsweise berechnen, indem wir die *ungestörte Bahn* des Teilchens verwenden, um den Durchschnitt zu finden. Die ungestörte Bahn ist durch die Lösung im ersten Abschnitt für ein gleichförmiges $\mathbf{B}$-Feld gegeben. Nimmt man den Realteil der Lösung für $v_x$ und $y$, so erhält man
 
-
 $$
 F_y = -q v_x B_z(y) = -q v_\perp(\cos \omega_c t) \Big[ B_0 \pm r_L(\cos\omega_c t )\frac{\partial B}{\partial y} \Big]
 $$
@@ -406,8 +405,7 @@ Deshalb
 
 $$
 |B| \propto \frac{1}{R_c},\, \frac{\nabla B}{B} = - \frac{\mathbf{R}_c}{R_c^2}
-$$
-Unter Verwendung des Ausdrucks für die Grad-B-Drift ergibt sich
+$$ Unter Verwendung des Ausdrucks für die Grad-B-Drift ergibt sich
 
 $$
 \mathbf{v}_{\nabla B} = \mp \frac{1}{2}\frac{v_\perp r_L}{B^2}\frac{B}\times |B| \frac{\mathbf{R}_c}{R_c^2} = \pm \frac{1}{2}\frac{v_\perp^2}{\omega_c}\frac{\mathbf{R}_c\times\mathbf{B}}{R_c^2 B} = \frac{1}{2}\frac{m}{q}v_\perp^2\frac{\mathbf{R}_c\times\mathbf{B}}{R_c^2 B^2}
@@ -422,7 +420,6 @@ $$
 Bedauerlicherweise addieren sich diese Drifts. Das bedeutet, dass, wenn man ein Magnetfeld in einen Torus biegt, um ein thermonukleares Plasma einzuschließen, die Teilchen aus dem Torus herausdriften werden, egal wie man mit den Temperaturen und Magnetfeldern jongliert.
 
 Für eine Maxwellsche Verteilung sind $\bar{v_\parallel^2}$ und $\frac{1}{2}\bar{v_\perp^2}$ jeweils gleich $k_B T/m$, da $v_\perp$ zwei Freiheitsgrade beinhaltet. Dann kann die durchschnittliche Drift des gekrümmten Feldes wie folgt geschrieben werden
-
 
 $$
 \bar{\mathbf{v}}_{R+\nabla B} = \pm \frac{v_{th}^2}{R_c\omega_c}\widehat{y} = \pm\frac{\bar{r}_L}{R_c}v_{th}\widehat{y}
@@ -602,7 +599,6 @@ $$
 
 wobei $\theta$ der Neigungswinkel der Bahn im Bereich des schwachen Feldes ist. Teilchen mit kleinerem θ spiegeln sich in Regionen mit höherem B. Wenn θ zu klein ist, übersteigt $B^\prime$ $B_m$, und das Teilchen spiegelt sich überhaupt nicht. Ersetzt man $B^\prime$ durch $B_m$, so sieht man, dass die kleinste $\theta$ eines eingeschlossenen Teilchens gegeben ist durch
 
-
 $$
 \sin^2 \theta_m = \frac{B_0}{B_m} \equiv \frac{1}{R_m}
 $$
@@ -610,8 +606,6 @@ $$
 wobei $R_m$ das *Spiegelverhältnis* ist. Es definiert die Grenze eines Bereichs im Geschwindigkeitsraum in Form eines Kegels, der *Verlustkegel* genannt wird. Teilchen, die sich innerhalb des Verlustkegels befinden, sind nicht eingegrenzt. Folglich ist ein spiegelbegrenztes Plasma niemals isotrop. Beachten Sie, dass der Verlustkegel unabhängig von q oder m ist. Ohne Kollisionen sind Ionen und Elektronen gleich gut eingeschlossen. Wenn es zu Kollisionen kommt, gehen Teilchen verloren, wenn sie bei einer Kollision ihren Neigungswinkel ändern und in den Verlustkegel gestreut werden. Im Allgemeinen gehen Elektronen leichter verloren, da sie eine höhere Kollisionsfrequenz haben.
 
 Der Magnetspiegel wurde erstmals von Enrico Fermi als Mechanismus für die Beschleunigung der kosmischen Strahlung vorgeschlagen. Protonen, die zwischen magnetischen Spiegeln abprallen und sich mit hoher Geschwindigkeit aufeinander zubewegen, könnten bei jedem Aufprall Energie gewinnen. Wie solche Spiegel entstehen können, ist eine andere Geschichte. Ein weiteres Beispiel für den Spiegeleffekt ist der Einschluss von Teilchen in den Van-Allen-Gürteln. Das Magnetfeld der Erde, das an den Polen stark und am Äquator schwach ist, bildet einen natürlichen Spiegel mit ziemlich großem $R_m$.
-
-
 
 ## Zusammenfassung Drift Führungszentrum
 
@@ -664,5 +658,3 @@ Polarsationsdrift:
 $$
 \mathbf{v}_p = \pm \frac{1}{\omega_c B}\frac{d\mathbf{E}}{dt}
 $$
-
-

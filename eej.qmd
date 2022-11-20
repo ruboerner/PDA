@@ -2,3 +2,55 @@
 title: "Leitfähigkeit"
 draft: true
 ---
+
+Wir untersuchen den Mechanismus der elektrischen Leitfähigkeit in schwach ionisierten Gasen.
+
+Wir gehen zunächst von einem Ensemble von Einzelteilchen aus und betrachten wie üblich die Bewegungsgleichung. Enthält das Gas Ionen der Ladung $q=+e$ und Elektronen der Ladung $q=-e$, ergibt sich die elektrische Stromdichte zu
+
+$$
+\mathbf j = (n_i \mathbf v_i - n_e \mathbf v_e) e.
+$$
+
+Die Ströme werden durch elektrische Felder hervorgerufen, und es gilt das Ohmsche Gesetz $\mathbf j = \sigma \mathbf E$.
+
+<!-- Es besteht eine Abhängigkeit der Leitfähigkeit von den Teilchendaten und dem Magnetfeld.-->
+
+## Kollisionen
+
+Die Teilchengeschwindigkeiten sind abhängig von ihrer Richtung zum Magnetfeld, deshalb wird die elektrische Leitfähigkeit bei Anwesenheit eines Magnetfeldes anisotrop.
+    
+Ein elektrisches Feld parallel zum Magnetfeld ergibt sich für _ein_ Teilchen die konstante Beschleunigung $q \mathbf E / m$.
+    
+Bei Anwesenheit _vieler_ Teilchen wird Bewegung des Einzelteilchens durch Stöße gebremst.
+Es stellt sich mittlere Geschwindigkeit ein.
+    
+Die Zeit zwischen zwei aufeinanderfolgenden Stößen sei $\tau$.
+
+Unter der unrealistischen Annahme einer konstanten Stoßzeit erhalten wir für die mittlere Geschwindigkeit
+
+$$
+\overline{\mathbf v}_\| = \frac{1}{\tau}\int\limits_0^\tau \frac{q \mathbf E_\|}{m} t \,\mathrm d t =
+\frac{1}{2} \frac{q \mathbf E_\|}{m} \tau
+$$
+
+Die Stoßzeiten sind jedoch nicht konstant, sondern statistisch verteilt.
+
+Die Wahrscheinlichkeit $W(\hat \tau)$, dass die Stoßzeit im Intervall $(\hat\tau, \hat\tau + \mathrm d\hat\tau)$ liegt, betrage
+
+$$
+W(\hat\tau) = \frac{1}{\tau} e^{- \hat\tau / \tau}.
+$$
+
+Diese Wahrscheinlichkeitsverteilung hat einen Mittelwert und eine mittlere quadratische Abweichung von $\tau$.
+
+Damit erhält man
+
+$$
+\overline{\mathbf v}_\| = \frac{1}{\tau}\int\limits_0^\infty 
+\left \{
+\int\limits_0^\hat\tau \frac{q \mathbf E_\|}{m} t \,\mathrm dt 
+\right\}
+W(\hat\tau) \mathrm d \hat\tau = \frac{q \mathbf E_\|}{m} \tau.
+$$
+
+Für die elektrische Stromdichte ergibt sich

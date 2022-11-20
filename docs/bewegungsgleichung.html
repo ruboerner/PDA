@@ -172,6 +172,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./Dipolefield_Motion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simulation der Teilchenbewegung mit Julia</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Tutorial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tutorial</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -184,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./eej.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">EEJ</span></a>
+  <a href="./eej.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Leitfähigkeit</span></a>
   </div>
 </li>
       </ul>
@@ -199,24 +204,24 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ionosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Ionosphäre</span></a>
+  <a href="./ionosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ionosphäre</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./variationen.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Variationen</span></a>
+  <a href="./variationen.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Variationen</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./phenomena.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Phänomene im System der Magnetosphäre und Ionosphäre</span></a>
+  <a href="./phenomena.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Phänomene im System der Magnetosphäre und Ionosphäre</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Zusammenfassung</span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Zusammenfassung</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
 <p><span id="eq-newton"><span class="math display">\[
 m \ddot{\mathbf r} = q (\mathbf E + \mathbf v \times \mathbf B) + \mathbf F
 \tag{8.1}\]</span></span> Diese Gleichung kann für einfache Feldkonfigurationen trivial integriert werden. Im Falle des geomagnetischen Feldes gibt es keine geschlossenen Lösungen, sondern nur Näherungen. Für Teilchen mit geringer Energie, wie sie bspw. in der Ionosphäre oder im Van-Allen-Gürtel vorliegen, steht eine Theorie zur Approximation bereit.</p>
-<p>Zunächst werden wir Lösungen von <a href="#eq-newton">Gleichung&nbsp;<span class="quarto-unresolved-ref">eq-newton</span></a> für vereinfachte Bedingungen betrachten. Später werden wir sehen, dass im Allgemeinen von den Teilchen eine schnelle Kreisbewegung ausgeführt wird, die überlagert wird durch die Bewegung durch Magnetfelder und elektrische Felder.</p>
+<p>Zunächst werden wir Lösungen von <a href="#eq-newton">Gleichung&nbsp;<span>8.1</span></a> für vereinfachte Bedingungen betrachten. Später werden wir sehen, dass im Allgemeinen von den Teilchen eine schnelle Kreisbewegung ausgeführt wird, die überlagert wird durch die Bewegung durch Magnetfelder und elektrische Felder.</p>
 <section id="zyklotronfrequenz-und-gyrationsradius" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="zyklotronfrequenz-und-gyrationsradius"><span class="header-section-number">8.1</span> Zyklotronfrequenz und Gyrationsradius</h2>
 <p>Bei Anwesenheit eines Magnetfeldes bewegen sich geladene Teilchen in Schraubenlinien entlang der Feldlinien. Die Bewegungsgleichung für ein mit der Geschwindigkeit <span class="math inline">\(\mathbf v\)</span> bewegtes Teilchen der Masse <span class="math inline">\(m\)</span> und Ladung <span class="math inline">\(q\)</span> im Magnetfeld <span class="math inline">\(\mathbf B\)</span> lautet <span class="math display">\[
@@ -309,7 +314,7 @@ m \dot{\mathbf v}_\perp = q \mathbf v_\perp \times \mathbf B.
 q &lt; 0: \qquad \widehat{\boldsymbol \omega}_g \| \mathbf B \qquad \text{parallel}
 \]</span> <span class="math display">\[
 q &gt; 0: \qquad -\widehat{\boldsymbol \omega}_g \| \mathbf B \qquad \text{antiparallel}
-\]</span> Integrieren wir <a href="#eq-gyration">Gleichung&nbsp;<span class="quarto-unresolved-ref">eq-gyration</span></a> zeitlich, erkennen wir den Zusammenhang zwischen Bahngeschwindigkeit und Teilchenposition. Es gilt <span class="math display">\[
+\]</span> Integrieren wir <a href="#eq-gyration">Gleichung&nbsp;<span>8.2</span></a> zeitlich, erkennen wir den Zusammenhang zwischen Bahngeschwindigkeit und Teilchenposition. Es gilt <span class="math display">\[
 \mathbf v_\perp = \boldsymbol \omega_g \times \mathbf r_g
 \]</span> Mit <span class="math inline">\(\mathbf r_g\)</span> bezeichnen wir die Teilchenposition. Sie beschreibt eine Kreisbahn mit Radius <span class="math inline">\(r_g\)</span> um den Gyrationsmittelpunkt, der auch als <em>Führungszentrum</em> bezeichnet wird.</p>
 <section id="beispiel" class="level3" data-number="8.3.1">
