@@ -61,7 +61,7 @@ $$
 \overline{\mathbf v} = \int\limits_0^\infty p(\tau) \frac{\tau}{\overline \tau} \frac{1}{2}\frac{q \mathbf E}{m} \tau \, \mathrm d\tau
 $$
 
-Mit der Annahme, dass die Zeit bis zur nächsten kollision nicht von in der Vergangenheit erfolgten Stößen abhängt, kann man eine Exponentialverteilung ansetzen.
+Mit der Annahme, dass die Zeit bis zur nächsten Kollision nicht von in der Vergangenheit erfolgten Stößen abhängt, kann man eine Exponentialverteilung ansetzen.
 
 Die Wahrscheinlichkeit $p(\tau)$, dass die Stoßzeit im Intervall $(\tau, \tau + \mathrm d\tau)$ liegt, betrage
 
@@ -82,6 +82,8 @@ p(\tau) \mathrm d \tau = \frac{q \mathbf E_\|}{m} \overline\tau.
 $$
 
 Für den Fall, dass die mittlere Geschwindigkeit repräsentativ für alle geladenen Teilchen des betrachteten Typs ist, benötigen wir nur die Teilchenzahldichten $n_i$ und $n_e$ zur Bestimmung der Stromdichte.
+
+## Parallelleitfähigkeit
 
 Für die elektrische Stromdichte ergibt sich bei Abwesenheit eines Magnetfeldes daraus
 
@@ -113,7 +115,7 @@ $$
 
 Wie lauten $\sigma_1$ und $\sigma_2$?
 
-### Pedersen- oder Transversalleitfähigkeit
+## Pedersen- oder Transversalleitfähigkeit
 
 Reine Gyrationsbewegungen liefern keinen Beitrag zur Leitfähigkeit. Aus der Newtonschen Bewegungsgleichung @eq-newton erhält man bei zeitlicher Mittelung
 
@@ -122,15 +124,17 @@ m \nu \overline {\mathbf v} = q(\mathbf E + \overline{\mathbf v} \times \mathbf 
 $$ Für ein kartesisches Koordinatensystem mit $\mathbf B = (0, 0, B)^\top$ und $\mathbf E = \mathbf E_\perp$ gilt
 
 $$
-m \nu \overline{\mathbf v}_x = q \mathbf E_\perp + q B \overline{\mathbf v}_y  \\
-m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
+\begin{align}
+m \nu \overline{\mathbf v}_x & = q \mathbf E_\perp & + q B \overline{\mathbf v}_y  \\
+m \nu \overline{\mathbf v}_y & = & - q B \overline{\mathbf v}_x
+\end{align}
 $$ Daraus gewinnt man
 
 $$
 \sigma_1 = \left(    \frac{n_i \nu_i}{m_i(\nu_i^2 + \omega_{gi}^2)} +    \frac{n_e \nu_e}{m_e(\nu_e^2 + \omega_{ge}^2)}    \right) e^2
 $$
 
-### Hall-Leitfähigkeit
+## Hall-Leitfähigkeit
 
 $\mathbf E_\perp$ erzeugt eine Drift in y-Richtung. Die Leitfähigkeit
 
@@ -169,8 +173,37 @@ Am wichtigsten für die Höhenabhängigkeit sind der Verlauf von $n_i(h)$, $n_e(
 
 ![Höhenabhängigkeit der Stoßfrequenz für Ionen und Elektronen in der unteren Ionosphäre in mittleren Breiten. Die gestrichelten Linien begrenzen die Dynamoschicht (aus [@kertz]).](images/hoehenabh_stossfreq.png)
 
+Die Leitfähigkeit parallel zum Magnetfeld nimmt mit der Höhe stark zu, da die Kollisionen mit dem neutralen Gas abnehmen. Die parallele Leitfähigkeit ist immer viel höher als die Leitfähigkeit senkrecht zum Magnetfeld. Tatsächlich ist die parallele Leitfähigkeit in der gesamten Ionosphäre so hoch, dass die Magnetfeldlinien in der Regel als Äquipotentiale des elektrischen Feldes betrachtet werden können.
+
+Die Bewegung einer Klasse von geladenen Teilchen senkrecht zu den Magnetfeldern hängt vom Verhältnis der Kollisionsfrequenz $\nu$ zur Kreiselfrequenz ab. Ist $\nu > \omega_g$, so verhindern Kollisionen die Kreiselbewegung der Teilchen und die Teilchen bewegen sich in Richtung des elektrischen Feldes als Pedersenstrom. Wenn hingegen $\nu < \omega_g$, so driften die Teilchen überwiegend senkrecht zum elektrischen Feld.
+
+Das unterschiedliche Verhalten von Ionen und Elektronen führt zu drastischen Veränderungen der elektrischen Eigenschaften der Ionosphäre mit der Höhe. Typischerweise übersteigt die Kollisionsfrequenz die Kreiselfrequenz für Ionen als auch für Elektronen bis zu einer Höhe von etwa 70 km stark. Bis zu dieser Höhe dominieren die Parallel- und Pedersen-Leitfähigkeiten.
+
+Oberhalb von etwa 70 km beginnen die Elektronen zu kreiseln und driften senkrecht zum elektrischen Feld, während die Ionen sich immer noch in Richtung des elektrischen Feldes bewegen. Dieser Richtungsunterschied ist die Grundlage für die Hall-Leitfähigkeit. Aus einem anderen Blickwinkel betrachtet: Ein neutraler Wind in dieser Höhe kann Ionen mit sich ziehen.
+
+Die Elektronen stoßen viel häufiger mit dem neutralen Gas zusammen, können aber immer noch kreiseln. Folglich ändern sie sofort die Richtung und können nicht vom neutralen Wind mitgerissen werden. Dies führt zu einer Ladungstrennung.
+
+Oberhalb von etwa 130 km Höhe beginnen auch die Ionen zu kreiseln und driften senkrecht zum Magnetfeld.
+
+Da die Drift von Elektronen und Ionen in dieselbe Richtung keinen elektrischen Strom darstellt, führt dies zu einer starken Abnahme der Hall-Leitfähigkeit. Gelegentliche Kollisionen spielen auch oberhalb von 130 km noch eine Rolle, was zu einer erheblichen Pedersen-Leitfähigkeit führt, die mit zunehmender Höhe abnimmt.
+
 ![Höhenabhängigkeit der ionosphärischen Leitfähigkeiten (aus [@kertz])](images/hoehenabh_leitf.png)
 
 ## Der äquatoriale Elektrojet (EEJ)
+
+Über dem magnetischen Äquator beobachtet man auf der Tagseite der Erde einen starken, östwärtsgerichteten elektrischen Strom.
+
+Dieser Strom hat eine einfache Erklärung. Wir wählen ein rechtshändiges Koordinatensystem mit x positiv nach Norden, y ostwärts und z nach unten.
+
+Ein zunächst ostwärts orientiertes elektrisches Feld erzeugt einen Hallstrom $j_z = \sigma_2 E_y$. Dieser führt zu einer positiven Ladungsakkumulation an der Unterseite der E-Schicht und einer negativen Ladungsakkumulation an ihrer Oberseite. Dieser Prozess setzt sich fort, bis die sekundäre elektrostatische Polarisation den vertikalen Hallstrom kompensiert.
+
+Zusammengefasst bedeutet das
+
+$$
+\begin{align}
+j_y & = \sigma_1 E_y - \sigma_2 E_z \\
+j_z & = \sigma_1 E_z + \sigma_2 E_y
+\end{align}
+$$
 
 ![Schematische Darstellung der Erhöhung der effektiven Leitfähigkeit am magnetischen Äquator. y-Achse nach magnetisch Ost (aus [@kertz]).](images/aequator_leitf.png)

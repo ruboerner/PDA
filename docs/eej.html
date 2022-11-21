@@ -257,14 +257,13 @@ div.csl-indent {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#kollisionen" id="toc-kollisionen" class="nav-link active" data-scroll-target="#kollisionen"><span class="toc-section-number">12.1</span>  Kollisionen</a>
-  <ul class="collapse">
-  <li><a href="#pedersen--oder-transversalleitfähigkeit" id="toc-pedersen--oder-transversalleitfähigkeit" class="nav-link" data-scroll-target="#pedersen--oder-transversalleitfähigkeit"><span class="toc-section-number">12.1.1</span>  Pedersen- oder Transversalleitfähigkeit</a></li>
-  <li><a href="#hall-leitfähigkeit" id="toc-hall-leitfähigkeit" class="nav-link" data-scroll-target="#hall-leitfähigkeit"><span class="toc-section-number">12.1.2</span>  Hall-Leitfähigkeit</a></li>
-  </ul></li>
-  <li><a href="#leitfähigkeitstensor" id="toc-leitfähigkeitstensor" class="nav-link" data-scroll-target="#leitfähigkeitstensor"><span class="toc-section-number">12.2</span>  Leitfähigkeitstensor</a></li>
-  <li><a href="#leitfähigkeit-der-ionosphäre" id="toc-leitfähigkeit-der-ionosphäre" class="nav-link" data-scroll-target="#leitfähigkeit-der-ionosphäre"><span class="toc-section-number">12.3</span>  Leitfähigkeit der Ionosphäre</a></li>
-  <li><a href="#der-äquatoriale-elektrojet-eej" id="toc-der-äquatoriale-elektrojet-eej" class="nav-link" data-scroll-target="#der-äquatoriale-elektrojet-eej"><span class="toc-section-number">12.4</span>  Der äquatoriale Elektrojet (EEJ)</a></li>
+  <li><a href="#kollisionen" id="toc-kollisionen" class="nav-link active" data-scroll-target="#kollisionen"><span class="toc-section-number">12.1</span>  Kollisionen</a></li>
+  <li><a href="#parallelleitfähigkeit" id="toc-parallelleitfähigkeit" class="nav-link" data-scroll-target="#parallelleitfähigkeit"><span class="toc-section-number">12.2</span>  Parallelleitfähigkeit</a></li>
+  <li><a href="#pedersen--oder-transversalleitfähigkeit" id="toc-pedersen--oder-transversalleitfähigkeit" class="nav-link" data-scroll-target="#pedersen--oder-transversalleitfähigkeit"><span class="toc-section-number">12.3</span>  Pedersen- oder Transversalleitfähigkeit</a></li>
+  <li><a href="#hall-leitfähigkeit" id="toc-hall-leitfähigkeit" class="nav-link" data-scroll-target="#hall-leitfähigkeit"><span class="toc-section-number">12.4</span>  Hall-Leitfähigkeit</a></li>
+  <li><a href="#leitfähigkeitstensor" id="toc-leitfähigkeitstensor" class="nav-link" data-scroll-target="#leitfähigkeitstensor"><span class="toc-section-number">12.5</span>  Leitfähigkeitstensor</a></li>
+  <li><a href="#leitfähigkeit-der-ionosphäre" id="toc-leitfähigkeit-der-ionosphäre" class="nav-link" data-scroll-target="#leitfähigkeit-der-ionosphäre"><span class="toc-section-number">12.6</span>  Leitfähigkeit der Ionosphäre</a></li>
+  <li><a href="#der-äquatoriale-elektrojet-eej" id="toc-der-äquatoriale-elektrojet-eej" class="nav-link" data-scroll-target="#der-äquatoriale-elektrojet-eej"><span class="toc-section-number">12.7</span>  Der äquatoriale Elektrojet (EEJ)</a></li>
   </ul>
 </nav>
     </div>
@@ -326,7 +325,7 @@ div.csl-indent {
 <p><span class="math display">\[
 \overline{\mathbf v} = \int\limits_0^\infty p(\tau) \frac{\tau}{\overline \tau} \frac{1}{2}\frac{q \mathbf E}{m} \tau \, \mathrm d\tau
 \]</span></p>
-<p>Mit der Annahme, dass die Zeit bis zur nächsten kollision nicht von in der Vergangenheit erfolgten Stößen abhängt, kann man eine Exponentialverteilung ansetzen.</p>
+<p>Mit der Annahme, dass die Zeit bis zur nächsten Kollision nicht von in der Vergangenheit erfolgten Stößen abhängt, kann man eine Exponentialverteilung ansetzen.</p>
 <p>Die Wahrscheinlichkeit <span class="math inline">\(p(\tau)\)</span>, dass die Stoßzeit im Intervall <span class="math inline">\((\tau, \tau + \mathrm d\tau)\)</span> liegt, betrage</p>
 <p><span class="math display">\[
 p(\tau) = \frac{1}{\overline\tau} e^{- \tau / \overline\tau}.
@@ -341,6 +340,9 @@ p(\tau) = \frac{1}{\overline\tau} e^{- \tau / \overline\tau}.
 p(\tau) \mathrm d \tau = \frac{q \mathbf E_\|}{m} \overline\tau.
 \]</span></p>
 <p>Für den Fall, dass die mittlere Geschwindigkeit repräsentativ für alle geladenen Teilchen des betrachteten Typs ist, benötigen wir nur die Teilchenzahldichten <span class="math inline">\(n_i\)</span> und <span class="math inline">\(n_e\)</span> zur Bestimmung der Stromdichte.</p>
+</section>
+<section id="parallelleitfähigkeit" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="parallelleitfähigkeit"><span class="header-section-number">12.2</span> Parallelleitfähigkeit</h2>
 <p>Für die elektrische Stromdichte ergibt sich bei Abwesenheit eines Magnetfeldes daraus</p>
 <p><span class="math display">\[
 \mathbf j_\| = \left(
@@ -363,30 +365,32 @@ p(\tau) \mathrm d \tau = \frac{q \mathbf E_\|}{m} \overline\tau.
 \mathbf j = \sigma_0 \mathbf E_\| + \sigma_1 \mathbf E_\perp + \sigma_2 \frac{\mathbf B \times \mathbf E_\perp}{B}
 \]</span></p>
 <p>Wie lauten <span class="math inline">\(\sigma_1\)</span> und <span class="math inline">\(\sigma_2\)</span>?</p>
-<section id="pedersen--oder-transversalleitfähigkeit" class="level3" data-number="12.1.1">
-<h3 data-number="12.1.1" class="anchored" data-anchor-id="pedersen--oder-transversalleitfähigkeit"><span class="header-section-number">12.1.1</span> Pedersen- oder Transversalleitfähigkeit</h3>
+</section>
+<section id="pedersen--oder-transversalleitfähigkeit" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="pedersen--oder-transversalleitfähigkeit"><span class="header-section-number">12.3</span> Pedersen- oder Transversalleitfähigkeit</h2>
 <p>Reine Gyrationsbewegungen liefern keinen Beitrag zur Leitfähigkeit. Aus der Newtonschen Bewegungsgleichung <a href="bewegungsgleichung.html#eq-newton">Gleichung&nbsp;<span>8.1</span></a> erhält man bei zeitlicher Mittelung</p>
 <p><span class="math display">\[
 m \nu \overline {\mathbf v} = q(\mathbf E + \overline{\mathbf v} \times \mathbf B)
 \]</span> Für ein kartesisches Koordinatensystem mit <span class="math inline">\(\mathbf B = (0, 0, B)^\top\)</span> und <span class="math inline">\(\mathbf E = \mathbf E_\perp\)</span> gilt</p>
 <p><span class="math display">\[
-m \nu \overline{\mathbf v}_x = q \mathbf E_\perp + q B \overline{\mathbf v}_y  \\
-m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
+\begin{align}
+m \nu \overline{\mathbf v}_x &amp; = q \mathbf E_\perp &amp; + q B \overline{\mathbf v}_y  \\
+m \nu \overline{\mathbf v}_y &amp; = &amp; - q B \overline{\mathbf v}_x
+\end{align}
 \]</span> Daraus gewinnt man</p>
 <p><span class="math display">\[
 \sigma_1 = \left(    \frac{n_i \nu_i}{m_i(\nu_i^2 + \omega_{gi}^2)} +    \frac{n_e \nu_e}{m_e(\nu_e^2 + \omega_{ge}^2)}    \right) e^2
 \]</span></p>
 </section>
-<section id="hall-leitfähigkeit" class="level3" data-number="12.1.2">
-<h3 data-number="12.1.2" class="anchored" data-anchor-id="hall-leitfähigkeit"><span class="header-section-number">12.1.2</span> Hall-Leitfähigkeit</h3>
+<section id="hall-leitfähigkeit" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="hall-leitfähigkeit"><span class="header-section-number">12.4</span> Hall-Leitfähigkeit</h2>
 <p><span class="math inline">\(\mathbf E_\perp\)</span> erzeugt eine Drift in y-Richtung. Die Leitfähigkeit</p>
 <p><span class="math display">\[
 \sigma_2 = \left(    -\frac{n_i \omega_{gi}}{m_i(\nu_i^2 + \omega_{gi}^2)}    +\frac{n_e \omega_{ge}}{m_e(\nu_e^2 + \omega_{ge}^2)}    \right) e^2
 \]</span> wird <em>Hall-Leitfähigkeit</em> genannt.</p>
 </section>
-</section>
-<section id="leitfähigkeitstensor" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="leitfähigkeitstensor"><span class="header-section-number">12.2</span> Leitfähigkeitstensor</h2>
+<section id="leitfähigkeitstensor" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="leitfähigkeitstensor"><span class="header-section-number">12.5</span> Leitfähigkeitstensor</h2>
 <p><span class="math display">\[
 \mathbf j = \underline\sigma \mathbf E =
 \begin{pmatrix}
@@ -396,8 +400,8 @@ m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
 \end{pmatrix} \mathbf E
 \]</span></p>
 </section>
-<section id="leitfähigkeit-der-ionosphäre" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="leitfähigkeit-der-ionosphäre"><span class="header-section-number">12.3</span> Leitfähigkeit der Ionosphäre</h2>
+<section id="leitfähigkeit-der-ionosphäre" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="leitfähigkeit-der-ionosphäre"><span class="header-section-number">12.6</span> Leitfähigkeit der Ionosphäre</h2>
 <p>In der Ionosphäre hängt die Leitfähigkeit über</p>
 <ul>
 <li>die Ionen- und Elektronenkonzentration sowie die</li>
@@ -418,6 +422,13 @@ m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
 <p></p><figcaption class="figure-caption">Höhenabhängigkeit der Stoßfrequenz für Ionen und Elektronen in der unteren Ionosphäre in mittleren Breiten. Die gestrichelten Linien begrenzen die Dynamoschicht (aus <span class="citation" data-cites="kertz">(<a href="references.html#ref-kertz" role="doc-biblioref">Kertz 1971</a>)</span>).</figcaption><p></p>
 </figure>
 </div>
+<p>Die Leitfähigkeit parallel zum Magnetfeld nimmt mit der Höhe stark zu, da die Kollisionen mit dem neutralen Gas abnehmen. Die parallele Leitfähigkeit ist immer viel höher als die Leitfähigkeit senkrecht zum Magnetfeld. Tatsächlich ist die parallele Leitfähigkeit in der gesamten Ionosphäre so hoch, dass die Magnetfeldlinien in der Regel als Äquipotentiale des elektrischen Feldes betrachtet werden können.</p>
+<p>Die Bewegung einer Klasse von geladenen Teilchen senkrecht zu den Magnetfeldern hängt vom Verhältnis der Kollisionsfrequenz <span class="math inline">\(\nu\)</span> zur Kreiselfrequenz ab. Ist <span class="math inline">\(\nu &gt; \omega_g\)</span>, so verhindern Kollisionen die Kreiselbewegung der Teilchen und die Teilchen bewegen sich in Richtung des elektrischen Feldes als Pedersenstrom. Wenn hingegen <span class="math inline">\(\nu &lt; \omega_g\)</span>, so driften die Teilchen überwiegend senkrecht zum elektrischen Feld.</p>
+<p>Das unterschiedliche Verhalten von Ionen und Elektronen führt zu drastischen Veränderungen der elektrischen Eigenschaften der Ionosphäre mit der Höhe. Typischerweise übersteigt die Kollisionsfrequenz die Kreiselfrequenz für Ionen als auch für Elektronen bis zu einer Höhe von etwa 70 km stark. Bis zu dieser Höhe dominieren die Parallel- und Pedersen-Leitfähigkeiten.</p>
+<p>Oberhalb von etwa 70 km beginnen die Elektronen zu kreiseln und driften senkrecht zum elektrischen Feld, während die Ionen sich immer noch in Richtung des elektrischen Feldes bewegen. Dieser Richtungsunterschied ist die Grundlage für die Hall-Leitfähigkeit. Aus einem anderen Blickwinkel betrachtet: Ein neutraler Wind in dieser Höhe kann Ionen mit sich ziehen.</p>
+<p>Die Elektronen stoßen viel häufiger mit dem neutralen Gas zusammen, können aber immer noch kreiseln. Folglich ändern sie sofort die Richtung und können nicht vom neutralen Wind mitgerissen werden. Dies führt zu einer Ladungstrennung.</p>
+<p>Oberhalb von etwa 130 km Höhe beginnen auch die Ionen zu kreiseln und driften senkrecht zum Magnetfeld.</p>
+<p>Da die Drift von Elektronen und Ionen in dieselbe Richtung keinen elektrischen Strom darstellt, führt dies zu einer starken Abnahme der Hall-Leitfähigkeit. Gelegentliche Kollisionen spielen auch oberhalb von 130 km noch eine Rolle, was zu einer erheblichen Pedersen-Leitfähigkeit führt, die mit zunehmender Höhe abnimmt.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/hoehenabh_leitf.png" class="img-fluid figure-img"></p>
@@ -425,8 +436,18 @@ m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
 </figure>
 </div>
 </section>
-<section id="der-äquatoriale-elektrojet-eej" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="der-äquatoriale-elektrojet-eej"><span class="header-section-number">12.4</span> Der äquatoriale Elektrojet (EEJ)</h2>
+<section id="der-äquatoriale-elektrojet-eej" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="der-äquatoriale-elektrojet-eej"><span class="header-section-number">12.7</span> Der äquatoriale Elektrojet (EEJ)</h2>
+<p>Über dem magnetischen Äquator beobachtet man auf der Tagseite der Erde einen starken, östwärtsgerichteten elektrischen Strom.</p>
+<p>Dieser Strom hat eine einfache Erklärung. Wir wählen ein rechtshändiges Koordinatensystem mit x positiv nach Norden, y ostwärts und z nach unten.</p>
+<p>Ein zunächst ostwärts orientiertes elektrisches Feld erzeugt einen Hallstrom <span class="math inline">\(j_z = \sigma_2 E_y\)</span>. Dieser führt zu einer positiven Ladungsakkumulation an der Unterseite der E-Schicht und einer negativen Ladungsakkumulation an ihrer Oberseite. Dieser Prozess setzt sich fort, bis die sekundäre elektrostatische Polarisation den vertikalen Hallstrom kompensiert.</p>
+<p>Zusammengefasst bedeutet das</p>
+<p><span class="math display">\[
+\begin{align}
+j_y &amp; = \sigma_1 E_y - \sigma_2 E_z \\
+j_z &amp; = \sigma_1 E_z + \sigma_2 E_y
+\end{align}
+\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/aequator_leitf.png" class="img-fluid figure-img"></p>
