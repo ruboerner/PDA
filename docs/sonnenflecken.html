@@ -363,20 +363,24 @@ R = k ( f + 10 g)
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(<span class="st">"Jahr"</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(<span class="st">"Sonnenfleckenrelativzahl"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stderr">
+<pre><code>┌ Info: Precompiling DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0]
+└ @ Base loading.jl:1664</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<p><img src="sonnenflecken_files/figure-html/cell-2-output-1.svg" class="img-fluid"></p>
+<p><img src="sonnenflecken_files/figure-html/cell-2-output-2.svg" class="img-fluid"></p>
 </div>
 </div>
 <p>Wir versuchen nun, die offensichtlich vorhandene Periodizität zu berechnen und nutzen dafür die Schnelle Fourietransformation <code>FFT</code>.</p>
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">FFTW</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> <span class="fu">fft</span>(SN <span class="op">.-</span> <span class="fu">mean</span>(SN))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">popfirst!</span>(S)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">abs</span>.(S), label<span class="op">=</span><span class="st">""</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(<span class="st">"Amplitudenspektrum"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">FFTW</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>S <span class="op">=</span> <span class="fu">fft</span>(SN <span class="op">.-</span> <span class="fu">mean</span>(SN))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">popfirst!</span>(S)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">abs</span>.(S), label<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(<span class="st">"Amplitudenspektrum"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <p><img src="sonnenflecken_files/figure-html/cell-3-output-1.svg" class="img-fluid"></p>
@@ -385,15 +389,15 @@ R = k ( f + 10 g)
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="fu">length</span>(S)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>up <span class="op">=</span> <span class="fu">Int</span>(<span class="fu">floor</span>(n<span class="op">/</span><span class="fl">2</span>))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>power <span class="op">=</span> <span class="fu">abs</span>.(S[<span class="fl">1</span><span class="op">:</span>up, <span class="op">:</span>])<span class="op">.^</span><span class="fl">2</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>samplinginterval <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> <span class="fl">12.0</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>nyquist <span class="op">=</span> <span class="fl">1</span> <span class="op">/</span> (<span class="fl">2</span> <span class="op">*</span> samplinginterval)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> [<span class="fl">1</span><span class="op">:</span>up<span class="op">...</span>] <span class="op">./</span> (n <span class="op">/</span> <span class="fl">2</span>) <span class="op">*</span> nyquist</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(freq, power)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(<span class="st">"Frequenz in 1/a"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(<span class="st">"Powerspektrum"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="fu">length</span>(S)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>up <span class="op">=</span> <span class="fu">Int</span>(<span class="fu">floor</span>(n<span class="op">/</span><span class="fl">2</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>power <span class="op">=</span> <span class="fu">abs</span>.(S[<span class="fl">1</span><span class="op">:</span>up, <span class="op">:</span>])<span class="op">.^</span><span class="fl">2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>samplinginterval <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> <span class="fl">12.0</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>nyquist <span class="op">=</span> <span class="fl">1</span> <span class="op">/</span> (<span class="fl">2</span> <span class="op">*</span> samplinginterval)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> [<span class="fl">1</span><span class="op">:</span>up<span class="op">...</span>] <span class="op">./</span> (n <span class="op">/</span> <span class="fl">2</span>) <span class="op">*</span> nyquist</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(freq, power)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(<span class="st">"Frequenz in 1/a"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(<span class="st">"Powerspektrum"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <p><img src="sonnenflecken_files/figure-html/cell-4-output-1.svg" class="img-fluid"></p>
@@ -402,14 +406,14 @@ R = k ( f + 10 g)
 <div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>period <span class="op">=</span> <span class="fl">1</span> <span class="op">./</span> freq</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="fu">argmax</span>(power)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(period, power, xscale<span class="op">=:</span>log10, label<span class="op">=</span><span class="st">""</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>([period[i]], [power[i]], m<span class="op">=:</span>o, label<span class="op">=</span><span class="st">""</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(<span class="st">"Periodendauer in a"</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(<span class="st">"Powerspektrum"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">title!</span>(<span class="st">"Sonnenfleckenzyklus: </span><span class="sc">$</span>(<span class="fu">round</span>(period[i], digits<span class="op">=</span><span class="fl">2</span>))<span class="st"> a"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>period <span class="op">=</span> <span class="fl">1</span> <span class="op">./</span> freq</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="fu">argmax</span>(power)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(period, power, xscale<span class="op">=:</span>log10, label<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>([period[i]], [power[i]], m<span class="op">=:</span>o, label<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(<span class="st">"Periodendauer in a"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(<span class="st">"Powerspektrum"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">title!</span>(<span class="st">"Sonnenfleckenzyklus: </span><span class="sc">$</span>(<span class="fu">round</span>(period[i], digits<span class="op">=</span><span class="fl">2</span>))<span class="st"> a"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <p><img src="sonnenflecken_files/figure-html/cell-5-output-1.svg" class="img-fluid"></p>
