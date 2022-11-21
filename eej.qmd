@@ -5,6 +5,12 @@ draft: true
 
 Wir untersuchen den Mechanismus der elektrischen Leitfähigkeit in schwach ionisierten Gasen.
 
+Folgende Annahmen werden getroffen:
+
+-   der Beitrag von Ionen mit Ladung größer als 1 ist vernachlässigbar,
+-   die Teilchenzahldichte der Ionen entspricht der der Elektronen, d.h., $n_i = n_e$,
+-   für die betrachteten Höhen von 50 bis 1000 km ist die Neutralgasdichte deutlichhöher als die Plasmadichte.
+
 Wir gehen zunächst von einem Ensemble von Einzelteilchen aus und betrachten wie üblich die Bewegungsgleichung. Enthält das Gas Ionen der Ladung $q=+e$ und Elektronen der Ladung $q=-e$, ergibt sich die elektrische Stromdichte zu
 
 $$
@@ -12,6 +18,8 @@ $$
 $$
 
 Die Ströme werden durch elektrische Felder hervorgerufen, und es gilt das Ohmsche Gesetz $\mathbf j = \sigma \mathbf E$.
+
+Unabhängig von der Richtung der Anfangsgeschwindigkeit wird sich die Bewegungsrichtung bei Abwesenheit von Magnetfeldern an die elektrische Feldrichtung angleichen.
 
 <!-- Es besteht eine Abhängigkeit der Leitfähigkeit von den Teilchendaten und dem Magnetfeld.-->
 
@@ -23,36 +31,59 @@ Ein elektrisches Feld parallel zum Magnetfeld ergibt sich für *ein* Teilchen di
 
 Bei Anwesenheit *vieler* Teilchen wird Bewegung des Einzelteilchens durch Stöße gebremst. Es stellt sich mittlere Geschwindigkeit ein.
 
-Die Zeit zwischen zwei aufeinanderfolgenden Stößen sei $\tau$.
+Das Teilchen verliert bei jedem Stoß die durch das elektrische Feld erlangte Geschwindigkeit, kommt also zum Stillstand. Die Zeit zwischen zwei aufeinanderfolgenden Stößen sei $\tau$.
 
-Unter der unrealistischen Annahme einer konstanten Stoßzeit erhalten wir für die mittlere Geschwindigkeit
-
-$$
-\overline{\mathbf v}_\| = \frac{1}{\tau}\int\limits_0^\tau \frac{q \mathbf E_\|}{m} t \,\mathrm d t =
-\frac{1}{2} \frac{q \mathbf E_\|}{m} \tau
-$$
-
-Die Stoßzeiten sind jedoch nicht konstant, sondern statistisch verteilt.
-
-Die Wahrscheinlichkeit $W(\hat \tau)$, dass die Stoßzeit im Intervall $(\hat\tau, \hat\tau + \mathrm d\hat\tau)$ liegt, betrage
+Unter der (unrealistischen) Annahme einer konstanten Stoßzeit $\tau_1$ erhalten wir für die mittlere Geschwindigkeit
 
 $$
-W(\hat\tau) = \frac{1}{\tau} e^{- \hat\tau / \tau}.
+\overline{\mathbf v}_1 = \frac{1}{\tau_1}\int\limits_0^{\tau_1} \frac{q \mathbf E_\|}{m} t \,\mathrm d t =
+\frac{1}{2} \frac{q \mathbf E_\|}{m} \tau_1
 $$
 
-Diese Wahrscheinlichkeitsverteilung hat einen Mittelwert und eine mittlere quadratische Abweichung von $\tau$.
+Für eine weitere Stoßzeit $\tau_2$ erhalten wir $\overline{\mathbf v}_2 = \frac{1}{2} \frac{q \mathbf E_\|}{m} \tau_2$ .
 
-Damit erhält man
+Die *mittlere Stoßzeit* ist $\overline\tau = (\tau_1 + \tau_2) / 2$.
+
+Die *mittlere Geschwindigkeit* beträgt
 
 $$
-\overline{\mathbf v}_\| = \frac{1}{\tau}\int\limits_0^\infty 
+\overline{\mathbf v}_{1,2} = \frac{\tau_1 \overline{\mathbf v}_1 + \tau_2 \overline{\mathbf v}_2}{\tau_1 + \tau_2} = \underbrace{\frac{1}{2}}_{p(\tau_1)} \frac{\tau_1}{\overline \tau}\overline{\mathbf v}_1 + 
+\underbrace{\frac{1}{2}}_{p(\tau_2)} \frac{\tau_2}{\overline \tau}\overline{\mathbf v}_2
+$$
+
+Die Faktoren $1/2$ entsprechen der Wahrscheinlichkeit, ob im entsprechenden Zeitintervall ein Stoß erfolgt oder nicht. Die 50/50-Chance für beliebige $\tau$ ist eher unrealistisch.
+
+Die Stoßzeiten sind nicht konstant, sondern statistisch verteilt.
+
+Wir können die mittlere Geschwindigkeit aus einer Wahrscheinlichkeitsverteilung ableiten:
+
+$$
+\overline{\mathbf v} = \int\limits_0^\infty p(\tau) \frac{\tau}{\overline \tau} \frac{1}{2}\frac{q \mathbf E}{m} \tau \, \mathrm d\tau
+$$
+
+Mit der Annahme, dass die Zeit bis zur nächsten kollision nicht von in der Vergangenheit erfolgten Stößen abhängt, kann man eine Exponentialverteilung ansetzen.
+
+Die Wahrscheinlichkeit $p(\tau)$, dass die Stoßzeit im Intervall $(\tau, \tau + \mathrm d\tau)$ liegt, betrage
+
+$$
+p(\tau) = \frac{1}{\overline\tau} e^{- \tau / \overline\tau}.
+$$
+
+Diese Wahrscheinlichkeitsverteilung hat einen Mittelwert und eine mittlere quadratische Abweichung von $\overline\tau$.
+
+Damit erhält man als mittlere Geschwindigkeit eines Einzelteilchens
+
+$$
+\overline{\mathbf v} = \frac{1}{\overline\tau}\int\limits_0^\infty 
 \left \{
-\int\limits_0^\hat\tau \frac{q \mathbf E_\|}{m} t \,\mathrm dt 
+\int\limits_0^\tau \frac{q \mathbf E_\|}{m} t \,\mathrm dt 
 \right\}
-W(\hat\tau) \mathrm d \hat\tau = \frac{q \mathbf E_\|}{m} \tau.
+p(\tau) \mathrm d \tau = \frac{q \mathbf E_\|}{m} \overline\tau.
 $$
 
-Für die elektrische Stromdichte ergibt sich daraus
+Für den Fall, dass die mittlere Geschwindigkeit repräsentativ für alle geladenen Teilchen des betrachteten Typs ist, benötigen wir nur die Teilchenzahldichten $n_i$ und $n_e$ zur Bestimmung der Stromdichte.
+
+Für die elektrische Stromdichte ergibt sich bei Abwesenheit eines Magnetfeldes daraus
 
 $$
 \mathbf j_\| = \left(
@@ -64,7 +95,7 @@ $$
 
 mit der *Parallelleitfähigkeit* $\sigma_0$.
 
-Führt man mit \$\\nu = 1 / \tau\$ die *Stoßfrequenz* ein, so gilt
+Führt man mit $\nu = 1 / \tau$ die *Stoßfrequenz* ein, so gilt
 
 $$
 \sigma_0 = \left(
@@ -107,6 +138,17 @@ $$
 \sigma_2 = \left(    -\frac{n_i \omega_{gi}}{m_i(\nu_i^2 + \omega_{gi}^2)}    +\frac{n_e \omega_{ge}}{m_e(\nu_e^2 + \omega_{ge}^2)}    \right) e^2
 $$ wird *Hall-Leitfähigkeit* genannt.
 
+## Leitfähigkeitstensor
+
+$$
+\mathbf j = \underline\sigma \mathbf E = 
+\begin{pmatrix}
+\sigma_1 & -\sigma_2 & 0 \\
+\sigma_2 & \sigma_1 & 0 \\
+0 & 0 & \sigma_0
+\end{pmatrix} \mathbf E
+$$
+
 ## Leitfähigkeit der Ionosphäre
 
 In der Ionosphäre hängt die Leitfähigkeit über
@@ -125,8 +167,10 @@ ab.
 
 Am wichtigsten für die Höhenabhängigkeit sind der Verlauf von $n_i(h)$, $n_e(h)$, $\nu_i(h)$ und $\nu_e(h)$.
 
-![](images/hoehenabh_stossfreq.png)
+![Höhenabhängigkeit der Stoßfrequenz für Ionen und Elektronen in der unteren Ionosphäre in mittleren Breiten. Die gestrichelten Linien begrenzen die Dynamoschicht (aus [@kertz]).](images/hoehenabh_stossfreq.png)
+
+![Höhenabhängigkeit der ionosphärischen Leitfähigkeiten (aus [@kertz])](images/hoehenabh_leitf.png)
 
 ## Der äquatoriale Elektrojet (EEJ)
 
-![](images/aequator_leitf.png)
+![Schematische Darstellung der Erhöhung der effektiven Leitfähigkeit am magnetischen Äquator. y-Achse nach magnetisch Ost (aus [@kertz]).](images/aequator_leitf.png)

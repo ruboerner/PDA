@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -243,8 +262,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pedersen--oder-transversalleitfähigkeit" id="toc-pedersen--oder-transversalleitfähigkeit" class="nav-link" data-scroll-target="#pedersen--oder-transversalleitfähigkeit"><span class="toc-section-number">12.1.1</span>  Pedersen- oder Transversalleitfähigkeit</a></li>
   <li><a href="#hall-leitfähigkeit" id="toc-hall-leitfähigkeit" class="nav-link" data-scroll-target="#hall-leitfähigkeit"><span class="toc-section-number">12.1.2</span>  Hall-Leitfähigkeit</a></li>
   </ul></li>
-  <li><a href="#leitfähigkeit-der-ionosphäre" id="toc-leitfähigkeit-der-ionosphäre" class="nav-link" data-scroll-target="#leitfähigkeit-der-ionosphäre"><span class="toc-section-number">12.2</span>  Leitfähigkeit der Ionosphäre</a></li>
-  <li><a href="#der-äquatoriale-elektrojet-eej" id="toc-der-äquatoriale-elektrojet-eej" class="nav-link" data-scroll-target="#der-äquatoriale-elektrojet-eej"><span class="toc-section-number">12.3</span>  Der äquatoriale Elektrojet (EEJ)</a></li>
+  <li><a href="#leitfähigkeitstensor" id="toc-leitfähigkeitstensor" class="nav-link" data-scroll-target="#leitfähigkeitstensor"><span class="toc-section-number">12.2</span>  Leitfähigkeitstensor</a></li>
+  <li><a href="#leitfähigkeit-der-ionosphäre" id="toc-leitfähigkeit-der-ionosphäre" class="nav-link" data-scroll-target="#leitfähigkeit-der-ionosphäre"><span class="toc-section-number">12.3</span>  Leitfähigkeit der Ionosphäre</a></li>
+  <li><a href="#der-äquatoriale-elektrojet-eej" id="toc-der-äquatoriale-elektrojet-eej" class="nav-link" data-scroll-target="#der-äquatoriale-elektrojet-eej"><span class="toc-section-number">12.4</span>  Der äquatoriale Elektrojet (EEJ)</a></li>
   </ul>
 </nav>
     </div>
@@ -269,38 +289,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Wir untersuchen den Mechanismus der elektrischen Leitfähigkeit in schwach ionisierten Gasen.</p>
+<p>Folgende Annahmen werden getroffen:</p>
+<ul>
+<li>der Beitrag von Ionen mit Ladung größer als 1 ist vernachlässigbar,</li>
+<li>die Teilchenzahldichte der Ionen entspricht der der Elektronen, d.h., <span class="math inline">\(n_i = n_e\)</span>,</li>
+<li>für die betrachteten Höhen von 50 bis 1000 km ist die Neutralgasdichte deutlichhöher als die Plasmadichte.</li>
+</ul>
 <p>Wir gehen zunächst von einem Ensemble von Einzelteilchen aus und betrachten wie üblich die Bewegungsgleichung. Enthält das Gas Ionen der Ladung <span class="math inline">\(q=+e\)</span> und Elektronen der Ladung <span class="math inline">\(q=-e\)</span>, ergibt sich die elektrische Stromdichte zu</p>
 <p><span class="math display">\[
 \mathbf j = (n_i \mathbf v_i - n_e \mathbf v_e) e.
 \]</span></p>
 <p>Die Ströme werden durch elektrische Felder hervorgerufen, und es gilt das Ohmsche Gesetz <span class="math inline">\(\mathbf j = \sigma \mathbf E\)</span>.</p>
+<p>Unabhängig von der Richtung der Anfangsgeschwindigkeit wird sich die Bewegungsrichtung bei Abwesenheit von Magnetfeldern an die elektrische Feldrichtung angleichen.</p>
 <!-- Es besteht eine Abhängigkeit der Leitfähigkeit von den Teilchendaten und dem Magnetfeld.-->
 <section id="kollisionen" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="kollisionen"><span class="header-section-number">12.1</span> Kollisionen</h2>
 <p>Die Teilchengeschwindigkeiten sind abhängig von ihrer Richtung zum Magnetfeld, deshalb wird die elektrische Leitfähigkeit bei Anwesenheit eines Magnetfeldes anisotrop.</p>
 <p>Ein elektrisches Feld parallel zum Magnetfeld ergibt sich für <em>ein</em> Teilchen die konstante Beschleunigung <span class="math inline">\(q \mathbf E / m\)</span>.</p>
 <p>Bei Anwesenheit <em>vieler</em> Teilchen wird Bewegung des Einzelteilchens durch Stöße gebremst. Es stellt sich mittlere Geschwindigkeit ein.</p>
-<p>Die Zeit zwischen zwei aufeinanderfolgenden Stößen sei <span class="math inline">\(\tau\)</span>.</p>
-<p>Unter der unrealistischen Annahme einer konstanten Stoßzeit erhalten wir für die mittlere Geschwindigkeit</p>
+<p>Das Teilchen verliert bei jedem Stoß die durch das elektrische Feld erlangte Geschwindigkeit, kommt also zum Stillstand. Die Zeit zwischen zwei aufeinanderfolgenden Stößen sei <span class="math inline">\(\tau\)</span>.</p>
+<p>Unter der (unrealistischen) Annahme einer konstanten Stoßzeit <span class="math inline">\(\tau_1\)</span> erhalten wir für die mittlere Geschwindigkeit</p>
 <p><span class="math display">\[
-\overline{\mathbf v}_\| = \frac{1}{\tau}\int\limits_0^\tau \frac{q \mathbf E_\|}{m} t \,\mathrm d t =
-\frac{1}{2} \frac{q \mathbf E_\|}{m} \tau
+\overline{\mathbf v}_1 = \frac{1}{\tau_1}\int\limits_0^{\tau_1} \frac{q \mathbf E_\|}{m} t \,\mathrm d t =
+\frac{1}{2} \frac{q \mathbf E_\|}{m} \tau_1
 \]</span></p>
-<p>Die Stoßzeiten sind jedoch nicht konstant, sondern statistisch verteilt.</p>
-<p>Die Wahrscheinlichkeit <span class="math inline">\(W(\hat \tau)\)</span>, dass die Stoßzeit im Intervall <span class="math inline">\((\hat\tau, \hat\tau + \mathrm d\hat\tau)\)</span> liegt, betrage</p>
+<p>Für eine weitere Stoßzeit <span class="math inline">\(\tau_2\)</span> erhalten wir <span class="math inline">\(\overline{\mathbf v}_2 = \frac{1}{2} \frac{q \mathbf E_\|}{m} \tau_2\)</span> .</p>
+<p>Die <em>mittlere Stoßzeit</em> ist <span class="math inline">\(\overline\tau = (\tau_1 + \tau_2) / 2\)</span>.</p>
+<p>Die <em>mittlere Geschwindigkeit</em> beträgt</p>
 <p><span class="math display">\[
-W(\hat\tau) = \frac{1}{\tau} e^{- \hat\tau / \tau}.
+\overline{\mathbf v}_{1,2} = \frac{\tau_1 \overline{\mathbf v}_1 + \tau_2 \overline{\mathbf v}_2}{\tau_1 + \tau_2} = \underbrace{\frac{1}{2}}_{p(\tau_1)} \frac{\tau_1}{\overline \tau}\overline{\mathbf v}_1 +
+\underbrace{\frac{1}{2}}_{p(\tau_2)} \frac{\tau_2}{\overline \tau}\overline{\mathbf v}_2
 \]</span></p>
-<p>Diese Wahrscheinlichkeitsverteilung hat einen Mittelwert und eine mittlere quadratische Abweichung von <span class="math inline">\(\tau\)</span>.</p>
-<p>Damit erhält man</p>
+<p>Die Faktoren <span class="math inline">\(1/2\)</span> entsprechen der Wahrscheinlichkeit, ob im entsprechenden Zeitintervall ein Stoß erfolgt oder nicht. Die 50/50-Chance für beliebige <span class="math inline">\(\tau\)</span> ist eher unrealistisch.</p>
+<p>Die Stoßzeiten sind nicht konstant, sondern statistisch verteilt.</p>
+<p>Wir können die mittlere Geschwindigkeit aus einer Wahrscheinlichkeitsverteilung ableiten:</p>
 <p><span class="math display">\[
-\overline{\mathbf v}_\| = \frac{1}{\tau}\int\limits_0^\infty
+\overline{\mathbf v} = \int\limits_0^\infty p(\tau) \frac{\tau}{\overline \tau} \frac{1}{2}\frac{q \mathbf E}{m} \tau \, \mathrm d\tau
+\]</span></p>
+<p>Mit der Annahme, dass die Zeit bis zur nächsten kollision nicht von in der Vergangenheit erfolgten Stößen abhängt, kann man eine Exponentialverteilung ansetzen.</p>
+<p>Die Wahrscheinlichkeit <span class="math inline">\(p(\tau)\)</span>, dass die Stoßzeit im Intervall <span class="math inline">\((\tau, \tau + \mathrm d\tau)\)</span> liegt, betrage</p>
+<p><span class="math display">\[
+p(\tau) = \frac{1}{\overline\tau} e^{- \tau / \overline\tau}.
+\]</span></p>
+<p>Diese Wahrscheinlichkeitsverteilung hat einen Mittelwert und eine mittlere quadratische Abweichung von <span class="math inline">\(\overline\tau\)</span>.</p>
+<p>Damit erhält man als mittlere Geschwindigkeit eines Einzelteilchens</p>
+<p><span class="math display">\[
+\overline{\mathbf v} = \frac{1}{\overline\tau}\int\limits_0^\infty
 \left \{
-\int\limits_0^\hat\tau \frac{q \mathbf E_\|}{m} t \,\mathrm dt
+\int\limits_0^\tau \frac{q \mathbf E_\|}{m} t \,\mathrm dt
 \right\}
-W(\hat\tau) \mathrm d \hat\tau = \frac{q \mathbf E_\|}{m} \tau.
+p(\tau) \mathrm d \tau = \frac{q \mathbf E_\|}{m} \overline\tau.
 \]</span></p>
-<p>Für die elektrische Stromdichte ergibt sich daraus</p>
+<p>Für den Fall, dass die mittlere Geschwindigkeit repräsentativ für alle geladenen Teilchen des betrachteten Typs ist, benötigen wir nur die Teilchenzahldichten <span class="math inline">\(n_i\)</span> und <span class="math inline">\(n_e\)</span> zur Bestimmung der Stromdichte.</p>
+<p>Für die elektrische Stromdichte ergibt sich bei Abwesenheit eines Magnetfeldes daraus</p>
 <p><span class="math display">\[
 \mathbf j_\| = \left(
 \frac{n_i \tau_i}{m_i}
@@ -309,7 +350,7 @@ W(\hat\tau) \mathrm d \hat\tau = \frac{q \mathbf E_\|}{m} \tau.
 \right) e^2 \mathbf E_\| = \sigma_0 \mathbf E_\|
 \]</span></p>
 <p>mit der <em>Parallelleitfähigkeit</em> <span class="math inline">\(\sigma_0\)</span>.</p>
-<p>Führt man mit $\nu = 1 / $ die <em>Stoßfrequenz</em> ein, so gilt</p>
+<p>Führt man mit <span class="math inline">\(\nu = 1 / \tau\)</span> die <em>Stoßfrequenz</em> ein, so gilt</p>
 <p><span class="math display">\[
 \sigma_0 = \left(
 \frac{n_i \tau_i}{m_i}
@@ -344,8 +385,19 @@ m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
 \]</span> wird <em>Hall-Leitfähigkeit</em> genannt.</p>
 </section>
 </section>
-<section id="leitfähigkeit-der-ionosphäre" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="leitfähigkeit-der-ionosphäre"><span class="header-section-number">12.2</span> Leitfähigkeit der Ionosphäre</h2>
+<section id="leitfähigkeitstensor" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="leitfähigkeitstensor"><span class="header-section-number">12.2</span> Leitfähigkeitstensor</h2>
+<p><span class="math display">\[
+\mathbf j = \underline\sigma \mathbf E =
+\begin{pmatrix}
+\sigma_1 &amp; -\sigma_2 &amp; 0 \\
+\sigma_2 &amp; \sigma_1 &amp; 0 \\
+0 &amp; 0 &amp; \sigma_0
+\end{pmatrix} \mathbf E
+\]</span></p>
+</section>
+<section id="leitfähigkeit-der-ionosphäre" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="leitfähigkeit-der-ionosphäre"><span class="header-section-number">12.3</span> Leitfähigkeit der Ionosphäre</h2>
 <p>In der Ionosphäre hängt die Leitfähigkeit über</p>
 <ul>
 <li>die Ionen- und Elektronenkonzentration sowie die</li>
@@ -360,13 +412,34 @@ m \nu \overline{\mathbf v}_y = - q B \overline{\mathbf v}_x
 </ul>
 <p>ab.</p>
 <p>Am wichtigsten für die Höhenabhängigkeit sind der Verlauf von <span class="math inline">\(n_i(h)\)</span>, <span class="math inline">\(n_e(h)\)</span>, <span class="math inline">\(\nu_i(h)\)</span> und <span class="math inline">\(\nu_e(h)\)</span>.</p>
-<p><img src="images/hoehenabh_stossfreq.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hoehenabh_stossfreq.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Höhenabhängigkeit der Stoßfrequenz für Ionen und Elektronen in der unteren Ionosphäre in mittleren Breiten. Die gestrichelten Linien begrenzen die Dynamoschicht (aus <span class="citation" data-cites="kertz">(<a href="references.html#ref-kertz" role="doc-biblioref">Kertz 1971</a>)</span>).</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hoehenabh_leitf.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Höhenabhängigkeit der ionosphärischen Leitfähigkeiten (aus <span class="citation" data-cites="kertz">(<a href="references.html#ref-kertz" role="doc-biblioref">Kertz 1971</a>)</span>)</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="der-äquatoriale-elektrojet-eej" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="der-äquatoriale-elektrojet-eej"><span class="header-section-number">12.3</span> Der äquatoriale Elektrojet (EEJ)</h2>
-<p><img src="images/aequator_leitf.png" class="img-fluid"></p>
+<section id="der-äquatoriale-elektrojet-eej" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="der-äquatoriale-elektrojet-eej"><span class="header-section-number">12.4</span> Der äquatoriale Elektrojet (EEJ)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/aequator_leitf.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Schematische Darstellung der Erhöhung der effektiven Leitfähigkeit am magnetischen Äquator. y-Achse nach magnetisch Ost (aus <span class="citation" data-cites="kertz">(<a href="references.html#ref-kertz" role="doc-biblioref">Kertz 1971</a>)</span>).</figcaption><p></p>
+</figure>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography" style="display: none">
+<div id="ref-kertz" class="csl-entry" role="doc-biblioentry">
+Kertz, W. (1971) <span>Einf<span>ü</span>hrung in die Geophysik II</span>. <em>Bibliographisches Institut, Mannheim</em>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
