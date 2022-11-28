@@ -259,6 +259,21 @@ Oberhalb von etwa 130 km Höhe beginnen auch die Ionen zu kreiseln und driften s
 
 Da die Drift von Elektronen und Ionen in dieselbe Richtung keinen elektrischen Strom darstellt, führt dies zu einer starken Abnahme der Hall-Leitfähigkeit. Gelegentliche Kollisionen spielen auch oberhalb von 130 km noch eine Rolle, was zu einer erheblichen Pedersen-Leitfähigkeit führt, die mit zunehmender Höhe abnimmt.
 
+### Wie entstehen Pedersen- und Hall-Ströme?
+Die Abbildung zeigt, welche Ladungsträger zu den Strömen beitragen:
+Mit Ausnahme des unteren Teils der gestrichelten Bereiches, in dem die Dichte der ionisierten Komponente zu gering ist, um einen nennenswerten Strom zu ermöglichen, gelten für die unteren zwei Drittel der Dynamoschicht die Werte $\nu_{in} \gg \omega_{gi}$ und $\nu_{en} \ll \omega_{ge}$.
+
+In einer Höhe von etwa 100 km können die Elektronen bereits etwa hundert Kreiselumdrehungen machen, bevor sie mit Neutralgas zusammenstoßen und eine etwas eingeschränkte $\mathbf{E}\times \mathbf{B}$-Drift erfahren.
+
+Die Ionen hingegen stoßen noch etwa hundertmal pro Kreiselzyklus mit Neutralgas zusammen und bewegen sich somit mit dem Neutralgas.
+
+Durch die Bewegung der Elektronen quer zu den elektrischen und magnetischen Feldern wird also ein Hall-Strom übertragen. Am oberen Ende der Dynamoschicht, in etwa 125 km Höhe, werden die Ionenzyklotron- und Kollisionsfrequenzen vergleichbar und die Ionen sind nicht mehr perfekt an das Neutralgas gekoppelt.
+
+Stattdessen bewegen sie sich in Richtung des elektrischen Feldes und tragen einen Pedersen-Strom, während sich die Elektronen weiterhin im rechten Winkel zu den Feldern bewegen und einen Hall-Strom tragen.
+Oberhalb der E-Region erfahren sowohl Elektronen als auch Ionen die gleiche $\mathbf{E}\times \mathbf{B}$-Drift und es fließt kein Strom.
+
+### Höhenabhängigkeit der Leitfähigkeit
+
 ![Höhenabhängigkeit der ionosphärischen Leitfähigkeiten (aus [@kertz])](images/hoehenabh_leitf.png)
 
 ### Zahlenwerte
