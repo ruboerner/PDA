@@ -263,30 +263,34 @@ Da die Drift von Elektronen und Ionen in dieselbe Richtung keinen elektrischen S
 
 ### Zahlenwerte
 
+![Verlauf der elektrischen Leitfähigkeit in der Ionosphäre (aus @treumann2001).](images/Pasted%20image%2020221125105006.png)
+
 #### Tagseite der Ionosphäre
+
 $$
 \begin{align}
 n_{e} & = 2 \times 10^{5} \text{ cm}^{-3} \\
 \sigma_{peak} & = 10^{-3} \text{ S/m}
 \end{align}
 $$
+
 #### Nachtseite der Ionosphäre:
+
 $$
 \begin{align}
 n_{e} & = 2 \times 10^{3} \text{ cm}^{-3} \\
 \sigma_{peak} & = 10^{-5} \text{ S/m}
 \end{align}
 $$
-#### Polarlichtregion
+
+#### Polarlichtregion 
+
 $$
 \begin{align}
 n_{e} & = 10^{6} \dots 10^{7} \text{ cm}^{-3} \\
 \sigma_{peak} & = 10^{-2} \text{ S/m}
 \end{align}
-$$
-Das Peak der Pedersen-LF beträgt etwa die Hälfte vom Peak der Hall-LF.
-Parallelleitfähigkeit $\sigma_{\parallel}$ ist wesentlich größer und erreicht Werte von $\sigma_{\parallel} = 10^{2}$ S/m. In F-Schicht und darüber wird der Wert eines voll ionisierten Plasmas erreicht und wird als Unendlich angenommen.
-
+$$ Das Peak der Pedersen-LF beträgt etwa die Hälfte vom Peak der Hall-LF. Parallelleitfähigkeit $\sigma_{\parallel}$ ist wesentlich größer und erreicht Werte von $\sigma_{\parallel} = 10^{2}$ S/m. In F-Schicht und darüber wird der Wert eines voll ionisierten Plasmas erreicht und wird als Unendlich angenommen.
 
 ## Der äquatoriale Elektrojet (EEJ)
 
