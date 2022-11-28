@@ -32,7 +32,7 @@ book:
         - eej.qmd
     - part: "Das erdmagnetische Außenfeld"
       chapters: 
-        - ionosphere.qmd
+        - Sq.qmd
         - variationen.qmd
     - phenomena.qmd
     - summary.qmd

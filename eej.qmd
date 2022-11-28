@@ -83,6 +83,78 @@ $$
 
 Für den Fall, dass die mittlere Geschwindigkeit repräsentativ für alle geladenen Teilchen des betrachteten Typs ist, benötigen wir nur die Teilchenzahldichten $n_i$ und $n_e$ zur Bestimmung der Stromdichte.
 
+## Plasmaleitfähigkeit
+
+Wir starten mit der starken Vereinfachung, dass sich nur die Elektronen bewegen. Alle Kollisionspartner sind in Ruhe.
+
+$$
+m \frac{ \partial \mathbf{v} }{ \partial t } = q (\mathbf{E} + \mathbf{v} \times \mathbf{B}) - m \nu_{c} (\mathbf{v} - \mathbf{u})
+$$ $\nu_{c}$: Kollisionsfrequenz $\mathbf{u}$: Geschwindigkeit der Kollisionspartner $\mathbf{v}$: Geschwindigkeit des geladenen Teilchens
+
+### $\mathbf{B} = \mathbf{0}$, $\mathbf{u}=\mathbf{0}$
+
+Elektronen mit $\mathbf{v}_{e}$, Ionen und Neutralgas in Ruhe $$
+\mathbf{E} = - \frac{m_{e} \nu_{c}}{e} \mathbf{v}_{e}
+$$ Stromdichte: $$
+\mathbf{j} = -e n_{e} \mathbf{v}_{e}
+$$ Zusammenfassen führt auf $$
+\mathbf{j} = \frac{e^{2}n_{e}}{m \nu_{c}} \mathbf{E}
+$$
+
+### $\mathbf{B} \ne \mathbf{0}$, $\mathbf{u}=\mathbf{0}$
+
+Plasma bewegt sich mit Geschwindigkeit $\mathbf{v}$ durch Magnetfeld. Wir addieren den Term $\mathbf{v}\times \mathbf{B}$. $$
+\mathbf{j} = \sigma_{0}(\mathbf{E} + \mathbf{v}\times \mathbf{B})
+$$ $$
+\sigma_{0} = \frac{e^{2}n_{e}}{m \nu_{c}}
+$$ $\sigma_{0}$: Plasmaleitfähigkeit, Parallelleitfähigkeit
+
+$$
+\mathbf{E} + \mathbf{v}_{e} \times \mathbf{B} = - \frac{m_{e} \nu_{c}}{e} \mathbf{v}_{e}
+$$ Erweitertes Ohmsches Gesetz $$
+\mathbf{j} = \sigma_{0}\mathbf{E} - \frac{\sigma_{0}}{n_{e} e} \mathbf{j}\times \mathbf{B}
+$$ Annahme: $\mathbf{B} = B \hat{\mathbf{z}}$. Kreisfrequenz der Gyrationsbewegung ist vorzeichenbehaftet wegen $q=-e$, womit $$
+\omega_{g} = \frac{q B}{m} = -\frac{e B}{m_{e}}
+$$ Dann ist $$
+\mathbf{j}\times \mathbf{B} = \begin{pmatrix}
++B_{z}j_{y} \\ -B_{z}j_{x} \\ 0
+\end{pmatrix}
+$$ Komponenten von $\mathbf{j}$ $$
+\begin{align}
+j_{x} & = \sigma_{0}E_{x} + \frac{\omega_{g}}{\nu_{c}} j_{y} \\
+j_{y} & = \sigma_{0}E_{y} - \frac{\omega_{g}}{\nu_{c}} j_{x} \\
+j_{z} & = \sigma_{0} E_{z}
+\end{align}
+$$ Zusammengefasst: $$
+\begin{align}
+j_{x} & = \frac{\nu_{c}^{2}}{\nu_{c}^{2} + \omega_{g}^{2}}\sigma_{0}E_{x} + 
+\frac{\omega_{g}\nu_{c}}{\nu_{c}^{2} + \omega_{g}^{2}}\sigma_{0}E_{y} \\
+j_{y} & = \frac{\nu_{c}^{2}}{\nu_{c}^{2} + \omega_{g}^{2}}\sigma_{0}E_{y} - 
+\frac{\omega_{g}\nu_{c}}{\nu_{c}^{2} + \omega_{g}^{2}}\sigma_{0}E_{x} \\
+j_{z} & = \sigma_{0}E_{z}
+\end{align}
+$$ Dies ist ein System von Gleichungen $$
+\mathbf{j} = \boldsymbol{\sigma}  \mathbf{E}
+$$ mit $$
+\boldsymbol{\sigma} = \begin{pmatrix}
+\sigma_{P} & -\sigma_{H} & 0 \\
+\sigma_{H} & \sigma_{P} & 0 \\
+0 & 0 & \sigma_{\parallel}
+\end{pmatrix}
+$$ wobei $$
+\begin{align}
+\sigma_{P}  & = +\frac{\nu_{c}^{2}}{\nu_{c}^{2} + \omega_{g}^{2}}\sigma_{0}  \\
+\sigma_{H} & = -\frac{\omega_{g}\nu_{c}}{\nu_{c}^{2} + \omega_{g}^{2}}\sigma_{0} \\
+\sigma_{\parallel} & = \sigma_{0} = \frac{n_{e}e^{2}}{m_{e}\nu_{c}}
+\end{align}
+$$ Allgemein hat $\mathbf{B}$ einen beliebigen Winkel bzgl. der Achsen des kartesischen Koordinatensystems. Dann gilt für die Stromdichte der Elektronen $$
+\mathbf{j} = \sigma_{\parallel} \mathbf{E}_{\parallel} + \sigma_{P}\mathbf{E}_{\perp} - \sigma_{H} \frac{\mathbf{E}_{\perp} \times \mathbf{B}}{B}
+$$
+
+![Anisotropie der Leitfähigkeit von Plasmen in Abhängigkeit des Verhätnisses von Gyrations- zu Kollisionsfrequenz (nach @treumann2001)](images/anisotrope_LF.png)
+
+Die Leitfähigkeit ist stark anisotrop, wenn $|\omega_{g}| \approx \nu_{c}$. Für $|\omega_{g}| < \nu_{c}$ dominiert die Pedersen-LF, da hier die Elektronen in Richtung des elektrischen Feldes gestreut werden, bevor sie in die Gyrationsbewegung übergehen. Für $|\omega_{g}| > \nu_{c}$ erfahren die Elektronen eine $\mathbf{E}\times \mathbf{B}$-Drift für die Dauer mehrerer Gyrationszyklen, bevor Kollisionen auftreten. Die Hall-LF dominiert. Bei $|\omega_{g}| \approx \nu_{c}$ werden die Elektronen etwa einmal pro Gyrationszyklus gestreut. Daher sind sowohl $\mathbf{E}\times \mathbf{B}$-Drift als auch Bewegung entlang des transversalen elektrischen Feldes gleichermaßen beteiligt. Pedersen- und Hall-LF sind etwa gleich groß. Dann bewegen sich die Elektronen im Mittel im Winkel von 45° bzgl. der Richtung des elektrischen Feldes und der Driftrichtung.
+
 ## Parallelleitfähigkeit
 
 Für die elektrische Stromdichte ergibt sich bei Abwesenheit eines Magnetfeldes daraus
@@ -188,6 +260,33 @@ Oberhalb von etwa 130 km Höhe beginnen auch die Ionen zu kreiseln und driften s
 Da die Drift von Elektronen und Ionen in dieselbe Richtung keinen elektrischen Strom darstellt, führt dies zu einer starken Abnahme der Hall-Leitfähigkeit. Gelegentliche Kollisionen spielen auch oberhalb von 130 km noch eine Rolle, was zu einer erheblichen Pedersen-Leitfähigkeit führt, die mit zunehmender Höhe abnimmt.
 
 ![Höhenabhängigkeit der ionosphärischen Leitfähigkeiten (aus [@kertz])](images/hoehenabh_leitf.png)
+
+### Zahlenwerte
+
+#### Tagseite der Ionosphäre
+$$
+\begin{align}
+n_{e} & = 2 \times 10^{5} \text{ cm}^{-3} \\
+\sigma_{peak} & = 10^{-3} \text{ S/m}
+\end{align}
+$$
+#### Nachtseite der Ionosphäre:
+$$
+\begin{align}
+n_{e} & = 2 \times 10^{3} \text{ cm}^{-3} \\
+\sigma_{peak} & = 10^{-5} \text{ S/m}
+\end{align}
+$$
+#### Polarlichtregion
+$$
+\begin{align}
+n_{e} & = 10^{6} \dots 10^{7} \text{ cm}^{-3} \\
+\sigma_{peak} & = 10^{-2} \text{ S/m}
+\end{align}
+$$
+Das Peak der Pedersen-LF beträgt etwa die Hälfte vom Peak der Hall-LF.
+Parallelleitfähigkeit $\sigma_{\parallel}$ ist wesentlich größer und erreicht Werte von $\sigma_{\parallel} = 10^{2}$ S/m. In F-Schicht und darüber wird der Wert eines voll ionisierten Plasmas erreicht und wird als Unendlich angenommen.
+
 
 ## Der äquatoriale Elektrojet (EEJ)
 

@@ -1,0 +1,36 @@
+---
+title: "Ionosphärische Stromsysteme"
+---
+# Sq-Stromsystem
+Ionen sind an Neutralgaskomponente der Atmosphäre gekoppelt und folgen ihrer Dynamik. Atmosphärische Winde und Gezeitenbewegungen führen dazu, dass sich die Ionenkomponente der E-Schicht quer zu Magnetfeldlinien bewegt. Elektronen bewegen sich viel langsamer quer zu Magnetfeld und neutralem Wind. Die Relativbewegung führt zu elektrischem Strom, Ladungstrennung führt zu elektrischem Feld, dies wiederum beeinflusst den Strom. Ohmsches Gesetz:
+$$
+\mathbf{j} = \boldsymbol{\sigma} \left( \mathbf{E} + \mathbf{v}_{n}\times \mathbf{B}\right) 
+$$
+Für mittlere und niedrige Breiten ist das $\mathbf{v}\times \mathbf{B}$-Feld, welches durch die Ionenbewegung im Magnetfeld angetrieben wird, der dominierende Treiber des Stromes. Der wichtigste Dynamoeffekt in mittleren Breiten ist die tägliche Variation der atmosphärischen Bewegung durch Gezeiten der Atmosphäre. Die Gezeiten mit der niedrigsten und höchsten Amplitude sind die ganztägigen und halbtägigen Oszillationen, welche durch Erwärmung infolge der Sonneneinstrahlung hervorgerufen werden. Das von diesen Gezeitenbewegungen verursachte Stromsystem ist das *solar quiet* oder *Sq*-Stromsystem.
+
+![Globales Sq-Stromsystem auf der Tagseite der Erde (@treumann2001 )](images/Pasted%20image%2020221125133436.png)
+
+# EEJ
+Entlang des magnetischen Äquators tritt auf der Tagseite ein starkes ostwärtsgerichtetes elektrisches Stromsystem auf.
+Dies hat eine einfache Erklärung:
+Mit x pos. nach Norden, y pos. ostwärts und z pos. nach unten definieren wir ein rechtshändiges geomagnetisches Koordinatensystem.
+Ein zunächst ostwärts gerichtetes elektrisches Feld $E_{y}$ erzeugt einen Hallstrom $j_{z = \sigma_{2} E_{y}}$.
+Dieser verursacht eine positive Ladungsakkumulation auf der Unterseite der E-Schicht und eine negative Ladungsakkumulation auf der Oberseite.
+In der Folge wird der vertikale Hallstrom durch dieses Polarisationsfeld gestoppt.
+Wir beobachten:
+$$
+\begin{align}
+j_{y} & = \sigma_{1}E_{y} - \sigma_{2}E_{z} \\
+j_{z} & = \sigma_{1}E_{z} + \sigma_{2}E_{y} \\
+E_{z} & = \frac{j_{z}}{\sigma_{1}} - \frac{\sigma_{2}}{\sigma_{1}}E_{y} \quad & j_{z} = 0
+\end{align}
+$$
+Daraus folgt für den Horizontalstrom
+$$
+\begin{align}
+j_{y} & = \sigma_{1}E_{y} + \sigma_{2} \frac{\sigma_{2}}{\sigma_{1}}E_{y} \\ \\
+& = \underbrace{ \sigma_{1} \left( 1 + \frac{\sigma_{2}^{2}}{\sigma_{1}^{2}} \right) }_{ \sigma_{C}\text{: Cowling-Leitfähigkeit} } E_{y}
+\end{align}
+$$
+Dieser anomale Strom wird als _Equatorial Electrojet_ (EEJ) bezeichnet.
+

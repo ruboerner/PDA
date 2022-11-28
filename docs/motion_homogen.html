@@ -267,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ionosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ionosphäre</span></a>
+  <a href="./Sq.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Ionosphärische Stromsysteme</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -342,6 +342,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    center[<span class="fl">1</span>] <span class="op">.+</span> radius <span class="op">*</span> <span class="fu">cos</span>.(θ), center[<span class="fl">2</span>] <span class="op">.+</span> radius <span class="op">*</span> <span class="fu">sin</span>.(θ)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stderr">
+<pre><code>┌ Info: Precompiling TestParticle [953b605b-f162-4481-8f7f-a191c2bb40e3]
+└ @ Base loading.jl:1664</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>┌ Info: Precompiling OrdinaryDiffEq [1dea7af3-3e70-54e6-95c3-0bf5283fa5ed]
+└ @ Base loading.jl:1664</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>┌ Warning: Replacing docs for `SciMLBase.sol :: Union{Tuple, Tuple{D}, Tuple{S}, Tuple{N}, Tuple{T}} where {T, N, S, D}` in module `SciMLBase`
+└ @ Base.Docs docs\Docs.jl:240</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>WARNING: method definition for TwiceDifferentiable at C:\Users\rub\.julia\packages\NLSolversBase\cfJrN\src\objective_types\incomplete.jl:96 declares type variable TH but does not use it.</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>circle (generic function with 1 method)</code></pre>
 </div>
@@ -368,25 +383,25 @@ f_g = \frac{\omega_g}{2 \pi} = \frac{|q| B}{2 \pi m}
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>m_p <span class="op">=</span> TestParticle.mᵢ</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>m_e <span class="op">=</span> TestParticle.mₑ</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>q_p <span class="op">=</span> TestParticle.qᵢ</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>q_e <span class="op">=</span> TestParticle.qₑ</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> <span class="fl">1.0e-9</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>f_p <span class="op">=</span> q_p <span class="op">*</span> B <span class="op">/</span> (<span class="fl">2</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> m_p) </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>f_e <span class="op">=</span> <span class="fu">abs</span>(q_e) <span class="op">*</span> B <span class="op">/</span> (<span class="fl">2</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> m_e) </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>r_p <span class="op">=</span> m_p <span class="op">*</span> v <span class="op">/</span> <span class="fu">abs</span>(q_p) <span class="op">/</span> B</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>r_e <span class="op">=</span> m_e <span class="op">*</span> v <span class="op">/</span> <span class="fu">abs</span>(q_e) <span class="op">/</span> B</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>Markdown.<span class="fu">parse</span>(<span class="st">"""</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">Die Gyrationsfrequenz für Protonen beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(f_p, digits<span class="op">=</span><span class="fl">3</span>))<span class="st"> Hz.</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">Die Gyrationsfrequenz für Elektronen beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(f_e, digits<span class="op">=</span><span class="fl">3</span>))<span class="st"> Hz.</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">Der Gyrationsradius für Protonen beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(r_p, sigdigits<span class="op">=</span><span class="fl">3</span>))<span class="st"> m.</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">Der Gyrationsradius für Elektronen beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(r_e, sigdigits<span class="op">=</span><span class="fl">3</span>))<span class="st"> m.</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>m_p <span class="op">=</span> TestParticle.mᵢ</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>m_e <span class="op">=</span> TestParticle.mₑ</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>q_p <span class="op">=</span> TestParticle.qᵢ</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>q_e <span class="op">=</span> TestParticle.qₑ</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> <span class="fl">1.0e-9</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>f_p <span class="op">=</span> q_p <span class="op">*</span> B <span class="op">/</span> (<span class="fl">2</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> m_p) </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>f_e <span class="op">=</span> <span class="fu">abs</span>(q_e) <span class="op">*</span> B <span class="op">/</span> (<span class="fl">2</span> <span class="op">*</span> <span class="cn">pi</span> <span class="op">*</span> m_e) </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>r_p <span class="op">=</span> m_p <span class="op">*</span> v <span class="op">/</span> <span class="fu">abs</span>(q_p) <span class="op">/</span> B</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>r_e <span class="op">=</span> m_e <span class="op">*</span> v <span class="op">/</span> <span class="fu">abs</span>(q_e) <span class="op">/</span> B</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>Markdown.<span class="fu">parse</span>(<span class="st">"""</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="st">Die Gyrationsfrequenz für Protonen beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(f_p, digits<span class="op">=</span><span class="fl">3</span>))<span class="st"> Hz.</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="st">Die Gyrationsfrequenz für Elektronen beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(f_e, digits<span class="op">=</span><span class="fl">3</span>))<span class="st"> Hz.</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="st">Der Gyrationsradius für Protonen beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(r_p, sigdigits<span class="op">=</span><span class="fl">3</span>))<span class="st"> m.</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="st">Der Gyrationsradius für Elektronen beträgt </span><span class="sc">$</span>(<span class="fu">round</span>(r_e, sigdigits<span class="op">=</span><span class="fl">3</span>))<span class="st"> m.</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <p>Die Gyrationsfrequenz für Protonen beträgt 0.015 Hz. Die Gyrationsfrequenz für Elektronen beträgt 27.992 Hz. Der Gyrationsradius für Protonen beträgt 10.4 m. Der Gyrationsradius für Elektronen beträgt 0.00569 m.</p>
@@ -395,58 +410,58 @@ f_g = \frac{\omega_g}{2 \pi} = \frac{|q| B}{2 \pi m}
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">20</span>, <span class="fl">20</span>, length<span class="op">=</span><span class="fl">41</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">20</span>, <span class="fl">20</span>, length<span class="op">=</span><span class="fl">41</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">20</span>, <span class="fl">20</span>, length<span class="op">=</span><span class="fl">41</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> <span class="fu">fill</span>(<span class="fl">0.0</span>, <span class="fl">3</span>, <span class="fu">length</span>(x), <span class="fu">length</span>(y), <span class="fu">length</span>(z)) <span class="co"># [T]</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> <span class="fu">fill</span>(<span class="fl">0.0</span>, <span class="fl">3</span>, <span class="fu">length</span>(x), <span class="fu">length</span>(y), <span class="fu">length</span>(z)) <span class="co"># [V/m]</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>B[<span class="fl">3</span>,<span class="op">:</span>,<span class="op">:</span>,<span class="op">:</span>] <span class="op">.=</span> <span class="fl">1e-9</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># E[2,:,:,:] .= 1e-10</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">20</span>, <span class="fl">20</span>, length<span class="op">=</span><span class="fl">41</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">20</span>, <span class="fl">20</span>, length<span class="op">=</span><span class="fl">41</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">20</span>, <span class="fl">20</span>, length<span class="op">=</span><span class="fl">41</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> <span class="fu">fill</span>(<span class="fl">0.0</span>, <span class="fl">3</span>, <span class="fu">length</span>(x), <span class="fu">length</span>(y), <span class="fu">length</span>(z)) <span class="co"># [T]</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> <span class="fu">fill</span>(<span class="fl">0.0</span>, <span class="fl">3</span>, <span class="fu">length</span>(x), <span class="fu">length</span>(y), <span class="fu">length</span>(z)) <span class="co"># [V/m]</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>B[<span class="fl">3</span>,<span class="op">:</span>,<span class="op">:</span>,<span class="op">:</span>] <span class="op">.=</span> <span class="fl">1e-9</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># E[2,:,:,:] .= 1e-10</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Δx <span class="op">=</span> x[<span class="fl">2</span>] <span class="op">-</span> x[<span class="fl">1</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Δy <span class="op">=</span> y[<span class="fl">2</span>] <span class="op">-</span> y[<span class="fl">1</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Δz <span class="op">=</span> z[<span class="fl">2</span>] <span class="op">-</span> z[<span class="fl">1</span>]</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> <span class="fu">CartesianGrid</span>((<span class="fu">length</span>(x)<span class="op">-</span><span class="fl">1</span>, <span class="fu">length</span>(y)<span class="op">-</span><span class="fl">1</span>, <span class="fu">length</span>(z)<span class="op">-</span><span class="fl">1</span>),</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   (x[<span class="fl">1</span>], y[<span class="fl">1</span>], z[<span class="fl">1</span>]),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>   (Δx, Δy, Δz))</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Δx <span class="op">=</span> x[<span class="fl">2</span>] <span class="op">-</span> x[<span class="fl">1</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Δy <span class="op">=</span> y[<span class="fl">2</span>] <span class="op">-</span> y[<span class="fl">1</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Δz <span class="op">=</span> z[<span class="fl">2</span>] <span class="op">-</span> z[<span class="fl">1</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> <span class="fu">CartesianGrid</span>((<span class="fu">length</span>(x)<span class="op">-</span><span class="fl">1</span>, <span class="fu">length</span>(y)<span class="op">-</span><span class="fl">1</span>, <span class="fu">length</span>(z)<span class="op">-</span><span class="fl">1</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>   (x[<span class="fl">1</span>], y[<span class="fl">1</span>], z[<span class="fl">1</span>]),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>   (Δx, Δy, Δz))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cn">nothing</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>isAnalytic <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>trajectories <span class="op">=</span> <span class="fl">1</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>] <span class="co"># initial position, [m]</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>u0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.0</span>] <span class="co"># initial velocity, [m/s]</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, u0<span class="op">...</span>]</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>param_electron <span class="op">=</span> <span class="fu">prepare</span>(grid, E, B, species<span class="op">=</span>Electron)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>tspan_electron <span class="op">=</span> (<span class="fl">0.0</span>, <span class="fl">0.1</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>param_proton <span class="op">=</span> <span class="fu">prepare</span>(grid, E, B, species<span class="op">=</span>Proton)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>tspan_proton <span class="op">=</span> (<span class="fl">0.0</span>, <span class="fl">200.0</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>prob_e <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan_electron, param_electron)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>prob_p <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan_proton, param_proton)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>sol_e <span class="op">=</span> <span class="fu">solve</span>(prob_e, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>])</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>sol_p <span class="op">=</span> <span class="fu">solve</span>(prob_p, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>]);</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>isAnalytic <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>trajectories <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> [<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>] <span class="co"># initial position, [m]</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>u0 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.0</span>] <span class="co"># initial velocity, [m/s]</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>stateinit <span class="op">=</span> [x0<span class="op">...</span>, u0<span class="op">...</span>]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>param_electron <span class="op">=</span> <span class="fu">prepare</span>(grid, E, B, species<span class="op">=</span>Electron)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>tspan_electron <span class="op">=</span> (<span class="fl">0.0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>param_proton <span class="op">=</span> <span class="fu">prepare</span>(grid, E, B, species<span class="op">=</span>Proton)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>tspan_proton <span class="op">=</span> (<span class="fl">0.0</span>, <span class="fl">200.0</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>prob_e <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan_electron, param_electron)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>prob_p <span class="op">=</span> <span class="fu">ODEProblem</span>(trace!, stateinit, tspan_proton, param_proton)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>sol_e <span class="op">=</span> <span class="fu">solve</span>(prob_e, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>])</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>sol_p <span class="op">=</span> <span class="fu">solve</span>(prob_p, <span class="fu">Tsit5</span>(); save_idxs<span class="op">=</span>[<span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>]);</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sol_e, idxs<span class="op">=</span>(<span class="fl">1</span>,<span class="fl">2</span>), lw<span class="op">=</span><span class="fl">3</span>, label<span class="op">=</span><span class="st">"Elektron"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fu">circle</span>(r_e ,[<span class="op">-</span><span class="fl">1.0</span> <span class="op">-</span> r_e; <span class="fl">0.0</span>], <span class="fl">32</span>);</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(c[<span class="fl">1</span>], c[<span class="fl">2</span>], label<span class="op">=</span><span class="st">"analytisch"</span>, lw<span class="op">=</span><span class="fl">0.5</span>, aspect_ratio<span class="op">=:</span>equal)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sol_e, idxs<span class="op">=</span>(<span class="fl">1</span>,<span class="fl">2</span>), lw<span class="op">=</span><span class="fl">3</span>, label<span class="op">=</span><span class="st">"Elektron"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fu">circle</span>(r_e ,[<span class="op">-</span><span class="fl">1.0</span> <span class="op">-</span> r_e; <span class="fl">0.0</span>], <span class="fl">32</span>);</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(c[<span class="fl">1</span>], c[<span class="fl">2</span>], label<span class="op">=</span><span class="st">"analytisch"</span>, lw<span class="op">=</span><span class="fl">0.5</span>, aspect_ratio<span class="op">=:</span>equal)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <p><img src="motion_homogen_files/figure-html/cell-7-output-1.svg" class="img-fluid"></p>
@@ -455,10 +470,10 @@ f_g = \frac{\omega_g}{2 \pi} = \frac{|q| B}{2 \pi m}
 <div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sol_p, idxs<span class="op">=</span>(<span class="fl">1</span>,<span class="fl">2</span>), lw<span class="op">=</span><span class="fl">3</span>, label<span class="op">=</span><span class="st">"Proton"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fu">circle</span>(r_p ,[<span class="op">-</span><span class="fl">1.0</span> <span class="op">+</span> r_p; <span class="fl">0.0</span>], <span class="fl">64</span>);</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(c[<span class="fl">1</span>], c[<span class="fl">2</span>], label<span class="op">=</span><span class="st">"analytisch"</span>, lw<span class="op">=</span><span class="fl">0.5</span>, aspect_ratio<span class="op">=:</span>equal)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sol_p, idxs<span class="op">=</span>(<span class="fl">1</span>,<span class="fl">2</span>), lw<span class="op">=</span><span class="fl">3</span>, label<span class="op">=</span><span class="st">"Proton"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fu">circle</span>(r_p ,[<span class="op">-</span><span class="fl">1.0</span> <span class="op">+</span> r_p; <span class="fl">0.0</span>], <span class="fl">64</span>);</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(c[<span class="fl">1</span>], c[<span class="fl">2</span>], label<span class="op">=</span><span class="st">"analytisch"</span>, lw<span class="op">=</span><span class="fl">0.5</span>, aspect_ratio<span class="op">=:</span>equal)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <p><img src="motion_homogen_files/figure-html/cell-8-output-1.svg" class="img-fluid"></p>
