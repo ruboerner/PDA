@@ -157,7 +157,7 @@ Die Leitfähigkeit ist stark anisotrop, wenn $|\omega_{g}| \approx \nu_{c}$. Fü
 
 ## Parallelleitfähigkeit
 
-Für die elektrische Stromdichte ergibt sich bei Abwesenheit eines Magnetfeldes daraus
+Für die elektrische Stromdichte ergibt sich bei Abwesenheit eines Magnetfeldes bei Berücksichtigung von exponentialverteilten Stoßzeiten $\tau$
 
 $$
 \mathbf j_\| = \left(
@@ -173,13 +173,13 @@ Führt man mit $\nu = 1 / \tau$ die *Stoßfrequenz* ein, so gilt
 
 $$
 \sigma_0 = \left(
-\frac{n_i \tau_i}{m_i} 
+\frac{n_i}{m_i \nu_i} 
 +
-\frac{n_e \tau_e}{m_e}
+\frac{n_e}{m_e \nu_e}
 \right) e^2.
 $$
 
-Bei beliebiger Lage des elektrischen Feldes erhält man als Folge der Stöße und Driften
+Bei beliebiger Lage des elektrischen Feldes erhält man als Folge von Stößen und Drift
 
 $$
 \mathbf j = \sigma_0 \mathbf E_\| + \sigma_1 \mathbf E_\perp + \sigma_2 \frac{\mathbf B \times \mathbf E_\perp}{B}
